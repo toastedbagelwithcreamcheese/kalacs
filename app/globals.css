@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Akaya Kanadaka";
+  src: url("/fonts/AkayaKanadaka-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Anton";
+  src: url("/fonts/Anton-Regular.ttf") format("truetype");
+}
+
+
+
+.font-akaya {
+  font-family: "Akaya Kanadaka", sans-serif;
+  font-weight: 600;
+  color: #c79c8d;
+}
+
+.footer-title {
+  font-family: "Anton", sans-serif;
+  font-weight: bold;
+}
+
+
+.debug-section {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  html, body {
+    height: auto;
+    overflow-y: scroll !important;
+  }
