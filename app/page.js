@@ -62,7 +62,7 @@ export default function PortfolioHome() {
 
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? "100%" : "-100%",
+      x: direction < 0 ? "100%" : "-100%",
       opacity: 0,
       position: "absolute",
     }),
@@ -102,54 +102,38 @@ export default function PortfolioHome() {
             {/* Háttér blur */}
             <img
               src={slides[currentIndex].image}
-              alt="blurred background"
-              // Kitölti a teret, object-cover levágja ha kell
-              // Blur és scale csökkentve/eltávolítva mobilon (pl. md: - közepes képernyőtől felfelé)
-              className="absolute inset-0 w-full h-full object-cover
-                         blur-lg md:blur-xl scale-105 md:scale-110 z-0"
+              alt="blurred bg"
+              className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 z-0"
             />
-            {/* Opcionális: Sötétítő réteg a jobb olvashatóságért */}
-            <div className="absolute inset-0 bg-black opacity-20 z-[1]"></div>
 
             {/* Wrapper az éles képhez és a szöveghez */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center justify-center text-center px-4">
               {/* Előtér éles kép */}
               <img
-              src={slides[currentIndex].image}
-              alt={`Slide ${currentIndex + 1}`}
-              // Kitölti a teret, object-cover levágja ha kell
-              className="absolute inset-0 w-full h-full object-cover z-[2]"
-              // FONTOS: Fontold meg a `loading="lazy"` attribútumot, ha nem ez a legelső kép
-              // De mivel ez a fő vizuális elem, valószínűleg nem kell lazy load
-            />
+                src={slides[currentIndex].image}
+                alt={`Slide ${currentIndex + 1}`}
+                className="max-h-[90vh] max-w-full object-contain mb-0"
+              />
 
               {/* Szöveg + gomb */}
-              <div className="absolute inset-x-0 bottom-0 z-[3] flex flex-col items-center justify-end text-center pb-12 sm:pb-16 md:pb-24 px-4">
               <motion.div
-                // Kulcs kell a szöveg animációjához is, ha az AnimatePresence alatt van
-                // De itt a fő motion.div kulcsa elég lehet, próbáljuk így először
-                key={currentIndex + "-text"} // Biztonság kedvéért adjunk külön kulcsot
-                initial={{ opacity: 0, y: 30 }}
+                key={currentIndex + "-text"}
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }} // Kicsit finomítva
-                transition={{ duration: 0.6, delay: 0.25 }} // Késleltetés finomítva
-                className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl" // Max szélesség a szövegnek
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="z-20 w-full max-w-xl md:max-w-2xl"
               >
-                {/* Szöveg: Reszponzív méret, árnyék */}
-                <p className="text-white text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-md mb-3 sm:mb-4">
+                <p className="text-white text-xl md:text-2xl font-semibold drop-shadow-md">
                   {slides[currentIndex].text}
                 </p>
-                {/* Gomb: Stílusok maradnak, Link komponens használata */}
-                <Link // Next.js Link komponens használata ajánlott az útvonalváltáshoz
+                <a
                   href={slides[currentIndex].link}
-                  className="inline-block border-2 border-[#C79984] bg-[#C79984] bg-opacity-50 text-white px-5 py-2 rounded-md font-semibold
-                             hover:bg-opacity-75 hover:border-[#C79984] hover:scale-105
-                             transition-all duration-300 transform"
+                  className="mt-2 inline-block border-2 border-[#C79984] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#C79984] hover:text-white transition-all duration-300 transform hover:scale-105"
                 >
                   {slides[currentIndex].buttonText}
-                </Link>
+                </a>
               </motion.div>
-              </div>
             </div>
           </motion.div>
         </AnimatePresence>
