@@ -7,6 +7,7 @@ import CarPhotography from "@/components/CarPhotography";
 import KismamaSection from "@/components/KismamaSection.js";
 import PortreSection from "@/components/PortreSection";
 import ParosSection from "@/components/ParosSection";
+import Link from "next/link";
 
 const slides = [
   {
@@ -117,22 +118,28 @@ export default function PortfolioHome() {
 
               {/* Szöveg + gomb */}
               <motion.div
-                key={currentIndex + "-text"}
-                initial={{ opacity: 0, y: 40 }}
+                // Kulcs kell a szöveg animációjához is, ha az AnimatePresence alatt van
+                // De itt a fő motion.div kulcsa elég lehet, próbáljuk így először
+                key={currentIndex + "-text"} // Biztonság kedvéért adjunk külön kulcsot
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="z-20 w-full max-w-xl md:max-w-2xl"
+                exit={{ opacity: 0, y: -15 }} // Kicsit finomítva
+                transition={{ duration: 0.6, delay: 0.25 }} // Késleltetés finomítva
+                className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl" // Max szélesség a szövegnek
               >
-                <p className="text-white text-xl md:text-2xl font-semibold drop-shadow-md">
+                {/* Szöveg: Reszponzív méret, árnyék */}
+                <p className="text-white text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-md mb-3 sm:mb-4">
                   {slides[currentIndex].text}
                 </p>
-                <a
+                {/* Gomb: Stílusok maradnak, Link komponens használata */}
+                <Link // Next.js Link komponens használata ajánlott az útvonalváltáshoz
                   href={slides[currentIndex].link}
-                  className="mt-2 inline-block border-2 border-[#C79984] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#C79984] hover:text-white transition-all duration-300 transform hover:scale-105"
+                  className="inline-block border-2 border-[#C79984] bg-[#C79984] bg-opacity-50 text-white px-5 py-2 rounded-md font-semibold
+                             hover:bg-opacity-75 hover:border-[#C79984] hover:scale-105
+                             transition-all duration-300 transform"
                 >
                   {slides[currentIndex].buttonText}
-                </a>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
