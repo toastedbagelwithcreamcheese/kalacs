@@ -132,7 +132,7 @@ export default function PortfolioHome() {
                   {slides[currentIndex].text}
                 </p>
                 {/* Gomb: Stílusok maradnak, Link komponens használata */}
-                <Link // Next.js Link komponens használata ajánlott az útvonalváltáshoz
+                <Link // Next.js Link komponens használata ajánlott az útvonalváltáshozsss
                 //utállom fos
                   href={slides[currentIndex].link}
                   className="inline-block border-2 border-[#C79984] bg-[#C79984] bg-opacity-50 text-white px-5 py-2 rounded-md font-semibold
