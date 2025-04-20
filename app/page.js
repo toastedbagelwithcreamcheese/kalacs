@@ -62,7 +62,7 @@ export default function PortfolioHome() {
 
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? "100%" : "-100%",
+      x: direction < 0 ? "100%" : "-100%",
       opacity: 0,
       position: "absolute",
     }),
