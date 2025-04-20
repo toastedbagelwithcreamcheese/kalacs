@@ -43,7 +43,12 @@ export default function AboutSection() {
 
   return (
     // Külső padding csökkentése kisebb képernyőkön, növelése nagyobbakon
-    <div ref={sectionRef} className="bg-gray-100 py-12 md:py-16 overflow-hidden"> {/* overflow-hidden hozzáadva a vízszintes görgetés elkerülése érdekében */}
+    <div
+      ref={sectionRef}
+      className="bg-gray-100 py-12 md:py-16 overflow-hidden"
+    >
+      {" "}
+      {/* overflow-hidden hozzáadva a vízszintes görgetés elkerülése érdekében */}
       {/* Első szekció: Bemutatkozás */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -53,7 +58,9 @@ export default function AboutSection() {
         className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
       >
         {/* Kép: Méretek finomhangolása különböző töréspontokon, középre igazítás mobilon */}
-        <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-lg flex-shrink-0 mx-auto md:mx-0"> {/* flex-shrink-0 hozzáadva, hogy ne zsugorodjon */}
+        <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-lg flex-shrink-0 mx-auto md:mx-0">
+          {" "}
+          {/* flex-shrink-0 hozzáadva, hogy ne zsugorodjon */}
           <img
             src="/images/zsirii-2212.jpg" // Cseréld ki a saját képedre
             alt="Dobó Imre fotós" // Fontos az alt text! Javasolt a név javítása (Kovács Bálint?)
@@ -62,7 +69,9 @@ export default function AboutSection() {
         </div>
 
         {/* Szöveg rész: Betűméretek finomhangolása */}
-        <div className="max-w-lg text-center md:text-left mt-6 md:mt-0"> {/* Kis margó mobilon a kép és szöveg között */}
+        <div className="max-w-lg text-center md:text-left mt-6 md:mt-0">
+          {" "}
+          {/* Kis margó mobilon a kép és szöveg között */}
           {/* Cím és alcím: Kisebb méret mobilon */}
           <h2 className="text-3xl sm:text-4xl font-bold text-[#9A9A9A] mb-2">
             Kovács Bálint fotós Zalaegerszeg
@@ -70,12 +79,10 @@ export default function AboutSection() {
           <p className="text-lg sm:text-xl font-bold text-[#9A9A9A] mb-4 sm:mb-6">
             Rólam a lencse túloldalán
           </p>
-
           {/* Kiemelt szöveg: Kisebb méret mobilon */}
           <p className="text-base sm:text-lg font-bold text-[#646C5E] mb-3 sm:mb-4">
             Éld át újra a legszebb pillanatokat!
           </p>
-
           {/* Üdvözlő szöveg: Kisebb méret mobilon */}
           <p className="text-sm sm:text-base text-[#646C5E] mb-6">
             Örömmel köszöntelek a <strong>balintfoto.hu</strong> oldalán! A
@@ -87,7 +94,6 @@ export default function AboutSection() {
           </p>
         </div>
       </motion.div>
-
       {/* Szolgáltatások szekciója */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -159,7 +165,6 @@ export default function AboutSection() {
           </ul>
         </div>
       </motion.div>
-
       {/* Hogyan dolgozom szekció */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -187,7 +192,6 @@ export default function AboutSection() {
           </p>
         </div>
       </motion.div>
-
       {/* Vedd fel velem a kapcsolatot szekció */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -216,10 +220,11 @@ export default function AboutSection() {
             határon túl) keresel esküvői fotóst, jegyesfotóst, rendezvényfotóst
             vagy portréfotóst, én örömmel útra kelek, hogy elkészítsem a
             legszebb képeket számodra! Várom a hívásod vagy{" "}
-            <Link href="/contact" legacyBehavior> {/* legacyBehavior Next.js 13+ esetén javasolt, ha a Link-en belül van egy <a> vagy hasonló tag */}
-              <a className="font-bold text-[#C79C8D] hover:underline cursor-pointer">
-                üzeneted
-              </a>
+            <Link
+              href="/contact"
+              className="font-bold text-[#C79C8D] hover:underline cursor-pointer"
+            >
+              üzeneted
             </Link>
             , hogy egy személyre szabott ajánlattal segítsem megvalósítani a
             terveidet!
@@ -227,7 +232,9 @@ export default function AboutSection() {
 
           {/* Alsó szekció: Kiemelt szöveg és gomb */}
           {/* Flex container, hogy a szöveg és gomb egymás alatt legyen, de a gomb igazítása változhasson */}
-          <div className="flex flex-col items-center md:items-start gap-4 mt-6 md:mt-8"> {/* Középre igazítás mobilon, balra igazítás md-től */}
+          <div className="flex flex-col items-center md:items-start gap-4 mt-6 md:mt-8">
+            {" "}
+            {/* Középre igazítás mobilon, balra igazítás md-től */}
             {/* Szöveg: Kisebb méret mobilon, igazítás */}
             <h2
               className="text-base sm:text-lg font-bold text-[#646C5E] text-center md:text-left"
