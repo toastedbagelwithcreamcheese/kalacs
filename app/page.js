@@ -133,6 +133,7 @@ export default function PortfolioHome() {
                 </p>
                 {/* Gomb: Stílusok maradnak, Link komponens használata */}
                 <Link // Next.js Link komponens használata ajánlott az útvonalváltáshoz
+                //utállom fos
                   href={slides[currentIndex].link}
                   className="inline-block border-2 border-[#C79984] bg-[#C79984] bg-opacity-50 text-white px-5 py-2 rounded-md font-semibold
                              hover:bg-opacity-75 hover:border-[#C79984] hover:scale-105
