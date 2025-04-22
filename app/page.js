@@ -281,7 +281,7 @@ export default function PortfolioHome() {
       />
       <ParosSection
         title="Páros/jegyes fotózás"
-        description="A portréfotózás célja, hogy kiemelje a legjobb éned. Legyen szó üzleti, kreatív vagy emlékezetes portréról, segítek, hogy a képek hűen tükrözzék személyiséged és stílusod. Profi szemlélettel és kellemes légkörben alkotunk meg egy fotót, ami igazán téged reprezentál."
+        description="Hiszem, hogy minden szerelem egyedi és megismételhetetlen történet. A páros vagy jegyes fotózás tökéletes alkalom arra, hogy megálljunk egy pillanatra a rohanó hétköznapokban, és csak egymásra figyelve megörökítsük azt a különleges köteléket, ami összeköt Titeket. Egy felszabadult, vidám hangulatú fotózás, ahol nincsenek erőltetett pózok, csak Ti ketten és az őszinte érzelmeitek. Legyen szó egy romantikus sétáról a kedvenc helyeteken, egy meghitt összebújásról a naplementében, vagy egy közös nevetésről – a célom, hogy olyan képek szülessenek, amelyek valóban Rólatok mesélnek. Ez a fotózás remek lehetőség az eljegyzés megünneplésére, évfordulós ajándékként, vagy csak úgy, mert minden nap egy jó alkalom arra, hogy megörökítsük a szerelmeteket. Együtt megtaláljuk a Hozzátok leginkább illő helyszínt és stílust, hogy a végeredmény igazán személyes és időtálló legyen. Engedjétek meg, hogy megörökítsem a történetetek egyik legszebb fejezetét!"
         images={[
           {
             src: "/images/_MG_4795.jpg",

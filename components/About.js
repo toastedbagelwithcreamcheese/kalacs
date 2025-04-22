@@ -54,12 +54,15 @@ const About = () => {
             {" "}
             <p className="mb-4">
               {" "}
-              Üdvözöllek! Dobó Imre vagyok, a <strong>Bálint Fotó</strong>{" "}
-              zalaegerszegi fotósa, aki szenvedéllyel és elhivatottsággal
-              örökíti meg életed legszebb pillanatait. Legyen szó esküvőkről,
-              családi eseményekről vagy professzionális portréfotózásról,
-              számomra az a legfontosabb, hogy a képek visszaadják az érzelmeket
-              és az események hangulatát.{" "}
+              Üdvözöllek! Kovács Bálint vagyok, a <strong>
+                Bálint Fotó
+              </strong>{" "}
+              zalaegerszegi fotósa. Szenvedéllyel és elhivatottsággal azon
+              dolgozom, hogy megörökítsem életed legszebb és legfontosabb
+              pillanatait. Legyen szó esküvőről, meghitt családi eseményről vagy
+              kifejező portréfotózásról, számomra a legfontosabb, hogy a képeim
+              visszaadják az őszinte érzelmeket és az események valódi
+              hangulatát.{" "}
             </p>{" "}
             <p className="mb-4">
               {" "}
@@ -67,40 +70,44 @@ const About = () => {
                 {" "}
                 Miért válassz engem, ha Zalaegerszegen keresel fotóst?{" "}
               </strong>{" "}
-              <br /> 2016 óta foglalkozom komolyan a fotózással, és 2020 óta
-              főállású Debreceni fényképészként dolgozom. Több száz esküvőt,
-              családi eseményt és portrét örökítettem meg azóta, mindig szem
-              előtt tartva az ügyfeleim elképzeléseit és igényeit.{" "}
+              <br /> 2023 óta foglalkozom fotózással, és ez idő alatt
+              elköteleztem magam amellett, hogy folyamatosan fejlődjek és a
+              maximumot nyújtsam. Minden megbízás egy új lehetőség számomra,
+              hogy valami egyedit alkossak, mindig az ügyfeleim elképzeléseit és
+              igényeit helyezve előtérbe.{" "}
             </p>{" "}
             <p className="mb-4">
               {" "}
-              A munkám során a természetességre helyezem a hangsúlyt. Az
-              elkapott pillanatok, az őszinte mosolyok és a meghitt érzelmek
-              azok, amelyek igazán különlegessé teszik a fotókat.{" "}
+              Munkám során a természetességre és az őszinteségre helyezem a
+              hangsúlyt. Hiszem, hogy az elkapott, spontán pillanatok, a valódi
+              mosolyok és a meghitt érzelmek azok, amelyek igazán különlegessé
+              és időtállóvá teszik a fotókat.{" "}
             </p>{" "}
             <p className="mb-4">
               {" "}
               <strong>
                 Képek, amelyek hosszú éveken át mesélnek
-              </strong> <br /> Egy jól elkészített fotóval újraélheted a boldog
-              pillanatokat. A Zal fotós szolgáltatásaim célja, hogy ne csak
-              képeket kapj, hanem olyan emlékeket, amelyek generációkon átívelve
-              is megőrzik az élményeidet.{" "}
+              </strong> <br /> Egy jól elkészített fotó segítségével bármikor
+              újraélheted a legdrágább pillanatokat. Szolgáltatásaim célja, hogy
+              ne csupán képeket kapj, hanem olyan kézzelfogható emlékeket,
+              amelyek generációkon átívelve is megőrzik az élményeidet és
+              mesélnek Rólad, Rólatok.{" "}
             </p>{" "}
             <p className="mb-4">
               {" "}
-              Modern, professzionális felszereléssel dolgozom, és folyamatosan
-              fejlesztem tudásomat, hogy mindig a legjobb minőséget nyújtsam. Az
-              utómunka során gondoskodom arról, hogy a képek színei, tónusai és
-              részletei tökéletesek legyenek.{" "}
+              Modern, professzionális fotós felszereléssel dolgozom, és
+              folyamatosan képzem magam, hogy mindig a lehető legjobb minőséget
+              biztosíthassam. Az utómunka során nagy gondot fordítok arra, hogy
+              a képek színei, tónusai és részletei tökéletes összhangban
+              legyenek, valamint igazodjanak a te stílusodhoz.{" "}
             </p>{" "}
             <p className="mb-4">
               {" "}
-              <strong>Keress bátran!</strong> <br /> Ha esküvői fotózást,
-              családi képeket vagy professzionális portréfotózást szeretnél,
-              vedd fel velem a kapcsolatot! Szívesen segítek megvalósítani az
-              elképzeléseidet, hogy együtt hozzunk létre örök emlékeket. Nézd
-              meg néhány szolgáltatásomat is:{" "}
+              <strong>Keress bizalommal!</strong> <br /> Ha esküvői fotózást
+              tervezel, családi képeket szeretnél, vagy egyedi portréfotózásra
+              vágysz Zalaegerszegen vagy környékén, vedd fel velem a
+              kapcsolatot! Örömmel segítek megvalósítani az elképzeléseidet,
+              hogy együtt hozhassunk létre maradandó emlékeket.{" "}
             </p>{" "}
           </motion.div>
         </div>
@@ -145,82 +152,86 @@ const About = () => {
         </div>
       </div>
       <section className="bg-[#EAEAEA] py-20">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
-        {/* Bal oldal - Szöveg */}
-        <motion.div
-          className="md:w-1/2"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-semibold text-[#C79984] mb-6">
-            Miért válassz <span className="text-[#C79984] font-bold">Engem?</span>
-          </h2>
-          <p className="text-lg text-gray-700 mb-6">
-            Mert a pillanatok megörökítése nem csupán a munkám, hanem a szenvedélyem!
-          </p>
+        <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+          {/* Bal oldal - Szöveg */}
+          <motion.div
+            className="md:w-1/2"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-semibold text-[#C79984] mb-6">
+              Miért válassz{" "}
+              <span className="text-[#C79984] font-bold">Engem?</span>
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Mert a pillanatok megörökítése nem csupán a munkám, hanem a
+              szenvedélyem!
+            </p>
 
-          <ul className="space-y-4">
+            <ul className="space-y-4">
+              {[
+                {
+                  title: "Személyre szabott figyelem",
+                  text: "Minden ügyfél egyedi, és ezt tiszteletben tartom.",
+                },
+                {
+                  title: "Profi minőség",
+                  text: "Évek tapasztalatával, a legjobb eszközökkel dolgozom.",
+                },
+                {
+                  title: "Rugalmasság",
+                  text: "Hozzád igazodom, legyen szó időpontról vagy elképzelésekről.",
+                },
+                {
+                  title: "Életre szóló emlékek",
+                  text: "Minden kép egy történetet mesél el.",
+                },
+              ].map((item, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <CircleCheck className="text-[#C79984]" size={28} />
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600">{item.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Jobb oldal - Képek */}
+          <motion.div
+            className="md:w-1/2 grid grid-cols-3 gap-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             {[
-              {
-                title: "Személyre szabott figyelem",
-                text: "Minden ügyfél egyedi, és ezt tiszteletben tartom.",
-              },
-              {
-                title: "Profi minőség",
-                text: "Évek tapasztalatával, a legjobb eszközökkel dolgozom.",
-              },
-              {
-                title: "Rugalmasság",
-                text: "Hozzád igazodom, legyen szó időpontról vagy elképzelésekről.",
-              },
-              {
-                title: "Életre szóló emlékek",
-                text: "Minden kép egy történetet mesél el.",
-              },
-            ].map((item, index) => (
-              <li key={index} className="flex items-start gap-4">
-                <CircleCheck className="text-[#C79984]" size={28} />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
-                  <p className="text-gray-600">{item.text}</p>
-                </div>
-              </li>
+              "/images/BogyoLightGelPortraits-3.jpg",
+              "/images/FavBogyorol--2.jpg",
+              "/images/FavBogyorol-.jpg",
+              "/images/FavBogyorolCOLOR--2.jpg",
+              "/images/FavBogyorolCOLOR-.jpg",
+              "/images/KekPirosBogy-.jpg",
+              "/images/zsirii-2212.jpg",
+              "/images/BogyoLightGelPortraits-3.jpg",
+              "/images/zsirii-2212.jpg",
+            ].map((src, index) => (
+              <motion.img
+                key={index}
+                src={src}
+                alt={`Galéria kép ${index + 1}`}
+                className="w-full rounded-lg shadow-md"
+                whileHover={{ scale: 1.05 }}
+              />
             ))}
-          </ul>
-        </motion.div>
-
-        {/* Jobb oldal - Képek */}
-        <motion.div
-          className="md:w-1/2 grid grid-cols-3 gap-2"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          {[
-            "/images/BogyoLightGelPortraits-3.jpg",
-            "/images/FavBogyorol--2.jpg",
-            "/images/FavBogyorol-.jpg",
-            "/images/FavBogyorolCOLOR--2.jpg",
-            "/images/FavBogyorolCOLOR-.jpg",
-            "/images/KekPirosBogy-.jpg",
-            "/images/zsirii-2212.jpg",
-            "/images/BogyoLightGelPortraits-3.jpg",
-            "/images/zsirii-2212.jpg",
-          ].map((src, index) => (
-            <motion.img
-              key={index}
-              src={src}
-              alt={`Galéria kép ${index + 1}`}
-              className="w-full rounded-lg shadow-md"
-              whileHover={{ scale: 1.05 }}
-            />
-          ))}
-        </motion.div>
-      </div>
-    </section>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 };

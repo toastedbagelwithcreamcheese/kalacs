@@ -85,7 +85,7 @@ export default function AboutSection() {
           </p>
           {/* Üdvözlő szöveg: Kisebb méret mobilon */}
           <p className="text-sm sm:text-base text-[#646C5E] mb-6">
-            Örömmel köszöntelek a <strong>balintfoto.hu</strong> oldalán! A
+            Örömmel köszöntelek a <strong>kovacsbalintfoto.hu</strong> oldalán! A
             célom, hogy minden fotózási igényedet a lehető legmagasabb szinten,
             mégis barátságos és közvetlen légkörben valósítsam meg. Legyen szó
             esküvőkről, családi eseményekről vagy épp üzleti projektről, minden
@@ -214,11 +214,10 @@ export default function AboutSection() {
           >
             Ha felkeltettem az érdeklődésed, és szeretnéd megtudni, hogyan
             tudunk együtt dolgozni a Te elképzeléseiden, keress bátran! Akár
-            Debrecenben, Hajdúszoboszlón, Nyíregyházán, Miskolcon, Egerben,
-            Tiszafüreden, Hajdúböszörmény, Balmazújvárosban, Hajdúnánáson,
-            Hajdúdorogon vagy Tiszaújvárosban, akár az ország más pontján (vagy
-            határon túl) keresel esküvői fotóst, jegyesfotóst, rendezvényfotóst
-            vagy portréfotóst, én örömmel útra kelek, hogy elkészítsem a
+            Zalaegerzseg, Nagykanizsa, Veszprém, Győr, Budapest,
+            Siófok, Sopron, akár az ország más pontján (vagy
+            határon túl) keresel portréfotóst, jegyesfotóst, rendezvényfotóst
+            vagy esküvői fotóst, én örömmel útra kelek, hogy elkészítsem a
             legszebb képeket számodra! Várom a hívásod vagy{" "}
             <Link
               href="/contact"
