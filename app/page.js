@@ -100,44 +100,70 @@ export default function PortfolioHome() {
             exit="exit"
             className="absolute inset-0 w-full h-full"
           >
-            {/* Háttér blur */}
+            {/* Háttér blur minden nézetben */}
             <img
               src={slides[currentIndex].image}
               alt="blurred bg"
               className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 z-0"
             />
 
-            {/* Wrapper az éles képhez és a szöveghez */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center justify-center text-center px-4">
+            {/* ----- Mobilos verzió (háttérkép + szöveg) ----- */}
+            <div
+              className="sm:hidden absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${slides[currentIndex].image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <motion.div
+                key={currentIndex + "-text-mobile"}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="w-full max-w-xs"
+              >
+                <p className="text-white text-lg font-semibold drop-shadow-md mb-3">
+                  {slides[currentIndex].text}
+                </p>
+                <Link
+                  href={slides[currentIndex].link}
+                  className="inline-block border-2 border-[#C79984] bg-[#C79984] bg-opacity-50 text-white px-5 py-2 rounded-md font-semibold
+                       hover:bg-opacity-75 hover:border-[#C79984] hover:scale-105
+                       transition-all duration-300 transform"
+                >
+                  {slides[currentIndex].buttonText}
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* ----- Desktop verzió (éles kép külön) ----- */}
+            <div className="hidden sm:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex-col items-center justify-center text-center px-4">
               {/* Előtér éles kép */}
               <img
                 src={slides[currentIndex].image}
                 alt={`Slide ${currentIndex + 1}`}
-                className="max-h-[110vh] max-w-full object-contain mb-0"
+                className="max-h-[85vh] max-w-full object-contain mb-0"
               />
 
               {/* Szöveg + gomb */}
               <motion.div
-                // Kulcs kell a szöveg animációjához is, ha az AnimatePresence alatt van
-                // De itt a fő motion.div kulcsa elég lehet, próbáljuk így először
-                key={currentIndex + "-text"} // Biztonság kedvéért adjunk külön kulcsot
+                key={currentIndex + "-text-desktop"}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }} // Kicsit finomítva
-                transition={{ duration: 0.6, delay: 0.25 }} // Késleltetés finomítva
-                className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl" // Max szélesség a szövegnek
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="w-full max-w-md"
               >
-                {/* Szöveg: Reszponzív méret, árnyék */}
-                <p className="text-white text-lg sm:text-xl md:text-2xl font-semibold drop-shadow-md mb-3 sm:mb-4">
+                <p className="text-white text-xl md:text-2xl font-semibold drop-shadow-md mb-1">
                   {slides[currentIndex].text}
                 </p>
-                {/* Gomb: Stílusok maradnak, Link komponens használata */}
-                <Link // Next.js Link komponens használata ajánlott az útvonalváltáshozsss
-                //utállom fos
+                <Link
                   href={slides[currentIndex].link}
                   className="inline-block border-2 border-[#C79984] bg-[#C79984] bg-opacity-50 text-white px-5 py-2 rounded-md font-semibold
-                             hover:bg-opacity-75 hover:border-[#C79984] hover:scale-105
-                             transition-all duration-300 transform"
+                       hover:bg-opacity-75 hover:border-[#C79984] hover:scale-105
+                       transition-all duration-300 transform"
                 >
                   {slides[currentIndex].buttonText}
                 </Link>
@@ -156,35 +182,31 @@ export default function PortfolioHome() {
         images={[
           {
             src: "/images/audi_tel-1198.jpg",
-            title: "Very Audi very good",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/audi_tel--5.jpg",
-            title: "Romantikus pillanat",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/audi_tel-1307.jpg",
-            title: "Csodás esküvői helyszín",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/audi_tel-1198.jpg",
-            title: "Esküvői séta a Halászbástyán",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
         ]}
         extraImages={[
-          {
-            src: "/images/zsirii-2212.jpg",
-            alt: "Esküvő 3",
-            title: "Tengerparti esküvő",
-          },
+
           {
             src: "/images/audi_tel-1198.jpg",
-            alt: "Esküvő 4",
-            title: "Naplemente",
+            alt: "",
+            title: "",
           },
         ]}
       />
@@ -194,35 +216,35 @@ export default function PortfolioHome() {
         images={[
           {
             src: "/images/_MG_4693.jpg",
-            title: "Very Audi very good",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/_MG_4731.jpg",
-            title: "Romantikus pillanat",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/_MG_4764.jpg",
-            title: "Csodás esküvői helyszín",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/_MG_4795.jpg",
-            title: "Esküvői séta a Halászbástyán",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
         ]}
         extraImages={[
           {
             src: "/images/_MG_4931.jpg",
-            alt: "Esküvő 3",
-            title: "Tengerparti esküvő",
+            alt: "",
+            title: "",
           },
           {
             src: "/images/_MG_4971.jpg",
-            alt: "Esküvő 4",
-            title: "Naplemente",
+            alt: "",
+            title: "",
           },
         ]}
       />
@@ -232,50 +254,50 @@ export default function PortfolioHome() {
         images={[
           {
             src: "/images/bigycv-1.jpg",
-            title: "Very Audi very good",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/BogyoCv2FF-1-2.jpg",
-            title: "Romantikus pillanat",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/_MG_4270festettV5.jpg",
-            title: "Csodás esküvői helyszín",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/_MG_4462.jpg",
-            title: "Esküvői séta a Halászbástyán",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
         ]}
         extraImages={[
           {
             src: "/images/Evoto-(3 of 3).jpg",
-            alt: "Esküvő 3",
-            title: "Tengerparti esküvő",
+            alt: "",
+            title: "",
           },
           {
             src: "/images/_MG_4619.jpg",
-            alt: "Esküvő 4",
-            title: "Naplemente",
+            alt: "",
+            title: "",
           },
           {
             src: "/images/_MG_4523.jpg",
-            alt: "Esküvő 4",
-            title: "Naplemente",
+            alt: "",
+            title: "",
           },
           {
             src: "/images/_MG_4521.jpg",
-            alt: "Esküvő 4",
-            title: "Naplemente",
+            alt: "",
+            title: "",
           },
           {
             src: "/images/_MG_4486.jpg",
-            alt: "Esküvő 4",
-            title: "Naplemente",
+            alt: "",
+            title: "",
           },
         ]}
       />
@@ -285,30 +307,30 @@ export default function PortfolioHome() {
         images={[
           {
             src: "/images/_MG_4795.jpg",
-            title: "Very Audi very good",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/_MG_4931.jpg",
-            title: "Romantikus pillanat",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/_MG_4971.jpg",
-            title: "Csodás esküvői helyszín",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
           {
             src: "/images/_MG_4986.jpg",
-            title: "Esküvői séta a Halászbástyán",
-            alt: "Esküvői fotó",
+            title: "",
+            alt: "",
           },
         ]}
         extraImages={[
           {
             src: "/images/_MG_4805.jpg",
-            alt: "Esküvő 3",
-            title: "Tengerparti esküvő",
+            alt: "",
+            title: "",
           },
         ]}
       />
