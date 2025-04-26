@@ -212,8 +212,8 @@ const Navbar = () => {
         <div className="text-xl font-bold">
           <Image
             src="/images/logo2.png"
-            width={30} // Adj meg egy konkrét szélességet pixelben
-            height={30} // Adj meg egy konkrét magasságot pixelben
+            width={40} // Adj meg egy konkrét szélességet pixelben
+            height={40} // Adj meg egy konkrét magasságot pixelben
             alt="Cég Logó" // Fontos az akadálymentesség miatt!
           />
         </div>
@@ -235,43 +235,60 @@ const Navbar = () => {
       </div>
 
       {/* Mobil menü (Slide-in panel) */}
-      <AnimatePresence>
+     {/* Mobil menü (Slide-in panel - MOST TELJES KÉPERNYŐS) */}
+     <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            // Választhatsz animációt, pl. fade-in vagy slide-in
+            // Slide-in balról (az eredetihez hasonló, de most teljes szélességben):
             initial={{ opacity: 0, x: "-100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "-100%" }}
+            // Vagy egy egyszerű fade-in:
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden fixed inset-0 top-0 left-0 h-screen w-full max-w-xs bg-white shadow-xl z-40 overflow-y-auto" // Z-index alacsonyabb, mint a nav, de magas
+            // A className-ből eltávolítjuk a max-w-xs-t és finomítjuk a többit:
+            className="lg:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col" // Teljes képernyős, flex konténer
           >
-            {/* Bezáró gomb a mobil menüben */}
-            <div className="flex justify-end p-4 pt-6">
-              <button onClick={closeMobileMenu} aria-label="Menü bezárása">
-                <X size={28} />
-              </button>
-            </div>
+            {/* Bezáró gomb a mobil menüben (marad a jobb felső sarokban) */}
+             <div className="w-full flex justify-end p-4 pt-6"> {/* Biztosítja, hogy a gomb a konténer szélén legyen */}
+                <button onClick={closeMobileMenu} aria-label="Menü bezárása">
+                    <X size={28} className="text-gray-900" /> {/* Szín explicit beállítása, ha kell */}
+                </button>
+             </div>
 
-            {/* Mobil menü lista */}
-            <ul className="flex flex-col space-y-1 px-4 pb-6">
-              {menuItems.map((item, index) =>
-                renderMenuItem(item, index, true)
-              )}
-            </ul>
+            {/* Mobil menü lista (középre igazítva vagy balra, ahogy szeretnéd) */}
+            {/* Példa: Lista középre igazítva, némi paddinggel */}
+            <div className="flex-grow flex flex-col items-center justify-center px-4 pb-6"> {/* items-center és justify-center a középre igazításhoz */}
+                <ul className="flex flex-col space-y-4 text-center w-full max-w-md"> {/* space-y növelve, text-center */}
+                   {menuItems.map((item, index) => renderMenuItem(item, index, true))}
+                </ul>
+            </div>
+             {/* Vagy ha balra igazított listát szeretnél, mint a side-drawerben volt:
+             <div className="px-4 pb-6 pt-8"> // Pl. felső padding
+                 <ul className="flex flex-col space-y-1">
+                   {menuItems.map((item, index) => renderMenuItem(item, index, true))}
+                 </ul>
+             </div>
+             */}
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Háttér overlay mobil menü nyitva állapotában */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30" // A menü mögött, de a tartalom felett
-            onClick={closeMobileMenu} // Kattintásra bezárja a menüt
-          />
-        )}
-      </AnimatePresence>
+
+      {/* Háttér overlay mobil menü nyitva állapotában (ez maradhat) */}
+       <AnimatePresence>
+            {isMobileMenuOpen && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30" // A menü mögött, de a tartalom felett
+                    onClick={closeMobileMenu} // Kattintásra bezárja a menüt
+                />
+            )}
+        </AnimatePresence>
     </nav>
   );
 };
