@@ -113,7 +113,7 @@ export default function PortfolioHome() {
               <img
                 src={slides[currentIndex].image}
                 alt={`Slide ${currentIndex + 1}`}
-                className="max-h-[90vh] max-w-full object-contain mb-0"
+                className="max-h-[110vh] max-w-full object-contain mb-0"
               />
 
               {/* Szöveg + gomb */}
