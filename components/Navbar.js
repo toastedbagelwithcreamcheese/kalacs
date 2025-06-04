@@ -40,11 +40,12 @@ const Navbar = () => {
 
   const services = [
     { href: "/portre", label: "Portré fotózás" },
+    { href: "/autok", label: "Autó fotózás" },
+    { href: "/kutyusok", label: "Kutyus fotózás" },
     { href: "/kismama", label: "Kismama fotózás" },
     { href: "/wedding-packages", label: "Esküvői csomagok" },
     { href: "/family-sessions", label: "Családi fotózás" },
     { href: "/paros_jegyes", label: "Páros/jegyes fotózás" },
-    { href: "/autok", label: "Autó fotózás" },
   ];
 
   const toggleDropdown = (menu) => {
@@ -149,11 +150,12 @@ const Navbar = () => {
                 {/* 🔹 Dropdown menüelemek hover effekttel */}
                 {[
                   { href: "/portre", label: "Portré fotózás" },
+                  { href: "/autok", label: "Autó fotózás" },
+                  { href: "/kutyusok", label: "Kutya fotózás" },
                   { href: "/kismama", label: "Kismama fotózás" },
                   { href: "/wedding-packages", label: "Esküvői csomagok" },
                   { href: "/family-sessions", label: "Családi fotózás" },
                   { href: "/paros_jegyes", label: "Páros/jegyes fotózás" },
-                  { href: "/autok", label: "Autó fotózás" },
                 ].map((item, index) => (
                   <li key={index} className="group relative">
                     <Link

@@ -34,6 +34,12 @@ const slides = [
     buttonText: "Részletek",
     link: "/autok",
   },
+  {
+    image: "/images/_MG_5347.webp",
+    text: "Képek rólad, és kiskedvencedről.",
+    buttonText: "Részletek",
+    link: "/kutyusok",
+  },
 ];
 
 export default function PortfolioHome() {
