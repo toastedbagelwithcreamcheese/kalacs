@@ -8,6 +8,7 @@ import KismamaSection from "@/components/KismamaSection.js";
 import PortreSection from "@/components/PortreSection";
 import ParosSection from "@/components/ParosSection";
 import Link from "next/link";
+import KutyusSection from "@/components/KutyusSection";
 
 const slides = [
   {
@@ -355,6 +356,44 @@ export default function PortfolioHome() {
         extraImages={[
           {
             src: "/images/_MG_4805.jpg",
+            alt: "",
+            title: "",
+          },
+        ]}
+      />
+      <KutyusSection
+        title="Kutyus fotózás"
+        description="A kutyafotózás célja, hogy megmutassa, milyen különleges a kutyád – úgy, ahogy ő igazán. Legyen szó játékos, bújós vagy komoly pillanatokról, a fotókon visszaköszön a személyisége. A szabadban, kellemes hangulatban fotózunk, hogy minden kép őszinte és természetes legyen – pont olyan, amilyen ő maga is."
+        images={[
+          {
+            src: "/images/_MG_5347.webp",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/59957F6B-2DAA-4D9D-AB69-3B47B1F7216F_1_105_c.jpeg",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_5324.webp",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_5351.webp",
+            title: "",
+            alt: "",
+          },
+        ]}
+        extraImages={[
+          {
+            src: "/images/_MG_5375.webp",
+            alt: "",
+            title: "",
+          },
+          {
+            src: "/images/_MG_5415.webp",
             alt: "",
             title: "",
           },
