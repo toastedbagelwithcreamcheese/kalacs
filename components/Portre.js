@@ -57,7 +57,7 @@ export default function PortreFotozas() {
     <div className="max-w-6xl mx-auto p-6 text-center">
       <div className="flex items-center my-6">
         <Image
-          src="/images/zsirii-2212.jpg"
+          src="/images/Evoto-(3 of 3).webp"
           width={200}
           height={200}
           className="rounded-full mr-4"
