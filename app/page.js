@@ -11,19 +11,19 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/images/_MG_4462.jpg",
+    image: "/images/_MG_4462.webp",
     text: "Stílusos portrék, amelyek megmutatják egyéniséged.",
     buttonText: "Részletek",
     link: "/portre",
   },
   {
-    image: "/images/_MG_4693.jpg",
+    image: "/images/_MG_4693.webp",
     text: "Természetes fények és tökéletes pillanatok.",
     buttonText: "Részletek",
     link: "/kismama",
   },
   {
-    image: "/images/_MG_4795.jpg",
+    image: "/images/_MG_4795.webp",
     text: "Tökéletes páros képek.",
     buttonText: "Részletek",
     link: "/paros_jegyes",
