@@ -97,7 +97,7 @@ export default function KismamaFotozas() {
             className="text-4xl font-bold"
             style={{ fontSize: "35px", color: "#c79c8d" }}
           >
-            Kismama fotózás Debrecen –<br />
+            Kismama fotózás Zalaegerszegen –<br />
             Örökítsd meg a babavárás pillanatait!
           </motion.h1>
         </div>

@@ -6,14 +6,15 @@ import { useState } from "react";
 
 // Példa képek (cseréld ki sajátjaidra)
 const allImages = [
-  { src: "/images/audi_tel-1198.jpg", alt: "Sportautó esti fényben" },
-  { src: "/images/audi_tel--5.jpg", alt: "Klasszikus veterán autó" },
-  { src: "/images/audi_tel-1307.jpg", alt: "Tuningolt jármű a városban" },
-  { src: "/images/audi_tel-1307.jpg", alt: "Tuningolt jármű a városban" },
-  { src: "/images/audi_tel-1307.jpg", alt: "Tuningolt jármű a városban" },
-  { src: "/images/audi_tel-1307.jpg", alt: "Tuningolt jármű a városban" },
-  { src: "/images/audi_tel-1307.jpg", alt: "Tuningolt jármű a városban" },
-  { src: "/images/audi_tel-1307.jpg", alt: "Tuningolt jármű a városban" },
+  { src: "/images/audi_tel-1198.webp", alt: "" },
+  { src: "/images/_MG_6310.webp", alt: "" },
+  { src: "/images/_MG_6506.webp", alt: "" },
+  { src: "/images/_MG_6508.webp", alt: "" },
+  { src: "/images/_MG_6519.webp", alt: "" },
+  { src: "/images/_MG_6531.webp", alt: "" },
+  { src: "/images/_MG_6330_2.webp", alt: "" },
+  { src: "/images/audi_tel--5.webp", alt: "" },
+  { src: "/images/_MG_6525.webp", alt: "" },
 ];
 
 const packages = [

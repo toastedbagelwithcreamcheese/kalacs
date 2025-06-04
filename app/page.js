@@ -186,17 +186,17 @@ export default function PortfolioHome() {
             alt: "",
           },
           {
-            src: "/images/audi_tel--5.webp",
+            src: "/images/_MG_6506.webp",
             title: "",
             alt: "",
           },
           {
-            src: "/images/audi_tel-1307.jpg",
+            src: "/images/_MG_6310.webp",
             title: "",
             alt: "",
           },
           {
-            src: "/images/audi_tel-1198.jpg",
+            src: "/images/_MG_6330_2.webp",
             title: "",
             alt: "",
           },
@@ -204,9 +204,29 @@ export default function PortfolioHome() {
         extraImages={[
 
           {
-            src: "/images/audi_tel-1198.jpg",
+            src: "/images/_MG_6305-Enhanced-NR.webp",
             alt: "",
             title: "",
+          },
+          {
+            src: "/images/audi_tel--5.webp",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_6508.webp",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_6519.webp",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_6531.webp",
+            title: "",
+            alt: "",
           },
         ]}
       />
