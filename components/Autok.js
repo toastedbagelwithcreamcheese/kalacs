@@ -158,8 +158,7 @@ export default function AutoPhotographySection() {
           Autófotózás – Örökítsd meg az autód/motorod legszebb pillanatait!
         </h1>
         <p className="text-gray-700 mt-4 max-w-3xl mx-auto">
-          Profi autófotózás tuningolt autóknak, veterán járműveknek és
-          sportkocsiknak. Egyedi, részletgazdag képek, amelyek kiemelik a
+          Profi autófotózás bármilyen autóról motorról. Egyedi, részletgazdag képek, amelyek kiemelik a
           karakterét.
         </p>
         <Link
@@ -507,7 +506,7 @@ export default function AutoPhotographySection() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800">
-              Autók Mozgásban: Videós Munkáim
+              Videós Munkáim
             </h2>
             <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
               Egy jól elkészített videó új dimenzióba helyezi az autó élményét.

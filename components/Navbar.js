@@ -7,7 +7,7 @@ import {
   Home,
   Images,
   Camera,
-  Gift,
+  Settings2,
   Mail,
   IdCard,
   Menu,
@@ -100,10 +100,8 @@ const Navbar = () => {
                 className="absolute left-0 mt-2 w-48 bg-white text-gray-900 rounded shadow-md border border-gray-300"
               >
                 {[
-                  { href: "/portfolio", label: "Portfólió" },
-                  { href: "/wedding", label: "Esküvők" },
-                  { href: "/portraits", label: "Portrék" },
-                  { href: "/autokfoto", label: "Autók" },
+                  { href: "/portre-galeria", label: "Portré galéria" },
+                  { href: "/autok-galeria", label: "Autók galéria" },
                 ].map((item, index) => (
                   <li key={index} className="group relative">
                     <Link
@@ -174,12 +172,12 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            href="/gift-card"
+            href="/presets"
             className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative"
           >
-            <Gift size={22} />
+            <Settings2 size={22} />
             <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-              Ajándékutalvány
+              Presetjeim
             </span>
           </Link>
         </li>

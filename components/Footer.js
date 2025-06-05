@@ -106,16 +106,10 @@ const Footer = () => {
                   >
                     {/* !! FONTOS: A href értékeket cseréld le a megfelelő útvonalakra !! */}
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
-                      <Link href="/portfolio">Portfolio</Link>
+                      <Link href="/portre-galeria">Portré galéria</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
-                      <Link href="/weddings">Esküvők</Link>
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 transition">
-                      <Link href="/portraits">Portrék</Link>
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 transition">
-                      <Link href="/cars">Autók</Link>
+                      <Link href="/autok-galeria">Autók galéria</Link>
                     </li>
                   </motion.ul>
                 )}
@@ -151,6 +145,12 @@ const Footer = () => {
                       <Link href="/portre">Portré fotózás</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
+                      <Link href="/autok">Autó fotózás</Link>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100 transition">
+                      <Link href="/kutyusok">Kutya fotózás</Link>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100 transition">
                       <Link href="/kismama">Kismama fotózás</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
@@ -158,9 +158,6 @@ const Footer = () => {
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
                       <Link href="/paros_jegyes">Páros/Jegyes fotózás</Link>
-                    </li>
-                     <li className="px-4 py-2 hover:bg-gray-100 transition">
-                      <Link href="/autok">Autó fotózás</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
                       <Link href="/csaladi">Családi fotózás</Link>
@@ -172,7 +169,7 @@ const Footer = () => {
 
             {/* További linkek változatlanul */}
             <li>
-              <Link href="/gift-card" className="hover:text-gray-500 transition">Ajándékutalvány fotózásra</Link>
+              <Link href="/presets" className="hover:text-gray-500 transition">Presetjeim</Link>
             </li>
             <li>
               <Link href="/contact" className="hover:text-gray-500 transition">Kapcsolat</Link>
