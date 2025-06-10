@@ -254,10 +254,18 @@ const Navbar = () => {
                     >
                       <li>
                         <Link
-                          href="/portfolio"
+                          href="/portre-galeria"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          Portfólió
+                          Portré galéria
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/autok-galeria"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Autós galéria
                         </Link>
                       </li>
                     </motion.ul>
