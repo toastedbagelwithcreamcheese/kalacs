@@ -3,294 +3,298 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Gallery from "@/components/kismamagallery";
+import KismamaGallery from "@/components/kismamagallery"; // A galéria komponensed
 import Link from "next/link";
+import { ChevronDown, CheckCircle, Gift, Heart, Users } from "lucide-react";
 
-const packages = [
+// --- ÚJ, KISMAMA TÉMÁJÚ CSOMAGOK ---
+const maternityPackages = [
   {
-    title: "Alap csomag",
-    price: "29.900 Ft",
-    duration: "30 perc fotózás",
+    title: "Pocak Varázs Csomag",
+    price: "19.900 Ft",
+    priceSuffix: "(alapdíj)",
+    duration: "kb. 45-60 perc fotózás",
     features: [
-      "10-15 profi retusált kép",
-      "1 helyszín",
-      "Összes kép digitálisan elküldve",
+      "Előzetes konzultáció a stílusról és helyszínről",
+      "8 db profi, gondosan retusált digitális fotó",
+      "Minden további retusált kép: 1.990 Ft/db",
+      "1 választott helyszín (szabadtér vagy otthon)",
+      "1-2 átöltözési lehetőség",
+      "Fókuszban a kismama és a pocak szépsége",
+      "Online, jelszóval védett válogató galéria",
     ],
+    popular: false,
   },
   {
-    title: "Normál csomag",
+    title: "Családi Álmodozás Csomag",
     price: "34.900 Ft",
-    duration: "60 perc fotózás",
+    priceSuffix: "(alapdíj)",
+    duration: "kb. 60-90 perc fotózás",
     features: [
-      "20-25 profi retusált kép",
-      "1 helyszín",
-      "Összes kép digitálisan elküldve",
+      "Részletes konzultáció, közös koncepcióalkotás",
+      "15 db profi, művészi retusálású digitális fotó",
+      "Minden további retusált kép: 1.790 Ft/db",
+      "Akár 2 helyszín (pl. otthon és szabadtér)",
+      "Több (2-3) átöltözési lehetőség",
+      "Apás, tesós és közös családi képek is készülnek",
+      "Igény esetén kellékek és kismamaruhák biztosítása",
+      "Online galéria válogatáshoz és letöltéshez",
     ],
+    popular: true, // Ezzel jelöljük a legnépszerűbb csomagot
   },
   {
-    title: "Maxi csomag",
-    price: "44.900 Ft",
-    duration: "90 perc fotózás",
+    title: "Örökké Emlék Prémium Csomag",
+    price: "49.900 Ft",
+    priceSuffix: "(alapdíj)",
+    duration: "kb. 90-120 perc fotózás",
     features: [
-      "25-30 profi retusált kép",
-      "Akár több helyszín is",
-      "Összes kép digitálisan elküldve",
+      "Mélyreható konzultáció, személyre szabott moodboard",
+      "25 db profi, magazin minőségű retusált digitális fotó",
+      "Minden további retusált kép: 1.590 Ft/db",
+      "Rugalmas helyszínválasztás, akár több helyszínen is",
+      "Korlátlan átöltözési lehetőség",
+      "Kreatív, lifestyle és klasszikus beállítások vegyesen",
+      "Ajándék 10x15-ös prémium fotónyomat a 10 kedvenc képből",
+      "Prémium online galéria, akár nyomtatási lehetőséggel",
     ],
-  },
-  {
-    title: "Prémium csomag",
-    price: "54.900 Ft",
-    duration: "120 perc fotózás",
-    features: [
-      "Összes kép resutálva digitálisan elküldve",
-      "Akár több helyszín is",
-      "Összes kép digitálisan elküldve",
-    ],
+    popular: false,
   },
 ];
 
+// A GYIK adatok megmaradtak, mert relevánsak és hasznosak
 const faqData = [
-  {
-    question: "Mikor érdemes kismama fotózást készíteni?",
-    answer:
-      "A legideálisabb időszak a 28-34. hét között van, amikor a pocak már szépen kerekedik, de még nem okoz túl nagy kényelmetlenséget.",
-  },
-  {
-    question: "Milyen ruhát érdemes hozni a fotózásra?",
-    answer:
-      "Ajánlott világos, pasztell színű ruhákat választani, amelyek kiemelik a pocak szépségét. Stúdióban és szabadtéren is egyaránt ajánlott kényelmes, elegáns viselet.",
-  },
-  {
-    question: "Hány ruhát hozzak a fotózásra?",
-    answer:
-      "A ruhák száma teljesen rád van bízva, de számoljatok az átöltözéssel, és annak idejével is. Általában 2 maximum 3 ruha ajánlott.",
-  },
-  {
-    question: "Lehet-e a párom és a gyermekem is a képeken?",
-    answer:
-      "Természetesen! A fotózás során lehetőség van közös képek készítésére is, hogy az egész család megörökíthesse ezt a különleges időszakot.",
-  },
-  {
-    question: "Mikor kapom meg a kész képeket?",
-    answer:
-      "A fotózás után az elkészült képeket gondosan válogatom és kidolgozom, majd elküldöm neked, hogy kiválaszthasd közülük a retusálásra és nyomtatásra szánt képeket. A végleges képeket általában 1 héten belül átadom digitális formában. Ha rövidebb határidőre van szükséged, jelezd előre, és igyekszem alkalmazkodni.",
-  },
+  { question: "Mikor érdemes kismama fotózást készíteni?", answer: "A legideálisabb időszak a 28-34. hét között van, amikor a pocak már szépen kerekedik, de még nem okoz túl nagy kényelmetlenséget." },
+  { question: "Milyen ruhát érdemes hozni a fotózásra?", answer: "Ajánlott világos, pasztell színű, testhezálló vagy lágy esésű ruhákat választani, amelyek kiemelik a pocak szépségét. Kényelmes, elegáns viselet ajánlott. Természetesen segítek a választásban!" },
+  { question: "Lehet-e a párom és a gyermekem is a képeken?", answer: "Természetesen, sőt, bátorítalak is rá! A fotózás során lehetőség van közös képek készítésére is, hogy az egész család megörökíthesse ezt a különleges időszakot." },
+  { question: "Hogyan kapom meg a kész képeket?", answer: "A fotózás után 1-2 napon belül küldök egy online válogató galériát. A kiválasztott képeket általában 7-10 munkanapon belül retusálom és adom át digitálisan, nagy felbontásban." },
 ];
 
-export default function KismamaFotozas() {
-  const [openIndex, setOpenIndex] = useState(null);
+export default function KismamaFotozasModern() {
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
+  // Placeholder képek - CSERÉLD LE SAJÁT KÉPEIDRE!
+  const heroImage = "/images/_MG_4693.webp"; 
+  
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-6 md:px-12">
-      {/* Főcím */}
-      <div className="text-center mb-12 p-6 bg-[#f5ede6c4]">
-        <div className="flex items-center justify-start max-w-4xl mx-auto">
-          <img
-            src="/images/_MG_4693.jpg"
-            alt="Kismama fotózás"
-            className="rounded-full w-24 h-32 mr-6"
+    <div className="bg-white text-gray-800">
+
+      {/* HERO SZEKCIÓ (MÓDOSÍTVA) */}
+      <motion.section
+        className="relative h-[70vh] sm:h-[80vh] md:h-screen flex items-center justify-center text-white text-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.div
+          className="absolute inset-0 z-0" // Ez a div feszül ki a szülőre, és ezt animáljuk
+          initial={{
+            scale: 1,
+            x: "0%",
+            y: "0%",
+          }}
+          animate={{
+            scale: 1.5,
+            x: "-2%",
+            y: "1%",
+          }}
+          transition={{
+            duration: 25,
+            ease: "linear",
+          }}
+        >
+          <Image
+            src={heroImage} // CSERÉLD LE A LEGSZEBB KISMAMA KÉPEDRE!
+            alt="Gyönyörű kismama egy virágos mezőn naplementében"
+            layout="fill"
+            objectFit="contain"
+            quality={90}
+            priority
           />
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl font-bold"
-            style={{ fontSize: "35px", color: "#c79c8d" }}
+        </motion.div>
+        
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent z-10"></div>
+        
+        <motion.div
+          className="relative z-20 p-6 max-w-3xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <h1 
+            className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4"
+            style={{ fontFamily: "Noto Serif Armenian, sans-serif", textShadow: "2px 2px 8px rgba(0,0,0,0.6)" }}
           >
-            Kismama fotózás Zalaegerszegen –<br />
-            Örökítsd meg a babavárás pillanatait!
-          </motion.h1>
-        </div>
-
-        {/* Gomb hozzáadása */}
-        <div className="mt-6">
-          <Link href="/contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 border-2 border-[#c79c8d] text-[#c79c8d] font-semibold rounded-full transition duration-300 hover:bg-[#c79c8d] hover:text-white"
-            >
-              Foglalj időpontot
-            </motion.button>
+            A Várandósság Varázsa
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto" style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.6)" }}>
+            Örökítsd meg életed egyik legcsodálatosabb időszakát Zalaegerszegen. Készítsünk együtt finom, meghitt és időtálló képeket, melyek örökre megőrzik a boldog várakozás pillanatait.
+          </p>
+          <Link href="/contact?subject=Kismamafotozas_ajanlatkeres" legacyBehavior>
+            <a className="inline-block bg-[#C79C8D] text-white font-semibold py-3 px-8 rounded-full text-lg hover:bg-[#b3897b] transition duration-300 transform hover:scale-105 shadow-lg">
+              Időpontot Foglalok
+            </a>
           </Link>
+        </motion.div>
+      </motion.section>
+
+      {/* MIÉRT ÉLMÉNY? SZEKCIÓ */}
+      <section className="py-16 sm:py-24 bg-rose-50/30">
+        <div className="container mx-auto px-6 text-center">
+            <motion.h2 
+                className="text-3xl sm:text-4xl font-bold text-gray-800 mb-16"
+                initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} viewport={{ once: true, amount:0.3 }} transition={{ duration:0.6 }}
+                style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}
+            >
+                Több Mint Fotózás, Egy Életre Szóló Emlék
+            </motion.h2>
+            <div className="grid md:grid-cols-3 gap-8 sm:gap-12">
+            {[
+              { icon: <Heart size={36} className="text-[#C79C8D]" />, title: "Intim Pillanatok", text: "Egy lehetőség, hogy megállj egy pillanatra és megünnepeld a testedben zajló csodát." },
+              { icon: <Users size={36} className="text-[#C79C8D]" />, title: "Családi Kapcsok", text: "Vond be párodat, gyermekeidet is, hogy megörökítsük az első közös családi emléketeket." },
+              { icon: <Gift size={36} className="text-[#C79C8D]" />, title: "Időtálló Ajándék", text: "A képek örök emléket jelentenek számodra, és csodálatos ajándékot a születendő gyermekednek." },
+            ].map((item, index) => (
+              <motion.div 
+                key={index} 
+                className="flex flex-col items-center"
+                initial={{ opacity: 0, y:30 }} whileInView={{ opacity: 1, y:0 }} viewport={{ once: true, amount:0.3 }} transition={{ duration:0.5, delay: index * 0.15 }}
+              >
+                <div className="mb-5 inline-block p-4 bg-white rounded-full shadow-md">{item.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-base max-w-xs">{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* Szabadtéri kismama fotózás */}
-      <section className="w-4/5 mb-12 mx-auto bg-pink-50 py-12 px-6 rounded-3xl shadow-md">
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-          Kismama Fotózás
-        </h1>
-
-        {/* Szabadtéri kismama fotózás */}
-        <motion.div
-          className="flex flex-col md:flex-row items-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.div className="overflow-hidden" whileHover={{ scale: 1.05 }}>
-            <Image
-              src="/images/_MG_4693.jpg"
-              width={300}
-              height={200}
-              alt="Szabadtéri kismama fotózás"
-              className="rounded-tl-[90px] rounded-br-[90px] rounded-tr-3xl rounded-bl-3xl shadow-lg"
-            />
-          </motion.div>
-          <div className="md:ml-8 mt-4 md:mt-0 max-w-lg">
-            <h2 className="text-4xl text-[#7A7A7A] font-semibold">
-              Szabadtéri kismama fotózás
-            </h2>
-            <p className="mt-2 text-[#7A7A7A] text-[20px] t-gray-700">
-              A természetes fények és a csodálatos környezet teszi egyedivé a
-              szabadtéri fotózást. A szabadban készített képek frissességet és
-              természetességet sugároznak, miközben örök emléket teremtenek.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Stúdió kismama fotózás */}
-        <motion.div
-          className="flex flex-col md:flex-row-reverse items-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <motion.div className="overflow-hidden" whileHover={{ scale: 1.05 }}>
-            <Image
-              src="/images/_MG_4731.jpg"
-              width={300}
-              height={200}
-              alt="Stúdió kismama fotózás"
-              className="rounded-tl-[90px] rounded-br-[90px] rounded-tr-3xl rounded-bl-3xl shadow-lg"
-            />
-          </motion.div>
-          <div className="md:mr-8 mt-4 md:mt-0 max-w-lg">
-            <h2 className="text-4xl text-[#7A7A7A] font-semibold">
-              Stúdió kismama fotózás
-            </h2>
-            <p className="mt-2 text-gray-700">
-              A stúdió fotózás lehetőséget biztosít a professzionális világítás
-              és a különböző háttérbeállítások használatára. Így minden részlet
-              a lehető legtökéletesebb lesz, és az időjárás sem befolyásolja a
-              végeredményt.
-            </p>
-          </div>
-        </motion.div>
       </section>
 
-      <div>
-        <Gallery />
-      </div>
+      {/* GALÉRIA KIEMELŐ */}
+      <section className="py-16 sm:py-24">
+        <div className="container mx-auto px-6 text-center">
+          <motion.h2 
+            className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4"
+            initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} viewport={{ once: true, amount:0.3 }} transition={{ duration:0.6 }}
+            style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}
+          >
+            Pillanatok a Várandósságból
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} viewport={{ once: true, amount:0.3 }} transition={{ duration:0.6, delay:0.1 }}
+          >
+            Nézd meg, hogyan látom én a kismama fotózás világát, és meríts inspirációt a saját fotózásodhoz!
+          </motion.p>
+          <div className="mb-10">
+            <KismamaGallery />
+          </div>
+        </div>
+      </section>
 
-      <motion.section
-        className="bg-[#F5EDE6] py-16 rounded-3xl"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      {/* CSOMAGAJÁNLATOK */}
+      <section className="py-16 sm:py-24 bg-rose-50/30">
         <div className="container mx-auto text-center px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#C79984]">
-            Kismama fotózás Csomagajánlatok
-          </h1>
-          <p className="text-gray-700 mt-4 max-w-3xl mx-auto">
-            Válaszd ki a számodra tökéletes csomagot!
-          </p>
-          <p className="text-[#8b614e] font-bold mt-1 max-w-3xl mx-auto text-xl">
-            Minden csomag teljesen testreszabható a Te igyéneid szerint! Egyedi
-            ajánlatokkal keress nyugodtan Emailen vagy telefonon!
-          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4" style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}>Csomagajánlatok</h2>
+          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto mb-12">Találd meg a Hozzád leginkább illő csomagot, hogy tökéletes formában őrizhesd meg ezeket a pillanatokat.</p>
         </div>
 
-        <div className="container mx-auto mt-12 px-6 grid md:grid-cols-4 gap-8">
-          {packages.map((pkg, index) => (
+        <div className="container mx-auto px-6 grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl">
+          {maternityPackages.map((pkg, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md text-center"
+              className={`bg-white p-8 rounded-2xl shadow-lg flex flex-col transition-all duration-300 ${pkg.popular ? 'border-2 border-[#C79C8D] transform lg:scale-105' : 'border border-gray-200'}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h3 className="text-2xl font-semibold text-[#C79984]">
-                {pkg.title}
-              </h3>
-              <p>{pkg.price} </p>
-              <p className="text-gray-700 mt-2">{pkg.duration}</p>
-              <ul className="mt-4 text-gray-700 space-y-2 text-left">
+              {pkg.popular && <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#C79C8D] text-white text-xs font-bold px-4 py-1 rounded-full">LEGNÉPSZERŰBB</div>}
+              
+              <h3 className="text-2xl font-semibold text-gray-800 mb-3">{pkg.title}</h3>
+              <p className="text-4xl font-extrabold text-[#C79C8D] mb-1">{pkg.price}</p>
+              <p className="text-sm text-gray-500 mb-6">{pkg.duration}</p>
+              
+              <ul className="text-gray-600 space-y-3 text-sm sm:text-base mb-8 text-left flex-grow">
                 {pkg.features.map((feature, i) => (
-                  <li key={i}>✔ {feature}</li>
+                  <li key={i} className="flex items-start">
+                    <CheckCircle size={18} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </li>
                 ))}
               </ul>
-              <Link
-                href="/contact"
-                className="inline-block mt-4 px-6 py-2 border border-[#646C5E] text-[#646C5E] rounded-lg font-semibold hover:text-black hover:border-black transition-all duration-200 transform hover:scale-105"
-              >
-                Foglalj időpontot!
+
+              <Link href="/contact?subject=Kismama_csomag_erdeklodes" legacyBehavior>
+                <a className={`w-full inline-block font-semibold py-3 px-6 rounded-lg text-md transition duration-300 transform hover:scale-105 ${pkg.popular ? 'bg-gray-800 text-white hover:bg-gray-700' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`}>
+                  Kiválasztom
+                </a>
               </Link>
             </motion.div>
           ))}
         </div>
-        {/* Piros csillagos magyarázatok */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mt-4 p-4 border-t border-gray-300 text-center mx-auto max-w-md text-sm"
-        >
-          <p className="text-gray-700">
-            <span className="font-bold">
-              Helyszín<span className="text-red-500">*</span>:
-            </span>
-            Természetesen ez is bármikor testreszabható, nem feltétlen kell egy
-            helyszínen fotózni ha belefér az időbe.
-          </p>
-          <p className="text-gray-700 mt-2">
-            <span className="font-bold">
-              Időtartam<span className="text-red-500">*</span>:
-            </span>{" "}
-            A fotózás hossza rugalmasan módosítható az igényeid szerint.
-          </p>
-          <p className="text-gray-700 mt-2">
-            <span className="font-bold">
-              Ár<span className="text-red-500">*</span>:
-            </span>
-            Az ügyfeleim elégedettsége számomra a legfontosabb, ezért ha az ár
-            magasnak tűnik, bátran jelezd, és igyekszünk megtalálni a megfelelő
-            megoldást!
-          </p>
-        </motion.div>
-      </motion.section>
+      </section>
 
-      {/* GYIK */}
-      <div className="max-w-3xl mx-auto mt-7">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-          Gyakran Ismétlődő Kérdések
-        </h2>
-        <div className="space-y-4">
-          {faqData.map((item, index) => (
-            <div key={index} className="border-b border-gray-300 pb-2">
-              <button
-                className="w-full text-left font-semibold text-lg text-gray-700 flex justify-between items-center"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+      {/* GYAKRAN ISMÉTELT KÉRDÉSEK (GYIK) */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} viewport={{ once: true, amount:0.3 }} transition={{ duration:0.6 }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4" style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}>
+              Kérdések és Válaszok
+            </h2>
+          </motion.div>
+          <div className="space-y-4">
+            {faqData.map((item, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-gray-50/80 rounded-lg shadow-sm overflow-hidden"
+                initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} viewport={{ once: true, amount:0.3 }} transition={{ duration:0.5, delay: index * 0.1 }}
               >
-                {item.question}
-                <span>{openIndex === index ? "▲" : "▼"}</span>
-              </button>
-              {openIndex === index && (
-                <motion.p
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  transition={{ duration: 0.3 }}
-                  className="mt-2 text-gray-600"
+                <button
+                  className="w-full flex justify-between items-center text-left p-5 sm:p-6 font-semibold text-gray-700 hover:bg-rose-50/50 focus:outline-none"
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                 >
-                  {item.answer}
-                </motion.p>
-              )}
-            </div>
-          ))}
+                  <span className="text-md sm:text-lg">{item.question}</span>
+                  <ChevronDown
+                    size={24}
+                    className={`transform transition-transform duration-300 ${openFaqIndex === index ? "rotate-180" : "rotate-0"} text-[#C79C8D]`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {openFaqIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="px-5 sm:px-6 pb-5 text-gray-600 text-base"
+                    >
+                      <p className="border-l-2 border-[#C79C8D] pl-4">{item.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* VÉGSŐ CALL TO ACTION (MÓDOSÍTVA) */}
+      <section className="py-20 sm:py-28 bg-rose-50/30">
+        <div className="container mx-auto px-6 text-center">
+            <motion.div
+                initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true, amount:0.3 }} transition={{ duration:0.7 }}
+            >
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800" style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}>Készen állsz megörökíteni a csodát?</h2>
+                <p className="text-lg sm:text-xl mb-10 max-w-xl mx-auto text-gray-600">Beszéljük meg az elképzeléseidet! Vedd fel velem a kapcsolatot egy ingyenes konzultációra, és tervezzük meg együtt a tökéletes kismama fotózásodat.</p>
+                <Link href="/contact" legacyBehavior>
+                    <a className="inline-block bg-gray-800 text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105 shadow-lg">
+                        Kapcsolatfelvétel
+                    </a>
+                </Link>
+            </motion.div>
+        </div>
+      </section>
+
     </div>
   );
 }

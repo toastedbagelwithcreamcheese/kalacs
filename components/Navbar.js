@@ -151,7 +151,6 @@ const Navbar = () => {
                   { href: "/autok", label: "Autó fotózás" },
                   { href: "/kutyusok", label: "Kutya fotózás" },
                   { href: "/kismama", label: "Kismama fotózás" },
-                  { href: "/wedding-packages", label: "Esküvői csomagok" },
                   { href: "/family-sessions", label: "Családi fotózás" },
                   { href: "/paros_jegyes", label: "Páros/jegyes fotózás" },
                 ].map((item, index) => (
@@ -170,17 +169,20 @@ const Navbar = () => {
             )}
           </AnimatePresence>
         </li>
-        <li>
-          <Link
-            href="/presets"
-            className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative"
-          >
-            <Settings2 size={22} />
-            <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-              Presetjeim
-            </span>
-          </Link>
-        </li>
+        {/* 
+          <li>
+            <Link
+              href="/presets"
+              className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative"
+            >
+              <Settings2 size={22} />
+              <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
+                Presetjeim
+              </span>
+            </Link>
+          </li> 
+          */}
+
         <li>
           <Link href="/contact" legacyBehavior>
             <a className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative">
