@@ -154,13 +154,10 @@ const Footer = () => {
                       <Link href="/kismama">Kismama fotózás</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
-                      <Link href="/eskuvok">Esküvő fotózás</Link>
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 transition">
                       <Link href="/paros_jegyes">Páros/Jegyes fotózás</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
-                      <Link href="/csaladi">Családi fotózás</Link>
+                      <Link href="/family-sessions">Családi fotózás</Link>
                     </li>
                   </motion.ul>
                 )}
@@ -168,9 +165,6 @@ const Footer = () => {
             </li>
 
             {/* További linkek változatlanul */}
-            <li>
-              <Link href="/presets" className="hover:text-gray-500 transition">Presetjeim</Link>
-            </li>
             <li>
               <Link href="/contact" className="hover:text-gray-500 transition">Kapcsolat</Link>
             </li>

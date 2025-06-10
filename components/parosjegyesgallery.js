@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "/images/_MG_4693.jpg",
-  "/images/_MG_4731.jpg",
-  "/images/_MG_4764.jpg",
-  "/images/_MG_4795.jpg",
-  "/images/_MG_4693.jpg",
-  "/images/_MG_4971.jpg",
+  "/images/_MG_4693.webp",
+  "/images/_MG_4731.webp",
+  "/images/_MG_4764.webp",
+  "/images/_MG_4795.webp",
+  "/images/_MG_4693.webp",
+  "/images/_MG_4971.webp",
 ];
 
 const ParosGallery = () => {
