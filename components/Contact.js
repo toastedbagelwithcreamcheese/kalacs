@@ -134,7 +134,7 @@ const ContactPage = () => {
                 <Mail size={28} className="text-[#C79C8D] mr-4 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-700">Email</h3>
-                  <a href="mailto:fotós_emailje@example.com" className="text-gray-600 text-sm hover:text-[#C79C8D] transition-colors">kapcsolat@kovacsbalintfoto.com</a> 
+                  <a href="mailto:fotós_emailje@example.com" className="text-gray-600 text-sm hover:text-[#C79C8D] transition-colors">kovacsbalintfoto@gmail.com</a> 
                   {/* ÁTÍRANDÓ: A te email címed */}
                 </div>
               </div>
