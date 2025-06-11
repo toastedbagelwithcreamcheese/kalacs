@@ -54,9 +54,9 @@ const ContactPage = () => {
     setMessageStatus({ type: "", text: "" }); // Reset status
 
     // **FONTOS: Cseréld le a saját EmailJS Service ID, Template ID és Public Key adataidra!**
-    const SERVICE_ID = "service_slkhy49"; // ÁTÍRANDÓ: Saját EmailJS Service ID
-    const USER_TEMPLATE_ID = "template_hwigljg"; // ÁTÍRANDÓ: Felhasználói visszaigazoló sablon ID
-    const ADMIN_TEMPLATE_ID = "template_h9vh4s7"; // ÁTÍRANDÓ: Admin értesítő sablon ID
+    const SERVICE_ID = "service_lf3fk4z"; // ÁTÍRANDÓ: Saját EmailJS Service ID
+    const USER_TEMPLATE_ID = "template_y0lknp9"; // ÁTÍRANDÓ: Felhasználói visszaigazoló sablon ID
+    const ADMIN_TEMPLATE_ID = "template_5ydhnlg"; // ÁTÍRANDÓ: Admin értesítő sablon ID
     const PUBLIC_KEY = "GV9oSuGnV7NGpGLGu";   // ÁTÍRANDÓ: Saját EmailJS Public Key
 
     const templateParams = {
