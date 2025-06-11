@@ -71,9 +71,9 @@ export default function CsaladiFotozasPageDistinct() {
 
   // Placeholder képek - CSERÉLD LE SAJÁT KÉPEIDRE!
   const heroImage = "/images/_MG_4971.webp"; 
-  const featureImage1 = "/images/_MG_4971.webp";
+  const featureImage1 = "/images/_MG_4764.webp";
   const featureImage2 = "/images/_MG_4971.webp";
-  const featureImage3 = "/images/_MG_4971.webp";
+  const featureImage3 = "/images/_MG_4986.webp";
   
   return (
     <div className="bg-[#FBF9F4] text-gray-800"> {/* Új, meleg törtfehér háttér */}
