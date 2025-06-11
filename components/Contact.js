@@ -57,7 +57,7 @@ const ContactPage = () => {
     const SERVICE_ID = "service_lf3fk4z"; // ÁTÍRANDÓ: Saját EmailJS Service ID
     const USER_TEMPLATE_ID = "template_y0lknp9"; // ÁTÍRANDÓ: Felhasználói visszaigazoló sablon ID
     const ADMIN_TEMPLATE_ID = "template_5ydhnlg"; // ÁTÍRANDÓ: Admin értesítő sablon ID
-    const PUBLIC_KEY = "GV9oSuGnV7NGpGLGu";   // ÁTÍRANDÓ: Saját EmailJS Public Key
+    const PUBLIC_KEY = "XRnx70SnxBuIIX5NQ";   // ÁTÍRANDÓ: Saját EmailJS Public Key
 
     const templateParams = {
       name: formData.name,
