@@ -2,182 +2,204 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight, Circle } from "lucide-react";
 import AboutSection from "@/components/AboutSection";
 import CarPhotography from "@/components/CarPhotography";
 import KismamaSection from "@/components/KismamaSection.js";
 import PortreSection from "@/components/PortreSection";
 import ParosSection from "@/components/ParosSection";
-import Link from "next/link";
 import KutyusSection from "@/components/KutyusSection";
 
+// --- SLIDE ADATOK (FRISSÍTVE DESKTOP KÉPEKKEL) ---
+// !!! FIGYELEM: AZ ALÁBBI MÉRETEK CSAK PLACEHOLDEREK! CSERÉLD ŐKET A VALÓS KÉPEID MÉRETEIRE!
 const slides = [
   {
-    image: "/images/_MG_4462.webp",
+    image: "/images/_MG_4462.webp",         // Mobil kép
+    width: 1200, height: 800,              // Mobil kép méretei
+    desktopImage: "/images/PortreKollazs.png", // Desktop kép
+    desktopWidth: 1920, desktopHeight: 1080, // Desktop kép méretei
+    title: "Portrék",
     text: "Stílusos portrék, amelyek megmutatják egyéniséged.",
     buttonText: "Részletek",
     link: "/portre",
   },
   {
     image: "/images/_MG_4693.webp",
-    text: "Természetes fények és tökéletes pillanatok.",
+    width: 1200, height: 800,
+    desktopImage: "/images/KismamaKollazs.png",
+    desktopWidth: 1920, desktopHeight: 1080,
+    title: "Kismama",
+    text: "A várandósság varázsa finom, meghitt pillanatokban.",
     buttonText: "Részletek",
     link: "/kismama",
   },
   {
-    image: "/images/_MG_4795.webp",
-    text: "Tökéletes páros képek.",
-    buttonText: "Részletek",
-    link: "/paros_jegyes",
-  },
-  {
     image: "/images/audi_tel-1198.webp",
-    text: "Autós fotózás prémium minőségben.",
+    width: 1600, height: 900,
+    desktopImage: "/images/AutoKollazs.png",
+    desktopWidth: 1920, desktopHeight: 1080,
+    title: "Autó Fotózás",
+    text: "Lenyűgöző formák és dinamikus részletek, prémium minőségben.",
     buttonText: "Részletek",
     link: "/autok",
   },
   {
     image: "/images/_MG_5347.webp",
-    text: "Képek rólad, és kiskedvencedről.",
+    width: 1200, height: 800,
+    desktopImage: "/images/KutyusKollazs.png",
+    desktopWidth: 1920, desktopHeight: 1080,
+    title: "Kutyus Fotózás",
+    text: "Játékos kalandok és felejthetetlen emlékek a négylábú barátodról.",
     buttonText: "Részletek",
     link: "/kutyusok",
   },
+  // A Páros/Jegyes dia eltávolítva a kérésnek megfelelően.
 ];
+// --------------------
 
-export default function PortfolioHome() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
-  const intervalRef = useRef(null);
+export default function PortfolioHomeFinal() {
+  const [index, setIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true); // Alapértelmezetten desktop, a kliens oldalon frissül
+  const timeoutRef = useRef(null);
 
-  const nextImage = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % slides.length);
-  };
+  const slideDuration = 5000; // 5 másodperc
 
-  const prevImage = () => {
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
+  // Képernyőméret figyelése
   useEffect(() => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
+    const handleResize = () => {
+      // A Tailwind 'md' töréspontja (768px) alapján döntünk
+      setIsDesktop(window.innerWidth >= 768);
+    };
 
-    intervalRef.current = setInterval(() => {
-      nextImage();
-    }, 5000);
+    handleResize(); // Első ellenőrzés betöltődéskor
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    return () => clearInterval(intervalRef.current);
-  }, [currentIndex]);
 
-  const slideVariants = {
-    enter: (direction) => ({
-      x: direction < 0 ? "100%" : "-100%",
-      opacity: 0,
-      position: "absolute",
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      position: "absolute",
-      transition: {
-        x: { type: "spring", stiffness: 60, damping: 20 },
-        opacity: { duration: 0.5 },
-      },
-    },
-    exit: (direction) => ({
-      x: direction > 0 ? "-100%" : "100%",
-      opacity: 0,
-      position: "absolute",
-      transition: {
-        x: { type: "spring", stiffness: 60, damping: 20 },
-        opacity: { duration: 0.4 },
-      },
-    }),
-  };
+  // Automatikus lapozás logikája
+  useEffect(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    if (!isHovered) {
+      timeoutRef.current = setTimeout(
+        () =>
+          setIndex((prevIndex) =>
+            prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+          ),
+        slideDuration
+      );
+    }
+    return () => {
+      clearTimeout(timeoutRef.current);
+    };
+  }, [index, isHovered]);
+
+  const goToSlide = (slideIndex) => setIndex(slideIndex);
+  const nextSlide = () => setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+
+  const currentSlide = slides[index];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <div className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-[#C79984]">
-        <AnimatePresence custom={direction} initial={false}>
+    <main className="flex flex-col min-h-screen bg-white">
+      <div 
+        className="relative w-full h-screen overflow-hidden"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <AnimatePresence mode="wait">
           <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
+            key={index}
             className="absolute inset-0 w-full h-full"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1.05,
+              transition: {
+                opacity: { duration: 1, ease: "easeInOut" },
+                scale: { duration: slideDuration / 1000, ease: "linear" }
+              }
+            }}
+            exit={{ 
+              opacity: 0, 
+              scale: 1,
+              transition: { opacity: { duration: 0.8, ease: "easeInOut" }}
+            }}
           >
-            {/* Háttér blur minden nézetben */}
-            <img
-              src={slides[currentIndex].image}
-              alt="blurred bg"
-              className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 z-0"
+            <Image
+              src={isDesktop ? currentSlide.desktopImage : currentSlide.image}
+              alt={currentSlide.title}
+              layout="fill"
+              objectFit="cover"
+              quality={90}
+              priority={index === 0}
+              // A next/image-nek nem kell a width/height, ha `fill` van,
+              // de a placeholder generáláshoz és a jó gyakorlathoz fontos, hogy az adatstruktúrában meglegyenek.
             />
-
-            {/* ----- Mobilos verzió (háttérkép + szöveg) ----- */}
-            <div
-              className="sm:hidden absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${slides[currentIndex].image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <motion.div
-                key={currentIndex + "-text-mobile"}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.6, delay: 0.25 }}
-                className="w-full max-w-xs"
-              >
-                <p className="text-white text-lg font-semibold drop-shadow-md mb-3">
-                  {slides[currentIndex].text}
-                </p>
-                <Link
-                  href={slides[currentIndex].link}
-                  className="inline-block border-2 border-[#C79984] bg-[#C79984] bg-opacity-50 text-white px-5 py-2 rounded-md font-semibold
-                       hover:bg-opacity-75 hover:border-[#C79984] hover:scale-105
-                       transition-all duration-300 transform"
-                >
-                  {slides[currentIndex].buttonText}
-                </Link>
-              </motion.div>
-            </div>
-
-            {/* ----- Desktop verzió (éles kép külön) ----- */}
-            <div className="hidden sm:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex-col items-center justify-center text-center px-4">
-              {/* Előtér éles kép */}
-              <img
-                src={slides[currentIndex].image}
-                alt={`Slide ${currentIndex + 1}`}
-                className="max-h-[85vh] max-w-full object-contain mb-0"
-              />
-
-              {/* Szöveg + gomb */}
-              <motion.div
-                key={currentIndex + "-text-desktop"}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.6, delay: 0.25 }}
-                className="w-full max-w-md"
-              >
-                <p className="text-white text-xl md:text-2xl font-semibold drop-shadow-md mb-1">
-                  {slides[currentIndex].text}
-                </p>
-                <Link
-                  href={slides[currentIndex].link}
-                  className="inline-block border-2 border-[#C79984] bg-[#C79984] bg-opacity-50 text-white px-5 py-2 rounded-md font-semibold
-                       hover:bg-opacity-75 hover:border-[#C79984] hover:scale-105
-                       transition-all duration-300 transform"
-                >
-                  {slides[currentIndex].buttonText}
-                </Link>
-              </motion.div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
           </motion.div>
         </AnimatePresence>
+
+        {/* --- Szöveges Tartalom és Gomb --- */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-6">
+          <AnimatePresence mode="wait">
+            <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
+                <h2 className="text-xl md:text-2xl font-semibold uppercase tracking-widest text-white/80 mb-2" style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}>
+                    {currentSlide.title}
+                </h2>
+                <p className="text-3xl md:text-5xl font-bold max-w-2xl mb-6" style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.7)" }}>
+                    {currentSlide.text}
+                </p>
+                <Link href={currentSlide.link} legacyBehavior>
+                    <a className="inline-block bg-[#C79C8D] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#b3897b] transition duration-300 transform hover:scale-105 shadow-lg">
+                    {currentSlide.buttonText}
+                    </a>
+                </Link>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* --- Navigációs Nyilak --- */}
+        <button onClick={prevSlide} className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-white/20 p-2 rounded-full hover:bg-white/40 transition-colors backdrop-blur-sm" aria-label="Előző dia">
+            <ArrowLeft className="text-white"/>
+        </button>
+        <button onClick={nextSlide} className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-white/20 p-2 rounded-full hover:bg-white/40 transition-colors backdrop-blur-sm" aria-label="Következő dia">
+            <ArrowRight className="text-white"/>
+        </button>
+
+        {/* --- Paginációs Pontok --- */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+          {slides.map((_, slideIndex) => (
+            <button
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className="p-1"
+              aria-label={`Ugrás a(z) ${slideIndex + 1}. diára`}
+            >
+              <div className="w-8 h-1 rounded-full overflow-hidden bg-white/20">
+                {index === slideIndex && (
+                  <motion.div 
+                    className="h-full bg-white"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: slideDuration / 1000, ease: "linear" }}
+                  />
+                )}
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* 🔹 ABOUT SECTION */}
@@ -399,6 +421,6 @@ export default function PortfolioHome() {
           },
         ]}
       />
-    </div>
+      </main>
   );
 }
