@@ -1,147 +1,143 @@
 "use client";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { Maximize } from "lucide-react";
-import Link from "next/link";
 
-const PortreSection = ({ title, description, images, extraImages }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [showMore, setShowMore] = useState(false);
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { Maximize, ArrowRight } from "lucide-react";
+
+const PortreSectionModern = ({ title, description, images = [], extraImages = [], link }) => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const allImages = [...images, ...extraImages];
+  const slides = allImages.map(img => ({ src: img.src, alt: img.alt }));
+  const displayImages = images.slice(0, 3);
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
-    <motion.section
-      className="bg-[#F5EDE6] py-16"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true }}
-    >
-      <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
-        {/* BAL OLDAL - SZÖVEG */}
-        <motion.div
-          className="md:w-1/2 text-center md:text-left"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#C79984]">
-            {title}
-          </h2>
-          <p className="text-gray-700 mt-4">{description}</p>
-          <Link
-            href="/portre"
-            className="inline-flex items-center px-4 py-2 border border-[#646C5E] text-[#646C5E] rounded-lg font-semibold hover:text-black hover:border-black transition-all duration-200 transform hover:scale-105 max-w-[220px] mt-2.5"
-          >
-            Fedezd fel a részleteket!
-          </Link>
-        </motion.div>
-
-        {/* JOBB OLDAL - KÉPEK */}
-        <motion.div
-          className="md:w-1/2 grid grid-cols-2 gap-1 relative" // Csökkentett távolság
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          {images.map((img, index) => (
-            <div
-              key={index}
-              className="relative w-full aspect-[3/4] group cursor-pointer overflow-hidden" // Fix képarány
-              onClick={() => setSelectedImage(img.src)}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white text-lg font-semibold">{img.title}</p>
-                <Maximize className="text-white mt-2 w-6 h-6" />
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* EXTRA KÉPEK - UGYANÚGY AZ ELSŐDLEGES KÉPEK ALATT */}
-      <AnimatePresence>
-        {showMore && (
+    <>
+      <motion.section
+        className="bg-white py-16 sm:py-24" // Letisztult fehér háttér
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/* BAL OLDAL - SZÖVEG */}
           <motion.div
-            className="container mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 px-6 mt-4"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {extraImages.map((img, index) => (
-              <motion.div
-                key={index}
-                className="relative group cursor-pointer overflow-hidden"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                onClick={() => setSelectedImage(img.src)}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={400}
-                  height={300}
-                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-lg font-semibold">
-                    {img.title}
-                  </p>
-                  <Maximize className="text-white mt-2 w-6 h-6" />
-                </div>
-              </motion.div>
-            ))}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight" style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}>
+              {title}
+            </h2>
+            <p className="text-lg text-slate-600 mt-6 max-w-lg mx-auto lg:mx-0">
+              {description}
+            </p>
+            <Link href={link || "/portre"} legacyBehavior>
+              <a className="inline-flex items-center mt-8 bg-slate-800 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-slate-700 transition duration-300 transform hover:scale-105 shadow-lg">
+                Tovább a részletekhez
+                <ArrowRight size={20} className="ml-2" />
+              </a>
+            </Link>
           </motion.div>
-        )}
-      </AnimatePresence>
 
-      {/* MUTASS TÖBBET GOMB */}
-      <motion.div className="flex justify-center mt-6">
-        <motion.button
-          onClick={() => setShowMore(!showMore)}
-          className="px-6 py-2 bg-[#C79984] text-white rounded-lg font-semibold hover:bg-[#b18877] transition-all duration-200 transform hover:scale-105"
-          whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-        >
-          {showMore ? "Kevesebb" : "Mutass többet"}
-        </motion.button>
-      </motion.div>
+          {/* JOBB OLDAL - KÉP MOZAIK */}
+          <motion.div
+            className="w-full h-full"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          >
+            {displayImages.length > 0 && (
+              <div className="grid grid-cols-2 grid-rows-2 gap-4 aspect-[4/3]">
+                {/* Első, nagy kép */}
+                <div 
+                  className="col-span-1 row-span-2 rounded-xl overflow-hidden shadow-lg group cursor-pointer relative"
+                  onClick={() => openLightbox(0)}
+                >
+                  <Image
+                    src={displayImages[0].src}
+                    alt={displayImages[0].alt}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <Maximize size={32} className="text-white drop-shadow-lg" />
+                  </div>
+                </div>
 
-      {/* MODÁL TELJES KÉPERNYŐS KÉPHEZ */}
-      {selectedImage && (
-        <motion.div
-          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setSelectedImage(null)}
-        >
-          <Image
-            src={selectedImage}
-            alt="Teljes képernyős kép"
-            width={900}
-            height={600}
-            className="max-w-full max-h-full object-contain" // Hozzáadtam az object-contain-t
-          />
-        </motion.div>
-      )}
-    </motion.section>
+                {/* Második, kis kép */}
+                {displayImages[1] && (
+                  <div 
+                    className="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg group cursor-pointer relative"
+                    onClick={() => openLightbox(1)}
+                  >
+                    <Image
+                      src={displayImages[1].src}
+                      alt={displayImages[1].alt}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    />
+                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <Maximize size={28} className="text-white drop-shadow-lg" />
+                    </div>
+                  </div>
+                )}
+                
+                {/* Harmadik, kis kép */}
+                {displayImages[2] && (
+                  <div 
+                    className="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg group cursor-pointer relative"
+                    onClick={() => openLightbox(2)}
+                  >
+                    <Image
+                      src={displayImages[2].src}
+                      alt={displayImages[2].alt}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    />
+                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <Maximize size={28} className="text-white drop-shadow-lg" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* LIGHTBOX (MODÁL) */}
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        slides={slides}
+        index={lightboxIndex}
+        plugins={[Zoom, Thumbnails]}
+        styles={{ container: { backgroundColor: "rgba(10, 10, 10, .95)" } }}
+      />
+    </>
   );
 };
 
-export default PortreSection;
+export default PortreSectionModern;
