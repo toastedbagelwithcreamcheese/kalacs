@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import ModernMobileMenu from '@/components/ModernMobileMenu';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState({
@@ -52,15 +53,18 @@ const Navbar = () => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
 
+  
   return (
+    
     <nav className="bg-white text-gray-900 py-6 px-6 shadow-md fixed top-0 w-full z-50">
       {/* Mobilmenü ikon */}
       <button
         className="lg:hidden"
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        onClick={() => setIsMobileMenuOpen(true)}
       >
         {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
+
       <ul className="hidden lg:flex justify-center space-x-8 font-semibold">
         {/* Kezdőlap */}
         <li>
@@ -205,131 +209,7 @@ const Navbar = () => {
         </li>
       </ul>
       {/* Mobil menü (hamburger) */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            className="lg:hidden fixed inset-0 bg-white flex flex-col pt-6 px-6 z-50 overflow-y-auto"
-          >
-            {/* Bezáró gomb */}
-            <div className="w-full flex justify-end mb-8">
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                aria-label="Bezárás"
-              >
-                <X size={32} />
-              </button>
-            </div>
-
-            {/* Menü */}
-            <ul className="space-y-6 text-lg font-semibold w-full max-w-xs mx-auto">
-              <li>
-                <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                  Kezdőlap
-                </Link>
-              </li>
-
-              {/* Munkáim lenyíló */}
-              <li>
-                <button
-                  className="w-full flex items-center justify-between text-left"
-                  onClick={() => toggleDropdown("munkáim")}
-                >
-                  Munkáim
-                  {openDropdown === "munkáim" ? (
-                    <ChevronUp size={20} />
-                  ) : (
-                    <ChevronDown size={20} />
-                  )}
-                </button>
-
-                <AnimatePresence>
-                  {openDropdown === "munkáim" && (
-                    <motion.ul
-                      initial={{ opacity: 0, height: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, height: "auto", scale: 1 }}
-                      exit={{ opacity: 0, height: 0, scale: 0.95 }}
-                      transition={{ duration: 0.3 }}
-                      className="pl-4 mt-2 space-y-2 text-gray-700"
-                    >
-                      <li>
-                        <Link
-                          href="/portre-galeria"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Portré galéria
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/autok-galeria"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Autós galéria
-                        </Link>
-                      </li>
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
-              </li>
-
-              {/* Szolgáltatásaim lenyíló */}
-              <li>
-                <button
-                  className="w-full flex items-center justify-between text-left"
-                  onClick={() => toggleDropdown("szolgaltatasaim")}
-                >
-                  Szolgáltatásaim
-                  {openDropdown === "szolgaltatasaim" ? (
-                    <ChevronUp size={20} />
-                  ) : (
-                    <ChevronDown size={20} />
-                  )}
-                </button>
-
-                <AnimatePresence>
-                  {openDropdown === "szolgaltatasaim" && (
-                    <motion.ul
-                      initial={{ opacity: 0, height: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, height: "auto", scale: 1 }}
-                      exit={{ opacity: 0, height: 0, scale: 0.95 }}
-                      transition={{ duration: 0.3 }}
-                      className="pl-4 mt-2 space-y-2 text-gray-700"
-                    >
-                      {services.map((item, index) => (
-                        <li key={index}>
-                          <Link
-                            href={item.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
-              </li>
-
-              <li>
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Kapcsolat
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>
-                  Rólam
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ModernMobileMenu isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
     </nav>
   );
 };

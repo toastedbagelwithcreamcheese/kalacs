@@ -360,7 +360,7 @@ export default function PortfolioHomeFinal() {
             alt: "",
           },
           {
-            src: "/images/_MG_4931.jpg",
+            src: "/images/_MG_4931.webp",
             title: "",
             alt: "",
           },
