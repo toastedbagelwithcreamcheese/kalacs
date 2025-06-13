@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { X, ChevronLeft } from "lucide-react";
+import { X, ChevronLeft,  Instagram, Facebook } from "lucide-react";
 
 // Töltsd fel a szolgáltatásaid és galériáid listájával
 const galleryItems = [
@@ -154,8 +154,8 @@ export default function ModernMobileMenu({ isOpen, setIsOpen }) {
           
           {/* Alsó sáv: Social media linkek (opcionális) */}
           <div className="flex justify-center space-x-6 text-gray-500 mt-10">
-            <a href="#" className="hover:text-white transition-colors">FB</a>
-            <a href="#" className="hover:text-white transition-colors">IG</a>
+            <a href="#" className="hover:text-white transition-colors"><Facebook size={16}/></a>
+            <a href="#" className="hover:text-white transition-colors"><Instagram size={16}/></a>
           </div>
         </motion.div>
       )}
