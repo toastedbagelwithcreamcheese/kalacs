@@ -27,7 +27,7 @@ const packages = [
     duration: "kb. 30-45 perc fotózás",
     features: [
       "Előzetes online vagy telefonos konzultáció",
-      "5 db profi, természetesen retusált digitális portré",
+      "8 db profi, természetesen retusált digitális portré",
       "Minden további retusált kép: 1.990 Ft/db",
       "1 választott helyszín Zalaegerszegen (szabadtér/otthon)",
       "1-2 átöltözési lehetőség",

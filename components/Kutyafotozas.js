@@ -9,12 +9,12 @@ import Link from "next/link";
 const packages = [
   {
     title: "Pajkos Portrék",
-    price: "14.900 Ft",
+    price: "9.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 30 perc fotózás",
     features: [
       "Személyes konzultáció a fotózás előtt",
-      "Az alapdíj 5 db profi, retusált digitális képet tartalmaz",
+      "Az alapdíj 5-8 db profi, retusált digitális képet tartalmaz",
       "Minden további választott és retusált kép: 1.990 Ft/db",
       "1 választott helyszín (pl. kedvenc park, otthon)",
       "Online képgaléria a válogatáshoz",
@@ -23,7 +23,7 @@ const packages = [
   },
   {
     title: "Kalandra Fel!",
-    price: "29.900 Ft",
+    price: "19.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 60-90 perc fotózás",
     features: [
