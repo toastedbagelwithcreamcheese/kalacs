@@ -27,7 +27,7 @@ const maternityPackages = [
   },
   {
     title: "Családi Álmodozás Csomag",
-    price: "34.900 Ft",
+    price: "29.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 60-90 perc fotózás",
     features: [
@@ -44,7 +44,7 @@ const maternityPackages = [
   },
   {
     title: "Örökké Emlék Prémium Csomag",
-    price: "49.900 Ft",
+    price: "39.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 90-120 perc fotózás",
     features: [

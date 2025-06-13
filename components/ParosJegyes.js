@@ -9,9 +9,9 @@ import { ChevronDown, CheckCircle, ArrowRight } from "lucide-react";
 
 // --- CSOMAGOK ÉS GYIK ADATOK (VÁLTOZATLAN TARTALOMMAL) ---
 const couplePackages = [
-    { title: "Kezdetek Varázsa", price: "19.900 Ft", duration: "kb. 45 perc", features: ["Tökéletes választás egy rövid, hangulatos fotózáshoz", "8 db profi, gondosan retusált digitális fotó", "Minden további retusált kép: 1.990 Ft/db", "1 választott helyszín Zalaegerszegen", "Online, jelszóval védett válogató galéria"], popular: false },
-    { title: "Romantikus Kaland", price: "29.900 Ft", duration: "kb. 60-90 perc", features: ["A legnépszerűbb választás jegyes- és páros fotózásra", "20 db profi, művészi retusálású digitális fotó", "Minden további retusált kép: 1.790 Ft/db", "Akár 2 közeli helyszín a változatosabb képekért", "Lehetőség 1-2 átöltözésre", "Online galéria válogatáshoz és letöltéshez"], popular: true },
-    { title: "Örökké Ti Prémium", price: "44.900 Ft", duration: "kb. 90-120 perc", features: ["Egy teljeskörű, prémium élményfotózás", "35 db prémium, magazin minőségű retusált digitális fotó", "<strong>✨ 10 db prémium 10x15 cm-es nyomtatott kép elegáns díszdobozban</strong>", "Segítség a tökéletes ruhák és kiegészítők kiválasztásában", "Prémium online galéria, egyszerű megosztási lehetőséggel"], popular: false },
+    { title: "Kezdetek Varázsa", price: "14.900 Ft", duration: "kb. 45 perc", features: ["Tökéletes választás egy rövid, hangulatos fotózáshoz", "8 db profi, gondosan retusált digitális fotó", "Minden további retusált kép: 1.990 Ft/db", "1 választott helyszín Zalaegerszegen", "Online, jelszóval védett válogató galéria"], popular: false },
+    { title: "Romantikus Kaland", price: "19.900 Ft", duration: "kb. 60-90 perc", features: ["A legnépszerűbb választás jegyes- és páros fotózásra", "20 db profi, művészi retusálású digitális fotó", "Minden további retusált kép: 1.790 Ft/db", "Akár 2 közeli helyszín a változatosabb képekért", "Lehetőség 1-2 átöltözésre", "Online galéria válogatáshoz és letöltéshez"], popular: true },
+    { title: "Örökké Ti Prémium", price: "29.900 Ft", duration: "kb. 90-120 perc", features: ["Egy teljeskörű, prémium élményfotózás", "35 db prémium, magazin minőségű retusált digitális fotó", "<strong>✨ 10 db prémium 10x15 cm-es nyomtatott kép elegáns díszdobozban</strong>", "Segítség a tökéletes ruhák és kiegészítők kiválasztásában", "Prémium online galéria, egyszerű megosztási lehetőséggel"], popular: false },
 ];
 
 const faqData = [

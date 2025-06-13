@@ -42,7 +42,7 @@ const packages = [
   },
   {
     title: "Bővített Autófotó Csomag", // Semlegesebb név
-    price: "29.900 Ft",
+    price: "24.900 Ft",
     priceSuffix: "(alapdíj fotókra)",
     duration: "kb. 75-90 perc fotózás",
     features: [

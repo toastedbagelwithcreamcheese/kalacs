@@ -22,7 +22,7 @@ import {
 const packages = [
   {
     title: "Alap Portré Csomag",
-    price: "19.900 Ft",
+    price: "14.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 30-45 perc fotózás",
     features: [
@@ -38,7 +38,7 @@ const packages = [
   },
   {
     title: "Prémium Portré Csomag",
-    price: "34.900 Ft",
+    price: "24.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 60-90 perc fotózás",
     features: [

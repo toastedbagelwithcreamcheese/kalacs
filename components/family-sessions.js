@@ -26,7 +26,7 @@ const familyPackages = [
   },
   {
     title: "Nagy Családi Élmény",
-    price: "29.900 Ft",
+    price: "24.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 60-90 perc fotózás",
     features: [
@@ -42,7 +42,7 @@ const familyPackages = [
   },
   {
     title: "Prémium Csomag",
-    price: "44.900 Ft",
+    price: "34.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 90-120 perc fotózás",
     features: [
