@@ -1,13 +1,28 @@
 // pages/_app.js
-
-// FONTOS: Ellenőrizd, hogy a globális stíluslapod hol található!
-// Általában 'app/globals.css' vagy 'styles/globals.css'. Igazítsd a sösvényt, ha szükséges.
-import '@/app/globals.css'; 
+import Head from 'next/head'; // 1. FONTOS: Head komponens importálása a next/head-ből
+import '@/app/globals.css'; // Feltételezve, hogy a globális stíluslapod továbbra is itt található
 
 function MyApp({ Component, pageProps }) {
-  // Ez a komponens fogja "becsomagolni" az összes oldalt a 'pages' mappában,
-  // így mindegyik megkapja a globális stílusokat.
-  return <Component {...pageProps} />;
+  return (
+    <>
+      {/* 2. A Head komponens használata a globális meta adatokhoz */}
+      <Head>
+        {/* Az `export const metadata = { title: "..." }` megfelelője: */}
+        <title>Kovács Bálint Fotó</title>
+
+        {/* Az `icons: { icon: "..." }` megfelelője: */}
+        <link rel="icon" href="/images/favicon.ico" />
+        
+        {/* Hozzáadtam pár további hasznos meta taget is az oldaladhoz */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Professzionális fotózás Zalaegerszegen: esküvő, portré, család, páros, autó és kutyus fotózás." />
+        {/* Ide jöhetnek majd további SEO-val kapcsolatos meta tagek is a jövőben */}
+      </Head>
+      
+      {/* A tényleges oldal komponens, ami megjelenik */}
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
