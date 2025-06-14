@@ -1,10 +1,11 @@
 // components/ClientGallery.jsx
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle, Send, LoaderCircle } from "lucide-react";
-import emailjs from '@emailjs/browser'; // <-- ÚJ IMPORT
+import emailjs from '@emailjs/browser'; // FONTOS: Az új import
 
 export default function ClientGallery({ galleryId, initialImages, initialSelections, clientName, clientEmail }) {
     const [selectedImages, setSelectedImages] = useState(new Set(initialSelections));
@@ -12,7 +13,7 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
     const [feedback, setFeedback] = useState("");
     const [isSaving, setIsSaving] = useState(false);
 
-    // A kiválasztás mentése továbbra is a szerveren keresztül történik, ez így jó!
+    // A kiválasztás mentése az adatbázisba (ez a funkció változatlan marad)
     const toggleSelection = async (publicId) => {
         const newSelection = new Set(selectedImages);
         if (newSelection.has(publicId)) {
@@ -35,7 +36,7 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
         }
     };
 
-    // --- ÚJ EMAIL KÜLDŐ LOGIKA ---
+    // --- ÁTÍRT, KLIENS OLDALI EMAIL KÜLDŐ LOGIKA ---
     const handleSubmitSelection = async () => {
         setIsSubmitting(true);
         setFeedback("Küldés folyamatban, kérlek várj...");
@@ -43,31 +44,23 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
         // Adatok előkészítése az EmailJS sablonhoz
         const templateParams = {
             client_name: clientName,
-            client_email: clientEmail, // Email cím a visszajelzéshez
+            client_email: clientEmail, // Email cím az automatikus válaszhoz
             gallery_id: galleryId,
             selection_count: selectedImages.size,
-            image_list_html: `<ul>${Array.from(selectedImages).map(id => `<li>${id}</li>`).join('')}</ul>`,
+            image_list_html: `<ul>${Array.from(selectedImages).map(id => `<li>${id.split('/').pop()}</li>`).join('')}</ul>`,
         };
 
         try {
-            // 1. Email a fotósnak
+            // Email küldése közvetlenül a böngészőből
             await emailjs.send(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_ADMIN,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_ADMIN, // A sablon ID-ja, ami NEKED megy
                 templateParams,
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
             );
-
-            // 2. Email az ügyfélnek
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CLIENT,
-                templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-            );
-            setFeedback("Köszönöm! A kiválasztásodat sikeresen elküldted. Hamarosan kapsz egy megerősítő e-mailt.");
+            setFeedback("Köszönöm! A kiválasztásodat sikeresen elküldtük. Hamarosan kapsz egy megerősítő e-mailt.");
         } catch (error) {
-            console.error("Email küldési hiba:", error);
+            console.error("EmailJS küldési hiba:", error);
             setFeedback("Hiba történt a küldés során. Kérlek, vedd fel velem a kapcsolatot.");
         } finally {
             setIsSubmitting(false);
@@ -84,11 +77,7 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
                     </div>
                     <div className="flex items-center gap-4">
                         {isSaving && (
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                className="flex items-center text-sm text-gray-500"
-                            >
+                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center text-sm text-gray-500">
                                 <LoaderCircle className="animate-spin mr-2" size={16}/> Mentés...
                             </motion.div>
                         )}
