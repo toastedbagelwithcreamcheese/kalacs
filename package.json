@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emailjs/nodejs": "^5.0.2",
+    "@netlify/next": "^1.4.9",
     "@supabase/supabase-js": "^2.50.0",
     "cloudinary": "^2.6.1",
     "emailjs-com": "^3.2.0",
