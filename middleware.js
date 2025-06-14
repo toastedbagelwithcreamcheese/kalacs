@@ -19,6 +19,6 @@ export function middleware(request) {
 
 export const config = {
   // Ez biztosítja, hogy a middleware csak a galéria oldalakra fusson le,
-  // az API route-okra, képekre stb. nem.
+  // az API route-okra, képekre stb. nem. A
   matcher: '/galeria/:galleryId',
 };
