@@ -16,7 +16,7 @@ const maternityPackages = [
     duration: "kb. 45-60 perc fotózás",
     features: [
       "Előzetes konzultáció a stílusról és helyszínről",
-      "8 db profi, gondosan retusált digitális fotó",
+      "Kb 10-15 db profi, gondosan retusált digitális fotó",
       "Minden további retusált kép: 1.990 Ft/db",
       "1 választott helyszín (szabadtér vagy otthon)",
       "1-2 átöltözési lehetőség",
@@ -32,7 +32,7 @@ const maternityPackages = [
     duration: "kb. 60-90 perc fotózás",
     features: [
       "Részletes konzultáció, közös koncepcióalkotás",
-      "15 db profi, művészi retusálású digitális fotó",
+      "15-20 db profi, művészi retusálású digitális fotó",
       "Minden további retusált kép: 1.790 Ft/db",
       "Akár 2 helyszín (pl. otthon és szabadtér)",
       "Több (2-3) átöltözési lehetőség",
@@ -49,7 +49,7 @@ const maternityPackages = [
     duration: "kb. 90-120 perc fotózás",
     features: [
       "Mélyreható konzultáció, személyre szabott moodboard",
-      "25 db profi, magazin minőségű retusált digitális fotó",
+      "25-30 db profi, magazin minőségű retusált digitális fotó",
       "Minden további retusált kép: 1.590 Ft/db",
       "Rugalmas helyszínválasztás, akár több helyszínen is",
       "Korlátlan átöltözési lehetőség",

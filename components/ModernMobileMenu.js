@@ -14,7 +14,7 @@ const galleryItems = [
 const services = [
   { href: "/kismama", label: "Kismama Fotózás" },
   { href: "/family-sessions", label: "Családi Fotózás" },
-  { href: "/paros_jegyes", label: "Páros & Jegyes" },
+  //{ href: "/paros_jegyes", label: "Páros & Jegyes" },
   { href: "/portre", label: "Portré" },
   { href: "/autok", label: "Autók" },
   { href: "/kutyusok", label: "Kutyusok" },

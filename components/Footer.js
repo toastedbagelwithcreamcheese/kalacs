@@ -153,9 +153,11 @@ const Footer = () => {
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
                       <Link href="/kismama">Kismama fotózás</Link>
                     </li>
+                    {/*
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
                       <Link href="/paros_jegyes">Páros/Jegyes fotózás</Link>
                     </li>
+                    */}
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
                       <Link href="/family-sessions">Családi fotózás</Link>
                     </li>

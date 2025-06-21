@@ -16,7 +16,7 @@ const familyPackages = [
     duration: "kb. 45 perc fotózás",
     features: [
       "Ideális kisebb családoknak vagy egy gyors sorozathoz",
-      "10 db profi, természetes stílusban retusált digitális fotó",
+      "10-15 db profi, természetes stílusban retusált digitális fotó",
       "Minden további retusált kép: 1.990 Ft/db",
       "1 választott szabadtéri helyszín Zalaegerszegen",
       "Játékos, spontán pillanatok megörökítése",
@@ -31,7 +31,7 @@ const familyPackages = [
     duration: "kb. 60-90 perc fotózás",
     features: [
       "Előzetes konzultáció, közös ötletelés",
-      "20 db profi, művészi retusálású digitális fotó",
+      "20-25 db profi, művészi retusálású digitális fotó",
       "Minden további retusált kép: 1.790 Ft/db",
       "Rugalmas helyszínválasztás, akár 2 közeli helyszínen is",
       "Több beállítás: közös képek, gyerekek külön, szülők kettesben",
@@ -47,7 +47,7 @@ const familyPackages = [
     duration: "kb. 90-120 perc fotózás",
     features: [
       "Tökéletes választás nagyszülőkkel, több generációval",
-      "35 db prémium, magazin minőségű retusált digitális fotó",
+      "Kb 35 db prémium, magazin minőségű retusált digitális fotó",
       "Minden további retusált kép: 1.590 Ft/db",
       "Kényelmes, ráérős tempó, mindenkire figyelve",
       "Különböző családi konstellációk lefotózása",
