@@ -1,10 +1,10 @@
 // components/ClientGallery.jsx
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle, Send, LoaderCircle, ZoomIn } from "lucide-react";
+import { CheckCircle, Send, LoaderCircle, ZoomIn, X } from "lucide-react";
 import emailjs from '@emailjs/browser'; // FONTOS: Az új import
 
 import Lightbox from "yet-another-react-lightbox";
@@ -29,16 +29,16 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
         setLightboxOpen(true);
     };
 
-    // Slides tömb létrehozása a lightbox számára
-    const slides = initialImages.map(img => ({
+    // A 'slides' tömböt useMemo-val hozzuk létre, hogy ne generálódjon újra minden rendereléskor.
+    // Ez segít megelőzni a felesleges újra-rendereléseket a lightboxban.
+    const slides = useMemo(() => initialImages.map(img => ({
         src: img.src,
         width: img.width,
         height: img.height,
         alt: `Fotó - ${img.id}`,
-        publicId: img.publicId // Átadjuk a publicId-t is
-    }));
+        publicId: img.publicId
+    })), [initialImages]);
 
-    // A kiválasztás mentése az adatbázisba (ez a funkció változatlan marad)
     const toggleSelection = async (publicId) => {
         const newSelection = new Set(selectedImages);
         if (newSelection.has(publicId)) {
@@ -47,6 +47,7 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
             newSelection.add(publicId);
         }
         setSelectedImages(newSelection);
+        
         setIsSaving(true);
         try {
             await fetch('/api/update-selection', {
@@ -120,31 +121,38 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
                                 <motion.div
                                     key={image.id}
                                     className="relative aspect-square cursor-pointer group"
-                                    onClick={() => openLightboxOn(index)} // <-- MÓDOSÍTÁS: Lightboxot nyit
+                                    onClick={() => toggleSelection(image.publicId)} // <-- MÓDOSÍTÁS: A fő kattintás mostantól kijelöl
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.3 }}
                                     layout
                                 >
-                                    <Image src={image.src} alt={`Fotó - ${image.id}`} layout="fill" objectFit="cover" className="rounded-md transition-transform duration-300 group-hover:scale-105" />
+                                    <Image src={image.src} alt={`Fotó - ${image.id}`} layout="fill" objectFit="cover" className={`rounded-md transition-all duration-300 ${selectedImages.has(image.publicId) ? 'scale-95 shadow-lg' : 'group-hover:scale-95'}`} />
                                     
-                                    {/* Vizuális jelzések */}
-                                    <div className="absolute inset-0 rounded-md transition-all duration-300 pointer-events-none group-hover:bg-black/40">
+                                    <div className={`absolute inset-0 rounded-md transition-all duration-300 pointer-events-none ${selectedImages.has(image.publicId) ? 'border-4 border-[#C79C8D] bg-black/30' : ''}`}>
                                         {/* Pipa, ha ki van választva */}
                                         {selectedImages.has(image.publicId) && (
                                             <div className="absolute top-2 right-2 bg-[#C79C8D] rounded-full p-1 shadow-lg border-2 border-white">
                                                 <CheckCircle size={20} className="text-white"/>
                                             </div>
                                         )}
-                                        {/* Nagyító ikon hoverre */}
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <ZoomIn size={40} className="text-white drop-shadow-lg"/>
-                                        </div>
                                         {/* Fájlnév */}
                                         <div className="absolute bottom-2 left-2 bg-black/50 text-white text-xs p-1 rounded">
                                             {image.publicId.split('/').pop()}
                                         </div>
                                     </div>
+
+                                    {/* ÚJ: Külön gomb a lightbox megnyitásához */}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // Megakadályozza, hogy a háttérben lévő kijelölés is lefusson
+                                            openLightboxOn(index);
+                                        }}
+                                        className="absolute top-2 left-2 z-10 p-2 bg-white/20 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:bg-white/40 transition-all duration-300"
+                                        aria-label="Kép nagyítása"
+                                    >
+                                        <ZoomIn size={20} className="text-white"/>
+                                    </button>
                                 </motion.div>
                             ))}
                         </div>
@@ -172,6 +180,7 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
                     )}
                 </div>
             </footer>
+            {/* LIGHTBOX KOMPONENS (MÓDOSÍTVA) */}
             <Lightbox
                 open={lightboxOpen}
                 close={() => setLightboxOpen(false)}
@@ -179,9 +188,9 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
                 index={lightboxIndex}
                 plugins={[Zoom, Thumbnails]}
                 styles={{ container: { backgroundColor: "rgba(10, 10, 10, .95)" } }}
-                // Egyedi gombok és funkciók renderelése a lightboxon belül
+                // JAVÍTÁS: A 'view' eseményre frissítjük a külső indexet, így nem ugrik vissza
+                on={{ view: ({ index }) => setLightboxIndex(index) }}
                 render={{
-                    // Ez a rész felel a slide-ok egyedi megjelenítéséért
                     slide: ({ slide, rect }) => {
                         const isSelected = selectedImages.has(slide.publicId);
                         return (
@@ -192,10 +201,9 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
                                     objectFit="contain"
                                     alt={slide.alt}
                                 />
-                                {/* Egyedi "Kiválasztom" gomb a képen */}
                                 <button
                                     onClick={(e) => {
-                                        e.stopPropagation(); // Megakadályozza, hogy a lightbox bezáródjon
+                                        e.stopPropagation();
                                         toggleSelection(slide.publicId);
                                     }}
                                     className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-200 text-lg shadow-lg
@@ -209,7 +217,13 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
                                 </button>
                             </div>
                         );
-                    }
+                    },
+                    // Opcionális: A lightbox bezáró gombjának lecserélése egy modernebbre
+                    buttonClose: () => (
+                        <button type="button" className="yarl__button" onClick={() => setLightboxOpen(false)}>
+                          <X className="w-8 h-8"/>
+                        </button>
+                    ),
                 }}
             />
         </div>
@@ -217,4 +231,4 @@ export default function ClientGallery({ galleryId, initialImages, initialSelecti
       
         
     );
-}
+}   
