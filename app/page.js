@@ -302,7 +302,7 @@ export default function PortfolioHomeFinal() {
         description="A portréfotózás célja, hogy kiemelje a legjobb éned. Legyen szó üzleti, kreatív vagy emlékezetes portréról, segítek, hogy a képek hűen tükrözzék személyiséged és stílusod. Profi szemlélettel és kellemes légkörben alkotunk meg egy fotót, ami igazán téged reprezentál."
         images={[
           {
-            src: "/images/bigycv-1.jpg",
+            src: "/images/_MG_7123.webp",
             title: "",
             alt: "",
           },

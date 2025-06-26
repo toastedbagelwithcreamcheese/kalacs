@@ -5,15 +5,18 @@ import { X, Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   "/images/_MG_4270festettV5.webp",
-  "/images/bigycv-1.jpg",
+  "/images/_MG_7123.webp",
+  "/images/_MG_7542.webp",
+  "/images/_MG_7296.webp",
   "/images/_MG_4462.webp",
   "/images/_MG_4486.webp",
   "/images/BogyoCv2FF-1-2.jpg",
-  "/images/_MG_4521.webp",
+  "/images/_MG_7503.webp",
   "/images/_MG_4523.webp",
-  "/images/_MG_4590-Enhanced-NR.webp",
+  "/images/_MG_7041.webp",
   "/images/_MG_4619.webp",
   "/images/Evoto-(3 of 3).webp",
+  "/images/_MG_7266.webp",
 ];
 
 const PortreGallery = () => {

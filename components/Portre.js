@@ -27,7 +27,7 @@ const packages = [
     duration: "kb. 30-45 perc fotózás",
     features: [
       "Előzetes online vagy telefonos konzultáció",
-      "8 db profi, természetesen retusált digitális portré",
+      "10-15 db profi, természetesen retusált digitális portré",
       "Minden további retusált kép: 1.990 Ft/db",
       "1 választott helyszín Zalaegerszegen (szabadtér/otthon)",
       "1-2 átöltözési lehetőség",
@@ -43,7 +43,7 @@ const packages = [
     duration: "kb. 60-90 perc fotózás",
     features: [
       "Részletes konzultáció, közös koncepcióalkotás",
-      "15 db profi, művészi retusálású digitális portré",
+      "20-30 db profi, művészi retusálású digitális portré",
       "Minden további retusált kép: 1.790 Ft/db",
       "Akár 2 helyszín Zalaegerszegen és környékén",
       "Több (2-3) átöltözési lehetőség",
@@ -89,7 +89,7 @@ export default function PortreFotozasModern() {
   // Placeholder képek - ezeket cseréld le saját, jó minőségű portréidra!
   const heroImage = "/images/BogyoCv2FF-1.jpg"; // NAGY, LÁTVÁNYOS HERO KÉP
   const whyImage1 = "/images/BogyoCv2FF-1-2.jpg";
-  const whyImage2 = "/images/_MG_4462.webp";
+  const whyImage2 = "/images/_MG_7041.webp";
   const whyImage3 = "/images/_MG_4523.webp";
 
   return (

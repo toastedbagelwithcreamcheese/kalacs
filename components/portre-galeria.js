@@ -17,17 +17,23 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 // !!! FIGYELEM: AZ ALÁBBI `width` ÉS `height` ÉRTÉKEK CSAK PLACEHOLDEREK!
 // !!! KÉRLEK, CSERÉLD LE ŐKET A KÉPEID TÉNYLEGES EREDETI MÉRETEIRE!
 const galleryImages = [
-  { src: "/images/BogyoCv2FF-1.jpg", width: 800, height: 1200, alt: "Portré kép 1" },
+  { src: "/images/_MG_7468.webp", width: 800, height: 1200, alt: "Portré kép 1" },
   { src: "/images/BogyoCv2FF-1-2.jpg", width: 800, height: 1200, alt: "Portré kép 2" }, // Lehetséges duplikátum vagy hasonló név
   { src: "/images/_MG_4462.webp", width: 800, height: 1200, alt: "Portré kép 3" },
+  { src: "/images/_MG_7494.webp", width: 800, height: 1200, alt: "Portré kép 3" },
   { src: "/images/_MG_4523.webp", width: 800, height: 1200, alt: "Portré kép 4" },
   { src: "/images/_MG_4270festettV5.webp", width: 800, height: 1200, alt: "Portré kép 5" },
-  { src: "/images/bigycv-1.jpg", width: 800, height: 1200, alt: "Portré kép 6" },
+  { src: "/images/_MG_7123.webp", width: 800, height: 1200, alt: "Portré kép 6" },
   { src: "/images/_MG_4486.webp", width: 800, height: 1200, alt: "Portré kép 8" },
   { src: "/images/_MG_4521.webp", width: 800, height: 1200, alt: "Portré kép 10" },
-  { src: "/images/_MG_4590-Enhanced-NR.webp", width: 800, height: 1200, alt: "Portré kép 12" },
+  { src: "/images/_MG_7296.webp", width: 800, height: 1200, alt: "Portré kép 12" },
   { src: "/images/_MG_4619.webp", width: 800, height: 1200, alt: "Portré kép 13" },
+  { src: "/images/_MG_7266.webp", width: 800, height: 1200, alt: "Portré kép 13" },
+  { src: "/images/_MG_7000.webp", width: 800, height: 1200, alt: "Portré kép 13" },
   { src: "/images/Evoto-(3 of 3).webp", width: 1200, height: 800, alt: "Portré kép 14 (lehet fekvő)" }, // Eltérő méretarány példa
+  { src: "/images/_MG_7041.webp", width: 1200, height: 800, alt: "Portré kép 14 (lehet fekvő)" }, // Eltérő méretarány példa
+  { src: "/images/_MG_7503.webp", width: 1200, height: 800, alt: "Portré kép 14 (lehet fekvő)" }, // Eltérő méretarány példa
+  { src: "/images/_MG_7542.webp", width: 1200, height: 800, alt: "Portré kép 14 (lehet fekvő)" }, // Eltérő méretarány példa
 ];
 // --------------------
 
