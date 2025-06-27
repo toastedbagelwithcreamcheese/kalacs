@@ -45,7 +45,7 @@ const Footer = () => {
           </h4>
           <div className="flex justify-center md:justify-start space-x-4">
             {/* Social media linkek változatlanul */}
-            <Link href="https://facebook.com" target="_blank">
+            <Link href="https://www.facebook.com/profile.php?id=61577861518379" target="_blank" rel="noopener noreferrer">
               <Image
                 src="/facebook.svg"
                 alt="Facebook"
@@ -53,7 +53,7 @@ const Footer = () => {
                 height={32}
               />
             </Link>
-            <Link href="https://instagram.com" target="_blank">
+            <Link href="https://www.instagram.com/k_balintfoto/" target="_blank" rel="noopener noreferrer">
               <Image
                 src="/instagram.svg"
                 alt="Instagram"

@@ -153,8 +153,8 @@ export default function ModernMobileMenu({ isOpen, setIsOpen }) {
           
           {/* Alsó sáv: Social media linkek (opcionális) */}
           <div className="flex justify-center space-x-6 text-gray-500 mt-10">
-            <a href="#" className="hover:text-white transition-colors"><Facebook size={20}/></a>
-            <a href="#" className="hover:text-white transition-colors"><Instagram size={20}/></a>
+            <a href="https://www.facebook.com/profile.php?id=61577861518379" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook size={20}/></a>
+            <a href="https://www.instagram.com/k_balintfoto/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Instagram size={20}/></a>
           </div>
         </motion.div>
       )}

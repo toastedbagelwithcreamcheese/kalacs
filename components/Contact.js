@@ -150,8 +150,8 @@ const ContactPage = () => {
             <hr className="my-6 border-gray-200" />
             <h3 className="text-lg font-semibold text-[#646C5E] mb-3">Kövess a közösségi médiában!</h3>
             <div className="flex space-x-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#C79C8D] transition-colors"><Instagram size={28}/></a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#C79C8D] transition-colors"><Facebook size={28}/></a>
+              <a href="https://www.instagram.com/k_balintfoto/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#C79C8D] transition-colors"><Instagram size={28}/></a>
+              <a href="https://www.facebook.com/profile.php?id=61577861518379" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#C79C8D] transition-colors"><Facebook size={28}/></a>
               {/* ÁTÍRANDÓ: Közösségi média linkjeid */}
             </div>
              <p className="mt-6 text-sm text-gray-500">
