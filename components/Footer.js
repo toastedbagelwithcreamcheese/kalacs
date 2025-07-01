@@ -178,10 +178,10 @@ const Footer = () => {
           </h4>
           <ul className="space-y-2">
             <li>
-              <Link href="/privacy-policy" className="hover:text-gray-500 transition">Adatvédelmi irányelvek</Link>
+              <Link href="/adatvedelem" className="hover:text-gray-500 transition">Adatvédelmi irányelvek</Link>
             </li>
             <li>
-              <Link href="/terms-of-service" className="hover:text-gray-500 transition">
+              <Link href="/aszf" className="hover:text-gray-500 transition">
                 Általános szerződési feltételek
               </Link>
             </li>

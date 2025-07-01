@@ -23,7 +23,7 @@ const carGalleryImages = [
   { src: "/images/_MG_6506.webp", width: 1600, height: 900, alt: "Autó fotó 3" },
   { src: "/images/_MG_7633.webp", width: 1600, height: 900, alt: "Autó fotó 3" },
   { src: "/images/_MG_6508.webp", width: 1600, height: 900, alt: "Autó fotó 4" },
-  { src: "/images/_MG_7633.webp", width: 1600, height: 900, alt: "Autó fotó 4" },
+  { src: "/images/_MG_7636.webp", width: 1600, height: 900, alt: "Autó fotó 4" },
   { src: "/images/_MG_6519.webp", width: 1600, height: 900, alt: "Autó fotó 5" },
   { src: "/images/_MG_6531.webp", width: 1600, height: 900, alt: "Autó fotó 6" },
   { src: "/images/_MG_6330_2.webp", width: 1600, height: 900, alt: "Autó fotó 7" },
@@ -34,7 +34,6 @@ const carGalleryImages = [
   { src: "/images/Rendszamnelkul-7651.webp", width: 1600, height: 900, alt: "Autó fotó 14" },
   { src: "/images/_MG_6508.webp", width: 1600, height: 900, alt: "Autó fotó 16 (duplikált)" },
   { src: "/images/_MG_6519.webp", width: 1600, height: 900, alt: "Autó fotó 17 (duplikált)" },
-  { src: "/images/_MG_6531.webp", width: 1600, height: 900, alt: "Autó fotó 18 (duplikált)" },
 ];
 // --------------------
 

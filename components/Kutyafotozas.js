@@ -231,7 +231,7 @@ export default function KutyaFotozas() {
             Az alapdíj a fotózási időt és a csomagban meghatározott számú retusált digitális képet tartalmazza.
           </p>
           <p className="text-gray-700 mt-2">
-            Kiszállási díj Zalaegerszegen kívül egyedi megbeszélés alapján.
+            Kiszállási díj Zalamegyén kívül egyedi megbeszélés alapján.
           </p>
            <p className="text-gray-700 mt-2">
             A fotózás során a kutyus(ok) biztonságáért és viselkedéséért a gazdi(k) felel(nek).

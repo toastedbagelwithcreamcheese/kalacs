@@ -11,6 +11,7 @@ import KismamaSection from "@/components/KismamaSection.js";
 import PortreSection from "@/components/PortreSection";
 import ParosSection from "@/components/ParosSection";
 import KutyusSection from "@/components/KutyusSection";
+import FamilySection from "@/components/FamilySection";
 
 // --- SLIDE ADATOK (FRISSÍTVE DESKTOP KÉPEKKEL) ---
 // !!! FIGYELEM: AZ ALÁBBI MÉRETEK CSAK PLACEHOLDEREK! CSERÉLD ŐKET A VALÓS KÉPEID MÉRETEIRE!
@@ -350,9 +351,9 @@ export default function PortfolioHomeFinal() {
           },
         ]}
       />
-      <ParosSection
-        title="Páros/jegyes fotózás"
-        description="Hiszem, hogy minden szerelem egyedi és megismételhetetlen történet. A páros vagy jegyes fotózás tökéletes alkalom arra, hogy megálljunk egy pillanatra a rohanó hétköznapokban, és csak egymásra figyelve megörökítsük azt a különleges köteléket, ami összeköt Titeket. Egy felszabadult, vidám hangulatú fotózás, ahol nincsenek erőltetett pózok, csak Ti ketten és az őszinte érzelmeitek. Legyen szó egy romantikus sétáról a kedvenc helyeteken, egy meghitt összebújásról a naplementében, vagy egy közös nevetésről – a célom, hogy olyan képek szülessenek, amelyek valóban Rólatok mesélnek. Ez a fotózás remek lehetőség az eljegyzés megünneplésére, évfordulós ajándékként, vagy csak úgy, mert minden nap egy jó alkalom arra, hogy megörökítsük a szerelmeteket. Együtt megtaláljuk a Hozzátok leginkább illő helyszínt és stílust, hogy a végeredmény igazán személyes és időtálló legyen. Engedjétek meg, hogy megörökítsem a történetetek egyik legszebb fejezetét!"
+      <FamilySection
+        title="Családi fotózás"
+        description="Örökítsük meg a jelent, mielőtt emlékké válik! A családi fotózás nálam egy felszabadult élmény, ahol az őszinte pillanatok és a köztetek lévő kötelék a legfontosabb. Olyan képeket készítek, amik a ti egyedi történeteteket mesélik el – zajosan, vidáman és szeretettel telien."
         images={[
           {
             src: "/images/_MG_4795.webp",
@@ -416,6 +417,39 @@ export default function PortfolioHomeFinal() {
           },
           {
             src: "/images/_MG_5415.webp",
+            alt: "",
+            title: "",
+          },
+        ]}
+      />
+      <ParosSection
+        title="Páros, jegyes fotózás"
+        description="Hiszem, hogy minden szerelem egyedi és megismételhetetlen történet. A páros vagy jegyes fotózás tökéletes alkalom arra, hogy megálljunk egy pillanatra a rohanó hétköznapokban, és csak egymásra figyelve megörökítsük azt a különleges köteléket, ami összeköt Titeket. Egy felszabadult, vidám hangulatú fotózás, ahol nincsenek erőltetett pózok, csak Ti ketten és az őszinte érzelmeitek. Legyen szó egy romantikus sétáról a kedvenc helyeteken, egy meghitt összebújásról a naplementében, vagy egy közös nevetésről – a célom, hogy olyan képek szülessenek, amelyek valóban Rólatok mesélnek. Ez a fotózás remek lehetőség az eljegyzés megünneplésére, évfordulós ajándékként, vagy csak úgy, mert minden nap egy jó alkalom arra, hogy megörökítsük a szerelmeteket. Együtt megtaláljuk a Hozzátok leginkább illő helyszínt és stílust, hogy a végeredmény igazán személyes és időtálló legyen. Engedjétek meg, hogy megörökítsem a történetetek egyik legszebb fejezetét!"
+        images={[
+          {
+            src: "/images/_MG_4795.webp",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_4931.webp",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_4971.jpg",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_4986.jpg",
+            title: "",
+            alt: "",
+          },
+        ]}
+        extraImages={[
+          {
+            src: "/images/_MG_4805.jpg",
             alt: "",
             title: "",
           },
