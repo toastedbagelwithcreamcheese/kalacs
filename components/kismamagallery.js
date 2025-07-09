@@ -5,10 +5,11 @@ import { X, Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   "/images/_MG_4693.webp",
+  "/images/_MG_4958.webp",
+  "/images/_MG_4966.webp",
+  "/images/_MG_4931.webp",
   "/images/_MG_4731.webp",
   "/images/_MG_4764.webp",
-  "/images/_MG_4795.webp",
-  "/images/_MG_4931-3.webp",
   "/images/_MG_4971.webp",
 ];
 

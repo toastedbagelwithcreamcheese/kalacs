@@ -73,7 +73,7 @@ export default function KismamaFotozasModern() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   // Placeholder képek - CSERÉLD LE SAJÁT KÉPEIDRE!
-  const heroImage = "/images/_MG_4693.webp"; 
+  const heroImage = "/images/_MG_4958.webp"; 
   
   return (
     <div className="bg-white text-gray-800">

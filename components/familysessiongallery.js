@@ -5,11 +5,15 @@ import { X, Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   "/images/_MG_4693.webp",
-  "/images/_MG_4731.webp",
+  "/images/_MG_8775.webp",
   "/images/_MG_4764.webp",
   "/images/_MG_4795.webp",
-  "/images/_MG_4931-3.webp",
+  "/images/_MG_8762.webp",
   "/images/_MG_4971.webp",
+  "/images/_MG_9219.webp",
+  "/images/_MG_9237.webp",
+  "/images/_MG_8876.webp",
+  "/images/_MG_9335.webp",
 ];
 
 const Gallery = () => {

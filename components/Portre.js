@@ -24,7 +24,7 @@ const packages = [
     title: "Alap Portré Csomag",
     price: "14.900 Ft",
     priceSuffix: "(alapdíj)",
-    duration: "kb. 30-45 perc fotózás",
+    duration: "kb. 45 perc fotózás",
     features: [
       "Előzetes online vagy telefonos konzultáció",
       "10-15 db profi, természetesen retusált digitális portré",
@@ -90,7 +90,7 @@ export default function PortreFotozasModern() {
   const heroImage = "/images/BogyoCv2FF-1.jpg"; // NAGY, LÁTVÁNYOS HERO KÉP
   const whyImage1 = "/images/BogyoCv2FF-1-2.jpg";
   const whyImage2 = "/images/_MG_7041.webp";
-  const whyImage3 = "/images/_MG_4523.webp";
+  const whyImage3 = "/images/_MG_9381.webp";
 
   return (
     <div className="bg-gray-50 text-gray-800">
@@ -143,7 +143,7 @@ export default function PortreFotozasModern() {
               textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
             }}
           >
-            Fedezd fel Önmagad Ereje – Egyedi Portrék Zalaegerszegen
+            Fedezd fel Önmagad – Egyedi Portrék Zalaegerszegen
           </h1>
           <p
             className="text-lg sm:text-xl md:text-2xl mb-8 font-light"
