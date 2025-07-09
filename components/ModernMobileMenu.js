@@ -9,6 +9,7 @@ import { X, ChevronLeft,  Instagram, Facebook } from "lucide-react";
 const galleryItems = [
   { href: "/portre-galeria", label: "Portré Galéria" },
   { href: "/autok-galeria", label: "Autós Galéria" },
+  { href: "/csaladi-galeria", label: "Családi Galéria" },
 ];
 
 const services = [
