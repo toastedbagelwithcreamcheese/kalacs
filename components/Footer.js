@@ -111,6 +111,9 @@ const Footer = () => {
                     <li className="px-4 py-2 hover:bg-gray-100 transition">
                       <Link href="/autok-galeria">Autók galéria</Link>
                     </li>
+                    <li className="px-4 py-2 hover:bg-gray-100 transition">
+                      <Link href="/csaladi-galeria">Családi galéria</Link>
+                    </li>
                   </motion.ul>
                 )}
               </AnimatePresence>

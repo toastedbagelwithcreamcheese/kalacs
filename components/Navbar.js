@@ -105,6 +105,7 @@ const Navbar = () => {
                 {[
                   { href: "/portre-galeria", label: "Portré galéria" },
                   { href: "/autok-galeria", label: "Autók galéria" },
+                  { href: "/csaladi-galeria", label: "Családi galéria" },
                 ].map((item, index) => (
                   <li key={index} className="group relative">
                     <Link

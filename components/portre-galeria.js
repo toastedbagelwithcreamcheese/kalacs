@@ -44,6 +44,8 @@ const allImages = [
   { src: "/images/_MG_8842.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
   { src: "/images/_MG_8634.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
   { src: "/images/_MG_8620.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
+  { src: "/images/_MG_5009.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
+  { src: "/images/_MG_4986.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
 ];
 // --------------------
 
