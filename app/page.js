@@ -265,22 +265,17 @@ export default function PortfolioHomeFinal() {
         description="A várandósság egy varázslatos időszak, tele izgalommal és új élményekkel. Kismama fotózásaim célja, hogy meghitt, természetes környezetben örökítsük meg ezt a különleges pillanatot. Fontos számomra, hogy felszabadultan érezd magad, hiszen így születnek a legőszintébb és legszebb emlékek. A letisztult, harmonikus képek évekkel később is felidézik a várandósság szépségét és a bennetek formálódó erős köteléket."
         images={[
           {
-            src: "/images/_MG_4693.webp",
+            src: "/images/_MG_4958.webp",
+            title: "",
+            alt: "",
+          },
+          {
+            src: "/images/_MG_4931.webp",
             title: "",
             alt: "",
           },
           {
             src: "/images/_MG_4731.webp",
-            title: "",
-            alt: "",
-          },
-          {
-            src: "/images/_MG_4764.webp",
-            title: "",
-            alt: "",
-          },
-          {
-            src: "/images/_MG_4795.webp",
             title: "",
             alt: "",
           },
@@ -330,6 +325,16 @@ export default function PortfolioHomeFinal() {
             title: "",
           },
           {
+            src: "/images/_MG_8992.webp",
+            alt: "",
+            title: "",
+          },
+          {
+            src: "/images/_MG_8890.webp",
+            alt: "",
+            title: "",
+          },
+          {
             src: "/images/_MG_4619.webp",
             alt: "",
             title: "",
@@ -361,17 +366,17 @@ export default function PortfolioHomeFinal() {
             alt: "",
           },
           {
-            src: "/images/_MG_4931.webp",
+            src: "/images/_MG_8762.webp",
             title: "",
             alt: "",
           },
           {
-            src: "/images/_MG_4971.jpg",
+            src: "/images/_MG_8653.webp",
             title: "",
             alt: "",
           },
           {
-            src: "/images/_MG_4986.jpg",
+            src: "/images/_MG_4764.webp",
             title: "",
             alt: "",
           },
@@ -422,6 +427,7 @@ export default function PortfolioHomeFinal() {
           },
         ]}
       />
+      {/* Páros/Jegyes szekció eltávolítva a kérésnek megfelelően. 
       <ParosSection
         title="Páros, jegyes fotózás"
         description="Hiszem, hogy minden szerelem egyedi és megismételhetetlen történet. A páros vagy jegyes fotózás tökéletes alkalom arra, hogy megálljunk egy pillanatra a rohanó hétköznapokban, és csak egymásra figyelve megörökítsük azt a különleges köteléket, ami összeköt Titeket. Egy felszabadult, vidám hangulatú fotózás, ahol nincsenek erőltetett pózok, csak Ti ketten és az őszinte érzelmeitek. Legyen szó egy romantikus sétáról a kedvenc helyeteken, egy meghitt összebújásról a naplementében, vagy egy közös nevetésről – a célom, hogy olyan képek szülessenek, amelyek valóban Rólatok mesélnek. Ez a fotózás remek lehetőség az eljegyzés megünneplésére, évfordulós ajándékként, vagy csak úgy, mert minden nap egy jó alkalom arra, hogy megörökítsük a szerelmeteket. Együtt megtaláljuk a Hozzátok leginkább illő helyszínt és stílust, hogy a végeredmény igazán személyes és időtálló legyen. Engedjétek meg, hogy megörökítsem a történetetek egyik legszebb fejezetét!"
@@ -455,6 +461,7 @@ export default function PortfolioHomeFinal() {
           },
         ]}
       />
+      */}
       </main>
   );
 }

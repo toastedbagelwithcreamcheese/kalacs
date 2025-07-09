@@ -45,7 +45,7 @@ const allImages = [
   { src: "/images/_MG_8634.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
   { src: "/images/_MG_8620.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
   { src: "/images/_MG_5009.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
-  { src: "/images/_MG_4986.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
+  { src: "/images/_MG_4986.jpg", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
 ];
 // --------------------
 
@@ -192,8 +192,8 @@ export default function PortreGaleriaPage() {
               thumbnailsContainer: { backgroundColor: "rgba(0,0,0,0.5)"}
             }}
             render={{
-              buttonPrev: () => galleryImages.length <= 1 ? null : undefined,
-              buttonNext: () => galleryImages.length <= 1 ? null : undefined,
+              buttonPrev: () => allImages.length <= 1 ? null : undefined,
+              buttonNext: () => allImages.length <= 1 ? null : undefined,
             }}
           />
         )}

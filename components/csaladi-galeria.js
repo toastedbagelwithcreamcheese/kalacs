@@ -16,7 +16,7 @@ const familyImages = [
   { src: "/images/_MG_4693.webp", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_4805.jpg", alt: "", width: 800, height: 1200 },
   { src: "/images/_MG_4971.webp", alt: "", width: 1200, height: 800 },
-  { src: "/images/_MG_4986.webp", alt: "", width: 1200, height: 800 },
+  { src: "/images/_MG_4986.jpg", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_8653.webp", alt: "", width: 800, height: 1200 },
   { src: "/images/_MG_8762.webp", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_8775.webp", alt: "", width: 800, height: 1200 },
