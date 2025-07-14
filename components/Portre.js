@@ -24,7 +24,7 @@ const packages = [
     title: "Alap Portré Csomag",
     price: "14.900 Ft",
     priceSuffix: "(alapdíj)",
-    duration: "kb. 45 perc fotózás",
+    duration: "kb. 1 óra fotózás",
     features: [
       "Előzetes online vagy telefonos konzultáció",
       "10-15 db profi, természetesen retusált digitális portré",
@@ -40,7 +40,7 @@ const packages = [
     title: "Prémium Portré Csomag",
     price: "24.900 Ft",
     priceSuffix: "(alapdíj)",
-    duration: "kb. 60-90 perc fotózás",
+    duration: "kb. 90 perc fotózás",
     features: [
       "Részletes konzultáció, közös koncepcióalkotás",
       "20-30 db profi, művészi retusálású digitális portré",
