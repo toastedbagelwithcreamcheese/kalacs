@@ -172,19 +172,19 @@ const Navbar = () => {
             )}
           </AnimatePresence>
         </li>
-        {/* 
+
           <li>
             <Link
-              href="/presets"
+              href="/velemenyek"
               className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative"
             >
               <Settings2 size={22} />
               <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-                Presetjeim
+                Vélemények
               </span>
             </Link>
           </li> 
-          */}
+
 
         <li>
           <Link href="/contact" legacyBehavior>

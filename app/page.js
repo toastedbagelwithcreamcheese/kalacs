@@ -12,6 +12,7 @@ import PortreSection from "@/components/PortreSection";
 import ParosSection from "@/components/ParosSection";
 import KutyusSection from "@/components/KutyusSection";
 import FamilySection from "@/components/FamilySection";
+import Velemenyek from "@/components/HomePageReviews";
 
 // --- SLIDE ADATOK (FRISSÍTVE DESKTOP KÉPEKKEL) ---
 // !!! FIGYELEM: AZ ALÁBBI MÉRETEK CSAK PLACEHOLDEREK! CSERÉLD ŐKET A VALÓS KÉPEID MÉRETEIRE!
@@ -205,6 +206,7 @@ export default function PortfolioHomeFinal() {
 
       {/* 🔹 ABOUT SECTION */}
       <AboutSection />
+      <Velemenyek />
       <CarPhotography
         title="Autó fotózás"
         description="Az autófotózás világában minden pillanat különleges, a járművünket nemcsak gépként látjuk, hanem egy részét az életünknek, amely történeteinket és útjainkat követi. Minőségi fényképekkel örökítem meg azt a speciális kapcsolatot, amelyet az autódhoz építettél fel. A finom részletek, a hangulatos színek és az elkaptatott szögek segítségével biztosítom, hogy az autód legjobb oldalait láthatóságra hozzuk, mintegy új életet szúrva neki a képen.

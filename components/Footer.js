@@ -166,6 +166,9 @@ const Footer = () => {
 
             {/* További linkek változatlanul */}
             <li>
+              <Link href="/velemenyek" className="hover:text-gray-500 transition">Vélemények</Link>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-gray-500 transition">Kapcsolat</Link>
             </li>
             <li>

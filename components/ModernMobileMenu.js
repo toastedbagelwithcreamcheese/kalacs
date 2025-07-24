@@ -111,6 +111,9 @@ export default function ModernMobileMenu({ isOpen, setIsOpen }) {
                   <motion.li variants={menuItemVariants}>
                     <button onClick={() => setView("szolgaltatasaim")} className="hover:text-[#C79C8D] transition-colors w-full text-center">Szolgáltatásaim</button>
                   </motion.li>
+                  <motion.li variants={menuItemVariants}>
+                    <Link href="/velemenyek" onClick={handleLinkClick} className="hover:text-[#C79C8D] transition-colors">Vélemények</Link>
+                  </motion.li>
                    <motion.li variants={menuItemVariants}>
                     <Link href="/about" onClick={handleLinkClick} className="hover:text-[#C79C8D] transition-colors">Rólam</Link>
                   </motion.li>
