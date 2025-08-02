@@ -13,7 +13,7 @@ const familyPackages = [
     title: "Mini Családi Kaland",
     price: "19.900 Ft",
     priceSuffix: "(alapdíj)",
-    duration: "kb. 45 perc fotózás",
+    duration: "kb. 1 óra fotózás",
     features: [
       "Ideális kisebb családoknak vagy egy gyors sorozathoz",
       "10-15 db profi, természetes stílusban retusált digitális fotó",
@@ -28,7 +28,7 @@ const familyPackages = [
     title: "Nagy Családi Élmény",
     price: "24.900 Ft",
     priceSuffix: "(alapdíj)",
-    duration: "kb. 60-90 perc fotózás",
+    duration: "kb. 90 perc fotózás",
     features: [
       "Előzetes konzultáció, közös ötletelés",
       "20-25 db profi, művészi retusálású digitális fotó",
@@ -44,10 +44,10 @@ const familyPackages = [
     title: "Prémium Csomag",
     price: "34.900 Ft",
     priceSuffix: "(alapdíj)",
-    duration: "kb. 90-120 perc fotózás",
+    duration: "kb. 120 perc fotózás",
     features: [
       "Tökéletes választás nagyszülőkkel, több generációval",
-      "Kb 35 db prémium, magazin minőségű retusált digitális fotó",
+      "Kb 35 db prémium minőségű retusált digitális fotó",
       "Minden további retusált kép: 1.590 Ft/db",
       "Kényelmes, ráérős tempó, mindenkire figyelve",
       "Különböző családi konstellációk lefotózása",
