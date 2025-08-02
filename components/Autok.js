@@ -500,7 +500,7 @@ export default function AutoPhotographySection() {
           </button>
         </div>
       )}
-      {/* VIDEÓGALÉRIA SZEKCIÓ */}
+      {/* VIDEÓGALÉRIA SZEKCIÓ 
       <section className="my-16 py-12 bg-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
@@ -526,7 +526,6 @@ export default function AutoPhotographySection() {
                 >
                   <div className="aspect-video">
                     {" "}
-                    {/* Ez biztosítja a 16:9 arányt */}
                     <iframe
                       className="w-full h-full"
                       src={
@@ -563,6 +562,8 @@ export default function AutoPhotographySection() {
           </div>
         </div>
       </section>
+      */}
+      
       {/* GYIK */}
       <div className="max-w-3xl mx-auto mt-12 p-6 bg-white rounded-xl shadow-lg">
         <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">
