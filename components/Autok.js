@@ -27,12 +27,11 @@ const packages = [
     duration: "kb. 45 perc fotózás",
     features: [
       "Online konzultáció a helyszínről és a kívánt stílusról",
-      "Az alapdíj 5-10 db profi, nagy felbontású, retusált digitális képet tartalmaz",
+      "Az alapdíj 10-15 db profi, nagy felbontású, retusált digitális képet tartalmaz",
       "Minden további választott és retusált kép: 1.790 Ft/db",
       "1 egyeztetett, az autó karakteréhez illő helyszín",
       "Fókuszban az autó külső vonalai és legjellegzetesebb részletei",
       "Online, jelszóval védett képgaléria a válogatáshoz",
-      "Igény esetén néhány kép az autóval és a tulajdonossal",
     ],
     videoOption: {
       available: true,
@@ -52,8 +51,6 @@ const packages = [
       "Az alapdíj 15-20 db profi, nagy felbontású, retusált digitális képet tartalmaz",
       "Minden további választott és retusált kép: 1.590 Ft/db (kedvezőbb ár)",
       "Akár 2 különböző, gondosan kiválasztott helyszín a maximális változatosságért",
-      "Teljes körű külső és belső felvételek, művészi kompozíciók, látványos részletfotók",
-      "Lehetőség 'golden hour' fotózásra (időjárás- és időpontfüggő)",
       "Online, jelszóval védett képgaléria a válogatáshoz és a kész képek letöltéséhez",
       "Kreatív beállítások az autóval és a tulajdonossal",
     ],
@@ -73,7 +70,7 @@ const packages = [
     duration: "kb. 50-60 perc forgatás",
     features: [
       "Konzultáció a videó koncepciójáról, helyszín(ek)ről és stílusról",
-      "Elképzeléstől függően 15-45mp videó",
+      "Elképzeléstől függően 10-30mp videó",
       "Minőségi 4k felbontás",
       "1-2 rövidebb verzió közösségi média platformokra (pl. Instagram Reel)",
     ],

@@ -27,7 +27,7 @@ const maternityPackages = [
   },
   {
     title: "Családi Álmodozás Csomag",
-    price: "29.900 Ft",
+    price: "24.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 60-90 perc fotózás",
     features: [
@@ -44,12 +44,12 @@ const maternityPackages = [
   },
   {
     title: "Örökké Emlék Prémium Csomag",
-    price: "39.900 Ft",
+    price: "34.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 90-120 perc fotózás",
     features: [
-      "Mélyreható konzultáció, személyre szabott moodboard",
-      "35+ db profi, magazin minőségű retusált digitális fotó",
+      "Részletes konzultáció, közös koncepcióalkotás",
+      "35+ db profi minőségű retusált digitális fotó",
       "Minden további retusált kép: 1.590 Ft/db",
       "Rugalmas helyszínválasztás, akár több helyszínen is",
       "Korlátlan átöltözési lehetőség",
