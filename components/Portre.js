@@ -31,14 +31,15 @@ const packages = [
       "Minden további retusált kép: 1.990 Ft/db",
       "1 választott helyszín Zalaegerszegen (szabadtér/otthon)",
       "1-2 átöltözési lehetőség",
+      "Változatos beállítások (teljes alakos, közeli stb.)",
+      "Kreatív ötletek megvalósítása, személyes tárgyak bevonása",
       "Online válogató galéria",
-      "Fókuszban az egyéniség és a természetes kisugárzás",
     ],
     category: "portrait_package",
   },
   {
     title: "Prémium Portré Csomag",
-    price: "24.900 Ft",
+    price: "19.900 Ft",
     priceSuffix: "(alapdíj)",
     duration: "kb. 90 perc fotózás",
     features: [
@@ -87,8 +88,8 @@ export default function PortreFotozasModern() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   // Placeholder képek - ezeket cseréld le saját, jó minőségű portréidra!
-  const heroImage = "/images/BogyoCv2FF-1.jpg"; // NAGY, LÁTVÁNYOS HERO KÉP
-  const whyImage1 = "/images/BogyoCv2FF-1-2.jpg";
+  const heroImage = "/images/BogyoCv2FF-1.webp"; // NAGY, LÁTVÁNYOS HERO KÉP
+  const whyImage1 = "/images/_MG_0056-2.webp";
   const whyImage2 = "/images/_MG_7041.webp";
   const whyImage3 = "/images/_MG_9381.webp";
 

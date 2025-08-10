@@ -33,6 +33,19 @@ const allImages = [
   { src: "/images/_MG_7041.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
   { src: "/images/_MG_7503.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
   { src: "/images/_MG_7542.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0047.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0056-2.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0127-2.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0586-2.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0568.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0315-2.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0274.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0490.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0390.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0284.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/_MG_0262.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  
+
   // Gyermek fotók
   { src: "/images/_MG_9410.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },
   { src: "/images/_MG_9398.webp", width: 800, height: 1200, alt: "Gyermek portré", category: 'Gyermek' },

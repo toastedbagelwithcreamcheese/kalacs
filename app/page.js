@@ -18,9 +18,9 @@ import Velemenyek from "@/components/HomePageReviews";
 // !!! FIGYELEM: AZ ALÁBBI MÉRETEK CSAK PLACEHOLDEREK! CSERÉLD ŐKET A VALÓS KÉPEID MÉRETEIRE!
 const slides = [
   {
-    image: "/images/_MG_4462.webp",         // Mobil kép
+    image: "/images/_MG_0315-2.webp",         // Mobil kép
     width: 1200, height: 800,              // Mobil kép méretei
-    desktopImage: "/images/PortreKollazs.png", // Desktop kép
+    desktopImage: "/images/Portre_Kollazs.png", // Desktop kép
     desktopWidth: 1920, desktopHeight: 1080, // Desktop kép méretei
     title: "Portrék",
     text: "Stílusos portrék, amelyek megmutatják egyéniséged.",

@@ -22,6 +22,19 @@ const images = [
   "/images/Evoto-(3 of 3).webp",
   "/images/_MG_7266.webp",
   "/images/_MG_9381.webp",
+  "/images/_MG_0047.webp",
+  "/images/_MG_0056-2.webp",
+  "/images/_MG_0127-2.webp",
+  "/images/_MG_0586-2.webp",
+  "/images/_MG_0568.webp",
+  "/images/_MG_0315-2.webp",
+  "/images/_MG_0274.webp",
+  "/images/_MG_0490.webp",
+  "/images/_MG_0390.webp",
+  "/images/_MG_0284.webp",
+  "/images/_MG_0262.webp",
+
+
 ];
 
 const PortreGallery = () => {
