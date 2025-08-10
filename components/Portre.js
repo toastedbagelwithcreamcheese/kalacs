@@ -88,7 +88,7 @@ export default function PortreFotozasModern() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   // Placeholder képek - ezeket cseréld le saját, jó minőségű portréidra!
-  const heroImage = "/images/BogyoCv2FF-1.webp"; // NAGY, LÁTVÁNYOS HERO KÉP
+  const heroImage = "/images/BogyoCv2FF-1.jpg"; // NAGY, LÁTVÁNYOS HERO KÉP
   const whyImage1 = "/images/_MG_0056-2.webp";
   const whyImage2 = "/images/_MG_7041.webp";
   const whyImage3 = "/images/_MG_9381.webp";
