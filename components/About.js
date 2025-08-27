@@ -12,7 +12,7 @@ export default function AboutPageModern() {
     {
       icon: <Camera size={36} className="text-[#C79984]" />,
       category: "Fényképezőgép váz",
-      items: ["Canon EOS 6D"]
+      items: ["Canon EOS 6D", "Canon EOS 90D"]
     },
     {
       icon: <Layers3 size={36} className="text-[#C79984]" />,
