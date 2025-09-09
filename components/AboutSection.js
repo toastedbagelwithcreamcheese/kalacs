@@ -60,15 +60,16 @@ export default function AboutSectionModernized() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full shadow-2xl p-2 bg-white">
-              <Image
-                src="/images/zsirii-2212.jpg" // CSERÉLD LE A SAJÁT PORTRÉDRA!
-                alt="Kovács Bálint, fotós Zalaegerszeg"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-full"
-              />
-            </div>
+<div className="relative w-48 h-64 sm:w-56 sm:h-72 lg:w-72 lg:h-[400px] shadow-2xl p-2 bg-white overflow-hidden rounded-2xl">
+  <Image
+    src="/images/profilkep.jpg"
+    alt="Kovács Bálint, fotós Zalaegerszeg"
+    layout="fill"
+    objectFit="cover"
+    className="rounded-2xl"
+  />
+</div>
+
           </motion.div>
 
           {/* JOBB OLDAL: SZÖVEG */}

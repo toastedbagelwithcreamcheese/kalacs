@@ -73,11 +73,11 @@ export default function AboutPageModern() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <Image
-              src="/images/zsirii-2212.jpg" // CSERÉLD LE A SAJÁT PORTRÉDRA!
+              src="/images/profilkep.jpg" 
               alt="Kovács Bálint, fotós"
               width={500}
               height={500}
-              className="rounded-full shadow-2xl w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover"
+              className="rounded-full shadow-2xl w-80 h-80 sm:w-80 sm:h-80 lg:max-w-[2000px] lg:h-[30rem] object-cover"
             />
           </motion.div>
         </div>
