@@ -65,7 +65,7 @@ const faqData = [
   {
     question: "Szükséges sminkes/fodrász?",
     answer:
-      "Egy profi smink és frizura sokat hozzáadhat a képekhez, de nem kötelező. Ha szeretnéd, tudok ajánlani szakembereket Zalaegerszegen, akikkel együtt dolgozom.",
+      "Egy profi smink és frizura sokat hozzáadhat a képekhez, de nem kötelező.",
   },
   {
     question: "Hol zajlik a fotózás?",
@@ -88,9 +88,9 @@ export default function PortreFotozasModern() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   // Placeholder képek - ezeket cseréld le saját, jó minőségű portréidra!
-  const heroImage = "/images/BogyoCv2FF-1.jpg"; // NAGY, LÁTVÁNYOS HERO KÉP
+  const heroImage = "/images/_MG_0315-2.webp"; // NAGY, LÁTVÁNYOS HERO KÉP
   const whyImage1 = "/images/_MG_0056-2.webp";
-  const whyImage2 = "/images/_MG_7041.webp";
+  const whyImage2 = "/images/_MG_0490.webp";
   const whyImage3 = "/images/_MG_9381.webp";
 
   return (

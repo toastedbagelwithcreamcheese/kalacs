@@ -16,8 +16,8 @@ const familyPackages = [
     duration: "kb. 1 óra fotózás",
     features: [
       "Ideális kisebb családoknak vagy egy gyors sorozathoz",
-      "10-15 db profi, természetes stílusban retusált digitális fotó",
-      "Minden további retusált kép: 1.990 Ft/db",
+      "20-25 db profi, természetes stílusban retusált digitális fotó",
+      "Minden további retusált kép: 990 Ft/db",
       "1 választott szabadtéri helyszín Zalaegerszegen",
       "Játékos, spontán pillanatok megörökítése",
       "Online, jelszóval védett válogató galéria",
@@ -31,8 +31,8 @@ const familyPackages = [
     duration: "kb. 90 perc fotózás",
     features: [
       "Előzetes konzultáció, közös ötletelés",
-      "20-25 db profi, művészi retusálású digitális fotó",
-      "Minden további retusált kép: 1.790 Ft/db",
+      "30-35 db profi, művészi retusálású digitális fotó",
+      "Minden további retusált kép: 990 Ft/db",
       "Rugalmas helyszínválasztás, akár 2 közeli helyszínen is",
       "Több beállítás: közös képek, gyerekek külön, szülők kettesben",
       "1-2 átöltözési lehetőség, ha szeretnétek",
@@ -47,8 +47,8 @@ const familyPackages = [
     duration: "kb. 120 perc fotózás",
     features: [
       "Tökéletes választás nagyszülőkkel, több generációval",
-      "Kb 35 db prémium minőségű retusált digitális fotó",
-      "Minden további retusált kép: 1.590 Ft/db",
+      "Kb 50 db prémium minőségű retusált digitális fotó",
+      "Minden további retusált kép: 990 Ft/db",
       "Kényelmes, ráérős tempó, mindenkire figyelve",
       "Különböző családi konstellációk lefotózása",
       "Ajándék 10x15-ös prémium fotónyomat a 10 kedvenc képből",
@@ -69,14 +69,13 @@ const faqData = [
 export default function CsaladiFotozasPageDistinct() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  // Placeholder képek - CSERÉLD LE SAJÁT KÉPEIDRE!
   const heroImage = "/images/_MG_8762.webp"; 
   const featureImage1 = "/images/_MG_4764.webp";
   const featureImage2 = "/images/_MG_8653.webp";
-  const featureImage3 = "/images/_MG_4795.webp";
+  const featureImage3 = "/images/_MG_0017-2.webp";
   
   return (
-    <div className="bg-[#FBF9F4] text-gray-800"> {/* Új, meleg törtfehér háttér */}
+    <div className="bg-[#FBF9F4] text-gray-800">
 
       {/* HERO SZEKCIÓ - ÚJ ELRENDEZÉS */}
       <section className="container mx-auto px-6 py-16 sm:py-24">

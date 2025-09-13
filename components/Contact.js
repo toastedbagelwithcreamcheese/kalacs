@@ -127,7 +127,7 @@ const ContactPage = () => {
                 <MapPin size={28} className="text-[#C79C8D] mr-4 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-700">Helyszín</h3>
-                  <p className="text-gray-600 text-sm">Zalaegerszeg és környéke (rugalmas vagyok)</p>
+                  <p className="text-gray-600 text-sm">Budapest és Zalaegerszeg és környéke (rugalmas vagyok)</p>
                 </div>
               </div>
               <div className="flex items-center">

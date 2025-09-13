@@ -8,7 +8,6 @@ const images = [
   "/images/_MG_7123.webp",
   "/images/_MG_8992.webp",
   "/images/_MG_7542.webp",
-  "/images/_MG_7296.webp",
   "/images/_MG_8932.webp",
   "/images/_MG_4462.webp",
   "/images/_MG_4486.webp",
@@ -33,16 +32,14 @@ const images = [
   "/images/_MG_0390.webp",
   "/images/_MG_0284.webp",
   "/images/_MG_0262.webp",
-
-
 ];
 
 const PortreGallery = () => {
-  const [visibleImages, setVisibleImages] = useState(4);
+  const [visibleImages, setVisibleImages] = useState(6);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const loadMore = () => {
-    setVisibleImages((prev) => Math.min(prev + 4, images.length));
+    setVisibleImages((prev) => Math.min(prev + 6, images.length));
   };
 
   const prevImage = () => {
@@ -55,27 +52,33 @@ const PortreGallery = () => {
 
   return (
     <div className="text-center">
-      {/* Galéria */}
-      <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
-        {images.slice(0, visibleImages).map((src, index) => (
-          <motion.div
-            key={index}
-            className="relative cursor-pointer overflow-hidden group"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => setSelectedIndex(index)}
-          >
-            <Image
-              src={src}
-              width={400}
-              height={300}
-              className="w-full h-auto object-cover"
-              alt="Kismama fotó"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Search size={40} className="text-white" />
-            </div>
-          </motion.div>
-        ))}
+      {/* Grid alapú galéria */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <AnimatePresence>
+          {images.slice(0, visibleImages).map((src, index) => (
+            <motion.div
+              key={src}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative cursor-pointer overflow-hidden group rounded-lg shadow-md"
+              onClick={() => setSelectedIndex(index)}
+            >
+              <Image
+                src={src}
+                width={600}
+                height={800}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                alt="Portré fotó"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+                <Search size={40} className="text-white" />
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
 
       {/* Mutass többet gomb */}
@@ -84,23 +87,24 @@ const PortreGallery = () => {
           className="px-6 py-2 mt-6 mb-5 border-2 border-gray-700 text-gray-700 rounded-lg hover:bg-gray-700 hover:text-white transition"
           onClick={loadMore}
           whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05 }}
         >
           Mutass többet
         </motion.button>
       )}
 
-      {/* Lightbox (nagyított kép + lapozás) */}
+      {/* Lightbox */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedIndex(null)}
           >
             <div className="relative flex items-center">
-              {/* Balra lapozás */}
+              {/* Balra */}
               <button
                 className="absolute left-2 bg-white p-2 rounded-full shadow-md"
                 onClick={(e) => {
@@ -112,15 +116,23 @@ const PortreGallery = () => {
               </button>
 
               {/* Kép */}
-              <Image
-                src={images[selectedIndex]}
-                width={800}
-                height={600}
-                className="rounded-lg shadow-lg"
-                alt="Nagyított kép"
-              />
+              <motion.div
+                key={images[selectedIndex]}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <Image
+                  src={images[selectedIndex]}
+                  width={1000}
+                  height={800}
+                  className="rounded-lg shadow-lg max-h-[90vh] w-auto"
+                  alt="Nagyított kép"
+                />
+              </motion.div>
 
-              {/* Jobbra lapozás */}
+              {/* Jobbra */}
               <button
                 className="absolute right-2 bg-white p-2 rounded-full shadow-md"
                 onClick={(e) => {
@@ -131,7 +143,7 @@ const PortreGallery = () => {
                 <ChevronRight size={30} className="text-black" />
               </button>
 
-              {/* Bezárás ikon */}
+              {/* Bezárás */}
               <button
                 className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md"
                 onClick={() => setSelectedIndex(null)}
