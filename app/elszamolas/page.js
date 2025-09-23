@@ -180,9 +180,17 @@ export default function ElszamolasPage() {
                 <p className="text-sm text-gray-400 mt-2">Martin költése</p><p className="text-xl font-bold text-blue-400">{calculation.martinSpent.toLocaleString('hu-HU')} Ft</p>
                 <div className="mt-4 pt-3 border-t border-gray-700"><p className="text-md font-semibold text-pink-400">{calculation.balanceMessage}</p></div>
             </div>
-            <div className='bg-gray-900/40 p-4 rounded-lg flex flex-col justify-center'>
-                <h3 className='font-bold text-lg mb-3 text-yellow-400'>Támogatás</h3>
-                <p className="text-sm text-gray-400">Apa által fizetve</p><p className="text-2xl font-bold">{calculation.apaPaid.toLocaleString('hu-HU')} Ft</p>
+            <div className="bg-gray-900/40 p-4 rounded-lg flex flex-col justify-center">
+              <h3 className="font-bold text-lg mb-3 text-yellow-400">Támogatás</h3>
+
+              <p className="text-sm text-gray-400">Apa által fizetve</p>
+              <p className="text-2xl font-bold">
+                {calculation.apaPaid.toLocaleString('hu-HU')} Ft
+              </p>
+              <p className="text-sm text-gray-400 mt-4">Anya által fizetve</p>
+              <p className="text-2xl font-bold">100 000 Ft</p>
+              <p className="text-sm text-gray-400 mt-4">Mama által fizetve</p>
+              <p className="text-2xl font-bold">60 000 Ft</p>
             </div>
             <div className='bg-gray-900/40 p-4 rounded-lg flex flex-col justify-center'>
                  <h3 className='font-bold text-lg mb-3 text-purple-300'>Teljes Megélhetés</h3>
