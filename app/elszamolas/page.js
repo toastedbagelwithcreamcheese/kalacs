@@ -175,7 +175,7 @@ export default function ElszamolasPage() {
           <h2 className="text-2xl font-semibold mb-4 text-purple-300">Összegzés ({selectedMonth})</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className='bg-gray-900/40 p-4 rounded-lg'>
-                <h3 className='font-bold text-lg mb-3 text-pink-400'>Ti Ketten</h3>
+                <h3 className='font-bold text-lg mb-3 text-pink-400'>Mi Ketten</h3>
                 <p className="text-sm text-gray-400">Bálint költése</p><p className="text-xl font-bold text-green-400">{calculation.balintSpent.toLocaleString('hu-HU')} Ft</p>
                 <p className="text-sm text-gray-400 mt-2">Martin költése</p><p className="text-xl font-bold text-blue-400">{calculation.martinSpent.toLocaleString('hu-HU')} Ft</p>
                 <div className="mt-4 pt-3 border-t border-gray-700"><p className="text-md font-semibold text-pink-400">{calculation.balanceMessage}</p></div>
@@ -188,7 +188,11 @@ export default function ElszamolasPage() {
                 {calculation.apaPaid.toLocaleString('hu-HU')} Ft
               </p>
               <p className="text-sm text-gray-400 mt-4">Anya által fizetve</p>
-              <p className="text-2xl font-bold">100 000 Ft</p>
+              {selectedMonth === "2025-08" ? (
+                <p className="text-2xl font-bold text-red-400">—</p> // vagy üresen hagyhatod
+              ) : (
+                <p className="text-2xl font-bold">100 000 Ft</p>
+              )}
               <p className="text-sm text-gray-400 mt-4">Mama által fizetve</p>
               <p className="text-2xl font-bold">60 000 Ft</p>
             </div>
