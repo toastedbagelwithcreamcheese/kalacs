@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabaseClient';
-import { motion, AnimatePresence } from 'framer-motion'; // Importáljuk a motion-t
-import { clsx } from 'clsx'; // Importáljuk a clsx-et
+import { motion, AnimatePresence } from 'framer-motion';
+import { clsx } from 'clsx';
 
-// Egyedi, animált pipa komponens
+// Az AnimatedCheckmark komponens változatlan maradt
 const AnimatedCheckmark = ({ checked }) => {
   return (
     <motion.svg
@@ -36,6 +36,11 @@ export default function ListaPage() {
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
+  // --- ÚJ RÉSZEK KEZDETE ---
+  const [newName, setNewName] = useState(''); // State az új név input mezőjéhez
+  const [isSubmitting, setIsSubmitting] = useState(false); // State a küldés folyamatának jelzésére
+  // --- ÚJ RÉSZEK VÉGE ---
 
   useEffect(() => {
     const fetchPeople = async () => {
@@ -59,24 +64,49 @@ export default function ListaPage() {
   }, []);
 
   const handleCheckboxChange = async (id, currentStatus) => {
+    // Ez a függvény változatlan
     const newStatus = !currentStatus;
     const originalPeople = [...people];
-
     setPeople(prevPeople =>
       prevPeople.map(person =>
         person.id === id ? { ...person, is_seen: newStatus } : person
       )
     );
-
     const { error } = await supabase
       .from('nevlista')
       .update({ is_seen: newStatus })
       .eq('id', id);
-
     if (error) {
       console.error('Hiba a frissítés során:', error);
       alert('Nem sikerült menteni a változást.');
-      setPeople(originalPeople); // Hiba esetén visszaállítás
+      setPeople(originalPeople);
+    }
+  };
+
+  // --- ÚJ FÜGGVÉNY ---
+  const handleAddPerson = async (e) => {
+    e.preventDefault(); // Megakadályozza az oldal újratöltődését
+    if (newName.trim() === '') return; // Ne engedjünk üres nevet hozzáadni
+
+    setIsSubmitting(true);
+    try {
+      // Beszúrjuk az új nevet az adatbázisba, és visszakérjük a generált sort
+      const { data, error } = await supabase
+        .from('nevlista')
+        .insert([{ name: newName.trim() }])
+        .select()
+        .single(); // .single() kell, mert egyetlen sort várunk vissza
+
+      if (error) throw error;
+
+      // Hozzáadjuk az új személyt a meglévő listához a kliens oldalon
+      setPeople(prevPeople => [...prevPeople, data]);
+      setNewName(''); // Kiürítjük az input mezőt
+    } catch (error) {
+      console.error('Hiba a hozzáadás során:', error);
+      alert('Nem sikerült hozzáadni az új nevet.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
   
@@ -138,7 +168,31 @@ export default function ListaPage() {
             Jelöld be, kit láttál már élőben!
           </motion.p>
         </div>
-
+{/* --- ÚJ ŰRLAP --- */}
+        <motion.div
+          className="p-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <form onSubmit={handleAddPerson} className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="text"
+              value={newName}
+              onChange={(e) => setNewName(e.target.value)}
+              placeholder="Új név hozzáadása..."
+              disabled={isSubmitting}
+              className="w-full px-4 py-3 bg-white/50 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition duration-200 outline-none disabled:opacity-50"
+            />
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full sm:w-auto px-6 py-3 font-semibold text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-md hover:scale-105 disabled:hover:scale-100 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200"
+            >
+              {isSubmitting ? 'Mentés...' : 'Hozzáadás'}
+            </button>
+          </form>
+        </motion.div>
         <div className="overflow-x-auto">
           <motion.ul
             className="divide-y divide-gray-200/80"
