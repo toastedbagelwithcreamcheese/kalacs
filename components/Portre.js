@@ -89,7 +89,7 @@ export default function PortreFotozasModern() {
 
   // Placeholder képek - ezeket cseréld le saját, jó minőségű portréidra!
   const heroImage = "/images/_MG_0315-2.webp"; // NAGY, LÁTVÁNYOS HERO KÉP
-  const whyImage1 = "/images/_MG_0056-2.webp";
+  const whyImage1 = "/images/Virag_BP/1_1.webp";
   const whyImage2 = "/images/_MG_0490.webp";
   const whyImage3 = "/images/_MG_9381.webp";
 
@@ -144,7 +144,7 @@ export default function PortreFotozasModern() {
               textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
             }}
           >
-            Fedezd fel Önmagad – Egyedi Portrék Zalaegerszegen
+            Fedezd fel Önmagad – Egyedi Portrék Budapesten és Zalaegerszegen
           </h1>
           <p
             className="text-lg sm:text-xl md:text-2xl mb-8 font-light"

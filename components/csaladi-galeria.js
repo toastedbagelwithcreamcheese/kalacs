@@ -14,18 +14,24 @@ import { Users } from "lucide-react";
 const familyImages = [
   { src: "/images/_MG_4795.webp", alt: "", width: 800, height: 1200 },
   { src: "/images/_MG_4693.webp", alt: "", width: 1200, height: 800 },
+  { src: "/images/_MG_1136.webp", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_4805.jpg", alt: "", width: 800, height: 1200 },
+  { src: "/images/_MG_0097-2.webp", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_4971.webp", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_4986.jpg", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_8653.webp", alt: "", width: 800, height: 1200 },
+  { src: "/images/_MG_0066-2.webp", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_8762.webp", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_8775.webp", alt: "", width: 800, height: 1200 },
   { src: "/images/_MG_8876.webp", alt: "", width: 800, height: 1200 },
   { src: "/images/_MG_9219.webp", alt: "", width: 800, height: 1200 },
+  { src: "/images/_MG_0114-2.webp", alt: "", width: 1200, height: 800 },
+  { src: "/images/_MG_0148-2-2.webp", alt: "", width: 1200, height: 800 },
   { src: "/images/_MG_9237.webp", alt: "", width: 800, height: 1200 },
   { src: "/images/_MG_9335.webp", alt: "", width: 800, height: 1200 },
-  // ... ide jöhet a többi képed ...
+  { src: "/images/_MG_0017-2.webp", alt: "", width: 1200, height: 800 },
 ];
+
 
 export default function FamilyGalleryPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);

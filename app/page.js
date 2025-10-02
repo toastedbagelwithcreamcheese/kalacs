@@ -20,7 +20,7 @@ const slides = [
   {
     image: "/images/_MG_0315-2.webp",         // Mobil kép
     width: 1200, height: 800,              // Mobil kép méretei
-    desktopImage: "/images/Portre_Kollazs.png", // Desktop kép
+    desktopImage: "/images/portrekollazs.png", // Desktop kép
     desktopWidth: 1920, desktopHeight: 1080, // Desktop kép méretei
     title: "Portrék",
     text: "Stílusos portrék, amelyek megmutatják egyéniséged.",
@@ -310,7 +310,7 @@ export default function PortfolioHomeFinal() {
             alt: "",
           },
           {
-            src: "/images/_MG_4270festettV5.webp",
+            src: "/images/Virag_BP/6.webp",
             title: "",
             alt: "",
           },
@@ -318,43 +318,6 @@ export default function PortfolioHomeFinal() {
             src: "/images/_MG_4462.webp",
             title: "",
             alt: "",
-          },
-        ]}
-        extraImages={[
-          {
-            src: "/images/Evoto-(3 of 3).webp",
-            alt: "",
-            title: "",
-          },
-          {
-            src: "/images/_MG_8992.webp",
-            alt: "",
-            title: "",
-          },
-          {
-            src: "/images/_MG_8890.webp",
-            alt: "",
-            title: "",
-          },
-          {
-            src: "/images/_MG_4619.webp",
-            alt: "",
-            title: "",
-          },
-          {
-            src: "/images/_MG_4523.webp",
-            alt: "",
-            title: "",
-          },
-          {
-            src: "/images/_MG_4521.webp",
-            alt: "",
-            title: "",
-          },
-          {
-            src: "/images/_MG_4486.webp",
-            alt: "",
-            title: "",
           },
         ]}
       />
