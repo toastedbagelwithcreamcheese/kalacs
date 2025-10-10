@@ -17,7 +17,7 @@ export default function AboutPageModern() {
     {
       icon: <Layers3 size={36} className="text-[#C79984]" />,
       category: "Objektívek",
-      items: ["Canon EF 24-105mm f/4 L", "Sigma EF 100-300mm f/4 EX APO DG", "Sigma EF 85mm f/1.4 EX DG HSM", "Canon EF 50mm f/1.8 II"]
+      items: ["Canon EF 24-105mm f/4 L", "Sigma EF 100-300mm f/4 EX APO DG", "Sigma EF 85mm f/1.4 EX DG HSM", "Canon EF 50mm f/1.4 USM"]
     },
     {
       icon: <Zap size={36} className="text-[#C79984]" />,

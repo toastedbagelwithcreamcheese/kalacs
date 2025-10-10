@@ -21,6 +21,7 @@
     "nookies": "^2.5.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-masonry-css": "^1.0.16",
     "uuid": "^11.1.0",
     "xlsx": "^0.18.5",
     "yet-another-react-lightbox": "^3.21.7"
