@@ -31,6 +31,14 @@ const portfolioData = {
     ],
   },
   // ÚJ SZEKCIÓ ADATAI
+  cherryBlossom: {
+    title: 'Tavaszi Ébredés: Cseresznyevirág Portrék',
+    description: 'A tavasz első virágai között készült portrésorozat, amely a természet újjászületését és a finom eleganciát örökíti meg.',
+    images: [
+      ...Array.from({ length: 6 }, (_, i) => `/images/portfolio/portre_dorka2/${i + 1}.png`)
+    ],
+  },
+  // ÚJ SZEKCIÓ ADATAI
   lavenderFamily: {
     title: 'Varázslat a Levendulamezőn',
     description: 'Meghitt családi pillanatok egy csodálatos levendulás kertben, ahol a színek és az érzelmek összefonódnak.',
@@ -71,17 +79,39 @@ const portfolioData = {
       '/images/portfolio/offroad/_MG_0103.jpg',
     ],
   },
+  carPortraits: {
+        title: 'Dinamika és Forma: Autóportrék',
+        description: 'Az autók világának megörökítése, ahol a fém és a fény találkozik. A cél a formák és a karakter kiemelése.',
+        images: [
+            ...Array.from({ length: 12 }, (_, i) => `/images/portfolio/autok/${i + 1}.png`)
+        ],
+    },
   versatility: {
-    title: 'További Munkák: Család és Természet',
-    description:
-      'Kisebb válogatás a családi és természetfotókból — érzelmes, megnyugtató képek.',
-    images: [
-      '/images/portfolio/offroad/_MG_0856.jpg',
-      '/images/portfolio/offroad/_MG_0856.jpg',
-      '/images/portfolio/offroad/_MG_0856.jpg',
-      '/images/portfolio/offroad/_MG_0856.jpg',
-    ],
-  },
+  title: 'A Természet Hívása: Madarak és Tájak',
+  description: 'Válogatás a legkedvesebb madár- és tájfotóimból, melyek a természet csendjét és szépségét örökítik meg.',
+  images: [
+    '/images/portfolio/termeszet/allat1.png',
+    '/images/portfolio/termeszet/birb1.png',
+    '/images/portfolio/termeszet/birb2.png',
+    '/images/portfolio/termeszet/birb3.png',
+    '/images/portfolio/termeszet/birb4.png',
+    '/images/portfolio/termeszet/birb5.png',
+    '/images/portfolio/termeszet/birb6.png',
+    '/images/portfolio/termeszet/birb7.png',
+    '/images/portfolio/termeszet/hold1.png',
+    '/images/portfolio/termeszet/hold2.png',
+    '/images/portfolio/termeszet/taj1.png',
+    '/images/portfolio/termeszet/taj2.png',
+    '/images/portfolio/termeszet/taj3.png',
+    '/images/portfolio/termeszet/taj4.png',
+    '/images/portfolio/termeszet/taj5.png',
+    '/images/portfolio/termeszet/taj6.png',
+    '/images/portfolio/termeszet/taj7.png',
+    '/images/portfolio/termeszet/taj8.png',
+    '/images/portfolio/termeszet/taj9.png',
+    '/images/portfolio/termeszet/taj10.png',
+  ],
+},
   // ÚJ SZEKCIÓ ADATAI
   lakesideFamily: {
     title: 'Tóparti Varázslat Alkonyatkor',
@@ -169,8 +199,12 @@ function ImageGrid({ images, onOpen }) {
 // --- MAIN PAGE ---
 export default function PortfolioPage() {
   const nightRef = useRef(null)
-  const versatilityRef = useRef(null)
+  const cherryBlossomRef = useRef(null);
+  const carRef = useRef(null); // ÚJ
+  const sunsetPortraitsRef = useRef(null); // ÚJ
+  const lakesideRef = useRef(null);
   const lavenderRef = useRef(null)
+  const natureRef = useRef(null);
   const containerRef = useRef(null)
   const [bgTop, setBgTop] = useState('#faf9f7') // törtfehér
   const [bgBottom, setBgBottom] = useState('#e5e7eb') // világos szürke alap
@@ -186,64 +220,94 @@ export default function PortfolioPage() {
     setLightboxOpen(true)
   }, [])
 
-  // MÓDOSÍTOTT: Scroll handler, 3-lépcsős színváltással
-  useEffect(() => {
+  // MÓDOSÍTOTT: Scroll handler, többlépcsős színváltással
+useEffect(() => {
     function onScroll() {
-      if (!nightRef.current || !lavenderRef.current || !versatilityRef.current) return
+      // Minden ref-et ellenőrzünk
+      if (!carRef.current || !sunsetPortraitsRef.current || !nightRef.current || !cherryBlossomRef.current || !lavenderRef.current || !lakesideRef.current || !natureRef.current) return;
 
-      const nightRect = nightRef.current.getBoundingClientRect()
-      const lavenderRect = lavenderRef.current.getBoundingClientRect()
-      const versatilityRect = versatilityRef.current.getBoundingClientRect()
-      const winH = window.innerHeight || document.documentElement.clientHeight
+      const carRect = carRef.current.getBoundingClientRect();
+      const sunsetRect = sunsetPortraitsRef.current.getBoundingClientRect();
+      const nightRect = nightRef.current.getBoundingClientRect();
+      const cherryRect = cherryBlossomRef.current.getBoundingClientRect();
+      const lavenderRect = lavenderRef.current.getBoundingClientRect();
+      const lakesideRect = lakesideRef.current.getBoundingClientRect();
+      const natureRect = natureRef.current.getBoundingClientRect();
+      const winH = window.innerHeight || document.documentElement.clientHeight;
 
-      // Színpaletta definiálása
-      const offwhite = '#faf9f7'; const midGray = '#d1d5db'; const black = '#111111'
-      const lavenderTop = '#e6e0f5'; const lavenderBottom = '#d8cbed' // Levendulás színek
-      const warmTop = '#fdf6e3'; const warmBottom = '#f3eade'       // Meleg, naplementés színek
+      // Színpaletta bővítése
+      const offwhite = '#faf9f7'; const midGray = '#d1d5db'; const black = '#111111';
+      const carTop = '#d4d4d8'; const carBottom = '#a1a1aa'; // ÚJ: Autós szürke színek
+      const cherryTop = '#fee2e2'; const cherryBottom = '#fecdd3';
+      const lavenderTop = '#e6e0f5'; const lavenderBottom = '#d8cbed';
+      const warmTop = '#fdf6e3'; const warmBottom = '#f3eade';
+      const natureTop = '#e0e7d4'; const natureBottom = '#c7d1b8';
 
-      // Haladási értékek (progress) kiszámítása mindhárom szekcióra
       const getProgress = (rect) => {
-        const triggerStart = winH * 0.9; const triggerEnd = winH * 0.15
-        const tRaw = (triggerStart - rect.top) / (triggerStart - triggerEnd)
-        return Math.min(1, Math.max(0, tRaw))
-      }
-      const tDark = getProgress(nightRect)
-      const tLavender = getProgress(lavenderRect)
-      const tLight = getProgress(versatilityRect)
+        const triggerStart = winH * 0.9; const triggerEnd = winH * 0.15;
+        const tRaw = (triggerStart - rect.top) / (triggerStart - triggerEnd);
+        return Math.min(1, Math.max(0, tRaw));
+      };
+      
+      const tCar = getProgress(carRect);
+      const tSunset = getProgress(sunsetRect);
+      const tDark = getProgress(nightRect);
+      const tCherry = getProgress(cherryRect);
+      const tLavender = getProgress(lavenderRect);
+      const tWarm = getProgress(lakesideRect);
+      const tNature = getProgress(natureRect);
 
-      let topColor, bottomColor
+      let topColor, bottomColor;
 
-      if (tLight > 0) {
-        // Átmenet 3: Levenduláról -> Meleg színre
-        topColor = lerpHex(lavenderTop, warmTop, tLight)
-        bottomColor = lerpHex(lavenderBottom, warmBottom, tLight)
+      if (tNature > 0) {
+        topColor = lerpHex(warmTop, natureTop, tNature);
+        bottomColor = lerpHex(warmBottom, natureBottom, tNature);
+      } else if (tWarm > 0) {
+        topColor = lerpHex(lavenderTop, warmTop, tWarm);
+        bottomColor = lerpHex(lavenderBottom, warmBottom, tWarm);
       } else if (tLavender > 0) {
-        // Átmenet 2: Feketéből -> Levendulára
-        topColor = lerpHex(black, lavenderTop, tLavender)
-        bottomColor = lerpHex(black, lavenderBottom, tLavender)
+        topColor = lerpHex(cherryTop, lavenderTop, tLavender);
+        bottomColor = lerpHex(cherryBottom, lavenderBottom, tLavender);
+      } else if (tCherry > 0) {
+        topColor = lerpHex(black, cherryTop, tCherry);
+        bottomColor = lerpHex(black, cherryBottom, tCherry);
+      } else if (tDark > 0) {
+          // MÓDOSÍTOTT: Kétlépcsős sötétedés
+          if (tDark < 0.5) {
+            const local = tDark / 0.5;
+            topColor = lerpHex(offwhite, midGray, local);
+            bottomColor = lerpHex('#f3f4f6', '#9ca3af', local);
+          } else {
+            const local = (tDark - 0.5) / 0.5;
+            topColor = lerpHex(midGray, black, local);
+            bottomColor = lerpHex('#9ca3af', black, local);
+          }
+      } else if (tSunset > 0) {
+        // ÚJ ÁTMENET: Szürkéből vissza világosra
+        topColor = lerpHex(carTop, offwhite, tSunset);
+        bottomColor = lerpHex(carBottom, '#f3f4f6', tSunset);
+      } else if (tCar > 0) {
+        // ÚJ ÁTMENET: Világosból szürkére
+        topColor = lerpHex(offwhite, carTop, tCar);
+        bottomColor = lerpHex('#f3f4f6', carBottom, tCar);
       } else {
-        // Átmenet 1: Világosból -> Feketére
-        if (tDark < 0.5) {
-          const local = tDark / 0.5
-          topColor = lerpHex(offwhite, midGray, local)
-          bottomColor = lerpHex('#f3f4f6', '#9ca3af', local)
-        } else {
-          const local = (tDark - 0.5) / 0.5
-          topColor = lerpHex(midGray, black, local)
-          bottomColor = lerpHex('#9ca3af', black, local)
-        }
+        // Alap háttérszín
+        topColor = offwhite;
+        bottomColor = '#e5e7eb';
       }
 
-      setBgTop(topColor); setBgBottom(bottomColor)
+      setBgTop(topColor);
+      setBgBottom(bottomColor);
     }
 
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
     return () => {
-      window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll)
-    }
-  }, [])
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+}, []);
 
   const bgStyle = { background: `linear-gradient(180deg, ${bgTop} 0%, ${bgBottom} 100%)`, transition: 'background 200ms linear' }
   const sectionVariant = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
@@ -330,6 +394,24 @@ export default function PortfolioPage() {
           />
         </motion.section>
 
+        {/* ÚJ SZEKCIÓ: CSERESZNYEVIRÁG PORTRÉK */}
+        <motion.section
+          id="cseresznye"
+          ref={cherryBlossomRef}
+          className="py-6"
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* A fejléc "inverted", mert sötét háttérből jön elő */}
+          <SectionHeader title={portfolioData.cherryBlossom.title} description={portfolioData.cherryBlossom.description} inverted />
+          <ImageGrid
+            images={portfolioData.cherryBlossom.images}
+            onOpen={(idx) => openLightboxWith(portfolioData.cherryBlossom.images, idx)}
+          />
+        </motion.section>
+
         {/* ÚJ SZEKCIÓ: LEVENDULÁS CSALÁDI FOTÓZÁS */}
         <motion.section
           id="levendula"
@@ -351,7 +433,7 @@ export default function PortfolioPage() {
         {/* ÚJ SZEKCIÓ: TÓPARTI CSALÁDI FOTÓZÁS */}
         <motion.section
           id="topart"
-          ref={versatilityRef} // ÚJ: A ref hozzárendelése a szekcióhoz
+          ref={lakesideRef} // ÚJ: A ref hozzárendelése a szekcióhoz
           className="py-6"
           variants={sectionVariant}
           initial="hidden"
@@ -365,9 +447,27 @@ export default function PortfolioPage() {
           />
         </motion.section>
 
-        {/* További munkák - család, természet */}
+        {/* ÚJ SZEKCIÓ: AUTÓPORTRÉK */}
+        <motion.section
+          id="autok"
+          ref={carRef}
+          className="py-6"
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <SectionHeader title={portfolioData.carPortraits.title} description={portfolioData.carPortraits.description} />
+          <ImageGrid
+            images={portfolioData.carPortraits.images}
+            onOpen={(idx) => openLightboxWith(portfolioData.carPortraits.images, idx)}
+          />
+        </motion.section>
+
+        {/* További munkák - madarak, természet */}
         <motion.section
           id="tovabbiak"
+          ref={natureRef} // MÓDOSÍTOTT: Ez a ref indítja a zöld színt
           className="py-6"
           variants={sectionVariant}
           initial="hidden"
@@ -379,7 +479,7 @@ export default function PortfolioPage() {
             images={portfolioData.versatility.images}
             onOpen={(idx) => openLightboxWith(portfolioData.versatility.images, idx)}
           />
-        </motion.section> 
+        </motion.section>
       </div>
 
       {/* FOOTER */}
