@@ -30,6 +30,27 @@ const portfolioData = {
       ...Array.from({ length: 5 }, (_, i) => `/images/portfolio/portre_virag/${i + 13}.jpg`),
     ],
   },
+  // ÚJ SZEKCIÓ ADATAI
+  lavenderFamily: {
+    title: 'Varázslat a Levendulamezőn',
+    description: 'Meghitt családi pillanatok egy csodálatos levendulás kertben, ahol a színek és az érzelmek összefonódnak.',
+    images: [
+      '/images/_MG_8620.webp',
+      '/images/_MG_8634.webp',
+      '/images/_MG_8762.webp',
+      '/images/_MG_8775.webp',
+      '/images/_MG_8842.webp',
+      '/images/_MG_8890.webp',
+      '/images/_MG_8932.webp',
+      '/images/_MG_9335.webp',
+      '/images/_MG_8653.webp',
+      '/images/_MG_8876.webp',
+      '/images/_MG_8992.webp',
+      '/images/_MG_9219.webp',
+      '/images/_MG_9237.webp',
+      '/images/_MG_9381.webp',
+    ],
+  },
   offroadEvents: {
     title: 'Rendezvényfotózás: Az Offroad Világa',
     description:
@@ -61,6 +82,21 @@ const portfolioData = {
       '/images/portfolio/offroad/_MG_0856.jpg',
     ],
   },
+  // ÚJ SZEKCIÓ ADATAI
+  lakesideFamily: {
+    title: 'Tóparti Varázslat Alkonyatkor',
+    description: 'Felszabadult családi pillanatok a lemenő nap arany fényében, a vízpart nyugalmával övezve.',
+    images: [
+      ...Array.from({ length: 8 }, (_, i) => `/images/portfolio/csaladi/csalad${i + 1}.png`),
+      '/images/_MG_1136.webp',
+      '/images/_MG_0017-2.webp',
+      '/images/_MG_0114-2.webp',
+      '/images/_MG_0097-2.webp',
+      '/images/_MG_0281-2-Edit.webp',
+      '/images/_MG_0066-2.webp',
+      '/images/_MG_0148-2-2.webp',
+    ],
+  }
 }
 
 // --- UTILS: szín-interpoláció hex között ---
@@ -134,6 +170,7 @@ function ImageGrid({ images, onOpen }) {
 export default function PortfolioPage() {
   const nightRef = useRef(null)
   const versatilityRef = useRef(null)
+  const lavenderRef = useRef(null)
   const containerRef = useRef(null)
   const [bgTop, setBgTop] = useState('#faf9f7') // törtfehér
   const [bgBottom, setBgBottom] = useState('#e5e7eb') // világos szürke alap
@@ -149,78 +186,67 @@ export default function PortfolioPage() {
     setLightboxOpen(true)
   }, [])
 
-  // MÓDOSÍTOTT: Scroll handler, ami a kivilágosodást is kezeli
+  // MÓDOSÍTOTT: Scroll handler, 3-lépcsős színváltással
   useEffect(() => {
     function onScroll() {
-      // Mindkét ref kell a számításhoz
-      if (!nightRef.current || !versatilityRef.current) return
-      
+      if (!nightRef.current || !lavenderRef.current || !versatilityRef.current) return
+
       const nightRect = nightRef.current.getBoundingClientRect()
+      const lavenderRect = lavenderRef.current.getBoundingClientRect()
       const versatilityRect = versatilityRef.current.getBoundingClientRect()
       const winH = window.innerHeight || document.documentElement.clientHeight
 
       // Színpaletta definiálása
-      const offwhite = '#faf9f7'
-      const midGray = '#d1d5db'
-      const black = '#000000'
-      const warmTop = '#fdf6e3' // ÚJ: Meleg, krémes szín a tetejére
-      const warmBottom = '#f3eade' // ÚJ: Meleg, föld-szín az aljára
+      const offwhite = '#faf9f7'; const midGray = '#d1d5db'; const black = '#111111'
+      const lavenderTop = '#e6e0f5'; const lavenderBottom = '#d8cbed' // Levendulás színek
+      const warmTop = '#fdf6e3'; const warmBottom = '#f3eade'       // Meleg, naplementés színek
 
-      // 1. Átmenet SÖTÉTRE (a nightRef alapján)
-      const triggerStartDark = winH * 0.9
-      const triggerEndDark = winH * 0.15
-      const tRawDark = (triggerStartDark - nightRect.top) / (triggerStartDark - triggerEndDark)
-      const tDark = Math.min(1, Math.max(0, tRawDark))
-
-      // 2. Átmenet VILÁGOSRA (a versatilityRef alapján)
-      const triggerStartLight = winH * 0.9
-      const triggerEndLight = winH * 0.15
-      const tRawLight = (triggerStartLight - versatilityRect.top) / (triggerStartLight - triggerEndLight)
-      const tLight = Math.min(1, Math.max(0, tRawLight))
+      // Haladási értékek (progress) kiszámítása mindhárom szekcióra
+      const getProgress = (rect) => {
+        const triggerStart = winH * 0.9; const triggerEnd = winH * 0.15
+        const tRaw = (triggerStart - rect.top) / (triggerStart - triggerEnd)
+        return Math.min(1, Math.max(0, tRaw))
+      }
+      const tDark = getProgress(nightRect)
+      const tLavender = getProgress(lavenderRect)
+      const tLight = getProgress(versatilityRect)
 
       let topColor, bottomColor
 
-      // Döntés: Melyik átmenet aktív?
       if (tLight > 0) {
-        // Ha a "További munkák" szekció már látszik, a sötétből világosra váltunk
-        topColor = lerpHex(black, warmTop, tLight)
-        bottomColor = lerpHex('#111111', warmBottom, tLight) // Feketéből indulunk
+        // Átmenet 3: Levenduláról -> Meleg színre
+        topColor = lerpHex(lavenderTop, warmTop, tLight)
+        bottomColor = lerpHex(lavenderBottom, warmBottom, tLight)
+      } else if (tLavender > 0) {
+        // Átmenet 2: Feketéből -> Levendulára
+        topColor = lerpHex(black, lavenderTop, tLavender)
+        bottomColor = lerpHex(black, lavenderBottom, tLavender)
       } else {
-        // Különben a megszokott világosból sötétbe átmenet fut
-        const t = tDark
-        if (t < 0.5) {
-          const local = t / 0.5
+        // Átmenet 1: Világosból -> Feketére
+        if (tDark < 0.5) {
+          const local = tDark / 0.5
           topColor = lerpHex(offwhite, midGray, local)
           bottomColor = lerpHex('#f3f4f6', '#9ca3af', local)
         } else {
-          const local = (t - 0.5) / 0.5
+          const local = (tDark - 0.5) / 0.5
           topColor = lerpHex(midGray, black, local)
-          bottomColor = lerpHex('#9ca3af', '#111111', local) // Majdnem feketére váltunk
+          bottomColor = lerpHex('#9ca3af', black, local)
         }
       }
 
-      setBgTop(topColor)
-      setBgBottom(bottomColor)
+      setBgTop(topColor); setBgBottom(bottomColor)
     }
 
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll)
     return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
+      window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll)
     }
-  }, []) // Az üres dependency array rendben van, mert a ref-ek nem változnak.
+  }, [])
 
-  const bgStyle = {
-    background: `linear-gradient(180deg, ${bgTop} 0%, ${bgBottom} 100%)`,
-    transition: 'background 200ms linear',
-  }
-
-  const sectionVariant = {
-    hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
+  const bgStyle = { background: `linear-gradient(180deg, ${bgTop} 0%, ${bgBottom} 100%)`, transition: 'background 200ms linear' }
+  const sectionVariant = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
 
   return (
     <main ref={containerRef} className={`${inter.className} min-h-screen`} style={bgStyle}>
@@ -304,10 +330,44 @@ export default function PortfolioPage() {
           />
         </motion.section>
 
+        {/* ÚJ SZEKCIÓ: LEVENDULÁS CSALÁDI FOTÓZÁS */}
+        <motion.section
+          id="levendula"
+          ref={lavenderRef} // Ref hozzárendelése
+          className="py-6"
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* A fejléc "inverted", mert sötét háttérből jön */}
+          <SectionHeader title={portfolioData.lavenderFamily.title} description={portfolioData.lavenderFamily.description} inverted />
+          <ImageGrid
+            images={portfolioData.lavenderFamily.images}
+            onOpen={(idx) => openLightboxWith(portfolioData.lavenderFamily.images, idx)}
+          />
+        </motion.section>
+
+        {/* ÚJ SZEKCIÓ: TÓPARTI CSALÁDI FOTÓZÁS */}
+        <motion.section
+          id="topart"
+          ref={versatilityRef} // ÚJ: A ref hozzárendelése a szekcióhoz
+          className="py-6"
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <SectionHeader title={portfolioData.lakesideFamily.title} description={portfolioData.lakesideFamily.description} />
+          <ImageGrid
+            images={portfolioData.lakesideFamily.images}
+            onOpen={(idx) => openLightboxWith(portfolioData.lakesideFamily.images, idx)}
+          />
+        </motion.section>
+
         {/* További munkák - család, természet */}
         <motion.section
           id="tovabbiak"
-          ref={versatilityRef} // ÚJ: A ref hozzárendelése a szekcióhoz
           className="py-6"
           variants={sectionVariant}
           initial="hidden"
