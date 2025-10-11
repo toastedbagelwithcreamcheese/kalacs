@@ -55,10 +55,10 @@ const portfolioData = {
     description:
       'Kisebb válogatás a családi és természetfotókból — érzelmes, megnyugtató képek.',
     images: [
-      '/images/csalad/csalad_01.jpg',
-      '/images/csalad/csalad_02.jpg',
-      '/images/termeszet/termeszet_01.jpg',
-      '/images/termeszet/termeszet_02.jpg',
+      '/images/portfolio/offroad/_MG_0856.jpg',
+      '/images/portfolio/offroad/_MG_0856.jpg',
+      '/images/portfolio/offroad/_MG_0856.jpg',
+      '/images/portfolio/offroad/_MG_0856.jpg',
     ],
   },
 }
@@ -133,6 +133,7 @@ function ImageGrid({ images, onOpen }) {
 // --- MAIN PAGE ---
 export default function PortfolioPage() {
   const nightRef = useRef(null)
+  const versatilityRef = useRef(null)
   const containerRef = useRef(null)
   const [bgTop, setBgTop] = useState('#faf9f7') // törtfehér
   const [bgBottom, setBgBottom] = useState('#e5e7eb') // világos szürke alap
@@ -148,45 +149,60 @@ export default function PortfolioPage() {
     setLightboxOpen(true)
   }, [])
 
-  // Scroll handler: compute progress to nightRef and interpolate colors
+  // MÓDOSÍTOTT: Scroll handler, ami a kivilágosodást is kezeli
   useEffect(() => {
     function onScroll() {
-      if (!nightRef.current) return
-      const rect = nightRef.current.getBoundingClientRect()
+      // Mindkét ref kell a számításhoz
+      if (!nightRef.current || !versatilityRef.current) return
+      
+      const nightRect = nightRef.current.getBoundingClientRect()
+      const versatilityRect = versatilityRef.current.getBoundingClientRect()
       const winH = window.innerHeight || document.documentElement.clientHeight
 
-      // progress where rect.top goes from winH -> 0 to -winH
-      // we want 0 when far above, 1 when the top of night section reaches middle of viewport,
-      // and >1 if scrolled further. We'll clamp to [0,1].
-      const triggerStart = winH * 0.9
-      const triggerEnd = winH * 0.15
-      const tRaw = (triggerStart - rect.top) / (triggerStart - triggerEnd)
-      const t = Math.min(1, Math.max(0, tRaw))
-
-      // We'll do two-stage interpolation:
-      // 0 .. 0.5 : offwhite -> gray
-      // 0.5 .. 1 : gray -> black
+      // Színpaletta definiálása
       const offwhite = '#faf9f7'
       const midGray = '#d1d5db'
       const black = '#000000'
+      const warmTop = '#fdf6e3' // ÚJ: Meleg, krémes szín a tetejére
+      const warmBottom = '#f3eade' // ÚJ: Meleg, föld-szín az aljára
 
-      let topColor
-      let bottomColor
-      if (t < 0.5) {
-        const local = t / 0.5
-        topColor = lerpHex(offwhite, midGray, local)
-        bottomColor = lerpHex('#f3f4f6', '#9ca3af', local) // lighter-to-darker bottom
+      // 1. Átmenet SÖTÉTRE (a nightRef alapján)
+      const triggerStartDark = winH * 0.9
+      const triggerEndDark = winH * 0.15
+      const tRawDark = (triggerStartDark - nightRect.top) / (triggerStartDark - triggerEndDark)
+      const tDark = Math.min(1, Math.max(0, tRawDark))
+
+      // 2. Átmenet VILÁGOSRA (a versatilityRef alapján)
+      const triggerStartLight = winH * 0.9
+      const triggerEndLight = winH * 0.15
+      const tRawLight = (triggerStartLight - versatilityRect.top) / (triggerStartLight - triggerEndLight)
+      const tLight = Math.min(1, Math.max(0, tRawLight))
+
+      let topColor, bottomColor
+
+      // Döntés: Melyik átmenet aktív?
+      if (tLight > 0) {
+        // Ha a "További munkák" szekció már látszik, a sötétből világosra váltunk
+        topColor = lerpHex(black, warmTop, tLight)
+        bottomColor = lerpHex('#111111', warmBottom, tLight) // Feketéből indulunk
       } else {
-        const local = (t - 0.5) / 0.5
-        topColor = lerpHex(midGray, black, local)
-        bottomColor = lerpHex('#9ca3af', '#000000', local)
+        // Különben a megszokott világosból sötétbe átmenet fut
+        const t = tDark
+        if (t < 0.5) {
+          const local = t / 0.5
+          topColor = lerpHex(offwhite, midGray, local)
+          bottomColor = lerpHex('#f3f4f6', '#9ca3af', local)
+        } else {
+          const local = (t - 0.5) / 0.5
+          topColor = lerpHex(midGray, black, local)
+          bottomColor = lerpHex('#9ca3af', '#111111', local) // Majdnem feketére váltunk
+        }
       }
 
       setBgTop(topColor)
       setBgBottom(bottomColor)
     }
 
-    // initial and listener
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll)
@@ -194,15 +210,13 @@ export default function PortfolioPage() {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
     }
-  }, [])
+  }, []) // Az üres dependency array rendben van, mert a ref-ek nem változnak.
 
-  // create top-to-bottom gradient style that will be updated on scroll
   const bgStyle = {
     background: `linear-gradient(180deg, ${bgTop} 0%, ${bgBottom} 100%)`,
     transition: 'background 200ms linear',
   }
 
-  // Framer Motion variants for sections
   const sectionVariant = {
     hidden: { opacity: 0, y: 18 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -290,9 +304,10 @@ export default function PortfolioPage() {
           />
         </motion.section>
 
-        {/* Sokoldalúság 
+        {/* További munkák - család, természet */}
         <motion.section
           id="tovabbiak"
+          ref={versatilityRef} // ÚJ: A ref hozzárendelése a szekcióhoz
           className="py-6"
           variants={sectionVariant}
           initial="hidden"
@@ -304,7 +319,7 @@ export default function PortfolioPage() {
             images={portfolioData.versatility.images}
             onOpen={(idx) => openLightboxWith(portfolioData.versatility.images, idx)}
           />
-        </motion.section> */}
+        </motion.section> 
       </div>
 
       {/* FOOTER */}
