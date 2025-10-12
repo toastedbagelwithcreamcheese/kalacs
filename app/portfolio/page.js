@@ -118,6 +118,7 @@ const portfolioData = {
     '/images/portfolio/termeszet/taj8.png',
     '/images/portfolio/termeszet/taj9.png',
     '/images/portfolio/termeszet/taj10.png',
+    '/images/portfolio/termeszet/taj11.JPG',
   ],
 },
   // ÚJ SZEKCIÓ ADATAI
