@@ -77,6 +77,14 @@ const portfolioData = {
       '/images/portfolio/offroad/_MG_0856.jpg',
       '/images/portfolio/offroad/_MG_0098.jpg',
       '/images/portfolio/offroad/_MG_0103.jpg',
+      '/images/portfolio/offroad/_MG_8379.JPG',
+      '/images/portfolio/offroad/_MG_8214.JPG',
+      '/images/portfolio/offroad/_MG_8143.JPG',
+      '/images/portfolio/offroad/_MG_8138.JPG',
+      '/images/portfolio/offroad/_MG_7882.JPG',
+      '/images/portfolio/offroad/_MG_7812.JPG',
+      '/images/portfolio/offroad/_MG_7671.JPG',
+
     ],
   },
   carPortraits: {
@@ -314,34 +322,77 @@ useEffect(() => {
 
   return (
     <main ref={containerRef} className={`${inter.className} min-h-screen`} style={bgStyle}>
-{/* HERO V2: Modern és Személyes */}
-<section className="overflow-hidden">
-  <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
+<section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+  <div className="max-w-7xl mx-auto px-6 py-20 md:py-28 relative z-10">
     <motion.div
       className="grid grid-cols-1 md:grid-cols-3 md:gap-12 lg:gap-16 items-center"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Kép */}
-      <div className="md:col-span-1 flex justify-center md:justify-end">
-        <div className="w-48 h-48 md:w-60 md:h-60 relative rounded-full overflow-hidden shadow-2xl mb-8 md:mb-0 transform hover:scale-105 transition-transform duration-300">
-          <Image src="/images/profilkep.jpg" alt="Profilkép" fill style={{ objectFit: 'cover' }} priority />
-        </div>
+      <div className="md:col-span-1 flex justify-center md:justify-end relative">
+        <motion.div
+          whileHover={{ scale: 1.05, rotate: 1 }}
+          transition={{ type: "spring", stiffness: 200 }}
+          className="w-48 h-48 md:w-60 md:h-60 relative rounded-full overflow-hidden shadow-2xl mb-8 md:mb-0 ring-4 ring-white/70"
+        >
+          <Image
+            src="/images/profilkep.jpg"
+            alt="Kovács Bálint portré"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+        </motion.div>
+
+        {/* Fényhatás */}
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-200/30 blur-3xl rounded-full animate-pulse"></div>
       </div>
       
       {/* Szöveg */}
-      <div className="md:col-span-2 text-center md:text-left">
+      <motion.div
+        className="md:col-span-2 text-center md:text-left"
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+      >
         <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tighter">
           Kovács Bálint
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-          Két éve a természetfotózás világában fedeztem fel a szenvedélyem, ami megtanított a fények és a kompozíció fontosságára. Azonban az igazi hivatásom az emberek egyedi karakterének és az autók dinamikus formavilágának megörökítése. Engem a valódi történetek inspirálnak.
-        </p>
-      </div>
+        <motion.p
+          className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto md:mx-0 leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
+          Két évvel ezelőtt apa egyik barátja a nyaralás előtt a kezembe nyomott egy fényképezőt azzal a mondattal, hogy 
+          <span className="text-gray-900 font-medium"> „te informatikus vagy, biztos értesz ehhez is”</span>. 
+          Onnantól kezdve beszippantott a fotózás világa. Először a természet és a tájak varázsoltak el, majd 
+          az állatok és madarak megörökítése vált szenvedélyemmé. Ma már az emberek, családok és autók 
+          fotózásában találom meg azt az élményt, ami igazán inspirál.
+        </motion.p>
+
+        {/* Kis animált gomb */}
+        <motion.div
+          className="mt-8 flex justify-center md:justify-start"
+          whileHover={{ scale: 1.05 }}
+        >
+          <a
+            href="/about"
+            className="inline-block border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-full font-medium tracking-wide hover:bg-gray-900 hover:text-white transition-all duration-300"
+          >
+            Tudj meg többet rólam
+          </a>
+        </motion.div>
+      </motion.div>
     </motion.div>
   </div>
+
+  {/* Háttérdekoráció */}
+  <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/20 via-transparent to-pink-100/30 pointer-events-none"></div>
 </section>
+
 
       <div className="max-w-6xl mx-auto px-6 space-y-20 pb-24">
         {/* OFFROAD / RENDEZVÉNY - priority */}
@@ -485,7 +536,7 @@ useEffect(() => {
       {/* FOOTER */}
       <footer className="py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-gray-700">Köszönöm a figyelmet — készen állok, hogy a Ti történeteteket is megörökítsem.</p>
+          
         </div>
       </footer>
 
