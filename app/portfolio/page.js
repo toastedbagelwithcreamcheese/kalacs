@@ -138,14 +138,11 @@ const portfolioData = {
   }
 }
 
-// --- UTILS: szín-interpoláció hex között ---
+// --- Color helpers ---
 function hexToRgb(hex) {
   const h = hex.replace('#', '')
   const bigint = parseInt(h, 16)
-  const r = (bigint >> 16) & 255
-  const g = (bigint >> 8) & 255
-  const b = bigint & 255
-  return { r, g, b }
+  return { r: (bigint >> 16) & 255, g: (bigint >> 8) & 255, b: bigint & 255 }
 }
 function rgbToHex({ r, g, b }) {
   const toHex = (v) => v.toString(16).padStart(2, '0')
@@ -164,7 +161,7 @@ function lerpHex(c1, c2, t) {
   })
 }
 
-// --- Reusable components ---
+// --- UI Components ---
 function SectionHeader({ title, description, inverted = false }) {
   return (
     <div className="text-center mb-8 md:mb-12">
@@ -184,10 +181,6 @@ function ImageGrid({ images, onOpen }) {
           className="group relative aspect-[4/3] overflow-hidden rounded-lg shadow-sm"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.45 }}
         >
           <Image
             src={src}
@@ -196,9 +189,7 @@ function ImageGrid({ images, onOpen }) {
             sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
             quality={80}
-            priority={idx < 6}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />
         </motion.button>
       ))}
     </div>
@@ -207,349 +198,201 @@ function ImageGrid({ images, onOpen }) {
 
 // --- MAIN PAGE ---
 export default function PortfolioPage() {
-  const nightRef = useRef(null)
-  const cherryBlossomRef = useRef(null);
-  const carRef = useRef(null); // ÚJ
-  const sunsetPortraitsRef = useRef(null); // ÚJ
-  const lakesideRef = useRef(null);
-  const lavenderRef = useRef(null)
-  const natureRef = useRef(null);
-  const containerRef = useRef(null)
-  const [bgTop, setBgTop] = useState('#faf9f7') // törtfehér
-  const [bgBottom, setBgBottom] = useState('#e5e7eb') // világos szürke alap
+  const [bgTop, setBgTop] = useState('#faf9f7')
+  const [bgBottom, setBgBottom] = useState('#e5e7eb')
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxSlides, setLightboxSlides] = useState([])
   const [lightboxIndex, setLightboxIndex] = useState(0)
 
-  // prepare a helper to open lightbox with a given image list and start index
+  const nightRef = useRef(null)
+  const carRef = useRef(null)
+  const cherryRef = useRef(null)
+  const lavenderRef = useRef(null)
+  const lakesideRef = useRef(null)
+  const natureRef = useRef(null)
+
   const openLightboxWith = useCallback((images, idx) => {
-    // yet-another-react-lightbox expects slides: [{ src: '/...' }, ...]
     setLightboxSlides(images.map((s) => ({ src: s })))
     setLightboxIndex(idx)
     setLightboxOpen(true)
   }, [])
 
-  // MÓDOSÍTOTT: Scroll handler, többlépcsős színváltással
-useEffect(() => {
-    function onScroll() {
-      // Minden ref-et ellenőrzünk
-      if (!carRef.current || !sunsetPortraitsRef.current || !nightRef.current || !cherryBlossomRef.current || !lavenderRef.current || !lakesideRef.current || !natureRef.current) return;
+  // --- ✅ Optimalizált scroll handler ---
+    useEffect(() => {
+    let ticking = false
 
-      const carRect = carRef.current.getBoundingClientRect();
-      const sunsetRect = sunsetPortraitsRef.current.getBoundingClientRect();
-      const nightRect = nightRef.current.getBoundingClientRect();
-      const cherryRect = cherryBlossomRef.current.getBoundingClientRect();
-      const lavenderRect = lavenderRef.current.getBoundingClientRect();
-      const lakesideRect = lakesideRef.current.getBoundingClientRect();
-      const natureRect = natureRef.current.getBoundingClientRect();
-      const winH = window.innerHeight || document.documentElement.clientHeight;
-
-      // Színpaletta bővítése
-      const offwhite = '#faf9f7'; const midGray = '#d1d5db'; const black = '#111111';
-      const carTop = '#d4d4d8'; const carBottom = '#a1a1aa'; // ÚJ: Autós szürke színek
-      const cherryTop = '#fee2e2'; const cherryBottom = '#fecdd3';
-      const lavenderTop = '#e6e0f5'; const lavenderBottom = '#d8cbed';
-      const warmTop = '#fdf6e3'; const warmBottom = '#f3eade';
-      const natureTop = '#e0e7d4'; const natureBottom = '#c7d1b8';
-
-      const getProgress = (rect) => {
-        const triggerStart = winH * 0.9; const triggerEnd = winH * 0.15;
-        const tRaw = (triggerStart - rect.top) / (triggerStart - triggerEnd);
-        return Math.min(1, Math.max(0, tRaw));
-      };
-      
-      const tCar = getProgress(carRect);
-      const tSunset = getProgress(sunsetRect);
-      const tDark = getProgress(nightRect);
-      const tCherry = getProgress(cherryRect);
-      const tLavender = getProgress(lavenderRect);
-      const tWarm = getProgress(lakesideRect);
-      const tNature = getProgress(natureRect);
-
-      let topColor, bottomColor;
-
-      if (tNature > 0) {
-        topColor = lerpHex(warmTop, natureTop, tNature);
-        bottomColor = lerpHex(warmBottom, natureBottom, tNature);
-      } else if (tWarm > 0) {
-        topColor = lerpHex(lavenderTop, warmTop, tWarm);
-        bottomColor = lerpHex(lavenderBottom, warmBottom, tWarm);
-      } else if (tLavender > 0) {
-        topColor = lerpHex(cherryTop, lavenderTop, tLavender);
-        bottomColor = lerpHex(cherryBottom, lavenderBottom, tLavender);
-      } else if (tCherry > 0) {
-        topColor = lerpHex(black, cherryTop, tCherry);
-        bottomColor = lerpHex(black, cherryBottom, tCherry);
-      } else if (tDark > 0) {
-          // MÓDOSÍTOTT: Kétlépcsős sötétedés
-          if (tDark < 0.5) {
-            const local = tDark / 0.5;
-            topColor = lerpHex(offwhite, midGray, local);
-            bottomColor = lerpHex('#f3f4f6', '#9ca3af', local);
-          } else {
-            const local = (tDark - 0.5) / 0.5;
-            topColor = lerpHex(midGray, black, local);
-            bottomColor = lerpHex('#9ca3af', black, local);
-          }
-      } else if (tSunset > 0) {
-        // ÚJ ÁTMENET: Szürkéből vissza világosra
-        topColor = lerpHex(carTop, offwhite, tSunset);
-        bottomColor = lerpHex(carBottom, '#f3f4f6', tSunset);
-      } else if (tCar > 0) {
-        // ÚJ ÁTMENET: Világosból szürkére
-        topColor = lerpHex(offwhite, carTop, tCar);
-        bottomColor = lerpHex('#f3f4f6', carBottom, tCar);
-      } else {
-        // Alap háttérszín
-        topColor = offwhite;
-        bottomColor = '#e5e7eb';
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateBackground()
+          ticking = false
+        })
+        ticking = true
       }
-
-      setBgTop(topColor);
-      setBgBottom(bottomColor);
     }
 
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-    };
-}, []);
+    const updateBackground = () => {
+      const winH = window.innerHeight
+      const rects = {
+        night: nightRef.current?.getBoundingClientRect(),
+        car: carRef.current?.getBoundingClientRect(),
+        cherry: cherryRef.current?.getBoundingClientRect(),
+        lavender: lavenderRef.current?.getBoundingClientRect(),
+        lake: lakesideRef.current?.getBoundingClientRect(),
+        nature: natureRef.current?.getBoundingClientRect(),
+      }
 
-  const bgStyle = { background: `linear-gradient(180deg, ${bgTop} 0%, ${bgBottom} 100%)`, transition: 'background 200ms linear' }
-  const sectionVariant = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
+      const getProgress = (rect) => {
+        if (!rect) return 0
+        const tRaw = (winH * 0.9 - rect.top) / (winH * 0.75)
+        return Math.min(1, Math.max(0, tRaw))
+      }
+
+      const progresses = Object.fromEntries(
+        Object.entries(rects).map(([key, rect]) => [key, getProgress(rect)])
+      )
+
+      // --- Színpaletta ---
+      const colors = {
+        offwhite: '#faf9f7',
+        gray: '#d1d5db',
+        black: '#111111',
+        pink: '#fecdd3',
+        lavender: '#d8cbed',
+        warm: '#f3eade',
+        green: '#c7d1b8',
+      }
+
+      // --- Alap színek ---
+      let top = colors.offwhite
+      let bottom = colors.gray
+
+      // --- Színt váltunk az alapján, melyik progress a legnagyobb ---
+      const maxKey = Object.keys(progresses).reduce((a, b) =>
+        progresses[a] > progresses[b] ? a : b
+      )
+
+      switch (maxKey) {
+        case 'night':
+          top = lerpHex(colors.offwhite, colors.black, progresses.night)
+          bottom = lerpHex(colors.gray, colors.black, progresses.night)
+          break
+        case 'car':
+          top = lerpHex(colors.offwhite, colors.gray, progresses.car)
+          bottom = lerpHex(colors.offwhite, colors.gray, progresses.car)
+          break
+        case 'cherry':
+          top = lerpHex(colors.black, colors.pink, progresses.cherry)
+          bottom = lerpHex(colors.black, colors.pink, progresses.cherry)
+          break
+        case 'lavender':
+          top = lerpHex(colors.pink, colors.lavender, progresses.lavender)
+          bottom = lerpHex(colors.pink, colors.lavender, progresses.lavender)
+          break
+        case 'lake':
+          top = lerpHex(colors.lavender, colors.warm, progresses.lake)
+          bottom = lerpHex(colors.lavender, colors.warm, progresses.lake)
+          break
+        case 'nature':
+          top = lerpHex(colors.warm, colors.green, progresses.nature)
+          bottom = lerpHex(colors.warm, colors.green, progresses.nature)
+          break
+      }
+
+      setBgTop(top)
+      setBgBottom(bottom)
+    }
+
+    updateBackground()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
+  }, [])
+
+  const bgStyle = { background: `linear-gradient(180deg, ${bgTop}, ${bgBottom})`, transition: 'background 0.1s ease' }
+  const bgGradient = `linear-gradient(180deg, ${bgTop}, ${bgBottom})`
+
 
   return (
-    <main ref={containerRef} className={`${inter.className} min-h-screen`} style={bgStyle}>
-<section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
-  <div className="max-w-7xl mx-auto px-6 py-20 md:py-28 relative z-10">
-    <motion.div
-      className="grid grid-cols-1 md:grid-cols-3 md:gap-12 lg:gap-16 items-center"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      {/* Kép */}
-      <div className="md:col-span-1 flex justify-center md:justify-end relative">
-        <motion.div
-          whileHover={{ scale: 1.05, rotate: 1 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          className="w-48 h-48 md:w-60 md:h-60 relative rounded-full overflow-hidden shadow-2xl mb-8 md:mb-0 ring-4 ring-white/70"
-        >
-          <Image
-            src="/images/profilkep.jpg"
-            alt="Kovács Bálint portré"
-            fill
-            style={{ objectFit: 'cover' }}
-            priority
-          />
-        </motion.div>
-
-        {/* Fényhatás */}
-        <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-200/30 blur-3xl rounded-full animate-pulse"></div>
-      </div>
-      
-      {/* Szöveg */}
-      <motion.div
-        className="md:col-span-2 text-center md:text-left"
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-      >
-        <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tighter">
-          Kovács Bálint
-        </h1>
-        <motion.p
-          className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto md:mx-0 leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          Két évvel ezelőtt apa egyik barátja a nyaralás előtt a kezembe nyomott egy fényképezőt azzal a mondattal, hogy 
-          <span className="text-gray-900 font-medium"> „te informatikus vagy, biztos értesz ehhez is”</span>. 
-          Onnantól kezdve beszippantott a fotózás világa. Először a természet és a tájak varázsoltak el, majd 
-          az állatok és madarak megörökítése vált szenvedélyemmé. Ma már az emberek, családok és autók 
-          fotózásában találom meg azt az élményt, ami igazán inspirál.
-        </motion.p>
-
-        {/* Kis animált gomb */}
-        <motion.div
-          className="mt-8 flex justify-center md:justify-start"
-          whileHover={{ scale: 1.05 }}
-        >
-          <a
-            href="/about"
-            className="inline-block border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-full font-medium tracking-wide hover:bg-gray-900 hover:text-white transition-all duration-300"
-          >
-            Tudj meg többet rólam
-          </a>
-        </motion.div>
-      </motion.div>
-    </motion.div>
-  </div>
-
-  {/* Háttérdekoráció */}
-  <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/20 via-transparent to-pink-100/30 pointer-events-none"></div>
-</section>
-
-
-      <div className="max-w-6xl mx-auto px-6 space-y-20 pb-24">
-        {/* OFFROAD / RENDEZVÉNY - priority */}
-        <motion.section
-          id="rendezveny"
-          className="py-6"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <SectionHeader title={portfolioData.offroadEvents.title} description={portfolioData.offroadEvents.description} />
-          <ImageGrid
-            images={portfolioData.offroadEvents.images}
-            onOpen={(idx) => openLightboxWith(portfolioData.offroadEvents.images, idx)}
-          />
-        </motion.section>
-
-        {/* Naplementés portrék (sunset) - still light background */}
-        <motion.section
-          id="portre-naplemente"
-          className="py-6"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <SectionHeader title={portfolioData.sunsetPortraits.title} description={portfolioData.sunsetPortraits.description} />
-          <ImageGrid
-            images={portfolioData.sunsetPortraits.images}
-            onOpen={(idx) => openLightboxWith(portfolioData.sunsetPortraits.images, idx)}
-          />
-        </motion.section>
-
-        {/* --- ÉJSZAKAI PORTRÉ: ide kell sötét hatás --- */}
-        <motion.section
-          id="portre-ejjel"
-          ref={nightRef}
-          className="py-6"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {/* Make header text light when background is darkening */}
-          <SectionHeader title={portfolioData.nightPortraits.title} description={portfolioData.nightPortraits.description} inverted />
-          <ImageGrid
-            images={portfolioData.nightPortraits.images}
-            onOpen={(idx) => openLightboxWith(portfolioData.nightPortraits.images, idx)}
-          />
-        </motion.section>
-
-        {/* ÚJ SZEKCIÓ: CSERESZNYEVIRÁG PORTRÉK */}
-        <motion.section
-          id="cseresznye"
-          ref={cherryBlossomRef}
-          className="py-6"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {/* A fejléc "inverted", mert sötét háttérből jön elő */}
-          <SectionHeader title={portfolioData.cherryBlossom.title} description={portfolioData.cherryBlossom.description} inverted />
-          <ImageGrid
-            images={portfolioData.cherryBlossom.images}
-            onOpen={(idx) => openLightboxWith(portfolioData.cherryBlossom.images, idx)}
-          />
-        </motion.section>
-
-        {/* ÚJ SZEKCIÓ: LEVENDULÁS CSALÁDI FOTÓZÁS */}
-        <motion.section
-          id="levendula"
-          ref={lavenderRef} // Ref hozzárendelése
-          className="py-6"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {/* A fejléc "inverted", mert sötét háttérből jön */}
-          <SectionHeader title={portfolioData.lavenderFamily.title} description={portfolioData.lavenderFamily.description} inverted />
-          <ImageGrid
-            images={portfolioData.lavenderFamily.images}
-            onOpen={(idx) => openLightboxWith(portfolioData.lavenderFamily.images, idx)}
-          />
-        </motion.section>
-
-        {/* ÚJ SZEKCIÓ: TÓPARTI CSALÁDI FOTÓZÁS */}
-        <motion.section
-          id="topart"
-          ref={lakesideRef} // ÚJ: A ref hozzárendelése a szekcióhoz
-          className="py-6"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <SectionHeader title={portfolioData.lakesideFamily.title} description={portfolioData.lakesideFamily.description} />
-          <ImageGrid
-            images={portfolioData.lakesideFamily.images}
-            onOpen={(idx) => openLightboxWith(portfolioData.lakesideFamily.images, idx)}
-          />
-        </motion.section>
-
-        {/* ÚJ SZEKCIÓ: AUTÓPORTRÉK */}
-        <motion.section
-          id="autok"
-          ref={carRef}
-          className="py-6"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <SectionHeader title={portfolioData.carPortraits.title} description={portfolioData.carPortraits.description} />
-          <ImageGrid
-            images={portfolioData.carPortraits.images}
-            onOpen={(idx) => openLightboxWith(portfolioData.carPortraits.images, idx)}
-          />
-        </motion.section>
-
-        {/* További munkák - madarak, természet */}
-        <motion.section
-          id="tovabbiak"
-          ref={natureRef} // MÓDOSÍTOTT: Ez a ref indítja a zöld színt
-          className="py-6"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <SectionHeader title={portfolioData.versatility.title} description={portfolioData.versatility.description} />
-          <ImageGrid
-            images={portfolioData.versatility.images}
-            onOpen={(idx) => openLightboxWith(portfolioData.versatility.images, idx)}
-          />
-        </motion.section>
-      </div>
-
-      {/* FOOTER */}
-      <footer className="py-12">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          
-        </div>
-      </footer>
-
-      {/* --- Lightbox (yet-another-react-lightbox) --- */}
-      <Lightbox
-        open={lightboxOpen}
-        close={() => setLightboxOpen(false)}
-        slides={lightboxSlides}
-        index={lightboxIndex}
-        // keyboard navigation and arrows are default; the component is modern and animated.
-        controller={{ closeOnBackdropClick: true }}
+    <motion.main
+    animate={{ background: bgGradient }}
+    transition={{ duration: 0.8, ease: 'easeInOut' }}
+    className={`${inter.className} min-h-screen transition-colors duration-500`}
+    style={{
+      background: bgGradient,
+      willChange: 'background',
+    }}
+  >
+    <div className="max-w-6xl mx-auto px-6 py-12 space-y-24">
+      <SectionHeader title={portfolioData.offroadEvents.title} description={portfolioData.offroadEvents.description} />
+      <ImageGrid
+        images={portfolioData.offroadEvents.images}
+        onOpen={(idx) => openLightboxWith(portfolioData.offroadEvents.images, idx)}
       />
-    </main>
+
+      <section ref={nightRef}>
+        <SectionHeader title={portfolioData.nightPortraits.title} description={portfolioData.nightPortraits.description} inverted />
+        <ImageGrid
+          images={portfolioData.nightPortraits.images}
+          onOpen={(idx) => openLightboxWith(portfolioData.nightPortraits.images, idx)}
+        />
+      </section>
+
+      <section ref={carRef}>
+        <SectionHeader title={portfolioData.carPortraits.title} description={portfolioData.carPortraits.description} />
+        <ImageGrid
+          images={portfolioData.carPortraits.images}
+          onOpen={(idx) => openLightboxWith(portfolioData.carPortraits.images, idx)}
+        />
+      </section>
+
+      <section ref={cherryRef}>
+        <SectionHeader title={portfolioData.cherryBlossom.title} description={portfolioData.cherryBlossom.description} inverted />
+        <ImageGrid
+          images={portfolioData.cherryBlossom.images}
+          onOpen={(idx) => openLightboxWith(portfolioData.cherryBlossom.images, idx)}
+        />
+      </section>
+
+      <section ref={lavenderRef}>
+        <SectionHeader title={portfolioData.lavenderFamily.title} description={portfolioData.lavenderFamily.description} inverted />
+        <ImageGrid
+          images={portfolioData.lavenderFamily.images}
+          onOpen={(idx) => openLightboxWith(portfolioData.lavenderFamily.images, idx)}
+        />
+      </section>
+
+      <section ref={lakesideRef}>
+        <SectionHeader title={portfolioData.lakesideFamily.title} description={portfolioData.lakesideFamily.description} />
+        <ImageGrid
+          images={portfolioData.lakesideFamily.images}
+          onOpen={(idx) => openLightboxWith(portfolioData.lakesideFamily.images, idx)}
+        />
+      </section>
+
+      <section ref={natureRef}>
+        <SectionHeader title={portfolioData.versatility.title} description={portfolioData.versatility.description} />
+        <ImageGrid
+          images={portfolioData.versatility.images}
+          onOpen={(idx) => openLightboxWith(portfolioData.versatility.images, idx)}
+        />
+      </section>
+    </div>
+
+    <footer className="py-12">
+      <div className="max-w-6xl mx-auto px-6 text-center"></div>
+    </footer>
+
+    <Lightbox
+      open={lightboxOpen}
+      close={() => setLightboxOpen(false)}
+      slides={lightboxSlides}
+      index={lightboxIndex}
+      controller={{ closeOnBackdropClick: true }}
+    />
+  </motion.main>
   )
 }
