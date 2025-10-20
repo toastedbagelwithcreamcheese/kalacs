@@ -21,7 +21,7 @@ const slides = [
     image: "/images/_MG_0315-2.webp",         // Mobil kép
     width: 1200, height: 800,              // Mobil kép méretei
     desktopImage: "/images/portrekollazs.png", // Desktop kép
-    desktopWidth: 1920, desktopHeight: 1080, // Desktop kép méretei
+    desktopWidth: 1920, desktopHeight: 1080, // Desktop kép méreteii
     title: "Portrék",
     text: "Stílusos portrék, amelyek megmutatják egyéniséged.",
     buttonText: "Részletek",
