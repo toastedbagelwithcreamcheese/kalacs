@@ -7,12 +7,9 @@ import { X, Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Cseréld le ezeket a saját kutyás képeid elérési útvonalaira
 const images = [
-  "/images/59957F6B-2DAA-4D9D-AB69-3B47B1F7216F_1_105_c.jpeg",
   "/images/_MG_5324.webp",
-  "/images/_MG_5347.webp",
   "/images/_MG_5351.webp",
-  "/images/_MG_5375.webp",
-  "/images/_MG_5415.webp",
+  "/images/_MG_5347.webp",
 ];
 
 const KutyaGallery = () => {

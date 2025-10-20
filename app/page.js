@@ -50,7 +50,7 @@ const slides = [
   {
     image: "/images/_MG_5347.webp",
     width: 1200, height: 800,
-    desktopImage: "/images/KutyusKollazs.png",
+    desktopImage: "/images/kutyus_kollazs.png",
     desktopWidth: 1920, desktopHeight: 1080,
     title: "Kutyus Fotózás",
     text: "Játékos kalandok és felejthetetlen emlékek a négylábú barátodról.",
@@ -364,11 +364,6 @@ export default function PortfolioHomeFinal() {
             alt: "",
           },
           {
-            src: "/images/59957F6B-2DAA-4D9D-AB69-3B47B1F7216F_1_105_c.jpeg",
-            title: "",
-            alt: "",
-          },
-          {
             src: "/images/_MG_5324.webp",
             title: "",
             alt: "",
@@ -377,18 +372,6 @@ export default function PortfolioHomeFinal() {
             src: "/images/_MG_5351.webp",
             title: "",
             alt: "",
-          },
-        ]}
-        extraImages={[
-          {
-            src: "/images/_MG_5375.webp",
-            alt: "",
-            title: "",
-          },
-          {
-            src: "/images/_MG_5415.webp",
-            alt: "",
-            title: "",
           },
         ]}
       />

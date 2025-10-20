@@ -14,7 +14,7 @@ const packages = [
     duration: "kb. 30 perc fotózás",
     features: [
       "Személyes konzultáció a fotózás előtt",
-      "Az alapdíj 5-8 db profi, retusált digitális képet tartalmaz",
+      "Az alapdíj 10-15 db profi, retusált digitális képet tartalmaz",
       "Minden további választott és retusált kép: 1.990 Ft/db",
       "1 választott helyszín (pl. kedvenc park, otthon)",
       "Online képgaléria a válogatáshoz",
@@ -28,7 +28,7 @@ const packages = [
     duration: "kb. 60-90 perc fotózás",
     features: [
       "Személyes konzultáció a fotózás előtt",
-      "Az alapdíj 15 db profi, retusált digitális képet tartalmaz",
+      "Az alapdíj 25 db profi, retusált digitális képet tartalmaz",
       "Minden további választott és retusált kép: 1.790 Ft/db",
       "Akár 2 közeli helyszín a változatosabb fotókért",
       "Online képgaléria a válogatáshoz",
@@ -144,7 +144,7 @@ export default function KutyaFotozas() {
         >
           <motion.div className="overflow-hidden md:ml-8" whileHover={{ scale: 1.05 }}>
             <Image
-              src="/images/59957F6B-2DAA-4D9D-AB69-3B47B1F7216F_1_105_c.jpeg" // <-- Placeholder kép
+              src="/images/_MG_5351.webp" // <-- Placeholder kép
               width={300}
               height={200}
               alt="Kutya portré fotózás"
