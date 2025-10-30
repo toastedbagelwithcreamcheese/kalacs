@@ -7,17 +7,23 @@ import { useState } from "react";
 // Példa képek (cseréld ki sajátjaidra)
 const allImages = [
   { src: "/images/audi_tel-1198.webp", alt: "" },
+  { src: "/images/_MG_0045.webp", alt: "" },
   { src: "/images/_MG_6310.webp", alt: "" },
+  { src: "/images/_MG_0094.webp", alt: "" },
   { src: "/images/_MG_6506.webp", alt: "" },
+  { src: "/images/_MG_0031.webp", alt: "" },
   { src: "/images/_MG_6508.webp", alt: "" },
   { src: "/images/_MG_7633.webp", alt: "" },
+  { src: "/images/_MG_0019.webp", alt: "" },
   { src: "/images/_MG_6519.webp", alt: "" },
   { src: "/images/Rendszamnelkul-7580.jpg", alt: "" },
   { src: "/images/_MG_6531.webp", alt: "" },
   { src: "/images/_MG_6330_2.webp", alt: "" },
+  { src: "/images/_MG_0003.webp", alt: "" },
   { src: "/images/audi_tel--5.webp", alt: "" },
   { src: "/images/_MG_6525.webp", alt: "" },
 ];
+
 
 const packages = [
   {
@@ -33,12 +39,6 @@ const packages = [
       "Fókuszban az autó külső vonalai és legjellegzetesebb részletei",
       "Online, jelszóval védett képgaléria a válogatáshoz",
     ],
-    videoOption: {
-      available: true,
-      description: "Rövid, 'TikTok' szerkesztett videó (kb. 15-20mp).",
-      price: "+ 6.990 Ft", // Ide írd a kedvezményes árat
-      icon: "🎬", // Opcionális ikon
-    },
     category: "photo_package",
   },
   {
@@ -54,31 +54,7 @@ const packages = [
       "Online, jelszóval védett képgaléria a válogatáshoz és a kész képek letöltéséhez",
       "Kreatív beállítások az autóval és a tulajdonossal",
     ],
-    videoOption: {
-      available: true,
-      description:
-        "Az alap, rövid, 'TikTok' féle szerkesztett videót (kb. 15-20mp) tartalmazza az ár.",
-      price: "", // Ide írd a kedvezményes árat
-      icon: "🎬✨", // Opcionális ikon
-    },
     category: "photo_package",
-  },
-  {
-    title: "Autó Videóklip Csomag",
-    price: "9.990 - 19.990 Ft", // Ide írd a videó csomag árát
-    priceSuffix: "(alapdíj videóra)",
-    duration: "kb. 50-60 perc forgatás",
-    features: [
-      "Konzultáció a videó koncepciójáról, helyszín(ek)ről és stílusról",
-      "Elképzeléstől függően 10-30mp videó",
-      "Minőségi 4k felbontás",
-      "1-2 rövidebb verzió közösségi média platformokra (pl. Instagram Reel)",
-    ],
-    videoOption: {
-      // Ennél a csomagnál nincs 'plusz' videó opció, mert ez maga a videó csomag
-      available: false,
-    },
-    category: "video_package",
   },
 ];
 
@@ -348,7 +324,7 @@ export default function AutoPhotographySection() {
           </p>
         </div>
 
-        <div className="container mx-auto mt-12 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto mt-12 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {/* Megjegyzés a grid-cols-hoz: 
     - Ha általában 2 csomagod van: md:grid-cols-2 lg:grid-cols-2
     - Ha 3 csomagod van (mint most): md:grid-cols-2 lg:grid-cols-3 (így egymás mellett lesznek nagyobb képernyőn)

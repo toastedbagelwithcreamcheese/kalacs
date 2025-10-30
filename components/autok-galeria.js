@@ -34,7 +34,15 @@ const carGalleryImages = [
   { src: "/images/Rendszamnelkul-7651.webp", width: 1600, height: 900, alt: "Autó fotó 14" },
   { src: "/images/_MG_6508.webp", width: 1600, height: 900, alt: "Autó fotó 16 (duplikált)" },
   { src: "/images/_MG_6519.webp", width: 1600, height: 900, alt: "Autó fotó 17 (duplikált)" },
+
+  // Újonnan beillesztett képek (egymás mellett)
+  { src: "/images/_MG_0019.webp", width: 1600, height: 900, alt: "Autó fotó 18" },
+  { src: "/images/_MG_0045.webp", width: 1600, height: 900, alt: "Autó fotó 19" },
+  { src: "/images/_MG_0031.webp", width: 1600, height: 900, alt: "Autó fotó 20" },
+  { src: "/images/_MG_0094.webp", width: 1600, height: 900, alt: "Autó fotó 21" },
+  { src: "/images/_MG_0003.webp", width: 1600, height: 900, alt: "Autó fotó 22" },
 ];
+
 // --------------------
 
 export default function AutoGaleriaPage() {
