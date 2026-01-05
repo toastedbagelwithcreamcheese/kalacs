@@ -66,6 +66,7 @@ export default function AboutPageModern() {
               </a>
             </Link>
           </motion.div>
+          
         </div>
       </section>
 
