@@ -7,29 +7,6 @@ import { Camera, Layers3, Zap, Video, ArrowRight } from "lucide-react";
 
 export default function AboutPageModern() {
 
-  // --- FELSZERELÉS ADATOK ---
-  const gear = [
-    {
-      icon: <Camera size={36} className="text-[#C79984]" />,
-      category: "Fényképezőgép váz",
-      items: ["Canon EOS R", "Canon EOS 6D"]
-    },
-    {
-      icon: <Layers3 size={36} className="text-[#C79984]" />,
-      category: "Objektívek",
-      items: ["Canon EF 24-105mm f/4 L", "Sigma EF 70-200mm f/2.8 EX APO DG", "Sigma EF 85mm f/1.4 EX DG HSM", "Canon EF 50mm f/1.4 USM"]
-    },
-    {
-      icon: <Zap size={36} className="text-[#C79984]" />,
-      category: "Világítástechnika",
-      items: ["Stúdió softboxok", "Professzionális vakuk"]
-    },
-    {
-      icon: <Video size={36} className="text-[#C79C8D]" />,
-      category: "Videó és Stabilizálás",
-      items: ["DJI Osmo Mobile 7 gimbal"]
-    }
-  ];
 
   // --- SZOLGÁLTATÁSOK ADATAI ---
   const services = [
@@ -66,7 +43,20 @@ export default function AboutPageModern() {
               </a>
             </Link>
           </motion.div>
-          
+          <motion.div 
+            className="flex justify-center md:justify-end"
+            initial={{ opacity: 0, scale: 0.9 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
+            <Image
+              src="/images/profilkep.jpg" 
+              alt="Kovács Bálint, fotós"
+              width={500}
+              height={500}
+              className="rounded-full shadow-2xl w-80 h-80 sm:w-80 sm:h-80 lg:max-w-[2000px] lg:h-[30rem] object-cover"
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -90,45 +80,6 @@ export default function AboutPageModern() {
               Legyen szó egy meghitt esküvőről, egy játékos családi délutánról vagy egy önbizalmat adó portrésorozatról, a célom, hogy a képeken keresztül ne csak a látványt, hanem az érzéseket is visszakapd. Olyan emlékeket készítek, amiket évek múltán is öröm lesz újra és újra elővenni.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* FELSZERELÉS SZEKCIÓ */}
-      <section className="py-16 sm:py-24 bg-gray-900 text-white">
-        <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-12 sm:mb-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}>Eszközök a Tökéletes Emlékekért</h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">A kreatív látásmód mellett a megbízható technika is elengedhetetlen. Kizárólag professzionális felszereléssel dolgozom, hogy garantáljam a kompromisszumok nélküli minőséget.</p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {gear.map((category, index) => (
-              <motion.div
-                key={category.category}
-                className="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  {category.icon}
-                  <h3 className="text-xl font-semibold text-white">{category.category}</h3>
-                </div>
-                <ul className="space-y-2">
-                  {category.items.map(item => (
-                    <li key={item} className="text-gray-300 text-sm sm:text-base">{item}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
