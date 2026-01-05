@@ -66,20 +66,6 @@ export default function AboutPageModern() {
               </a>
             </Link>
           </motion.div>
-          <motion.div 
-            className="flex justify-center md:justify-end"
-            initial={{ opacity: 0, scale: 0.9 }} 
-            animate={{ opacity: 1, scale: 1 }} 
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          >
-            <Image
-              src="/images/profilkep.jpg" 
-              alt="Kovács Bálint, fotós"
-              width={500}
-              height={500}
-              className="rounded-full shadow-2xl w-80 h-80 sm:w-80 sm:h-80 lg:max-w-[2000px] lg:h-[30rem] object-cover"
-            />
-          </motion.div>
         </div>
       </section>
 
