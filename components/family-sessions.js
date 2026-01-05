@@ -70,7 +70,7 @@ export default function CsaladiFotozasPageDistinct() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   const heroImage = "/images/_MG_8762.webp"; 
-  const featureImage1 = "/images/_MG_4764.webp";
+  const featureImage1 = "/images/karacsony_patriek/_47A2262.jpeg";
   const featureImage2 = "/images/_MG_8653.webp";
   const featureImage3 = "/images/_MG_0017-2.webp";
   

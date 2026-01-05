@@ -54,6 +54,11 @@ const allImages = [
   { src: "/images/Virag_BP/10.png", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
   { src: "/images/Virag_BP/_MG_2456.jpg", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
   { src: "/images/Virag_BP/8.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/anna_varosliget/_47A7016.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/anna_varosliget/_47A7180.webp", width: 800, height: 1200, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/anna_varosliget/_47A7193.webp", width: 800, height: 1200, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/anna_varosliget/_47A7506.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
+  { src: "/images/anna_varosliget/_47A7701.webp", width: 1200, height: 800, alt: "Felnőtt portré", category: 'Felnőtt' },
   
 
   // Gyermek fotók

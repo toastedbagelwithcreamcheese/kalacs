@@ -22,6 +22,18 @@ const images = [
   "/images/_MG_1136.webp",
   "/images/_MG_9335.webp",
   "/images/_MG_0017-2.webp",
+  "/images/karacsony_patriek/_47A2095.jpeg",
+  "/images/karacsony_patriek/_47A2157.jpeg",
+  "/images/karacsony_patriek/_47A2250.jpeg",
+  "/images/karacsony_patriek/_47A2262.jpeg",
+  "/images/karacsony_patriek/_47A2289.jpeg",
+  "/images/karacsony_patriek/_47A2319.jpeg",
+  "/images/karacsony_patriek/_47A2351.jpeg",
+  "/images/karacsony_patriek/_47A2421.jpeg",
+  "/images/karacsony_patriek/_47A2438.jpeg",
+  "/images/karacsony_patriek/_47A2860.jpeg",
+  "/images/karacsony_patriek/_47A2964.jpeg",
+  "/images/karacsony_patriek/_47A3036.jpeg",
 ];
 
 const Gallery = () => {

@@ -91,7 +91,7 @@ export default function PortreFotozasModern() {
   const heroImage = "/images/_MG_0315-2.webp"; // NAGY, LÁTVÁNYOS HERO KÉP
   const whyImage1 = "/images/Virag_BP/1_1.webp";
   const whyImage2 = "/images/_MG_0490.webp";
-  const whyImage3 = "/images/_MG_9381.webp";
+  const whyImage3 = "/images/anna_varosliget/_47A7180.webp";
 
   return (
     <div className="bg-gray-50 text-gray-800">

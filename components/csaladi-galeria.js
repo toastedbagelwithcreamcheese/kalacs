@@ -30,6 +30,18 @@ const familyImages = [
   { src: "/images/_MG_9237.webp", alt: "", width: 800, height: 1200 },
   { src: "/images/_MG_9335.webp", alt: "", width: 800, height: 1200 },
   { src: "/images/_MG_0017-2.webp", alt: "", width: 1200, height: 800 },
+  { src: "/images/karacsony_patriek/_47A2095.jpeg", alt: "", width: 800, height: 1200 },
+  { src: "/images/karacsony_patriek/_47A2157.jpeg", alt: "", width: 800, height: 1200 },
+  { src: "/images/karacsony_patriek/_47A2250.jpeg", alt: "", width: 800, height: 1200 },
+  { src: "/images/karacsony_patriek/_47A2262.jpeg", alt: "", width: 800, height: 1200 },
+  { src: "/images/karacsony_patriek/_47A2289.jpeg", alt: "", width: 1200, height: 800 },
+  { src: "/images/karacsony_patriek/_47A2319.jpeg", alt: "", width: 1200, height: 800 },
+  { src: "/images/karacsony_patriek/_47A2351.jpeg", alt: "", width: 800, height: 1200 },
+  { src: "/images/karacsony_patriek/_47A2421.jpeg", alt: "", width: 1200, height: 800 },
+  { src: "/images/karacsony_patriek/_47A2438.jpeg", alt: "", width: 800, height: 1200 },
+  { src: "/images/karacsony_patriek/_47A2860.jpeg", alt: "", width: 1200, height: 800 },
+  { src: "/images/karacsony_patriek/_47A2964.jpeg", alt: "", width: 1200, height: 800 },
+  { src: "/images/karacsony_patriek/_47A3036.jpeg", alt: "", width: 1200, height: 800 },
 ];
 
 

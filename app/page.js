@@ -267,17 +267,17 @@ export default function PortfolioHomeFinal() {
         description="A várandósság egy varázslatos időszak, tele izgalommal és új élményekkel. Kismama fotózásaim célja, hogy meghitt, természetes környezetben örökítsük meg ezt a különleges pillanatot. Fontos számomra, hogy felszabadultan érezd magad, hiszen így születnek a legőszintébb és legszebb emlékek. A letisztult, harmonikus képek évekkel később is felidézik a várandósság szépségét és a bennetek formálódó erős köteléket."
         images={[
           {
-            src: "/images/_MG_4958.webp",
+            src: "/images/kata_kismama/_47A9158-2.jpg",
             title: "",
             alt: "",
           },
           {
-            src: "/images/_MG_4931.webp",
+            src: "/images/kata_kismama/_47A9221-2.jpg",
             title: "",
             alt: "",
           },
           {
-            src: "/images/_MG_4731.webp",
+            src: "/images/kata_kismama/_47A8279-2.jpg",
             title: "",
             alt: "",
           },
@@ -305,17 +305,12 @@ export default function PortfolioHomeFinal() {
             alt: "",
           },
           {
-            src: "/images/_MG_0490.webp",
+            src: "/images/anna_varosliget/_47A7180.webp",
             title: "",
             alt: "",
           },
           {
             src: "/images/Virag_BP/6.webp",
-            title: "",
-            alt: "",
-          },
-          {
-            src: "/images/_MG_4462.webp",
             title: "",
             alt: "",
           },
