@@ -52,25 +52,6 @@ export default function AboutSectionModernized() {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* BAL OLDAL: KÉP (JELENTŐSEN KISEBB) */}
-          <motion.div 
-            className="lg:col-span-4 flex justify-center lg:justify-start"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-<div className="relative w-48 h-64 sm:w-56 sm:h-72 lg:w-72 lg:h-[400px] shadow-2xl p-2 bg-white overflow-hidden rounded-2xl">
-  <Image
-    src="/images/profilkep.jpg"
-    alt="Kovács Bálint, fotós Zalaegerszeg"
-    layout="fill"
-    objectFit="cover"
-    className="rounded-2xl"
-  />
-</div>
-
-          </motion.div>
 
           {/* JOBB OLDAL: SZÖVEG */}
           <motion.div 
