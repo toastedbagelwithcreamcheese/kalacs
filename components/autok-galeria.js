@@ -3,20 +3,17 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Lightbox from 'yet-another-react-lightbox';
 import "yet-another-react-lightbox/styles.css";
 
-// Lightbox pluginok importálása
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { Camera, ArrowRight } from "lucide-react";
 
-// --- KÉP ADATOK ---
-// !!! FIGYELEM: AZ ALÁBBI `width` ÉS `height` ÉRTÉKEK CSAK PLACEHOLDEREK!
-// !!! KÉRLEK, CSERÉLD LE ŐKET A KÉPEID TÉNYLEGES EREDETI MÉRETEIRE!
-// Az `alt` szövegeket is érdemes egyedivé tenni.
+// --- KÉP ADATOK (Változatlan tartalom) ---
 const carGalleryImages = [
   { src: "/images/audi_tel-1198.webp", width: 1600, height: 900, alt: "Autó fotó 1 (Audi)" },
   { src: "/images/_MG_6310.webp", width: 1600, height: 900, alt: "Autó fotó 2" },
@@ -34,16 +31,12 @@ const carGalleryImages = [
   { src: "/images/Rendszamnelkul-7651.webp", width: 1600, height: 900, alt: "Autó fotó 14" },
   { src: "/images/_MG_6508.webp", width: 1600, height: 900, alt: "Autó fotó 16 (duplikált)" },
   { src: "/images/_MG_6519.webp", width: 1600, height: 900, alt: "Autó fotó 17 (duplikált)" },
-
-  // Újonnan beillesztett képek (egymás mellett)
   { src: "/images/_MG_0019.webp", width: 1600, height: 900, alt: "Autó fotó 18" },
   { src: "/images/_MG_0045.webp", width: 1600, height: 900, alt: "Autó fotó 19" },
   { src: "/images/_MG_0031.webp", width: 1600, height: 900, alt: "Autó fotó 20" },
   { src: "/images/_MG_0094.webp", width: 1600, height: 900, alt: "Autó fotó 21" },
   { src: "/images/_MG_0003.webp", width: 1600, height: 900, alt: "Autó fotó 22" },
 ];
-
-// --------------------
 
 export default function AutoGaleriaPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -62,113 +55,111 @@ export default function AutoGaleriaPage() {
   };
 
   return (
-    <>
+    <div className="bg-white font-sans text-[#5A4A42] selection:bg-[#C79C8D] selection:text-white">
       <Head>
-        <title>Autó Galéria – [A Te Fotós Neved Ide]</title> {/* CSERÉLD LE! */}
+        <title>Autó Galéria – Kovács Bálint Fotó</title>
         <meta name="description" content="Lenyűgöző autófotók Zalaegerszegről. Dinamikus és művészi képek kedvenc járművekről." />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-        <motion.header 
-          className="py-20 md:py-28 text-center"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+      {/* HEADER */}
+      <motion.header 
+        className="pt-32 pb-16 text-center bg-[#F9F5F1] rounded-b-[3rem]"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 
+          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 font-akaya text-[#5A4A42]"
         >
-          <h1 
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#e0c3b6] via-[#C79C8D] to-[#b3897b]"
-            style={{ fontFamily: "Noto Serif Armenian, sans-serif"}}
-          >
-            Négy Kerék Művészete
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            Fedezd fel válogatott autófotóimat, ahol a design, az erő és a szenvedély találkozik minden egyes képen. Profi autófotózás Zalaegerszegen.
-          </p>
-        </motion.header>
+          Négy Kerék Művészete
+        </h1>
+        <div className="w-20 h-1 bg-[#C79C8D] mx-auto rounded-full mb-6" />
+        <p className="text-lg text-[#5A4A42]/70 max-w-2xl mx-auto px-6">
+          Fedezd fel válogatott autófotóimat, ahol a design, az erő és a szenvedély találkozik. 
+          Profi autófotózás Zalaegerszegen.
+        </p>
+      </motion.header>
 
-        <main className="container mx-auto px-2 sm:px-4 pb-16">
-          {carGalleryImages.length > 0 ? (
-            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-3 xl:columns-4 gap-4 sm:gap-5 md:gap-6"> {/* Autóknál lehet, hogy kevesebb oszlop jobb a fekvő képek miatt */}
+      {/* GALÉRIA RÁCS */}
+      <main className="container mx-auto px-4 sm:px-6 py-12 min-h-screen">
+        {carGalleryImages.length > 0 ? (
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+            <AnimatePresence>
               {carGalleryImages.map((image, index) => (
                 <motion.div
-                  key={image.src + '--' + index} // Egyedi kulcs duplikált src esetén is
-                  className="mb-4 sm:mb-5 md:mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-2xl group cursor-pointer relative block"
-                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{ duration: 0.6, delay: (index % 12) * 0.07, ease:"easeOut" }}
+                  key={image.src + '--' + index}
+                  className="break-inside-avoid relative rounded-2xl overflow-hidden cursor-pointer group shadow-lg bg-[#F9F5F1]"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.5, delay: (index % 6) * 0.05 }}
                   onClick={() => openImageInLightbox(index)}
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    width={image.width} // !!! FELTÉTLENÜL CSERÉLD LE A VALÓS MÉRETRE !!!
-                    height={image.height} // !!! FELTÉTLENÜL CSERÉLD LE A VALÓS MÉRETRE !!!
-                    layout="responsive"
-                    className="transition-transform duration-500 ease-in-out group-hover:scale-105" // Kisebb zoom autós képeknél
+                    width={image.width}
+                    height={image.height}
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                     quality={85}
-                    // placeholder="blur" // Fontold meg a blur placeholder használatát
-                    // blurDataURL="AUTOS_BLUR_DATA_URL_IDE"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 ease-in-out flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-75 group-hover:scale-100 drop-shadow-lg">
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                      <line x1="11" y1="8" x2="11" y2="14"></line>
-                      <line x1="8" y1="11" x2="14" y2="11"></line>
-                    </svg>
+                  <div className="absolute inset-0 bg-[#5A4A42]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <Camera className="text-white w-10 h-10 drop-shadow-md" />
                   </div>
                 </motion.div>
               ))}
-            </div>
-          ) : (
-             <p className="text-center text-gray-400 text-xl py-20">Az autógaléria jelenleg üres. Hamarosan érkeznek a lélegzetelállító képek!</p>
-          )}
-        </main>
-
-        {lightboxOpen && (
-          <Lightbox
-            open={lightboxOpen}
-            close={() => setLightboxOpen(false)}
-            slides={slides}
-            index={lightboxIndex}
-            plugins={[Zoom, Thumbnails]}
-            zoom={{
-              maxZoomPixelRatio: 3.5, // Autóknál a részletek miatt lehet nagyobb zoom
-              doubleTapDelay: 300,
-              scrollToZoom: true,
-            }}
-            thumbnails={{
-              position: "bottom",
-              width: 110, // Kicsit szélesebb thumbnail autós képekhez
-              height: 70,
-              padding: 2,
-              gap: 5,
-              border: 1,
-              borderColor: "rgba(255,255,255,0.2)",
-              imageFit: "cover", // vagy "contain", attól függően, mi néz ki jobban
-            }}
-            styles={{
-              container: { backgroundColor: "rgba(10, 10, 10, .95)" },
-              thumbnail: { borderColor: "rgba(255,255,255,0.2)"},
-              thumbnailsContainer: { backgroundColor: "rgba(0,0,0,0.6)"}
-            }}
-            render={{
-              buttonPrev: () => carGalleryImages.length <= 1 ? null : undefined,
-              buttonNext: () => carGalleryImages.length <= 1 ? null : undefined,
-            }}
-          />
+            </AnimatePresence>
+          </div>
+        ) : (
+           <p className="text-center text-[#5A4A42]/60 text-xl py-20">Az autógaléria jelenleg üres. Hamarosan érkeznek a lélegzetelállító képek!</p>
         )}
-        
-        <footer className="text-center py-16 border-t border-gray-700/50 mt-10">
-            <p className="text-gray-400 text-sm">&copy; {new Date().getFullYear()} Kovács Bálint – Professzionális Portréfotózás</p> {/* CSERÉLD LE! */}
-            <Link href="/contact" legacyBehavior>
-                <a className="text-[#C79C8D] hover:text-[#bda093] transition-colors mt-3 inline-block text-md font-medium">
-                  Kapcsolat & Időpontfoglalás
-                </a>
+      </main>
+
+      {/* LIGHTBOX */}
+      {lightboxOpen && (
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={slides}
+          index={lightboxIndex}
+          plugins={[Zoom, Thumbnails]}
+          zoom={{
+            maxZoomPixelRatio: 3.5,
+            doubleTapDelay: 300,
+            scrollToZoom: true,
+          }}
+          thumbnails={{
+            position: "bottom",
+            width: 110,
+            height: 70,
+            border: 0,
+            borderRadius: 4,
+            padding: 4,
+            gap: 10,
+          }}
+          styles={{
+            container: { backgroundColor: "rgba(90, 74, 66, 0.95)" },
+            thumbnail: { borderRadius: "4px" },
+            icon: { color: "#fff" }
+          }}
+        />
+      )}
+      
+      {/* FOOTER */}
+      <footer className="py-20 bg-[#5A4A42] text-white text-center mt-12">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold font-akaya mb-6">Szeretnéd megörökíteni az autódat?</h2>
+            <p className="text-white/70 mb-8 max-w-xl mx-auto">
+              Legyen szó eladásról vagy csak a szenvedélyről, egy profi sorozat kiemeli a járgányod karakterét.
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#C79C8D] hover:bg-[#b3897b] text-white px-8 py-3 rounded-full font-bold transition-all shadow-xl hover:scale-105">
+                Időpontot foglalok <ArrowRight size={20} />
             </Link>
-        </footer>
-      </div>
-    </>
+            <p className="text-white/40 text-sm mt-12">
+              &copy; {new Date().getFullYear()} Kovács Bálint – Autófotózás
+            </p>
+          </div>
+      </footer>
+    </div>
   );
 }

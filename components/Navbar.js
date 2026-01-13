@@ -11,232 +11,225 @@ import {
   Mail,
   IdCard,
   Menu,
-  X,
-  Snowflake,
-  Flower2
+  Flower2,
+  Sparkles
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image"; // Fontos: Image importálása
 import ModernMobileMenu from '@/components/ModernMobileMenu';
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState({
-    munkak: false,
-    szolgaltatasok: false,
-  });
-  const [miniMenuOpen, setMiniMenuOpen] = useState(false);
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState({ munkak: false, szolgaltatasok: false });
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  // Figyeli a képernyő méretét
   useEffect(() => {
-    const checkScreenSize = () => setIsMobile(window.innerWidth < 1024);
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: 10, scale: 0.95, display: "none" },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1, 
+      display: "block",
+      transition: { duration: 0.2, ease: "easeOut" }
+    },
+    exit: { 
+      opacity: 0, 
+      y: 10, 
+      scale: 0.95, 
+      transition: { duration: 0.15, ease: "easeIn" },
+      transitionEnd: { display: "none" }
+    }
+  };
+
   return (
-    <nav className="bg-white text-gray-900 py-6 px-6 shadow-md fixed top-0 w-full z-50">
-      {/* Mobilmenü ikon */}
-      <button
-        className="lg:hidden"
-        onClick={() => setIsMobileMenuOpen(true)}
+    <>
+      <nav 
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? "bg-white/90 backdrop-blur-md shadow-md py-3" : "bg-white py-5"
+        }`}
       >
-        {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-      </button>
-
-      <ul className="hidden lg:flex justify-center space-x-8 font-semibold">
-        {/* Kezdőlap */}
-        <li>
-          <Link
-            href="/"
-            className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative"
-          >
-            <Home size={22} />
-            <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-              Kezdőlap
-            </span>
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          
+          {/* --- LOGÓ SZEKCIÓ --- */}
+          <Link href="/" className="group flex items-center gap-2 relative z-50 shrink-0 select-none">
+            {/* Ikon rész - KÉP */}
+            <div className="relative w-10 h-10 transform group-hover:rotate-6 transition-transform duration-300">
+              <Image
+                src="/images/logo2.png"
+                alt="Kovács Bálint Logó"
+                fill
+                className="object-contain"
+                priority // Mivel ez a navbarban van, fontos, hogy azonnal betöltődjön
+              />
+            </div>
+            
+            {/* Szöveg rész */}
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-bold font-akaya text-[#5A4A42] tracking-wide group-hover:text-[#C79C8D] transition-colors">
+                Bálint
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#C79C8D] font-medium group-hover:text-[#5A4A42] transition-colors">
+                Portfolio
+              </span>
+            </div>
           </Link>
-        </li>
+          {/* -------------------- */}
 
-        {/* Munkáim Dropdown */}
-        <li
-          className="relative"
-          onMouseEnter={() => setMenuOpen({ ...menuOpen, munkak: true })}
-          onMouseLeave={() => setMenuOpen({ ...menuOpen, munkak: false })}
-        >
-          <button className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative">
-            <Images size={22} />
-            <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-              Munkáim
-            </span>
-            <ChevronDown size={18} className={`transition-transform duration-300 ${menuOpen.munkak ? 'rotate-180' : ''}`} />
-          </button>
-
-          <AnimatePresence>
-            {menuOpen.munkak && (
-              <motion.ul
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="absolute left-0 mt-2 w-48 bg-white text-gray-900 rounded shadow-md border border-gray-300"
-              >
-                {[
-                  { href: "/portre-galeria", label: "Portré galéria" },
-                  { href: "/autok-galeria", label: "Autók galéria" },
-                  { href: "/csaladi-galeria", label: "Családi galéria" },
-                  { href: "/kismama-galeria", label: "Kismama galéria" },
-                ].map((item, index) => (
-                  <li key={index} className="group relative">
-                    <Link
-                      href={item.href}
-                      className="flex items-center px-4 py-2 transition relative overflow-hidden hover:bg-gray-100"
-                    >
-                      <span className="absolute left-0 top-0 h-full w-[3px] bg-gray-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
-                      <span className="ml-2">{item.label}</span>
-                    </Link>
-                  </li>
-                ))}
-              </motion.ul>
-            )}
-          </AnimatePresence>
-        </li>
-
-        {/* Szolgáltatások Dropdown */}
-        <li
-  className="relative"
-  onMouseEnter={() => setMenuOpen(prev => ({ ...prev, szolgaltatasok: true }))}
-  onMouseLeave={() => {
-    setMenuOpen(prev => ({ ...prev, szolgaltatasok: false }));
-    setMiniMenuOpen(false);
-  }}
->
-  <button className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 ">
-    <Camera size={22} />
-    <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-      Szolgáltatásaim
-    </span>
-    <ChevronDown size={18} className={`transition-transform duration-300 ${menuOpen.szolgaltatasok ? 'rotate-180' : ''}`} />
-  </button>
-
-  <AnimatePresence>
-    {menuOpen.szolgaltatasok && (
-      <motion.ul
-        initial={{ opacity: 0, y: 5 }} // Kisebb elmozdulás a stabilitásért
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 5 }}
-        // Fontos: a menü teteje érjen hozzá a szülőhöz (top-full), 
-        // a pt-2 pedig biztosítja a vizuális távolságot a tartalomnak
-        className="absolute left-0 top-full pt-2 w-56 z-[60]" 
-      >
-        <div className="bg-white rounded shadow-xl border border-gray-300 overflow-visible">
-          {[
-            { href: "/portre", label: "Portré fotózás" },
-            { href: "/autok", label: "Autó fotózás" },
-            { href: "/kutyusok", label: "Kutya fotózás" },
-            { href: "/kismama", label: "Kismama fotózás" },
-            { href: "/family-sessions", label: "Családi fotózás" },
-            { 
-              label: "Mini fotózások", 
-              hasSub: true,
-              subItems: [
-                { href: "/mini-fotozasok/karacsony", label: "Karácsonyi", icon: <Snowflake size={14} className="text-blue-400" /> },
-                { href: "/mini-fotozasok/husvet", label: "Húsvéti", icon: <Flower2 size={14} className="text-pink-400" /> }
-              ]
-            },
-          ].map((item, index) => (
-            <li 
-              key={index} 
-              className="group relative"
-              onMouseEnter={() => item.hasSub && setMiniMenuOpen(true)}
-              onMouseLeave={() => item.hasSub && setMiniMenuOpen(false)}
-            >
-              {item.hasSub ? (
-                <div className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-gray-100 transition relative">
-                  <span className="absolute left-0 top-0 h-full w-[3px] bg-gray-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
-                  <span className="ml-2">{item.label}</span>
-                  <ChevronRight size={16} className="ml-auto" />
-                  
-                  {/* ALMENÜ - szintén top-0 és egy kis bal oldali padding a hídhoz */}
-                  <AnimatePresence>
-                    {miniMenuOpen && (
-                      <motion.ul
-                        initial={{ opacity: 0, x: 5 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 5 }}
-                        className="absolute left-full top-0 pl-1 w-48 z-[70]"
-                      >
-                        <div className="bg-white rounded shadow-lg border border-gray-300 py-1">
-                          {item.subItems.map((sub, sIndex) => (
-                            <li key={sIndex}>
-                              <Link
-                                href={sub.href}
-                                className="flex items-center px-4 py-3 hover:bg-gray-50 transition"
-                              >
-                                {sub.icon}
-                                <span className="ml-2 text-sm">{sub.label}</span>
-                              </Link>
-                            </li>
-                          ))}
-                        </div>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <Link
-                  href={item.href}
-                  className="flex items-center px-4 py-3 transition relative hover:bg-gray-100"
-                >
-                  <span className="absolute left-0 top-0 h-full w-[3px] bg-gray-600 scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
-                  <span className="ml-2">{item.label}</span>
-                </Link>
-              )}
+          {/* ASZTALI MENÜ */}
+          <ul className="hidden lg:flex items-center gap-1 xl:gap-6 font-medium text-gray-700">
+            
+            <li>
+              <Link href="/" className="px-3 py-2 hover:text-[#C79C8D] transition-colors flex items-center gap-1 text-sm xl:text-base">
+                <Home size={18} /> Kezdőlap
+              </Link>
             </li>
-          ))}
-        </div>
-      </motion.ul>
-    )}
-  </AnimatePresence>
-</li>
 
-        {/* További menüpontok */}
-        <li>
-          <Link
-            href="/velemenyek"
-            className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative"
+            {/* MUNKÁIM DROPDOWN */}
+            <li 
+              className="relative group"
+              onMouseEnter={() => setMenuOpen(prev => ({ ...prev, munkak: true }))}
+              onMouseLeave={() => setMenuOpen(prev => ({ ...prev, munkak: false }))}
+            >
+              <button className="px-3 py-2 flex items-center gap-1 hover:text-[#C79C8D] transition-colors text-sm xl:text-base">
+                <Images size={18} /> Galériák <ChevronDown size={16} className={`transition-transform duration-300 ${menuOpen.munkak ? "rotate-180" : ""}`}/>
+              </button>
+              
+              <AnimatePresence>
+                {menuOpen.munkak && (
+                  <motion.div
+                    variants={dropdownVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    className="absolute top-full left-0 mt-0 w-56 pt-2"
+                  >
+                    <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+                      {[
+                        { href: "/portre-galeria", label: "Portrék" },
+                        { href: "/autok-galeria", label: "Autók" },
+                        { href: "/csaladi-galeria", label: "Család & Kismama" },
+                      ].map((item, idx) => (
+                        <Link key={idx} href={item.href} className="block px-6 py-3 hover:bg-[#F9F5F1] hover:text-[#C79C8D] transition-colors text-sm">
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </li>
+
+            {/* SZOLGÁLTATÁSOK DROPDOWN */}
+            <li 
+              className="relative group"
+              onMouseEnter={() => setMenuOpen(prev => ({ ...prev, szolgaltatasok: true }))}
+              onMouseLeave={() => setMenuOpen(prev => ({ ...prev, szolgaltatasok: false }))}
+            >
+              <button className="px-3 py-2 flex items-center gap-1 hover:text-[#C79C8D] transition-colors text-sm xl:text-base">
+                <Camera size={18} /> Szolgáltatások <ChevronDown size={16} className={`transition-transform duration-300 ${menuOpen.szolgaltatasok ? "rotate-180" : ""}`}/>
+              </button>
+
+              <AnimatePresence>
+                {menuOpen.szolgaltatasok && (
+                  <motion.div
+                    variants={dropdownVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    className="absolute top-full -left-10 mt-0 w-[320px] pt-2"
+                  >
+                    <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+                      
+                      {/* SZEZONÁLIS KIEMELT DOBOZ */}
+                      <div className="bg-[#F7E7CE] p-4 border-b border-[#e6d0b3]">
+                        <p className="text-xs font-bold text-[#C79C8D] uppercase tracking-wider mb-2 flex items-center gap-1">
+                          <Sparkles size={12} /> Aktuális Ajánlat
+                        </p>
+                        <Link href="/mini-fotozasok/husvet" className="flex items-center gap-3 group/mini">
+                          <div className="bg-white p-2 rounded-full text-[#C79C8D] group-hover/mini:scale-110 transition-transform">
+                            <Flower2 size={20} />
+                          </div>
+                          <div>
+                            <span className="block font-bold text-[#5A4A42]">Húsvéti Mini Fotózás</span>
+                            <span className="text-xs text-[#5A4A42]/80">Foglalj időpontot most!</span>
+                          </div>
+                        </Link>
+                      </div>
+
+                      {/* TÖBBI SZOLGÁLTATÁS */}
+                      <div className="p-2">
+                        {[
+                          { href: "/portre", label: "Portré Fotózás" },
+                          { href: "/autok", label: "Autó Fotózás" },
+                          { href: "/family-sessions", label: "Családi Fotózás" },
+                          { href: "/kismama", label: "Kismama Fotózás" },
+                          { href: "/kutyusok", label: "Kutyusok" },
+                        ].map((item, idx) => (
+                          <Link key={idx} href={item.href} className="flex items-center justify-between px-4 py-3 rounded-lg hover:bg-[#F9F5F1] hover:text-[#C79C8D] transition-colors text-sm font-medium">
+                            {item.label}
+                            <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </Link>
+                        ))}
+                      </div>
+
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </li>
+
+            {/* SZEZONÁLIS DIREKT LINK */}
+            <li>
+              <Link 
+                href="/mini-fotozasok/husvet" 
+                className="flex items-center gap-2 px-4 py-2 bg-[#F7E7CE] text-[#5A4A42] rounded-full font-bold text-sm hover:bg-[#e6d0b3] transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              >
+                <Flower2 size={18} className="text-[#C79C8D]" /> 
+                <span>Húsvéti Fotózás</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/velemenyek" className="px-3 py-2 hover:text-[#C79C8D] transition-colors flex items-center gap-1 text-sm xl:text-base">
+                <Settings2 size={18} /> Vélemények
+              </Link>
+            </li>
+            
+            <li>
+              <Link href="/about" className="px-3 py-2 hover:text-[#C79C8D] transition-colors flex items-center gap-1 text-sm xl:text-base">
+                <IdCard size={18} /> Rólam
+              </Link>
+            </li>
+
+            {/* CTA GOMB */}
+            <li className="ml-2">
+              <Link href="/contact" className="bg-[#5A4A42] text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-[#4a3c35] transition-transform hover:scale-105 shadow-md flex items-center gap-2">
+                <Mail size={16} /> Kapcsolat
+              </Link>
+            </li>
+
+          </ul>
+
+          {/* MOBIL MENÜ GOMB */}
+          <button
+            className="lg:hidden text-[#5A4A42] hover:text-[#C79C8D] transition-colors p-2"
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Menü megnyitása"
           >
-            <Settings2 size={22} />
-            <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-              Vélemények
-            </span>
-          </Link>
-        </li> 
+            <Menu size={32} />
+          </button>
+        </div>
+      </nav>
 
-        <li>
-          <Link href="/contact" className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative">
-            <Mail size={22} />
-            <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-              Kapcsolat
-            </span>
-          </Link>
-        </li>
-
-        <li>
-          <Link href="/about" className="flex items-center space-x-2 hover:text-gray-600 transition transform hover:scale-105 relative">
-            <IdCard size={22} />
-            <span className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-600 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100">
-              Rólam
-            </span>
-          </Link>
-        </li>
-      </ul>
-
-      {/* Mobil menü */}
+      {/* MOBIL MENÜ KOMPONENS */}
       <ModernMobileMenu isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
-    </nav>
+    </>
   );
-};
-
-export default Navbar;
+}

@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { X, ChevronLeft,  Instagram, Facebook } from "lucide-react";
+import { X, ChevronLeft, Instagram, Facebook, Flower2, ArrowRight } from "lucide-react";
 
-// Töltsd fel a szolgáltatásaid és galériáid listájával
+// Menüpontok
 const galleryItems = [
   { href: "/portre-galeria", label: "Portré Galéria" },
   { href: "/autok-galeria", label: "Autós Galéria" },
@@ -13,153 +13,170 @@ const galleryItems = [
 ];
 
 const services = [
-  { href: "/kismama", label: "Kismama Fotózás" },
-  { href: "/family-sessions", label: "Családi Fotózás" },
   { href: "/portre", label: "Portré" },
   { href: "/autok", label: "Autók" },
+  { href: "/family-sessions", label: "Családi Fotózás" },
+  { href: "/kismama", label: "Kismama Fotózás" },
   { href: "/kutyusok", label: "Kutyusok" },
 ];
 
 export default function ModernMobileMenu({ isOpen, setIsOpen }) {
   const [view, setView] = useState("main"); // 'main', 'munkáim', 'szolgaltatasaim'
 
-  // Visszalépés a főmenübe és a dropdown bezárása
-  const handleBack = () => {
-    setView("main");
-  };
+  const handleBack = () => setView("main");
 
-  // Linkre kattintáskor bezárja a teljes menüt
   const handleLinkClick = () => {
     setIsOpen(false);
-    // Kis késleltetés, hogy a bezárás animáció után váltson vissza a nézet
-    setTimeout(() => {
-      setView("main");
-    }, 300); 
+    setTimeout(() => setView("main"), 300); 
   };
 
-  // Animációs variánsok
+  // --- Animációk ---
   const menuVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.2,
-        staggerChildren: 0.08, // A menüpontok lépcsőzetes megjelenése
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.2,
-        when: "afterChildren", // Előbb a gyerekek tűnnek el
-        staggerChildren: 0.05,
-        staggerDirection: -1,
-      },
-    }
+    visible: { opacity: 1, transition: { duration: 0.3 } },
+    exit: { opacity: 0, transition: { duration: 0.2 } }
   };
 
-  const menuItemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } },
-    exit: { opacity: 0, y: -20 },
-  };
-
-  const subMenuVariants = {
-    enter: { opacity: 0, x: '100%' },
-    center: { opacity: 1, x: 0, transition: { duration: 0.3, ease: 'easeOut' } },
-    exit: { opacity: 0, x: '-100%', transition: { duration: 0.3, ease: 'easeIn' } },
+  const containerVariants = {
+    hidden: { x: "100%" },
+    visible: { x: 0, transition: { type: "spring", stiffness: 300, damping: 30 } },
+    exit: { x: "100%", transition: { duration: 0.3 } }
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="lg:hidden fixed inset-0 bg-slate-900 text-gray-200 flex flex-col p-6 z-50"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={menuVariants}
+          className="fixed inset-0 z-[60] flex justify-end"
         >
-          {/* Felső sáv: Logó (opcionális) és Bezárás gomb */}
-          <div className="flex justify-between items-center mb-10">
-            <Link href="/" onClick={handleLinkClick}>
-              <span className="font-bold text-lg">Kovács Bálint Fotó</span>
-            </Link>
-            <button onClick={() => setIsOpen(false)} aria-label="Menü bezárása">
-              <X size={32} className="text-gray-400 hover:text-white transition-colors" />
-            </button>
-          </div>
+          {/* Sötét háttér (overlay) */}
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
 
-          {/* Menü nézetek konténere */}
-          <div className="relative flex-grow flex items-center justify-center text-center">
-            <AnimatePresence mode="wait">
-              {view === "main" && (
-                <motion.ul
-                  key="main"
-                  variants={menuVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="space-y-6 text-3xl font-semibold w-full"
-                  style={{ fontFamily: "Noto Serif Armenian, sans-serif" }}
-                >
-                  <motion.li variants={menuItemVariants}>
-                    <Link href="/" onClick={handleLinkClick} className="hover:text-[#C79C8D] transition-colors">Kezdőlap</Link>
-                  </motion.li>
-                  <motion.li variants={menuItemVariants}>
-                    <button onClick={() => setView("munkáim")} className="hover:text-[#C79C8D] transition-colors w-full text-center">Munkáim</button>
-                  </motion.li>
-                  <motion.li variants={menuItemVariants}>
-                    <button onClick={() => setView("szolgaltatasaim")} className="hover:text-[#C79C8D] transition-colors w-full text-center">Szolgáltatásaim</button>
-                  </motion.li>
-                  <motion.li variants={menuItemVariants}>
-                    <Link href="/velemenyek" onClick={handleLinkClick} className="hover:text-[#C79C8D] transition-colors">Vélemények</Link>
-                  </motion.li>
-                   <motion.li variants={menuItemVariants}>
-                    <Link href="/about" onClick={handleLinkClick} className="hover:text-[#C79C8D] transition-colors">Rólam</Link>
-                  </motion.li>
-                  <motion.li variants={menuItemVariants}>
-                    <Link href="/contact" onClick={handleLinkClick} className="hover:text-[#C79C8D] transition-colors">Kapcsolat</Link>
-                  </motion.li>
-                </motion.ul>
-              )}
+          {/* Menü panel */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="relative w-full max-w-sm bg-white h-full shadow-2xl flex flex-col overflow-hidden"
+          >
+            {/* FEJLÉC */}
+            <div className="flex justify-between items-center p-6 border-b border-gray-100">
+              <span className="font-bold text-xl font-akaya text-[#5A4A42]">Menü</span>
+              <button onClick={() => setIsOpen(false)} className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors">
+                <X size={24} />
+              </button>
+            </div>
 
-              {view === "munkáim" && (
-                 <motion.div key="munkáim" variants={subMenuVariants} initial="enter" animate="center" exit="exit" className="absolute w-full">
-                   <button onClick={handleBack} className="flex items-center text-lg font-semibold mb-8 text-gray-400 hover:text-white transition-colors">
-                     <ChevronLeft size={24} className="mr-2"/> Vissza
-                   </button>
-                   <ul className="space-y-4 text-2xl font-medium">
-                      {galleryItems.map(item => (
-                         <li key={item.href}>
-                             <Link href={item.href} onClick={handleLinkClick} className="hover:text-[#C79C8D] transition-colors">{item.label}</Link>
-                         </li>
-                      ))}
-                   </ul>
-                 </motion.div>
-              )}
+            {/* TARTALOM */}
+            <div className="flex-grow overflow-y-auto p-6 flex flex-col">
+              <AnimatePresence mode="wait">
+                
+                {/* --- FŐMENÜ NÉZET --- */}
+                {view === "main" && (
+                  <motion.div
+                    key="main"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="space-y-4"
+                  >
+                    {/* SZEZONÁLIS KIEMELT GOMB (MOBILON IS!) */}
+                    <Link 
+                      href="/mini-fotozasok/husvet" 
+                      onClick={handleLinkClick}
+                      className="flex items-center justify-between p-4 bg-[#F7E7CE] rounded-xl text-[#5A4A42] font-bold shadow-sm hover:shadow-md transition-shadow mb-6 border border-[#e6d0b3]"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="bg-white p-2 rounded-full text-[#C79C8D]">
+                          <Flower2 size={20} />
+                        </div>
+                        <span>Húsvéti Fotózás</span>
+                      </div>
+                      <ArrowRight size={20} />
+                    </Link>
 
-              {view === "szolgaltatasaim" && (
-                 <motion.div key="szolgaltatasaim" variants={subMenuVariants} initial="enter" animate="center" exit="exit" className="absolute w-full">
-                   <button onClick={handleBack} className="flex items-center text-lg font-semibold mb-8 text-gray-400 hover:text-white transition-colors">
-                     <ChevronLeft size={24} className="mr-2"/> Vissza
-                   </button>
-                   <ul className="space-y-4 text-2xl font-medium">
-                      {services.map(item => (
-                         <li key={item.href}>
-                             <Link href={item.href} onClick={handleLinkClick} className="hover:text-[#C79C8D] transition-colors">{item.label}</Link>
-                         </li>
-                      ))}
-                   </ul>
-                 </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          
-          {/* Alsó sáv: Social media linkek (opcionális) */}
-          <div className="flex justify-center space-x-6 text-gray-500 mt-10">
-            <a href="https://www.facebook.com/profile.php?id=61577861518379" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook size={20}/></a>
-            <a href="https://www.instagram.com/k_balintfoto/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Instagram size={20}/></a>
-          </div>
+                    {/* Normál menüpontok */}
+                    <Link href="/" onClick={handleLinkClick} className="block text-2xl font-bold text-[#5A4A42] py-2 hover:text-[#C79C8D] transition-colors font-akaya">
+                      Kezdőlap
+                    </Link>
+                    
+                    <button onClick={() => setView("munkáim")} className="flex items-center justify-between w-full text-2xl font-bold text-[#5A4A42] py-2 hover:text-[#C79C8D] transition-colors font-akaya">
+                      Munkáim <ArrowRight size={20} className="text-gray-300" />
+                    </button>
+
+                    <button onClick={() => setView("szolgaltatasaim")} className="flex items-center justify-between w-full text-2xl font-bold text-[#5A4A42] py-2 hover:text-[#C79C8D] transition-colors font-akaya">
+                      Szolgáltatásaim <ArrowRight size={20} className="text-gray-300" />
+                    </button>
+
+                    <Link href="/velemenyek" onClick={handleLinkClick} className="block text-2xl font-bold text-[#5A4A42] py-2 hover:text-[#C79C8D] transition-colors font-akaya">
+                      Vélemények
+                    </Link>
+
+                    <Link href="/about" onClick={handleLinkClick} className="block text-2xl font-bold text-[#5A4A42] py-2 hover:text-[#C79C8D] transition-colors font-akaya">
+                      Rólam
+                    </Link>
+
+                    <Link href="/contact" onClick={handleLinkClick} className="block text-2xl font-bold text-[#5A4A42] py-2 hover:text-[#C79C8D] transition-colors font-akaya">
+                      Kapcsolat
+                    </Link>
+
+                  </motion.div>
+                )}
+
+                {/* --- MUNKÁIM ALMENÜ --- */}
+                {view === "munkáim" && (
+                   <motion.div key="munkáim" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }}>
+                     <button onClick={handleBack} className="flex items-center text-sm font-semibold text-gray-500 mb-6 hover:text-[#C79C8D]">
+                       <ChevronLeft size={16} className="mr-1"/> Vissza a menübe
+                     </button>
+                     <h3 className="text-xl font-bold text-[#C79C8D] mb-4 font-akaya">Galériák</h3>
+                     <ul className="space-y-4">
+                        {galleryItems.map(item => (
+                           <li key={item.href}>
+                               <Link href={item.href} onClick={handleLinkClick} className="block text-lg font-medium text-[#5A4A42] hover:text-[#C79C8D] py-1">{item.label}</Link>
+                           </li>
+                        ))}
+                     </ul>
+                   </motion.div>
+                )}
+
+                {/* --- SZOLGÁLTATÁSOK ALMENÜ --- */}
+                {view === "szolgaltatasaim" && (
+                   <motion.div key="szolgaltatasaim" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }}>
+                     <button onClick={handleBack} className="flex items-center text-sm font-semibold text-gray-500 mb-6 hover:text-[#C79C8D]">
+                       <ChevronLeft size={16} className="mr-1"/> Vissza a menübe
+                     </button>
+                     <h3 className="text-xl font-bold text-[#C79C8D] mb-4 font-akaya">Szolgáltatások</h3>
+                     <ul className="space-y-4">
+                        {/* Itt is megjeleníthetjük a szezonálist, ha akarjuk */}
+                        <li>
+                           <Link href="/mini-fotozasok/husvet" onClick={handleLinkClick} className="flex items-center gap-2 text-lg font-bold text-[#C79C8D] py-1">
+                             <Flower2 size={18} /> Húsvéti Mini
+                           </Link>
+                        </li>
+                        {services.map(item => (
+                           <li key={item.href}>
+                               <Link href={item.href} onClick={handleLinkClick} className="block text-lg font-medium text-[#5A4A42] hover:text-[#C79C8D] py-1">{item.label}</Link>
+                           </li>
+                        ))}
+                     </ul>
+                   </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            
+            {/* LÁBLÉC: Social Ikonok */}
+            <div className="p-6 border-t border-gray-100 flex justify-center gap-6">
+              <a href="https://www.facebook.com/profile.php?id=61577861518379" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#1877F2] transition-colors"><Facebook size={24}/></a>
+              <a href="https://www.instagram.com/k_balintfoto/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#E4405F] transition-colors"><Instagram size={24}/></a>
+            </div>
+
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
