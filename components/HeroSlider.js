@@ -17,7 +17,7 @@ const slides = [
     link: "/portre",
   },
   {
-    image: "/images/_MG_4693.webp",
+    image: "/images/kata_kismama/_47A9158-2.jpg",
     desktopImage: "/images/kismama-collage.png",
     title: "Kismama",
     text: "A várandósság varázsa finom, meghitt pillanatokban.",
@@ -25,7 +25,7 @@ const slides = [
     link: "/kismama",
   },
   {
-    image: "/images/_MG_4693.webp",
+    image: "/images/_MG_4795.webp",
     desktopImage: "/images/csaladi-collage.png",
     title: "Családi Fotózás",
     text: "Örökítsd meg a család minden mosolyát és pillanatát szeretettel és természetességgel.",
