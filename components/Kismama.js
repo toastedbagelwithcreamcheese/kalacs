@@ -28,7 +28,10 @@ const galleryImages = [
   { src: "/images/kata_kismama/_47A9158-2.jpg", alt: "Harmónia" },
   { src: "/images/kata_kismama/_47A9191-2.jpg", alt: "Apával közösen" },
   { src: "/images/kata_kismama/_47A9221-2.jpg", alt: "Boldog szülők" },
-  { src: "/images/kata_kismama/B56E8960-7048-4562-BD9A-C27C2E6FEE1A.jpg", alt: "Művészi beállítás" }
+  { src: "/images/_MG_4795.webp", alt: "Boldog szülők" },
+  { src: "/images/_MG_4731.webp", alt: "Boldog szülők" },
+  { src: "/images/_MG_4693.webp", alt: "Boldog szülők" },
+  { src: "/images/_MG_4805.jpg", alt: "Boldog szülők" },
 ];
 
 const maternityPackages = [
