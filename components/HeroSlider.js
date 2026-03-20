@@ -1,159 +1,131 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
-// --- SLIDE ADATOK (A te eredeti adataid) ---
-const slides = [
-  {
-    image: "/images/_MG_0315-2.webp",
-    desktopImage: "/images/portre-collage.png",
-    title: "Portrék",
-    text: "Stílusos portrék, amelyek megmutatják egyéniséged.",
-    buttonText: "Részletek",
-    link: "/portre",
-  },
-  {
-    image: "/images/kata_kismama/_47A9158-2.jpg",
-    desktopImage: "/images/kismama-collage.png",
-    title: "Kismama",
-    text: "A várandósság varázsa finom, meghitt pillanatokban.",
-    buttonText: "Részletek",
-    link: "/kismama",
-  },
-  {
-    image: "/images/_MG_4795.webp",
-    desktopImage: "/images/csaladi-collage.png",
-    title: "Családi Fotózás",
-    text: "Örökítsd meg a család minden mosolyát és pillanatát szeretettel és természetességgel.",
-    buttonText: "Részletek",
-    link: "/family-sessions",
-  },
-  {
-    image: "/images/audi_tel-1198.webp",
-    desktopImage: "/images/AutoKollazs.png",
-    title: "Autó Fotózás",
-    text: "Lenyűgöző formák és dinamikus részletek, prémium minőségben.",
-    buttonText: "Részletek",
-    link: "/autok",
-  },
-  {
-    image: "/images/_MG_5347.webp",
-    desktopImage: "/images/kutyus_kollazs.png",
-    title: "Kutyus Fotózás",
-    text: "Játékos kalandok és felejthetetlen emlékek a négylábú barátodról.",
-    buttonText: "Részletek",
-    link: "/kutyusok",
-  },
-];
+export default function HeroFineArt() {
+  const containerRef = useRef(null);
+  
+  // Görgetés figyelése a parallax effekthez
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
 
-export default function HeroSlider() {
-  const [index, setIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(true);
-  const timeoutRef = useRef(null);
-
-  const slideDuration = 5000;
-
-  useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    if (!isHovered) {
-      timeoutRef.current = setTimeout(
-        () => setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1)),
-        slideDuration
-      );
-    }
-    return () => clearTimeout(timeoutRef.current);
-  }, [index, isHovered]);
-
-  const nextSlide = () => setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  const prevSlide = () => setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-
-  const currentSlide = slides[index];
+  // Eltérő mozgási sebességek beállítása
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]); // A kép lassan lefelé csúszik
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]); // A háttérszöveg gyorsan felfelé
+  const opacityFade = useTransform(scrollYProgress, [0, 0.5], [1, 0]); // Görgetésre lassan eltűnik az alsó doboz
 
   return (
-    <div 
-      className="relative w-full h-screen overflow-hidden bg-black"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <section 
+      ref={containerRef} 
+      className="relative w-full min-h-screen bg-[#F9F5F1] flex flex-col items-center justify-center overflow-hidden pt-20"
     >
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          className="absolute inset-0 w-full h-full"
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ 
-            opacity: 1, 
-            scale: 1,
-            transition: { duration: 1.5, ease: "easeOut" }
-          }}
-          exit={{ opacity: 0 }}
+      
+      {/* 1. OSZTOTT HÁTTÉR TIPOGRÁFIA (Parallax mozgással) */}
+      <motion.div 
+        style={{ y: textY }}
+        className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 sm:px-8 lg:px-16 z-0 pointer-events-none select-none"
+      >
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="text-[16vw] md:text-[13vw] lg:text-[14vw] font-bold font-akaya text-[#5A4A42]/5 leading-none"
         >
-          {/* Sötétítés a kép alatt az olvashatóságért */}
-          <div className="absolute inset-0 bg-black/40 z-10" />
-          
+          Kovács
+        </motion.h1>
+        
+        <motion.h1
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="text-[16vw] md:text-[13vw] lg:text-[14vw] font-bold font-akaya text-[#5A4A42]/5 leading-none"
+        >
+          Bálint
+        </motion.h1>
+      </motion.div>
+
+      {/* 2. A FÓKUSZPONT: KÉP MASZKOLT BETÖLTÉSSEL (Reveal) ÉS PARALLAX-al */}
+      <motion.div
+        style={{ y: imageY }} // Parallax mozgás rákötése
+        className="relative z-10 w-[75vw] sm:w-[50vw] md:w-[400px] lg:w-[450px] aspect-[4/5] shadow-2xl rounded-sm overflow-hidden"
+      >
+        {/* A trükk: a konténer clipPath segítségével lentről felfelé "nyílik ki" */}
+        <motion.div
+          initial={{ clipPath: "inset(100% 0 0 0)" }}
+          animate={{ clipPath: "inset(0% 0 0 0)" }}
+          transition={{ duration: 1.5, delay: 0.2, ease: [0.77, 0, 0.175, 1] }} // Profi, filmes animációs görbe
+          className="w-full h-full relative"
+        >
           <Image
-            src={isDesktop ? currentSlide.desktopImage : currentSlide.image}
-            alt={currentSlide.title}
+            src="/images/_MG_0315-2.webp" // A kedvenc fotód
+            alt="Kovács Bálint Fotográfia"
             fill
             className="object-cover"
-            priority={true}
-            quality={90}
+            priority
+            quality={100}
+          />
+          {/* Kép finom nagyítása (scale) a maszkolás alatt */}
+          <motion.div 
+            initial={{ scale: 1.2 }} 
+            animate={{ scale: 1 }} 
+            transition={{ duration: 2, ease: "easeOut" }} 
+            className="absolute inset-0"
           />
         </motion.div>
-      </AnimatePresence>
+        
+        <div className="absolute inset-4 border border-white/20 pointer-events-none z-20" />
+      </motion.div>
 
-      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white p-6">
-        <AnimatePresence mode="wait">
-          <motion.div
-              key={index + "-text"}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+      {/* 3. LETISZTULT SZÖVEG (Görgetésre eltűnik) */}
+      <motion.div
+        style={{ opacity: opacityFade }} // Görgetéskor halványodik
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+        className="relative z-20 text-center mt-10 md:-mt-8 px-4"
+      >
+        <div className="bg-[#F9F5F1]/80 backdrop-blur-md px-8 py-6 rounded-2xl shadow-sm border border-[#5A4A42]/5 inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold font-akaya text-[#5A4A42] mb-2">
+            A pillanat <span className="italic text-[#C79C8D]">művészete.</span>
+          </h2>
+          <p className="text-[#5A4A42]/70 text-sm md:text-base mb-6 font-light max-w-xs mx-auto">
+            Letisztult, őszinte és időtálló emlékek.
+          </p>
+          
+          <Link 
+            href="/contact" 
+            className="inline-block border-b-2 border-[#C79C8D] pb-1 text-[#5A4A42] font-bold uppercase tracking-widest text-xs hover:text-[#C79C8D] transition-colors"
           >
-              <h2 className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] text-white/90 mb-4 font-akaya">
-                  {currentSlide.title}
-              </h2>
-              <p className="text-3xl md:text-6xl font-bold max-w-4xl mb-8 leading-tight drop-shadow-lg">
-                  {currentSlide.text}
-              </p>
-              <Link href={currentSlide.link} className="inline-block btn-primary">
-                  {currentSlide.buttonText}
-              </Link>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+            Kapcsolatfelvétel
+          </Link>
+        </div>
+      </motion.div>
 
-      {/* Navigációs gombok */}
-      <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition text-white">
-          <ArrowLeft size={24}/>
-      </button>
-      <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition text-white">
-          <ArrowRight size={24}/>
-      </button>
+      {/* 4. GÖRDÍTÉSRE ÖSZTÖNZŐ JEL */}
+      <motion.div
+        style={{ opacity: opacityFade }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+      >
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[#5A4A42]/50 font-bold">
+          Görgess
+        </span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        >
+          <ArrowDown size={16} className="text-[#C79C8D]" />
+        </motion.div>
+      </motion.div>
 
-      {/* Pagináció */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`h-1 rounded-full transition-all duration-500 ${index === i ? "w-12 bg-white" : "w-4 bg-white/40"}`}
-            aria-label={`Ugrás a ${i + 1}. diára`}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }
