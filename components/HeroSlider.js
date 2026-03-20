@@ -63,7 +63,7 @@ export default function HeroFineArt() {
           className="w-full h-full relative"
         >
           <Image
-            src="/images/_MG_0315-2.webp" // A kedvenc fotód
+            src="/images/_BF_2915.webp" // A kedvenc fotód
             alt="Kovács Bálint Fotográfia"
             fill
             className="object-cover"

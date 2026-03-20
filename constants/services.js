@@ -6,11 +6,11 @@ export const SERVICES_DATA = {
     slug: "eskuvo",
     heroSubtitle: "Az igenektől az utolsó táncig",
     description: "Életetek nagy napja megérdemli a professzionális figyelmet. Stílusom az elegancia és a természetesség ötvözete, célom pedig az, hogy a képeket nézve újraélhessétek minden pillanatát.",
-    heroImage: "/images/wedding_main.webp", // Placeholder, cseréld le a kedvenc esküvői képedre
+    heroImage: "/images/_BF_2915.webp", // Placeholder, cseréld le a kedvenc esküvői képedre
     gridClass: "col-span-1 md:col-span-12 lg:col-span-7 row-span-1",
     tags: ["Egész napos", "Jegyesfotózás", "Fine-art retus"],
     gallery: [
-      { src: "/images/wedding_main.webp", alt: "Esküvői pillanat" },
+      { src: "/images/Eskuvo2026.webp", alt: "Esküvői pillanat" },
       // Ide jöhetnek majd az esküvői galéria képei
     ],
     packages: [
@@ -68,26 +68,23 @@ export const SERVICES_DATA = {
     packages: [
       {
         title: "Mini Portré",
-        price: "9.900 Ft",
-        duration: "30 perc",
+        price: "14.900 Ft",
+        duration: "30-45 perc",
         features: [
-          "5 db retusált kép",
-          "1 helyszín Zalaegerszegen", 
-          "1 szett ruha", 
+          "10 db retusált kép",
+          "Zala megye vagy Budapest", 
           "Online átadás 3 napon belül"
         ],
         popular: false
       },
       {
         title: "Alap Portré",
-        price: "14.900 Ft",
+        price: "19.900 Ft",
         duration: "60 perc",
         features: [
           "15 db retusált kép",
-          "1-2 helyszín", 
-          "2 szett ruha", 
+          "Zala megye vagy Budapest", 
           "Online válogató galéria",
-          "Ajándék fekete-fehér verziók"
         ],
         popular: true
       },
@@ -97,9 +94,7 @@ export const SERVICES_DATA = {
         duration: "90-120 perc",
         features: [
           "30 db retusált kép",
-          "Több helyszín (Zalaegerszeg + környéke)", 
-          "3+ szett ruha", 
-          "Kellékek használata",
+          "Több helyszín (Zalaegerszeg + környéke vagy Budapest)", 
           "Elsőbbségi retusálás (3 nap)"
         ],
         popular: false
@@ -162,8 +157,8 @@ export const SERVICES_DATA = {
         features: [
           "Részletes konzultáció, koncepció",
           "25-30 db profi, retusált digitális fotó",
+          "Minden további retusált kép: 1.490 Ft",
           "Akár 2 helyszín a változatosságért",
-          "Apás, tesós és közös képek is",
           "Online galéria válogatáshoz"
         ],
         popular: true
@@ -174,7 +169,6 @@ export const SERVICES_DATA = {
         duration: "90-120 perc",
         features: [
           "35+ db profi minőségű retusált fotó",
-          "Minden további retusált kép: 1.590 Ft",
           "Rugalmas helyszínválasztás",
           "Ajándék 10 db 10x15-ös papírkép",
           "Prémium online galéria"
@@ -230,8 +224,7 @@ export const SERVICES_DATA = {
           "Előzetes konzultáció, közös ötletelés",
           "30-35 db profi, művészi retusálású fotó",
           "Akár 2 helyszín a változatosságért",
-          "Több beállítás (közös, gyerekek külön, szülők kettesben)",
-          "Átöltözési lehetőség"
+          "Online, jelszóval védett válogató galéria"
         ],
         popular: true
       },
@@ -365,7 +358,6 @@ export const SERVICES_DATA = {
         price: "19.900 Ft",
         duration: "60-90 perc",
         features: [
-          "Személyes konzultáció",
           "25 db profi, retusált digitális fotó",
           "Minden további retusált kép: 1.790 Ft",
           "Akár 2 helyszín a változatosságért",

@@ -1,105 +1,117 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, Mail } from "lucide-react"; 
+import { Facebook, Instagram, Mail, ArrowRight } from "lucide-react"; 
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    // VÁLTOZÁS: Sötétebb háttérszín (#261F1D) a kontrasztért + felső elválasztó vonal
-    <footer className="bg-[#261F1D] text-white pt-20 pb-10 border-t border-[#C79C8D]/20">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-[#261F1D] text-[#F9F5F1] pt-24 pb-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
         
-        {/* 1. Brand & Bemutatkozás */}
-        <div className="space-y-6">
-           <Link href="/" className="text-3xl font-bold font-akaya text-white tracking-wide block">
-            Kovács Bálint<span className="text-[#C79C8D]">.Fotó</span>
+        {/* FELSŐ SZEKCIÓ: Elegáns CTA (Call to Action) */}
+        <div className="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-12 mb-16">
+          <h2 className="text-3xl md:text-5xl font-akaya font-bold mb-8 md:mb-0 text-white">
+            A pillanat <span className="text-[#C79C8D] italic">művészete.</span>
+          </h2>
+          <Link 
+            href="/contact" 
+            className="group flex items-center gap-4 text-sm font-bold uppercase tracking-[0.2em] hover:text-[#C79C8D] transition-colors"
+          >
+            Kérj ajánlatot 
+            <span className="bg-[#C79C8D] text-[#261F1D] p-3 rounded-full group-hover:bg-white transition-colors shadow-lg">
+              <ArrowRight size={18} />
+            </span>
           </Link>
-          <p className="text-gray-400 leading-relaxed text-sm">
-            Őszinte pillanatok, természetes fények, maradandó emlékek. 
-            Zalaegerszeg és környéke.
-          </p>
+        </div>
+
+        {/* KÖZÉPSŐ SZEKCIÓ: Linkek és Infók */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
-          {/* Social Ikonok */}
-          <div className="flex space-x-4">
-            <a 
-              href="https://www.facebook.com/profile.php?id=61577861518379" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-white/5 p-3 rounded-full hover:bg-[#C79C8D] hover:scale-110 transition-all text-gray-300 hover:text-white"
-              aria-label="Facebook"
-            >
-              <Facebook size={20} />
-            </a>
-            <a 
-              href="https://www.instagram.com/k_balintfoto/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-white/5 p-3 rounded-full hover:bg-[#C79C8D] hover:scale-110 transition-all text-gray-300 hover:text-white"
-              aria-label="Instagram"
-            >
-              <Instagram size={20} />
-            </a>
-            {/* E-mail gomb */}
-            <a 
-              href="/contact" 
-              className="bg-white/5 p-3 rounded-full hover:bg-[#C79C8D] hover:scale-110 transition-all text-gray-300 hover:text-white"
-              aria-label="Kapcsolat"
-            >
-              <Mail size={20} />
-            </a>
-          </div>
-        </div>
-
-        {/* 2. Galériák */}
-        <div>
-          <h4 className="text-xl font-bold font-akaya text-[#C79C8D] mb-6 flex items-center gap-2">
-            Galériák
-          </h4>
-          <ul className="space-y-3">
-            <li><Link href="/portre-galeria" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Portrék</Link></li>
-            <li><Link href="/csaladi-galeria" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Család & Kismama</Link></li>
-            <li><Link href="/autok-galeria" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Autók</Link></li>
-          </ul>
-        </div>
-
-        {/* 3. Szolgáltatások */}
-        <div>
-          <h4 className="text-xl font-bold font-akaya text-[#C79C8D] mb-6">Szolgáltatások</h4>
-          <ul className="space-y-3">
-             <li><Link href="/portre" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Portré Fotózás</Link></li>
-             <li><Link href="/family-sessions" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Családi Fotózás</Link></li>
-             <li><Link href="/kismama" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Kismama Fotózás</Link></li>
-             <li><Link href="/autok" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Autó Fotózás</Link></li>
-             <li><Link href="/kutyusok" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Kutyusok</Link></li>
-             {/* Kiemelt szezonális link */}
-             <li><Link href="/mini-fotozasok/husvet" className="text-[#F7E7CE] hover:text-white hover:translate-x-1 transition-all font-bold inline-block">🐰 Húsvéti Mini</Link></li>
-          </ul>
-        </div>
-
-        {/* 4. Információk & Jogi */}
-        <div>
-          <h4 className="text-xl font-bold font-akaya text-[#C79C8D] mb-6">Információk</h4>
-          <ul className="space-y-3">
-            <li><Link href="/about" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Rólam</Link></li>
-            <li><Link href="/contact" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Kapcsolat</Link></li>
-            <li><Link href="/velemenyek" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Vélemények</Link></li>
-            <li><Link href="/faq" className="text-gray-400 hover:text-white hover:translate-x-1 transition-all inline-block">Gyakori Kérdések</Link></li>
+          {/* 1. Brand & Bemutatkozás (Nagyobb oszlop) */}
+          <div className="lg:col-span-5 pr-8">
+            <Link href="/" className="block mb-6">
+              <span className="text-4xl font-bold font-akaya tracking-wide block text-white">
+                Kovács Bálint
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-[#C79C8D] font-bold">
+                Fotográfia
+              </span>
+            </Link>
+            <p className="text-white/60 leading-relaxed text-sm max-w-sm mb-8 font-light">
+              Természetes fények, őszinte érzelmek és időtálló emlékek. 
+              Zalaegerszegen és az ország egész területén.
+            </p>
             
-            <li className="pt-4 border-t border-white/5 mt-4">
-                <Link href="/adatvedelem" className="text-gray-500 text-sm hover:text-white transition-colors block mb-2">Adatkezelési Tájékoztató</Link>
-                <Link href="/aszf" className="text-gray-500 text-sm hover:text-white transition-colors block">ÁSZF</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+            {/* Social Ikonok - Finomított, letisztult stílus */}
+            <div className="flex space-x-6">
+              <a href="https://www.facebook.com/profile.php?id=61577861518379" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#C79C8D] hover:-translate-y-1 transition-all duration-300">
+                <Facebook size={22} strokeWidth={1.5} />
+              </a>
+              <a href="https://www.instagram.com/k_balintfoto/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#C79C8D] hover:-translate-y-1 transition-all duration-300">
+                <Instagram size={22} strokeWidth={1.5} />
+              </a>
+              <a href="/contact" className="text-white/60 hover:text-[#C79C8D] hover:-translate-y-1 transition-all duration-300">
+                <Mail size={22} strokeWidth={1.5} />
+              </a>
+            </div>
+          </div>
 
-      {/* Copyright Sáv */}
-      <div className="border-t border-white/5 pt-8 text-center">
-        <p className="text-gray-500 text-sm mb-2">
-          &copy; {currentYear} Kovács Bálint Fotográfia. Minden jog fenntartva.
-        </p>
+          {/* 2. Portfólió (Egyesítve a Galériák és Szolgáltatások) */}
+          <div className="lg:col-span-3">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C79C8D] mb-8">Portfólió</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/szolgaltatasok/eskuvo" className="text-white/90 font-medium hover:text-[#C79C8D] transition-colors text-sm flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C79C8D]"></span> Esküvő
+                </Link>
+              </li>
+              <li><Link href="/szolgaltatasok/portre" className="text-white/60 hover:text-white transition-colors text-sm">Portré</Link></li>
+              <li><Link href="/szolgaltatasok/family-sessions" className="text-white/60 hover:text-white transition-colors text-sm">Család</Link></li>
+              <li><Link href="/szolgaltatasok/kismama" className="text-white/60 hover:text-white transition-colors text-sm">Kismama</Link></li>
+              <li><Link href="/szolgaltatasok/autok" className="text-white/60 hover:text-white transition-colors text-sm">Autó</Link></li>
+              <li><Link href="/szolgaltatasok/kutyusok" className="text-white/60 hover:text-white transition-colors text-sm">Kutyusok</Link></li>
+              <li className="pt-2">
+                <Link href="/mini-fotozasok/husvet" className="text-[#C79C8D] hover:text-white transition-colors text-sm font-bold flex items-center gap-2">
+                  Húsvéti Mini
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 3. Információk */}
+          <div className="lg:col-span-2">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C79C8D] mb-8">Információk</h4>
+            <ul className="space-y-4">
+              <li><Link href="/about" className="text-white/60 hover:text-white transition-colors text-sm">Rólam</Link></li>
+              <li><Link href="/contact" className="text-white/60 hover:text-white transition-colors text-sm">Kapcsolat</Link></li>
+              <li><Link href="/velemenyek" className="text-white/60 hover:text-white transition-colors text-sm">Vélemények</Link></li>
+              {/* Ha a FAQ külön oldal, maradhat, de a szolgáltatásokba beépítettük! */}
+            </ul>
+          </div>
+
+          {/* 4. Jogi */}
+          <div className="lg:col-span-2">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C79C8D] mb-8">Jogi</h4>
+            <ul className="space-y-4">
+              <li><Link href="/adatvedelem" className="text-white/60 hover:text-white transition-colors text-sm">Adatvédelem</Link></li>
+              <li><Link href="/aszf" className="text-white/60 hover:text-white transition-colors text-sm">ÁSZF</Link></li>
+            </ul>
+          </div>
+          
+        </div>
+
+        {/* ALSÓ SZEKCIÓ: Copyright Sáv */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/40 text-xs font-light tracking-wide">
+            &copy; {currentYear} Kovács Bálint Fotográfia. Minden jog fenntartva.
+          </p>
+          <p className="text-white/20 text-[10px] uppercase tracking-[0.2em] font-bold">
+            Készült szenvedéllyel Zalaegerszegen
+          </p>
+        </div>
+
       </div>
     </footer>
   );

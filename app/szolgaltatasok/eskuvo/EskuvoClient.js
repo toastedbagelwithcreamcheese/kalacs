@@ -26,8 +26,8 @@ const packages = [
   {
     title: "Esszencia",
     subtitle: "Rövid, de tartalmas",
-    price: "180.000 Ft",
-    duration: "4 óra rendelkezésre állás",
+    price: "100.000 Ft",
+    duration: "4-5 óra rendelkezésre állás",
     desc: "Tökéletes választás kisebb, polgári esküvőkhöz, ahol csak a legfontosabb pillanatokat és a kreatív fotózást szeretnétek megörökíteni.",
     features: [
       "Kreatív páros fotózás",
@@ -40,8 +40,8 @@ const packages = [
   {
     title: "Harmónia",
     subtitle: "A legnépszerűbb",
-    price: "280.000 Ft",
-    duration: "8 óra rendelkezésre állás",
+    price: "150.000 Ft",
+    duration: "8-9 óra rendelkezésre állás",
     desc: "A készülődés izgalmaitól egészen a nyitótáncig végigkísérem a napotokat, hogy a történet kerek legyen.",
     features: [
       "Készülődés és \"first look\"",
@@ -55,9 +55,9 @@ const packages = [
   {
     title: "Örökkévalóság",
     subtitle: "Kompromisszumok nélkül",
-    price: "380.000 Ft",
+    price: "200.000 Ft",
     duration: "12+ óra (Egész napos)",
-    desc: "Az első sminkecsetvonástól a menyasszonytáncig (hajnali 1-ig) ott vagyok, hogy egyetlen mosoly se vesszen el.",
+    desc: "Az első sminkecsetvonástól a menyasszonytáncig (hajnali 1-ig, vagy tovább) ott vagyok, hogy egyetlen mosoly se vesszen el.",
     features: [
       "Teljes napos jelenlét (hajnali 1-ig)",
       "Jegyesfotózás (ajándék)",
