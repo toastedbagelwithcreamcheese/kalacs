@@ -200,7 +200,19 @@ export const SERVICES_DATA = {
       { src: "/images/_MG_4795.webp", alt: "Boldog család" },
       { src: "/images/_MG_1136.webp", alt: "Közös nevetés" },
       { src: "/images/_MG_4805.jpg", alt: "Családi portré" },
-      { src: "/images/_MG_0097-2.webp", alt: "Őszinte pillanat" }
+      { src: "/images/_MG_0097-2.webp", alt: "Őszinte pillanat" },
+      { src: "/images/karacsony_patriek/_47A2095.jpeg", alt: "Karácsonyi családi pillanat" },
+      { src: "/images/karacsony_patriek/_47A2157.jpeg", alt: "Meghitt ünnepi hangulat" },
+      { src: "/images/karacsony_patriek/_47A2250.jpeg", alt: "Családi ölelés a fa alatt" },
+      { src: "/images/karacsony_patriek/_47A2262.jpeg", alt: "Boldog karácsonyi mosolyok" },
+      { src: "/images/karacsony_patriek/_47A2289.jpeg", alt: "Ünnepi csillogás és nevetés" },
+      { src: "/images/karacsony_patriek/_47A2319.jpeg", alt: "Közös karácsonyi emlék" },
+      { src: "/images/karacsony_patriek/_47A2351.jpeg", alt: "Varázslatos ünnepi pillanat" },
+      { src: "/images/karacsony_patriek/_47A2421.jpeg", alt: "Karácsonyi portré" },
+      { src: "/images/karacsony_patriek/_47A2438.jpeg", alt: "Családi fotó a fenyőfa mellett" },
+      { src: "/images/karacsony_patriek/_47A2860.jpeg", alt: "Meghitt ünnepi ölelés" },
+      { src: "/images/karacsony_patriek/_47A2964.jpeg", alt: "Játékos karácsonyi pillanat" },
+      { src: "/images/karacsony_patriek/_47A3036.jpeg", alt: "Szeretetteljes ünnepi hangulat" }
     ],
     packages: [
       {
