@@ -114,7 +114,8 @@ export default function Navbar() {
               onMouseLeave={() => setMenuOpen(false)}
             >
               <button className="flex items-center gap-1.5 text-sm xl:text-base hover:text-[#C79C8D] transition-colors py-2">
-                Portfólió <ChevronDown size={14} className={`transition-transform duration-300 ${menuOpen ? "rotate-180 text-[#C79C8D]" : ""}`}/>
+                Szolgáltatások
+                <ChevronDown size={14} className={`transition-transform duration-300 ${menuOpen ? "rotate-180 text-[#C79C8D]" : ""}`}/>
               </button>
 
               <AnimatePresence>
