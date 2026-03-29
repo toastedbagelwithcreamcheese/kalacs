@@ -17,9 +17,25 @@ const galleryImages = [
   { src: "/images/_BF_2535.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_2915.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_3127.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_6727.jpg", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_6726.jpg", alt: "Esküvői pillanat" },
+  { src: "/images/asdf.jpg", alt: "Esküvői pillanat" },
   { src: "/images/_BF_2507.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_2448-4.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_2289.webp", alt: "Esküvői pillanat" }
+  { src: "/images/_BF_2289.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_U2A0633-2.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_U2A0314.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_U2A0102.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_4181.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_1337-2.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_0328.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5522.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5510.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5326-2.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5191-2.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5158-2.JPG", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5157-2.JPG", alt: "Esküvői pillanat" }
+
 ];
 
 const packages = [
@@ -48,7 +64,10 @@ const packages = [
       "Kreatív fotózás (akár külön napon)",
       "Polgári és templomi szertartás",
       "Vacsora és nyitótánc megörökítése",
-      "Minimum 350 db retusált kép"
+      "Minimum 350 db retusált kép",
+      "Mobil studio fotó sarokhoz",
+      "Online, jelszavas galéria",
+      "Polaroid gép használata a vendégeknek"
     ],
     popular: true
   },
@@ -64,7 +83,10 @@ const packages = [
       "Kreatív fotózás külön napon is",
       "Minimum 600 db retusált kép",
       "Prémium fotókönyv vagy papírképek",
-      "Elsőbbségi (gyorsított) átadás"
+      "Elsőbbségi (gyorsított) átadás",
+      "Mobil studio fotó sarokhoz",
+      "Online, jelszavas galéria",
+      "Polaroid gép használata a vendégeknek"
     ]
   }
 ];
