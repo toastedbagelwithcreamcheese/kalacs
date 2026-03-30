@@ -13,7 +13,7 @@ import "yet-another-react-lightbox/styles.css";
 const portfolioImages = [
   { src: "/images/Eskuvo2026-3.webp", category: "Esküvő", alt: "Esküvői főkép" },
   { src: "/images/_MG_0315-2.webp", category: "Portré", alt: "Kreatív portré" },
-  { src: "/images/_47A2095.jpg", category: "Család", alt: "Karácsonyi családi pillanat" },
+  { src: "/images/karacsony_patriek/_47A2095.jpeg", category: "Család", alt: "Karácsonyi családi pillanat" },
   { src: "/images/audi_tel-1198.webp", category: "Autók", alt: "Audi téli fotó" },
   { src: "/images/_MG_5347.webp", category: "Kutyusok", alt: "Kutyás akciófotó" },
   { src: "/images/_BF_2535.webp", category: "Esküvő", alt: "Esküvői portré" },
@@ -24,7 +24,7 @@ const portfolioImages = [
   { src: "/images/_MG_6310.webp", category: "Autók", alt: "Dinamikus autófotó" },
   { src: "/images/_MG_8992.webp", category: "Portré", alt: "Gyermek portré" },
   { src: "/images/Eskuvo2026.webp", category: "Esküvő", alt: "Vicces esküvői fotó" },
-  { src: "/images/_47A2250.jpg", category: "Család", alt: "Családi ölelés a fa alatt" },
+  { src: "/images/karacsony_patriek/_47A2250.jpeg", category: "Család", alt: "Családi ölelés a fa alatt" },
   { src: "/images/_MG_5324.webp", category: "Kutyusok", alt: "Kutya portré" }
 ];
 
@@ -54,7 +54,7 @@ export default function PortfolioClient() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold font-akaya text-[#5A4A42] mb-8"
         >
-          A pillanatok, <br/> <span className="text-[#C79C8D] italic">amiket megőrzünk.</span>
+          A pillanatok, <br/> <span className="text-[#C79C8D] italic">amiket megőrzök.</span>
         </motion.h1>
       </section>
 
