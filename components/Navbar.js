@@ -107,6 +107,12 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#C79C8D] transition-all duration-300 group-hover:bg-[#5A4A42] scale-x-50 group-hover:scale-x-100 origin-left"></span>
               </Link>
             </li>
+            <li>
+              <Link href="/portfolio" className="text-sm xl:text-base hover:text-[#C79C8D] transition-colors relative group">
+                Portfólió
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C79C8D] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
 
             <li 
               className="relative group"
