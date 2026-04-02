@@ -213,7 +213,7 @@ export default function Navbar() {
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                   className="text-4xl font-akaya flex items-center gap-3 hover:text-[#C79C8D] transition-colors"
                 >
-                  Portfólió 
+                  Szolgáltatások 
                   <ChevronDown size={24} className={`transition-transform duration-300 ${mobileServicesOpen ? "rotate-180 text-[#C79C8D]" : ""}`} />
                 </button>
                 
@@ -242,6 +242,12 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </motion.li>
+
+              <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
+                <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-akaya hover:text-[#C79C8D] transition-colors">
+                  Portfólió
+                </Link>
+                </motion.li>
 
               <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
                 <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-akaya hover:text-[#C79C8D] transition-colors">
