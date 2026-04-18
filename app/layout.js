@@ -81,6 +81,53 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "PhotographyService"],
+    "name": "Kovács Bálint Fotográfia",
+    "image": "https://kovacsbalintfoto.hu/images/profilkep.jpg", // A saját profilképed
+    "@id": "https://kovacsbalintfoto.hu",
+    "url": "https://kovacsbalintfoto.hu",
+    "telephone": "+36308723777", // TIPP: Írd át a saját telefonszámodra!
+    "priceRange": "14900 HUF - 150000+ HUF",
+    "description": "Prémium esküvői, portré, családi és autófotózás Zalaegerszegen és Budapesten. Őszinte pillanatok feszengés nélkül.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Zalaegerszeg",
+      "addressCountry": "HU"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Zalaegerszeg"
+      },
+      {
+        "@type": "City",
+        "name": "Budapest"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "24" // Ezt a számot frissítheted, ha gyűlnek a vélemények
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Esküvői Fotózás"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Portré Fotózás"
+        }
+      }
+    ]
+  };
   return (
     <html lang="hu">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
@@ -88,6 +135,10 @@ export default function RootLayout({ children }) {
         {/* A pt-[80px] eltávolítva, hogy a transzparens Navbar és a teljes képernyős Hero tökéletesen fedjék egymást */}
         <main>{children}</main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );

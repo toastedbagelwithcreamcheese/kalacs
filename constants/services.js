@@ -1,38 +1,17 @@
 // constants/services.js
 
 export const SERVICES_DATA = {
+  
+  // --- Az esküvőt a saját egyedi oldala kezeli, ide csak a globális adatok kellenek ---
   "eskuvo": {
     title: "Esküvői Fotózás",
     slug: "eskuvo",
     heroSubtitle: "Az igenektől az utolsó táncig",
     description: "Életetek nagy napja megérdemli a professzionális figyelmet. Stílusom az elegancia és a természetesség ötvözete, célom pedig az, hogy a képeket nézve újraélhessétek minden pillanatát.",
-    heroImage: "/images/_BF_2915.webp", // Placeholder, cseréld le a kedvenc esküvői képedre
+    heroImage: "/images/_BF_2915.webp", 
     gridClass: "col-span-1 md:col-span-12 lg:col-span-7 row-span-1",
     tags: ["Egész napos", "Jegyesfotózás", "Fine-art retus"],
-    gallery: [
-      { src: "/images/Eskuvo2026.webp", alt: "Esküvői pillanat" },
-      // Ide jöhetnek majd az esküvői galéria képei
-    ],
-    packages: [
-      {
-        title: "Standard Esküvő",
-        price: "150.000 Ft",
-        duration: "8 óra rendelkezésre állás",
-        features: ["Készülődés, szertartás, kreatív fotózás", "300+ retusált kép", "Online galéria 6 hónapig", "Ajándék jegyesfotózás"],
-        popular: true
-      },
-      {
-        title: "Prémium Esküvő",
-        price: "220.000 Ft",
-        duration: "Egész napos (12-14 óra)",
-        features: ["A teljes nap megörökítése", "500+ retusált kép", "Prémium fotókönyv", "Online galéria 1 évig"],
-        popular: false
-      }
-    ],
-    faq: [
-      { question: "Mikor kapjuk meg a képeket?", answer: "A válogató galériát 1 héten belül küldöm, a kész, retusált sorozatot pedig 4-6 héten belül adjuk át." },
-      { question: "Vállalsz vidékre is kiszállást?", answer: "Természetesen, az ország egész területén, sőt külföldön is szívesen fotózom az esküvőket." }
-    ]
+    gallery: [] // Nem használjuk a dinamikus oldalhoz
   },
 
   "portre": {
@@ -65,40 +44,19 @@ export const SERVICES_DATA = {
       { src: "/images/Virag_BP/7.webp", alt: "Felnőtt portré" },
       { src: "/images/_MG_0315-2.webp", alt: "Felnőtt portré" }
     ],
-    packages: [
-      {
-        title: "Mini Portré",
-        price: "14.900 Ft",
-        duration: "30-45 perc",
-        features: [
-          "10 db retusált kép",
-          "Zala megye vagy Budapest", 
-          "Online átadás 3 napon belül"
-        ],
-        popular: false
-      },
-      {
-        title: "Alap Portré",
-        price: "19.900 Ft",
-        duration: "60 perc",
-        features: [
-          "15 db retusált kép",
-          "Zala megye vagy Budapest", 
-          "Online válogató galéria",
-        ],
-        popular: true
-      },
-      {
-        title: "Prémium Portré",
-        price: "24.900 Ft",
-        duration: "90-120 perc",
-        features: [
-          "30 db retusált kép",
-          "Több helyszín (Zalaegerszeg + környéke vagy Budapest)", 
-          "Elsőbbségi retusálás (3 nap)"
-        ],
-        popular: false
-      }
+    startingPrice: "19.900 Ft",
+    baseFeatures: [
+      "1 óra rendelkezésre állás (Zala megye vagy Budapest)",
+      "Előzetes konzultáció, koncepciótervezés",
+      "15 db finoman retusált, nagy felbontású digitális kép",
+      "Online, jelszavas válogató galéria",
+      "Többszöri átöltözési lehetőség"
+    ],
+    extras: [
+      { name: "Extra retusált kép", price: "1.500 Ft / db" },
+      { name: "Műterem / Stúdió bérlése", price: "Stúdiófüggő (kb. 6-10.000 Ft/óra)" },
+      { name: "Gyorsított átadás (3 napon belül)", price: "10.000 Ft" },
+      { name: "Professzionális Sminkes / Fodrász", price: "Kérésre egyeztetve" }
     ],
     faq: [
       { question: "Milyen ruhákat hozzak?", answer: "Amiben magabiztos vagy! Kerüld az apró mintákat. Hozz 2-3 szettet, szívesen segítek választani a helyszínen." },
@@ -136,45 +94,19 @@ export const SERVICES_DATA = {
       { src: "/images/kata_kismama/_47A9191-2.jpg", alt: "Apával közösen" },
       { src: "/images/kata_kismama/_47A9221-2.jpg", alt: "Boldog szülők" }
     ],
-    packages: [
-      {
-        title: "Pocak Varázs",
-        price: "19.900 Ft",
-        duration: "45-60 perc",
-        features: [
-          "Előzetes konzultáció a stílusról",
-          "15-20 db profi, retusált digitális fotó",
-          "Minden további retusált kép: 1.990 Ft",
-          "1 választott helyszín (szabadtér/otthon)",
-          "Online, jelszóval védett galéria"
-        ],
-        popular: false
-      },
-      {
-        title: "Családi Álmodozás",
-        price: "24.900 Ft",
-        duration: "60-90 perc",
-        features: [
-          "Részletes konzultáció, koncepció",
-          "25-30 db profi, retusált digitális fotó",
-          "Minden további retusált kép: 1.490 Ft",
-          "Akár 2 helyszín a változatosságért",
-          "Online galéria válogatáshoz"
-        ],
-        popular: true
-      },
-      {
-        title: "Örökké Emlék",
-        price: "34.900 Ft",
-        duration: "90-120 perc",
-        features: [
-          "35+ db profi minőségű retusált fotó",
-          "Rugalmas helyszínválasztás",
-          "Ajándék 10 db 10x15-ös papírkép",
-          "Prémium online galéria"
-        ],
-        popular: false
-      }
+    startingPrice: "24.900 Ft",
+    baseFeatures: [
+      "kb. 1-1.5 óra fotózás szabadtéren vagy az otthonotokban",
+      "Páros, családi és egyéni kismama fotók vegyesen",
+      "25 db finoman retusált, nagy felbontású digitális kép",
+      "Kényelmes, feszengésmentes légkör",
+      "Online, jelszavas galéria a válogatáshoz"
+    ],
+    extras: [
+      { name: "Extra retusált kép", price: "1.500 Ft / db" },
+      { name: "Bérelt napfény-stúdió (pl. tejesfürdős fotózáshoz)", price: "Kérésre egyeztetve" },
+      { name: "Prémium Kismama ruha bérlése", price: "5.000 Ft-tól" },
+      { name: "Prémium Papírképek (10x15)", price: "400 Ft / db" }
     ],
     faq: [
       { question: "Mikor érdemes a fotózást időzíteni?", answer: "A legideálisabb időszak a 28-34. hét között van, amikor a pocak már szépen kerekedik, látványos, de még nem okoz túl nagy kényelmetlenséget a mozgásban." },
@@ -214,45 +146,19 @@ export const SERVICES_DATA = {
       { src: "/images/karacsony_patriek/_47A2964.jpeg", alt: "Játékos karácsonyi pillanat" },
       { src: "/images/karacsony_patriek/_47A3036.jpeg", alt: "Szeretetteljes ünnepi hangulat" }
     ],
-    packages: [
-      {
-        title: "Mini Családi Kaland",
-        price: "19.900 Ft",
-        duration: "kb. 1 óra",
-        features: [
-          "Ideális kisebb családoknak",
-          "20-25 db profi, retusált digitális fotó",
-          "1 választott szabadtéri helyszín",
-          "Játékos, spontán pillanatok megörökítése",
-          "Online, jelszóval védett válogató galéria"
-        ],
-        popular: false
-      },
-      {
-        title: "Nagy Családi Élmény",
-        price: "24.900 Ft",
-        duration: "kb. 90 perc",
-        features: [
-          "Előzetes konzultáció, közös ötletelés",
-          "30-35 db profi, művészi retusálású fotó",
-          "Akár 2 helyszín a változatosságért",
-          "Online, jelszóval védett válogató galéria"
-        ],
-        popular: true
-      },
-      {
-        title: "Prémium Generációk",
-        price: "34.900 Ft",
-        duration: "kb. 120 perc",
-        features: [
-          "Tökéletes választás nagyszülőkkel is",
-          "Kb 50 db prémium minőségű retusált fotó",
-          "Kényelmes, ráérős tempó, mindenkire figyelve",
-          "Ajándék 10x15-ös prémium fotónyomat (10 db)",
-          "Prémium online galéria"
-        ],
-        popular: false
-      }
+    startingPrice: "24.900 Ft",
+    baseFeatures: [
+      "Kb. 1-1.5 óra kötetlen, játékos fotózás szabadtéren",
+      "Közös képek, gyerekek külön, és a szülők kettesben is",
+      "25 db profi, művészi retusálású digitális fotó",
+      "Átöltözési lehetőség",
+      "Online, jelszóval védett válogató galéria"
+    ],
+    extras: [
+      { name: "Extra retusált kép", price: "1.500 Ft / db" },
+      { name: "Nagycsaládos fotózás (Nagyszülőkkel / 6 fő felett)", price: "+10.000 Ft alapdíjhoz" },
+      { name: "Polaroid gép (Instax) bérlése a fotózásra + 10 film", price: "8.000 Ft" },
+      { name: "Prémium Papírképek (10x15)", price: "400 Ft / db" }
     ],
     faq: [
       { question: "Mit vegyünk fel a fotózásra?", answer: "A legfontosabb a kényelem! Válasszatok egymással harmonizáló, de nem teljesen egyforma ruhákat. A pasztell és földszínek (bézs, barna, fehér, mustár) mindig jól működnek a képeimen. Kerüljük a nagy feliratokat." },
@@ -288,46 +194,19 @@ export const SERVICES_DATA = {
       { src: "/images/audi_tel--5.webp", alt: "Téli táj" },
       { src: "/images/_MG_6525.webp", alt: "Oldalnézet" }
     ],
-    packages: [
-      {
-        title: "Egyedi Képvásárlás",
-        price: "1.990 Ft",
-        duration: "Képalkuvó",
-        features: [
-          "Ideális, ha csak pár tökéletes kép hiányzik",
-          "Ár / retusált digitális kép",
-          "A fotózás időtartama a mennyiséghez igazodik",
-          "Akár eladáshoz, akár social médiába",
-          "Kérj egyedi ajánlatot a részletekért"
-        ],
-        popular: false
-      },
-      {
-        title: "Alap Autófotó",
-        price: "14.900 Ft",
-        duration: "kb. 45 perc",
-        features: [
-          "10-15 db profi, retusált digitális kép",
-          "Minden további választott kép: 1.790 Ft/db",
-          "1 egyeztetett, az autó karakteréhez illő helyszín",
-          "Fókuszban az autó külső vonalai és részletei",
-          "Online, jelszóval védett válogató galéria"
-        ],
-        popular: true
-      },
-      {
-        title: "Bővített Autófotó",
-        price: "24.900 Ft",
-        duration: "75-90 perc",
-        features: [
-          "15-20 db profi, retusált digitális kép",
-          "Minden további választott kép: 1.590 Ft/db (kedvezményes)",
-          "Akár 2 helyszín a maximális változatosságért",
-          "Kreatív beállítások az autóval és a tulajdonossal",
-          "Részletes koncepció kialakítása"
-        ],
-        popular: false
-      }
+    startingPrice: "19.900 Ft",
+    baseFeatures: [
+      "1 órás fotózás egy egyeztetett, az autóhoz illő helyszínen",
+      "Külső vonalak, belső tér és apró részletek megörökítése",
+      "15 db magazin minőségű, profin retusált digitális kép",
+      "Kreatív beállítások, akár a tulajdonossal közös képek is",
+      "Tökéletes választás social mediához vagy hirdetéshez"
+    ],
+    extras: [
+      { name: "Extra retusált kép", price: "1.500 Ft / db" },
+      { name: "Gurulós képek (Rolling shots) - Kísérő autóval", price: "+10.000 Ft" },
+      { name: "Második helyszín bevonása", price: "+8.000 Ft" },
+      { name: "Night shots / Speciális fényfestés", price: "Egyedi ajánlat alapján" }
     ],
     faq: [
       { question: "Milyen típusú autókat fotózol?", answer: "Bármilyen autót szívesen fotózok, legyen az sportautó, veterán, tuningolt építés, vagy akár egy hétköznapi, de számodra kedves autó." },
@@ -349,39 +228,24 @@ export const SERVICES_DATA = {
       { src: "/images/_MG_5347.webp", alt: "Játék a parkban" },
       { src: "/images/_MG_5324.webp", alt: "Kutyus portré" },
       { src: "/images/_MG_5351.webp", alt: "Gazdival közösen" }
-      // Ide jöhetnek majd az új kutyás képeid!
     ],
-    packages: [
-      {
-        title: "Pajkos Portrék",
-        price: "9.900 Ft",
-        duration: "kb. 30 perc",
-        features: [
-          "Személyes konzultáció",
-          "10-15 db profi, retusált digitális fotó",
-          "Minden további retusált kép: 1.990 Ft",
-          "1 választott helyszín (pl. park)",
-          "Kutyus és gazdi közös képei is"
-        ],
-        popular: false
-      },
-      {
-        title: "Kalandra Fel!",
-        price: "19.900 Ft",
-        duration: "60-90 perc",
-        features: [
-          "25 db profi, retusált digitális fotó",
-          "Minden további retusált kép: 1.790 Ft",
-          "Akár 2 helyszín a változatosságért",
-          "Akciófotók, portrék, közös képek"
-        ],
-        popular: true
-      }
+    startingPrice: "14.900 Ft",
+    baseFeatures: [
+      "Kb. 1 órás kötetlen séta és játék egy választott szabadtéri helyszínen",
+      "Akciófotók futás közben, nyugodt portrék és gazdival közös képek",
+      "15 db profin retusált, színelt digitális kép",
+      "Sok-sok türelem (nem baj, ha a kutya nem marad egy helyben!)",
+      "Online, jelszóval védett válogató galéria"
+    ],
+    extras: [
+      { name: "Extra retusált kép", price: "1.500 Ft / db" },
+      { name: "További kutyus bevonása (1 gazditól)", price: "+5.000 Ft / kutya" },
+      { name: "Polaroid gép (Instax) bérlése a fotózásra + 10 film", price: "8.000 Ft" }
     ],
     faq: [
       { question: "Hogyan készüljünk fel a fotózásra?", answer: "Érdemes a kutyust előtte megsétáltatni, hogy energikus, de ne 'túlpörgött' legyen. Hozz jutalomfalatot, vizet és a kedvenc játékát! Az alap vezényszavak (ül, marad) segítenek, de türelemmel mindent megoldunk nélkülük is." },
       { question: "A kutyám nagyon energikus vagy épp túl félénk...", answer: "Imádom a kihívásokat! Minden kutyus egyedi. Ha energikus, brutál jó akciófotókat készítünk róla, ahogy szalad; ha félénk, türelmesen, távolabbról kezdjük. A lényeg, hogy számára is egy pozitív játék legyen az egész." },
-      { question: "Hozhatok több kutyát is?", answer: "Természetesen! Ha több kutyussal érkeznél, kérlek jelezd előre. Több négylábú esetén a hosszabb, 'Kalandra Fel!' csomagot javaslom, hogy mindenkire kellő idő jusson." },
+      { question: "Hozhatok több kutyát is?", answer: "Természetesen! Ha több kutyussal érkeznél, kérlek jelezd előre." },
       { question: "Milyen helyszíneken fotózunk?", answer: "Zalaegerszeg és környéke tele van csodás helyekkel: erdő, mező, tópart, vagy akár a saját kertetek. A legfontosabb szempont, hogy a kutyus biztonságban érezze magát." }
     ]
   },

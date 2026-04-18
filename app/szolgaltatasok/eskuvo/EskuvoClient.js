@@ -9,7 +9,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
-// --- ESKÜVŐI KÉPEK A LISTÁDBÓL ---
+// --- ESKÜVŐI KÉPEK ---
 const heroImage = "/images/Eskuvo2026-3.webp";
 const funnyImage = "/images/Eskuvo2026.webp";
 
@@ -35,60 +35,6 @@ const galleryImages = [
   { src: "/images/_BF_5191-2.JPG", alt: "Esküvői pillanat" },
   { src: "/images/_BF_5158-2.JPG", alt: "Esküvői pillanat" },
   { src: "/images/_BF_5157-2.JPG", alt: "Esküvői pillanat" }
-
-];
-
-const packages = [
-  {
-    title: "Esszencia",
-    subtitle: "Rövid, de tartalmas",
-    price: "100.000 Ft",
-    duration: "4-5 óra rendelkezésre állás",
-    desc: "Tökéletes választás kisebb, polgári esküvőkhöz, ahol csak a legfontosabb pillanatokat és a kreatív fotózást szeretnétek megörökíteni.",
-    features: [
-      "Kreatív páros fotózás",
-      "Szertartás megörökítése",
-      "Csoport- és családi képek",
-      "Minimum 150 db retusált kép",
-      "Online, jelszavas galéria"
-    ]
-  },
-  {
-    title: "Harmónia",
-    subtitle: "A legnépszerűbb",
-    price: "150.000 Ft",
-    duration: "8-9 óra rendelkezésre állás",
-    desc: "A készülődés izgalmaitól egészen a nyitótáncig végigkísérem a napotokat, hogy a történet kerek legyen.",
-    features: [
-      "Készülődés és \"first look\"",
-      "Kreatív fotózás (akár külön napon)",
-      "Polgári és templomi szertartás",
-      "Vacsora és nyitótánc megörökítése",
-      "Minimum 350 db retusált kép",
-      "Mobil studio fotó sarokhoz",
-      "Online, jelszavas galéria",
-      "Polaroid gép használata a vendégeknek"
-    ],
-    popular: true
-  },
-  {
-    title: "Örökkévalóság",
-    subtitle: "Kompromisszumok nélkül",
-    price: "200.000 Ft",
-    duration: "12+ óra (Egész napos)",
-    desc: "Az első sminkecsetvonástól a menyasszonytáncig (hajnali 1-ig, vagy tovább) ott vagyok, hogy egyetlen mosoly se vesszen el.",
-    features: [
-      "Teljes napos jelenlét (hajnali 1-ig)",
-      "Jegyesfotózás (ajándék)",
-      "Kreatív fotózás külön napon is",
-      "Minimum 600 db retusált kép",
-      "Prémium fotókönyv vagy papírképek",
-      "Elsőbbségi (gyorsított) átadás",
-      "Mobil studio fotó sarokhoz",
-      "Online, jelszavas galéria",
-      "Polaroid gép használata a vendégeknek"
-    ]
-  }
 ];
 
 export default function EskuvoClient() {
@@ -135,7 +81,7 @@ export default function EskuvoClient() {
         </motion.div>
       </section>
 
-      {/* 2. EDITORIAL INTRO (Aszimmetrikus szöveg és egy portré) */}
+      {/* 2. EDITORIAL INTRO */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -176,7 +122,7 @@ export default function EskuvoClient() {
         </div>
       </section>
 
-      {/* 3. A VICCES KÉP SZEKCIÓJA (Törjük meg a jeget!) */}
+      {/* 3. A VICCES KÉP SZEKCIÓJA */}
       <section className="py-24 bg-[#261F1D] text-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -219,7 +165,7 @@ export default function EskuvoClient() {
             <div className="w-24 h-1 bg-[#C79C8D] mx-auto" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             {galleryImages.map((img, idx) => (
               <motion.div 
                 key={idx} 
@@ -227,15 +173,15 @@ export default function EskuvoClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx % 3 * 0.1 }}
-                className="relative aspect-[3/4] overflow-hidden shadow-lg group cursor-pointer"
+                className="break-inside-avoid overflow-hidden shadow-lg group cursor-pointer relative"
                 onClick={() => setLightboxIndex(idx)}
               >
                 <Image 
                   src={img.src} 
                   alt={img.alt} 
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105" 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  width={800} 
+                  height={1200} 
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
                 <div className="absolute inset-0 bg-[#5A4A42]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Camera className="text-white w-10 h-10 drop-shadow-md" />
@@ -246,59 +192,93 @@ export default function EskuvoClient() {
         </div>
       </section>
 
-      {/* 5. PRÉMIUM CSOMAGOK */}
+      {/* 5. BEFEKTETÉS (A'LA CARTE ÁRAZÁS) */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold font-akaya text-[#5A4A42] mb-6">Esküvői Csomagok</h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              Átlátható árazás, rejtett költségek nélkül. Válaszátok azt, amelyik a legjobban illik a Nagy Naphoz!
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold font-akaya text-[#5A4A42] mb-4">Befektetés az emlékekbe</h2>
+            <p className="text-lg text-gray-500 font-light max-w-2xl mx-auto">
+              Nincsenek merev csomagok, csak egy szilárd alap, amire felépítjük a ti egyedi napotokat.
             </p>
           </div>
+          
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Bal oldal: Alapdíj */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              className="lg:col-span-7 bg-[#F9F5F1] p-10 md:p-14 rounded-[2rem] shadow-sm relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+                <Sparkles size={120} />
+              </div>
+              <h3 className="text-2xl font-bold text-[#5A4A42] uppercase tracking-widest text-sm mb-4">Esküvői Alapdíj</h3>
+              <div className="text-5xl md:text-6xl font-bold text-[#C79C8D] mb-8 font-akaya">
+                100.000 Ft <span className="text-xl text-[#5A4A42]/50 font-sans tracking-normal">-tól</span>
+              </div>
+              
+              <div className="mb-6 font-bold text-[#5A4A42] text-lg">Az alapár tartalma:</div>
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-start gap-4 text-[#5A4A42]/80 font-light">
+                  <CheckCircle size={20} className="text-[#C79C8D] shrink-0 mt-0.5" /> 
+                  <span className="text-base md:text-lg">Konzultáció és forgatókönyv egyeztetés</span>
+                </li>
+                <li className="flex items-start gap-4 text-[#5A4A42]/80 font-light">
+                  <CheckCircle size={20} className="text-[#C79C8D] shrink-0 mt-0.5" /> 
+                  <span className="text-base md:text-lg">Kreatív páros fotózás és a szertartás megörökítése (4-5 óra)</span>
+                </li>
+                <li className="flex items-start gap-4 text-[#5A4A42]/80 font-light">
+                  <CheckCircle size={20} className="text-[#C79C8D] shrink-0 mt-0.5" /> 
+                  <span className="text-base md:text-lg">Csoport- és családi képek</span>
+                </li>
+                <li className="flex items-start gap-4 text-[#5A4A42]/80 font-light">
+                  <CheckCircle size={20} className="text-[#C79C8D] shrink-0 mt-0.5" /> 
+                  <span className="text-base md:text-lg">Minimum 150 db prémium retusált kép</span>
+                </li>
+                <li className="flex items-start gap-4 text-[#5A4A42]/80 font-light">
+                  <CheckCircle size={20} className="text-[#C79C8D] shrink-0 mt-0.5" /> 
+                  <span className="text-base md:text-lg">Online, jelszavas galéria a megosztáshoz</span>
+                </li>
+              </ul>
+              
+              <Link href="/contact?subject=Eskuvoi_ajanlatkeres" className="inline-block bg-[#5A4A42] text-white py-4 px-10 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#C79C8D] transition-colors shadow-lg hover:-translate-y-1 duration-300">
+                Kérj személyre szabott ajánlatot
+              </Link>
+            </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {packages.map((pkg, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className={`relative flex flex-col p-10 bg-[#F9F5F1] transition-all duration-300 ${pkg.popular ? 'border border-[#C79C8D] shadow-2xl scale-100 lg:scale-105 z-10' : 'border border-transparent hover:shadow-xl'}`}
-              >
-                {pkg.popular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#5A4A42] text-white px-6 py-2 text-xs font-bold uppercase tracking-[0.2em] shadow-lg">
-                    Legnépszerűbb
-                  </div>
-                )}
-                <div className="text-center mb-8 border-b border-[#5A4A42]/10 pb-8">
-                  <h3 className="text-3xl font-bold font-akaya text-[#5A4A42] mb-2">{pkg.title}</h3>
-                  <p className="text-sm text-[#C79C8D] font-bold uppercase tracking-widest mb-6">{pkg.subtitle}</p>
-                  <div className="text-4xl font-bold text-[#5A4A42] mb-4">{pkg.price}</div>
-                  <div className="inline-block px-4 py-2 bg-white text-[#5A4A42] text-sm font-bold shadow-sm">
-                    {pkg.duration}
-                  </div>
-                </div>
+            {/* Jobb oldal: Extrák */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              className="lg:col-span-5 bg-white border border-[#5A4A42]/10 p-10 md:p-12 rounded-[2rem] shadow-xl"
+            >
+              <h3 className="text-2xl font-bold font-akaya text-[#5A4A42] mb-8 border-b border-[#5A4A42]/10 pb-6">Legnépszerűbb Extrák</h3>
+              <ul className="space-y-6">
+                <li className="flex flex-col gap-1">
+                  <span className="font-bold text-[#5A4A42]">Egész napos rendelkezésre állás (12+ óra)</span>
+                  <span className="text-[#C79C8D] text-sm font-bold tracking-wider">+100.000 Ft-tól</span>
+                </li>
+                <li className="flex flex-col gap-1">
+                  <span className="font-bold text-[#5A4A42]">Külön napi kreatív fotózás</span>
+                  <span className="text-[#C79C8D] text-sm font-bold tracking-wider">Kérésre egyeztetve(Minden csomag tartalmazza díjmentesen)</span>
+                </li>
+                <li className="flex flex-col gap-1">
+                  <span className="font-bold text-[#5A4A42]">Mobil stúdió / Fotósarok a buliba</span>
+                  <span className="text-[#C79C8D] text-sm font-bold tracking-wider">Benne van a nagy csomagokban</span>
+                </li>
+                <li className="flex flex-col gap-1">
+                  <span className="font-bold text-[#5A4A42]">Polaroid gép (Instax) vendégeknek</span>
+                  <span className="text-[#C79C8D] text-sm font-bold tracking-wider">Egyéni díjszabás, nagy csomagok tartalmazzák díjmentesen</span>
+                </li>
+                <li className="flex flex-col gap-1">
+                  <span className="font-bold text-[#5A4A42]">Prémium Fine-Art fotókönyv</span>
+                  <span className="text-[#C79C8D] text-sm font-bold tracking-wider">Kérésre egyeztetve</span>
+                </li>
+              </ul>
+              <p className="mt-8 pt-6 border-t border-[#5A4A42]/10 text-xs text-gray-400 font-light italic">
+                A pontos árajánlatot a ti igényeitek (esküvő hossza, helyszínek száma) alapján állítom össze. Találkozzunk és tervezzük meg!
+              </p>
+            </motion.div>
 
-                <p className="text-gray-600 text-sm mb-8 leading-relaxed italic text-center min-h-[60px]">"{pkg.desc}"</p>
-
-                <ul className="space-y-4 mb-10 flex-grow">
-                  {pkg.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700 text-sm">
-                      <CheckCircle size={18} className="text-[#C79C8D] shrink-0 mt-0.5" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link 
-                  href="/contact?subject=Eskuvoi_ajanlatkeres" 
-                  className={`block text-center py-4 font-bold uppercase tracking-widest text-sm transition-colors ${pkg.popular ? 'bg-[#C79C8D] text-white hover:bg-[#5A4A42]' : 'bg-white text-[#5A4A42] border border-[#5A4A42]/20 hover:border-[#5A4A42] hover:bg-[#5A4A42] hover:text-white'}`}
-                >
-                  Ajánlatot Kérek
-                </Link>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -313,7 +293,7 @@ export default function EskuvoClient() {
           </p>
           <Link 
             href="/contact" 
-            className="inline-flex items-center gap-3 bg-[#C79C8D] text-white font-bold py-5 px-12 rounded-full text-lg hover:bg-white hover:text-[#5A4A42] transition-all shadow-xl hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#C79C8D] text-white font-bold py-5 px-12 rounded-full text-lg hover:bg-white hover:text-[#5A4A42] transition-all shadow-xl hover:-translate-y-1 duration-300"
           >
             Irány a kapcsolatfelvétel <ArrowRight size={22} />
           </Link>
