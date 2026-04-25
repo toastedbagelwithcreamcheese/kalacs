@@ -138,8 +138,8 @@ const Contact = () => {
                 <div>
                   <h3 className="font-bold text-[#C79C8D] mb-1">Helyszín</h3>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Zalaegerszeg és környéke <br/>
-                    <span className="text-xs opacity-70">(Budapesti kiszállás is lehetséges)</span>
+                    Budapest, Zalaegerszeg és környéke <br/>
+                    <span className="text-xs opacity-70">(Egész országos kiszállás is lehetséges)</span>
                   </p>
                 </div>
               </div>

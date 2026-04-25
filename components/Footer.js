@@ -41,7 +41,7 @@ export default function Footer() {
             </Link>
             <p className="text-white/60 leading-relaxed text-sm max-w-sm mb-8 font-light">
               Természetes fények, őszinte érzelmek és időtálló emlékek. 
-              Zalaegerszegen és az ország egész területén.
+              Budapesten, Zalaegerszegen és az ország egész területén.
             </p>
             
             {/* Social Ikonok - Finomított, letisztult stílus */}
@@ -70,13 +70,9 @@ export default function Footer() {
               <li><Link href="/szolgaltatasok/portre" className="text-white/60 hover:text-white transition-colors text-sm">Portré</Link></li>
               <li><Link href="/szolgaltatasok/family-sessions" className="text-white/60 hover:text-white transition-colors text-sm">Család</Link></li>
               <li><Link href="/szolgaltatasok/kismama" className="text-white/60 hover:text-white transition-colors text-sm">Kismama</Link></li>
-              <li><Link href="/szolgaltatasok/autok" className="text-white/60 hover:text-white transition-colors text-sm">Autó</Link></li>
+              <li><Link href="/szolgaltatasok/autok" className="text-white/60 hover:text-white transition-colors text-sm">Autó, motoros</Link></li>
               <li><Link href="/szolgaltatasok/kutyusok" className="text-white/60 hover:text-white transition-colors text-sm">Kutyusok</Link></li>
-              <li className="pt-2">
-                <Link href="/mini-fotozasok/husvet" className="text-[#C79C8D] hover:text-white transition-colors text-sm font-bold flex items-center gap-2">
-                  Húsvéti Mini
-                </Link>
-              </li>
+              {/*<li className="pt-2"><Link href="/mini-fotozasok/husvet" className="text-[#C79C8D] hover:text-white transition-colors text-sm font-bold flex items-center gap-2">Húsvéti Mini</Link></li>*/}
             </ul>
           </div>
 

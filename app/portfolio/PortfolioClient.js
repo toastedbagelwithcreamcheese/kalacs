@@ -11,6 +11,49 @@ import "yet-another-react-lightbox/styles.css";
 // --- A LEGJOBB KÉPEID (Minden kategóriából válogatva) ---
 // Ide tényleg csak a "Wow" faktoros képeket tedd!
 const portfolioImages = [
+  { src: "/images/_BF_8173.webp", category: "Család/Kismama", alt: "Nagycsaládi csoportkép a keszthelyi Festetics-kastély parkjában" },
+  { src: "/images/_BF_8479.webp", category: "Család/Kismama", alt: "Meghitt pillanat a szülők között a kastélykert fái alatt" },
+  { src: "/images/_BF_8065.webp", category: "Család/Kismama", alt: "Vidám gyermekportré a kastélypark zöld gyepén" },
+  { src: "/images/_BF_8791.webp", category: "Család/Kismama", alt: "Kisgyermek önfeledt játéka a Festetics-kastély udvarán" },
+  { src: "/images/_BF_9706.webp", category: "Család/Kismama", alt: "Érzelmes ölelés és családi szeretet a fotózás közben" },
+  { src: "/images/_BF_9604.webp", category: "Család/Kismama", alt: "Az egész család a Festetics-kastély impozáns épülete előtt" },
+  { src: "/images/_BF_8606.webp", category: "Család/Kismama", alt: "Séta a napsütötte réten a nagyszülőkkel és az unokákkal" },
+  { src: "/images/_BF_9511.webp", category: "Család/Kismama", alt: "A nagymama és unokája közötti különleges, szeretteljes pillanat" },
+  { src: "/images/_BF_9139.webp", category: "Család/Kismama", alt: "Bohókás gyermekkép a kastélykert színes virágai között" },
+  { src: "/images/_BF_8266.webp", category: "Család/Kismama", alt: "Profi családi fotózás Keszthelyen a történelmi parkban" },
+  { src: "/images/_BF_0299.JPEG", category: "Portré", alt: "Művészi esti portré a keszthelyi móló kivilágított korlátjánál" },
+  { src: "/images/_BF_0300.JPEG", category: "Portré", alt: "Hangulatos éjszakai fotó a Balaton-parton, sejtelmes fényekkel" },
+  { src: "/images/_BF_0306.JPEG", category: "Portré", alt: "Közeli portré fotó esti fényben a móló végénél" },
+  { src: "/images/_BF_9914.JPEG", category: "Portré", alt: "Tavaszi portré fotózás színes tulipánmező közepén" },
+  { src: "/images/_BF_9914-2.JPEG", category: "Portré", alt: "Művészi távlati kép a virágzó tulipánok között" },
+  { src: "/images/_BF_0167.JPEG", category: "Portré", alt: "Életkép a tulipánszüret idején készült tavaszi fotózásról" },
+  { src: "/images/_BF_0167-2.JPEG", category: "Portré", alt: "Vidám női portré a végtelen tulipánsorok között" },
+  { src: "/images/_BF_0180.JPEG", category: "Portré", alt: "Természetes fényekkel készült fotó a virágzó mezőn" },
+  { src: "/images/_BF_0180-2.JPEG", category: "Portré", alt: "Romantikus hangulatú közeli portré a tulipánok ölelésében" },
+  { src: "/images/_BF_0185.JPEG", category: "Portré", alt: "Napsütötte tavaszi portré a színes virágoskertben" },
+  { src: "/images/_BF_0185-2.JPEG", category: "Portré", alt: "Kreatív kompozíció a tulipánmezőn készült fotósorozatból" },
+  { src: "/images/_BF_0190.JPEG", category: "Portré", alt: "Profi kültéri portré a tavaszi virágzás idején" },
+  { src: "/images/_BF_0195.JPEG", category: "Portré", alt: "Érzelmes pillanat a tulipánok között, lágy tónusokkal" },
+  { src: "/images/_BF_0195-2.JPEG", category: "Portré", alt: "Fókuszált tekintet és virágos háttér a tavaszi mezőn" },
+  { src: "/images/_BF_9067.JPEG", category: "Portré", alt: "Színes és vidám tavaszi portré fotózás Keszthely környékén" },
+  { src: "/images/_BF_8498.JPEG", category: "Portré", alt: "Teljes alakos fotó a tulipánok színes tengerében" },
+  { src: "/images/_BF_9933.JPEG", category: "Portré", alt: "Művészi portré a naplementében a virágzó tulipánok között" },
+  { src: "/images/_BF_0772.webp", category: "Motorok", alt: "Vagány motoros portré a MOL Campus modern üvegfalai előtt" },
+  { src: "/images/_BF_0678.webp", category: "Motorok", alt: "Városi motorozás életérzés a Kopaszi-gát épületei között" },
+  { src: "/images/_BF_0640.webp", category: "Motorok", alt: "Stílusos motorkerékpár parkol Budapest legmagasabb irodaházánál" },
+  { src: "/images/_BF_0718.webp", category: "Motorok", alt: "Lifestyle motoros fotózás a Duna-parti modern negyedben" },
+  { src: "/images/_BF_0796-2.webp", category: "Motorok", alt: "Részletgazdag közeli fotó a motorosról és a gépről" },
+  { src: "/images/_BF_0795-2.webp", category: "Motorok", alt: "Dinamikus motoros kompozíció a Kopaszi-gát sétányának közelében" },
+  { src: "/images/_BF_0795.webp", category: "Motorok", alt: "Profi motoros portré fotózás Budapest modern építészeti környezetében" },
+  { src: "/images/_BF_0796.webp", category: "Motorok", alt: "Fekete ruhás motoros pózol a futurisztikus MOL Campus tövében" },
+  { src: "/images/_BF_0656.webp", category: "Motorok", alt: "Motoros pihenő a budapesti felhőkarcoló árnyékában" },
+  { src: "/images/_BF_0852.webp", category: "Motorok", alt: "Egyedi épített motor és a modern városi táj találkozása" },
+  { src: "/images/_BF_0573.JPG", category: "Motorok", alt: "Városi motoros kaland a 11. kerület új városközpontjában" },
+  { src: "/images/_BF_0560.JPG", category: "Motorok", alt: "Brutális motorkerékpár a Kopaszi-gát minimalista hátterével" },
+  { src: "/images/_BF_0547.JPG", category: "Motorok", alt: "Esti fények és króm: motoros fotózás a MOL székháznál" },
+  { src: "/images/_BF_0535.JPG", category: "Motorok", alt: "Szabadság két keréken a Duna-parthoz közeli modern utcákon" },
+  { src: "/images/_BF_0511.JPG", category: "Motorok", alt: "Művészi motoros életkép Budapest legújabb negyedéből" },
+  { src: "/images/_BF_0488.JPG", category: "Motorok", alt: "Portré fotó a motorossal a Kopaszi-gát üvegépületei előtt" },
   { src: "/images/Eskuvo2026-3.webp", category: "Esküvő", alt: "Esküvői főkép" },
   { src: "/images/_MG_0315-2.webp", category: "Portré", alt: "Kreatív portré" },
   { src: "/images/_BF_7632.webp", category: "Portré", alt: "Kreatív portré" },
@@ -76,7 +119,7 @@ const portfolioImages = [
   { src: "/images/_MG_8634.webp", category: "Család/Kismama", alt: "Családi vagy kismama fotó" },
 ];
 
-const categories = ["Összes", "Esküvő", "Portré", "Család/Kismama", "Autók", "Kutyusok"];
+const categories = ["Összes", "Esküvő", "Portré", "Család/Kismama", "Autók", "Kutyusok", "Motorok"];
 
 export default function PortfolioClient() {
   const [activeCategory, setActiveCategory] = useState("Összes");

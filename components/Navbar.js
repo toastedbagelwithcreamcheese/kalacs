@@ -152,20 +152,26 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
             </li>
-
+            
+              <li>
+              <Link href="/contact" className="text-sm xl:text-base hover:text-[#C79C8D] transition-colors relative group">
+                Kapcsolat
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C79C8D] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
             <li>
               <Link href="/about" className="text-sm xl:text-base hover:text-[#C79C8D] transition-colors relative group">
                 Rólam
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C79C8D] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
-
+{/*
             <li>
               <Link href="/mini-fotozasok/husvet" className="flex items-center gap-1.5 px-4 py-1.5 bg-[#C79C8D]/10 text-[#C79C8D] rounded-full text-xs xl:text-sm font-bold hover:bg-[#C79C8D] hover:text-white transition-colors">
                 <Flower2 size={14} /> Húsvéti Mini
               </Link>
             </li>
-
+  */}
             <li className="ml-4">
               <Link href="/contact" className="bg-[#5A4A42] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#C79C8D] transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-block duration-300">
                 Kapcsolat
@@ -248,19 +254,25 @@ export default function Navbar() {
                   Portfólió
                 </Link>
                 </motion.li>
+                
 
+              <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-akaya hover:text-[#C79C8D] transition-colors">
+                  Kapcsolat
+                </Link>
+              </motion.li>
               <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
                 <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-akaya hover:text-[#C79C8D] transition-colors">
                   Rólam
                 </Link>
               </motion.li>
-
+{/*
               <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="/mini-fotozasok/husvet" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-akaya hover:text-[#C79C8D] transition-colors flex items-center gap-3">
                   Húsvéti Mini <Flower2 size={24} />
                 </Link>
               </motion.li>
-
+                  */}
             </ul>
 
             <motion.div 

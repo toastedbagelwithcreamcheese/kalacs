@@ -13,9 +13,9 @@ export default function Home() {
       {/* 1. Teljes képernyős Slider */}
       <HeroSlider />
 
-      {/* 2. Szezonális Banner (Húsvét) - Közvetlenül a slider alatt */}
+      {/* 2. Szezonális Banner (Húsvét) - Közvetlenül a slider alatt 
       <SeasonalBanner />
-
+ */}
       {/* 3. Szolgáltatások Bento Grid - A hosszú görgetés helyett */}
       <ServicesGrid />
 
