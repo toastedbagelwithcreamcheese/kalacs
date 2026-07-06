@@ -53,8 +53,8 @@ export default function SzezonalisFotozas() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   // Kiemelt képek a karacsony_patriek mappából
-  const heroImage = "/images/karacsony_patriek/_47A2289.jpeg";
-  const featureImage = "/images/karacsony_patriek/_47A2964.jpeg";
+  const heroImage = "/images/karacsony_patriek/_47A2289.webp";
+  const featureImage = "/images/karacsony_patriek/_47A2964.webp";
 
   return (
     <div className="bg-white text-gray-800">
@@ -126,16 +126,16 @@ export default function SzezonalisFotozas() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/karacsony_patriek/_47A2095.jpeg" alt="Karácsony" fill className="object-cover" />
+              <Image src="/images/karacsony_patriek/_47A2095.webp" alt="Karácsony" fill className="object-cover" />
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-0">
-              <Image src="/images/karacsony_patriek/_47A2157.jpeg" alt="Karácsony" fill className="object-cover" />
+              <Image src="/images/karacsony_patriek/_47A2157.webp" alt="Karácsony" fill className="object-cover" />
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/karacsony_patriek/_47A2351.jpeg" alt="Karácsony" fill className="object-cover" />
+              <Image src="/images/karacsony_patriek/_47A2351.webp" alt="Karácsony" fill className="object-cover" />
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-0">
-              <Image src="/images/karacsony_patriek/_47A2438.jpeg" alt="Karácsony" fill className="object-cover" />
+              <Image src="/images/karacsony_patriek/_47A2438.webp" alt="Karácsony" fill className="object-cover" />
             </div>
           </div>
         </div>

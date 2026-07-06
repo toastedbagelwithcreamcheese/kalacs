@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Star, Camera, User, PenLine } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';
@@ -82,7 +83,7 @@ export default function ReviewsPage() {
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="relative w-14 h-14 shrink-0">
                                         {review.profile_image_url ? (
-                                            <img src={review.profile_image_url} className="w-full h-full rounded-full object-cover"/>
+                                            <Image src={review.profile_image_url} alt={review.name} fill sizes="56px" className="rounded-full object-cover"/>
                                         ) : (
                                             <div className="w-full h-full rounded-full bg-[#F9F5F1] flex items-center justify-center text-[#C79C8D]">
                                                 <User size={24} />
@@ -111,7 +112,7 @@ export default function ReviewsPage() {
                                         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
                                             {review.product_image_urls.map((imgUrl, idx) => (
                                                 <a href={imgUrl} target="_blank" rel="noopener noreferrer" key={idx} className="relative w-16 h-16 shrink-0 rounded-xl overflow-hidden block">
-                                                    <img src={imgUrl} className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" alt="Csatolt fotó"/>
+                                                    <Image src={imgUrl} fill sizes="64px" className="object-cover hover:scale-110 transition-transform duration-300" alt="Csatolt fotó"/>
                                                 </a>
                                             ))}
                                         </div>

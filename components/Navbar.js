@@ -80,7 +80,7 @@ export default function Navbar() {
           
           <Link href="/" className="group flex items-center gap-3 relative shrink-0 select-none" onClick={() => setMobileMenuOpen(false)}>
             <div className="relative w-10 h-10 transform group-hover:-rotate-6 transition-transform duration-500">
-              <Image src="/images/logo2.png" alt="Kovács Bálint Logó" fill className="object-contain" priority />
+              <Image src="/images/logo2.webp" alt="Kovács Bálint Logó" fill className="object-contain" priority />
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-2xl font-bold font-akaya text-[#5A4A42] tracking-wide group-hover:text-[#C79C8D] transition-colors">
@@ -154,12 +154,6 @@ export default function Navbar() {
             </li>
             
               <li>
-              <Link href="/contact" className="text-sm xl:text-base hover:text-[#C79C8D] transition-colors relative group">
-                Kapcsolat
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C79C8D] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
-            <li>
               <Link href="/about" className="text-sm xl:text-base hover:text-[#C79C8D] transition-colors relative group">
                 Rólam
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C79C8D] transition-all duration-300 group-hover:w-full"></span>
@@ -173,7 +167,7 @@ export default function Navbar() {
             </li>
   */}
             <li className="ml-4">
-              <Link href="/contact" className="bg-[#5A4A42] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#C79C8D] transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-block duration-300">
+              <Link href="/contact" className="btn-glass text-white px-6 py-2.5 rounded-full font-bold text-sm inline-block">
                 Kapcsolat
               </Link>
             </li>
@@ -181,7 +175,9 @@ export default function Navbar() {
 
           {/* JAVÍTVA: X gomb, ha nyitva van a menü */}
           <button
-            className="lg:hidden relative text-[#5A4A42] p-2 hover:text-[#C79C8D] transition-colors"
+            className={`lg:hidden relative p-2 rounded-full transition-colors ${
+              mobileMenuOpen ? "text-white btn-glass" : "text-[#5A4A42] hover:text-[#C79C8D]"
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menü megnyitása"
           >
@@ -281,17 +277,17 @@ export default function Navbar() {
               transition={{ delay: 0.6 }}
               className="mt-auto pt-12"
             >
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-center bg-[#5A4A42] text-white py-4 rounded-full font-bold text-xl hover:bg-[#C79C8D] transition-colors shadow-lg mb-8"
+                className="btn-glass block w-full text-center text-white py-4 rounded-full font-bold text-xl mb-8"
               >
                 Kapcsolatfelvétel
               </Link>
-              
+
               <div className="flex justify-center gap-6">
-                 <a href="#" className="text-[#5A4A42] hover:text-[#C79C8D] transition-colors"><Instagram size={28} /></a>
-                 <a href="#" className="text-[#5A4A42] hover:text-[#C79C8D] transition-colors"><Facebook size={28} /></a>
+                 <a href="https://www.instagram.com/k_balintfoto/" target="_blank" rel="noopener noreferrer" className="text-[#5A4A42] hover:text-[#C79C8D] transition-colors"><Instagram size={28} /></a>
+                 <a href="https://www.facebook.com/profile.php?id=61577861518379" target="_blank" rel="noopener noreferrer" className="text-[#5A4A42] hover:text-[#C79C8D] transition-colors"><Facebook size={28} /></a>
               </div>
             </motion.div>
 

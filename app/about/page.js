@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: "Rólam - Kovács Bálint Fotográfus",
     description: "Két bázisom van: Zalaegerszeg és Budapest. Célom a valódi érzelmek megörökítése.",
-    images: ["/images/profilkep.jpg"],
+    images: ["/images/profilkep.webp"],
   }
 };
 

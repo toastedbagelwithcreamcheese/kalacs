@@ -8,6 +8,7 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import TiltCard from "@/components/TiltCard";
 
 // --- ESKÜVŐI KÉPEK ---
 const heroImage = "/images/Eskuvo2026-3.webp";
@@ -17,24 +18,24 @@ const galleryImages = [
   { src: "/images/_BF_2535.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_2915.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_3127.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_6727.jpg", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_6726.jpg", alt: "Esküvői pillanat" },
-  { src: "/images/asdf.jpg", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_6727.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_6726.webp", alt: "Esküvői pillanat" },
+  { src: "/images/asdf.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_2507.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_2448-4.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_2289.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_U2A0633-2.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_U2A0314.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_U2A0102.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_4181.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_1337-2.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_0328.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5522.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5510.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5326-2.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5191-2.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5158-2.JPG", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5157-2.JPG", alt: "Esküvői pillanat" }
+  { src: "/images/_U2A0633-2.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_U2A0314.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_U2A0102.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_4181.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_1337-2.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_0328.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5522.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5510.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5326-2.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5191-2.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5158-2.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_5157-2.webp", alt: "Esküvői pillanat" }
 ];
 
 export default function EskuvoClient() {
@@ -167,25 +168,28 @@ export default function EskuvoClient() {
 
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             {galleryImages.map((img, idx) => (
-              <motion.div 
-                key={idx} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20, filter: "blur(12px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
-                transition={{ delay: idx % 3 * 0.1 }}
-                className="break-inside-avoid overflow-hidden shadow-lg group cursor-pointer relative"
+                transition={{ duration: 0.6, delay: (idx % 3) * 0.1, ease: "easeOut" }}
+                style={{ perspective: 800 }}
+                className="break-inside-avoid overflow-hidden shadow-lg cursor-pointer relative"
                 onClick={() => setLightboxIndex(idx)}
               >
-                <Image 
-                  src={img.src} 
-                  alt={img.alt} 
-                  width={800} 
-                  height={1200} 
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" 
-                />
-                <div className="absolute inset-0 bg-[#5A4A42]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Camera className="text-white w-10 h-10 drop-shadow-md" />
-                </div>
+                <TiltCard tiltStrength={6} glare={false}>
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={800}
+                    height={1200}
+                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[#5A4A42]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <Camera className="text-white w-10 h-10 drop-shadow-md" />
+                  </div>
+                </TiltCard>
               </motion.div>
             ))}
           </div>

@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# graphify knowledge-graph output (local tooling, not part of the app)
+/graphify-out/

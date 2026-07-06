@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Camera } from "lucide-react";
 import { SERVICES_DATA } from "@/constants/services";
+import TiltCard from "@/components/TiltCard";
 
 // VIZUÁLIS ELRENDEZÉS (Bento Grid)
 // Itt adjuk meg keménykódolva az osztályokat, hogy a Tailwind biztosan lefordítsa őket!
@@ -79,52 +80,55 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className={`relative group overflow-hidden rounded-[2.5rem] cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 ${gridClass}`}
+              className={`overflow-hidden rounded-[2.5rem] shadow-md hover:shadow-2xl transition-shadow duration-500 ${gridClass}`}
+              style={{ perspective: 1000 }}
             >
-              <Link href={`/szolgaltatasok/${service.slug}`} className="block w-full h-full relative z-0">
-                
-                {/* Kép */}
-                <Image
-                  src={service.heroImage}
-                  alt={service.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  priority={index === 0} // Az első (esküvő) kap prioritást
-                />
-                
-                {/* Sötétítő réteg a tökéletes olvashatóságért */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#261F1D]/90 via-[#261F1D]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                
-                {/* Tartalom */}
-                <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end items-start text-white">
-                  
-                  {/* Címkék */}
-                  <div className="mb-4 flex flex-wrap gap-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    {service.tags?.slice(0, 2).map((tag, i) => (
-                      <span key={i} className="text-xs font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30 shadow-sm">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+              <TiltCard tiltStrength={4} className="w-full h-full">
+                <Link href={`/szolgaltatasok/${service.slug}`} className="block w-full h-full relative z-0 cursor-pointer">
 
-                  {/* Szövegek */}
-                  <div className="w-full transform transition-transform duration-500 group-hover:-translate-y-2">
-                    <h3 className="text-3xl md:text-5xl font-bold font-akaya tracking-wide mb-2 drop-shadow-md">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-200 text-sm md:text-base font-medium line-clamp-2 max-w-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      {service.heroSubtitle}
-                    </p>
-                  </div>
+                  {/* Kép */}
+                  <Image
+                    src={service.heroImage}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    priority={index === 0} // Az első (esküvő) kap prioritást
+                  />
 
-                  {/* Nyíl ikon */}
-                  <div className="absolute top-8 right-8 bg-white text-[#5A4A42] hover:bg-[#C79C8D] hover:text-white p-4 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:scale-110 shadow-lg">
-                    <ArrowUpRight strokeWidth={2.5} size={24} />
-                  </div>
+                  {/* Sötétítő réteg a tökéletes olvashatóságért */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#261F1D]/90 via-[#261F1D]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
 
-                </div>
-              </Link>
+                  {/* Tartalom */}
+                  <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end items-start text-white">
+
+                    {/* Címkék */}
+                    <div className="mb-4 flex flex-wrap gap-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      {service.tags?.slice(0, 2).map((tag, i) => (
+                        <span key={i} className="text-xs font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30 shadow-sm">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Szövegek */}
+                    <div className="w-full transform transition-transform duration-500 group-hover:-translate-y-2">
+                      <h3 className="text-3xl md:text-5xl font-bold font-akaya tracking-wide mb-2 drop-shadow-md">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-200 text-sm md:text-base font-medium line-clamp-2 max-w-[90%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                        {service.heroSubtitle}
+                      </p>
+                    </div>
+
+                    {/* Nyíl ikon */}
+                    <div className="absolute top-8 right-8 bg-white text-[#5A4A42] hover:bg-[#C79C8D] hover:text-white p-4 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:scale-110 shadow-lg">
+                      <ArrowUpRight strokeWidth={2.5} size={24} />
+                    </div>
+
+                  </div>
+                </Link>
+              </TiltCard>
             </motion.div>
           );
         })}

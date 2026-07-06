@@ -1,10 +1,17 @@
 // pages/adatvedelem.js
+import Head from "next/head";
 import LegalPageLayout from "@/components/LegalPageLayout";
 import Link from "next/link";
 
 const AdatvedelemPage = () => {
   return (
-    <LegalPageLayout title="Adatvédelmi Irányelvek">
+    <>
+      <Head>
+        <title>Adatvédelmi Irányelvek | Kovács Bálint Fotó</title>
+        <meta name="description" content="Kovács Bálint Fotográfia adatvédelmi tájékoztatója a GDPR alapján: kezelt adatok köre, célja, jogalapja és az adatfeldolgozók listája." />
+        <link rel="canonical" href="https://kovacsbalintfoto.hu/adatvedelem" />
+      </Head>
+      <LegalPageLayout title="Adatvédelmi Irányelvek">
       <p>Jelen Adatvédelmi Irányelvek célja, hogy tájékoztatást nyújtson a kovacsbalintfoto.hu weboldal által végzett adatkezelési gyakorlatokról, az Európai Parlament és a Tanács (EU) 2016/679 rendelete (GDPR) alapján.</p>
       
       <h2>1. Az Adatkezelő Adatai</h2>
@@ -50,7 +57,8 @@ const AdatvedelemPage = () => {
       <h2>6. Jogorvoslati Lehetőségek</h2>
       <p>Amennyiben úgy véli, hogy adatkezelésem nem felel meg a jogszabályi előírásoknak, panasszal élhet a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH).</p>
       <p><em>Hatályos: 2025. július 1.</em></p>
-    </LegalPageLayout>
+      </LegalPageLayout>
+    </>
   );
 };
 

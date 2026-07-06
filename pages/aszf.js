@@ -1,4 +1,5 @@
 // pages/aszf.js
+import Head from "next/head";
 import LegalPageLayout from "@/components/LegalPageLayout";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -14,7 +15,12 @@ const ASZFPage = () => {
   // Ha a kapcsoló 'false', akkor ezt a nézetet mutatjuk a látogatóknak.
   if (!isAszfLive) {
     return (
-      <LegalPageLayout title="Feltöltés alatt...">
+      <>
+        <Head>
+          <title>Feltöltés alatt... | Kovács Bálint Fotó</title>
+          <meta name="robots" content="noindex, follow" />
+        </Head>
+        <LegalPageLayout title="Feltöltés alatt...">
         <motion.div
           className="text-center py-10 sm:py-20"
           initial={{ opacity: 0, y: 20 }}
@@ -39,14 +45,21 @@ const ASZFPage = () => {
             </a>
           </Link>
         </motion.div>
-      </LegalPageLayout>
+        </LegalPageLayout>
+      </>
     );
   }
 
   // --- NÉZET 2: A VÉGLEGES, ÉLES OLDAL ---
   // Ha az 'isAszfLive' értéke 'true', akkor ez a rész fog megjelenni.
   return (
-    <LegalPageLayout title="Általános Szerződési Feltételek (ÁSZF)">
+    <>
+      <Head>
+        <title>Általános Szerződési Feltételek | Kovács Bálint Fotó</title>
+        <meta name="description" content="Kovács Bálint Fotográfia Általános Szerződési Feltételei: időpontfoglalás, képek átadása, szerzői jogok, lemondási feltételek." />
+        <link rel="canonical" href="https://kovacsbalintfoto.hu/aszf" />
+      </Head>
+      <LegalPageLayout title="Általános Szerződési Feltételek (ÁSZF)">
       {/* Itt van a te eredeti, teljes ÁSZF kódod, változatlanul. */}
       <h2>1. A Szolgáltató Adatai</h2>
       <ul>
@@ -80,7 +93,8 @@ const ASZFPage = () => {
       <h2>7. Záró Rendelkezések</h2>
       <p>A jelen ÁSZF-ben nem szabályozott kérdésekben a Polgári Törvénykönyvről szóló 2013. évi V. törvény és az egyéb vonatkozó magyar jogszabályok az irányadók.</p>
       <p><em>Hatályos: 2025. július 1.</em></p>
-    </LegalPageLayout>
+      </LegalPageLayout>
+    </>
   );
 };
 

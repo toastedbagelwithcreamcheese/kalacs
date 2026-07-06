@@ -50,7 +50,7 @@ export default function AboutClient() {
           >
             <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto">
                 <Image
-                  src="/images/profilkep.jpg" 
+                  src="/images/profilkep.webp" 
                   alt="Kovács Bálint, fotós Budapest és Zalaegerszeg"
                   fill
                   className="object-cover"
@@ -103,7 +103,7 @@ export default function AboutClient() {
             >
                {/* TIPP: Ide tegyél be egy olyan képet, ami a munkádat szimbolizálja (pl. ahogy fotózol egy esküvőt, egy elkapott nevetés, vagy egy fényképezőgép) */}
               <Image 
-                src="/images/_BF_6727.jpg" 
+                src="/images/_BF_6727.webp" 
                 alt="Munka közben" 
                 fill 
                 className="object-cover" 

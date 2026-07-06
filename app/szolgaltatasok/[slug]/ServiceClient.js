@@ -8,6 +8,7 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import TiltCard from "@/components/TiltCard";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -94,26 +95,29 @@ export default function ServiceClient({ data }) {
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
               <AnimatePresence>
                 {data.gallery.slice(0, visibleImages).map((img, idx) => (
-                  <motion.div 
-                    key={img.src + idx} 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.4 }}
-                    className="break-inside-avoid rounded-2xl overflow-hidden shadow-md group cursor-pointer relative"
+                  <motion.div
+                    key={img.src + idx}
+                    initial={{ opacity: 0, scale: 0.95, y: 20, filter: "blur(12px)" }}
+                    animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, scale: 0.95, filter: "blur(8px)" }}
+                    transition={{ duration: 0.6, delay: Math.min((idx % 6) * 0.05, 0.4), ease: "easeOut" }}
+                    style={{ perspective: 800 }}
+                    className="break-inside-avoid rounded-2xl overflow-hidden shadow-md cursor-pointer relative"
                     onClick={() => setLightboxIndex(idx)}
                   >
-                    <Image 
-                      src={img.src} 
-                      alt={img.alt || "Galéria kép"} 
-                      width={600} 
-                      height={800} 
-                      className="hover:scale-105 transition-transform duration-700 w-full object-cover" 
-                      quality={85}
-                    />
-                    <div className="absolute inset-0 bg-[#5A4A42]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <Camera className="text-white w-8 h-8 drop-shadow-md" />
-                    </div>
+                    <TiltCard tiltStrength={6} glare={false}>
+                      <Image
+                        src={img.src}
+                        alt={img.alt || "Galéria kép"}
+                        width={600}
+                        height={800}
+                        className="group-hover:scale-105 transition-transform duration-700 w-full object-cover"
+                        quality={85}
+                      />
+                      <div className="absolute inset-0 bg-[#5A4A42]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <Camera className="text-white w-8 h-8 drop-shadow-md" />
+                      </div>
+                    </TiltCard>
                   </motion.div>
                 ))}
               </AnimatePresence>

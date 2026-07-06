@@ -1,14 +1,15 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 
 export default function HeroFineArt() {
   const containerRef = useRef(null);
-  
+  const shouldReduceMotion = useReducedMotion();
+
   // Görgetés figyelése a parallax effekthez
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -20,12 +21,34 @@ export default function HeroFineArt() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]); // A háttérszöveg gyorsan felfelé
   const opacityFade = useTransform(scrollYProgress, [0, 0.5], [1, 0]); // Görgetésre lassan eltűnik az alsó doboz
 
+  // Egérkövető, finom 3D dőlés a fókuszképen
+  const mouseX = useMotionValue(0.5);
+  const mouseY = useMotionValue(0.5);
+  const springX = useSpring(mouseX, { stiffness: 150, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 150, damping: 20 });
+  const rotateX = useTransform(springY, [0, 1], [8, -8]);
+  const rotateY = useTransform(springX, [0, 1], [-8, 8]);
+
+  const handleMouseMove = (e) => {
+    if (shouldReduceMotion) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width);
+    mouseY.set((e.clientY - rect.top) / rect.height);
+  };
+  const handleMouseLeave = () => {
+    mouseX.set(0.5);
+    mouseY.set(0.5);
+  };
+
   return (
-    <section 
-      ref={containerRef} 
+    <section
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="relative w-full min-h-screen bg-[#F9F5F1] flex flex-col items-center justify-center overflow-hidden pt-20"
+      style={{ perspective: 1200 }}
     >
-      
+
       {/* 1. OSZTOTT HÁTTÉR TIPOGRÁFIA (Parallax mozgással) */}
       <motion.div 
         style={{ y: textY }}
@@ -50,9 +73,14 @@ export default function HeroFineArt() {
         </motion.h1>
       </motion.div>
 
-      {/* 2. A FÓKUSZPONT: KÉP MASZKOLT BETÖLTÉSSEL (Reveal) ÉS PARALLAX-al */}
+      {/* 2. A FÓKUSZPONT: KÉP MASZKOLT BETÖLTÉSSEL (Reveal), PARALLAX-al ÉS EGÉRKÖVETŐ 3D DŐLÉSSEL */}
       <motion.div
-        style={{ y: imageY }} // Parallax mozgás rákötése
+        style={{
+          y: imageY,
+          rotateX: shouldReduceMotion ? 0 : rotateX,
+          rotateY: shouldReduceMotion ? 0 : rotateY,
+          transformStyle: "preserve-3d",
+        }}
         className="relative z-10 w-[75vw] sm:w-[50vw] md:w-[400px] lg:w-[450px] aspect-[4/5] shadow-2xl rounded-sm overflow-hidden"
       >
         {/* A trükk: a konténer clipPath segítségével lentről felfelé "nyílik ki" */}
@@ -92,7 +120,7 @@ export default function HeroFineArt() {
       >
         <div className="bg-[#F9F5F1]/80 backdrop-blur-md px-8 py-6 rounded-2xl shadow-sm border border-[#5A4A42]/5 inline-block">
           <h2 className="text-3xl md:text-4xl font-bold font-akaya text-[#5A4A42] mb-2">
-            A pillanat <span className="italic text-[#C79C8D]">művészete.</span>
+            A pillanat <span className="italic text-shimmer">művészete.</span>
           </h2>
           <p className="text-[#5A4A42]/70 text-sm md:text-base mb-6 font-light max-w-xs mx-auto">
             Letisztult, őszinte és időtálló emlékek.

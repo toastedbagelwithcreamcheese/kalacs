@@ -12,9 +12,9 @@ import {
 // --- ADATOK ---
 
 const galleryImages = [
-  { src: "/images/husvet_1.png", alt: "Vidám tavaszi hangulat" },
-  { src: "/images/husvet_2.png", alt: "Portré a szabadban" },
-  { src: "/images/husvet_3.png", alt: "Közös kép" },
+  { src: "/images/husvet_1.webp", alt: "Vidám tavaszi hangulat" },
+  { src: "/images/husvet_2.webp", alt: "Portré a szabadban" },
+  { src: "/images/husvet_3.webp", alt: "Közös kép" },
 ];
 
 const steps = [
@@ -119,7 +119,7 @@ export default function EasterSchoolPage() {
       <section className="relative h-[85vh] flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/husvet_hero.png" // Cseréld le a fő képre
+            src="/images/husvet_hero.webp" // Cseréld le a fő képre
             alt="Húsvéti fotózás"
             fill
             className="object-cover"

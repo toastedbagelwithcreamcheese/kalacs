@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
-import { 
-  Mail, Phone, User, MessageSquare, CalendarDays, Info, Send, 
-  AlertCircle, CheckCircle2, MapPin, Instagram, Facebook, Sparkles 
+import {
+  Mail, Phone, User, MessageSquare, Info, Send,
+  AlertCircle, CheckCircle2, MapPin, Instagram, Facebook, Sparkles
 } from "lucide-react";
+import DatePicker from "@/components/DatePicker";
 
 // Szolgáltatás típusok
 const serviceOptions = [
@@ -111,20 +113,31 @@ const Contact = () => {
       <div className="container mx-auto max-w-7xl">
         
         {/* FEJLÉC */}
-        <header className="text-center mb-16">
+        <motion.header
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-center mb-16"
+        >
           <h1 className="text-5xl md:text-6xl font-bold text-[#5A4A42] font-akaya mb-4">
-            Lépjünk kapcsolatba!
+            Lépjünk <span className="text-shimmer italic">kapcsolatba</span>!
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Kérdésed van, vagy szeretnél egyedi ajánlatot kérni? <br className="hidden md:block"/>
             Töltsd ki az űrlapot, és kezdjük el a közös tervezést!
           </p>
-        </header>
+        </motion.header>
 
         <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
+
           {/* BAL OLDAL: ELÉRHETŐSÉGEK (Sötétbarna kártya) */}
-          <aside className="md:col-span-5 lg:col-span-4 bg-[#5A4A42] text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
+          <motion.aside
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="md:col-span-5 lg:col-span-4 bg-[#5A4A42] text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
             {/* Dekoratív háttér elem */}
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-[#C79C8D] rounded-full opacity-20 blur-3xl"></div>
             
@@ -187,10 +200,16 @@ const Contact = () => {
                 <Info size={16} className="inline mr-1 mb-1 text-[#C79C8D]"/>
                 Általában 24-48 órán belül válaszolok. Hétvégén a fotózások miatt ez kicsit több lehet.
             </div>
-          </aside>
+          </motion.aside>
 
           {/* JOBB OLDAL: ŰRLAP (Fehér kártya) */}
-          <main className="md:col-span-7 lg:col-span-8 bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-gray-100">
+          <motion.main
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            className="md:col-span-7 lg:col-span-8 bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-gray-100"
+          >
             <h2 className="text-2xl font-bold text-[#5A4A42] font-akaya mb-6 flex items-center gap-2">
                 <Sparkles className="text-[#C79C8D]" /> Írj nekem üzenetet
             </h2>
@@ -261,14 +280,7 @@ const Contact = () => {
 
                   <div>
                         <label htmlFor="date" className="block text-sm font-bold text-[#5A4A42] mb-2">Tervezett dátum (opcionális)</label>
-                        <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                <CalendarDays size={18} className="text-gray-400" />
-                            </div>
-                            <input type="date" id="date" name="date" value={formData.date} onChange={handleChange}
-                                className="block w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#C79C8D] focus:border-transparent transition-all duration-200 text-gray-700"
-                            />
-                        </div>
+                        <DatePicker id="date" name="date" value={formData.date} onChange={handleChange} />
                    </div>
               </div>
 
@@ -337,7 +349,7 @@ const Contact = () => {
                 </button>
               </div>
             </form>
-          </main>
+          </motion.main>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Camera, Coffee, Heart, MapPin } from "lucide-react";
+import TiltCard from "@/components/TiltCard";
 
 export default function AboutSection() {
   return (
@@ -15,22 +16,25 @@ export default function AboutSection() {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           {/* 1. BAL OLDAL: KÉP (Rólad) */}
-          <motion.div 
+          <motion.div
             className="w-full lg:w-1/2 relative"
+            style={{ perspective: 1000 }}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative aspect-[4/5] md:aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
-              {/* TIPP: Ide tölts fel egy jó portrét magadról a public/images mappába! */}
-              <Image 
-                src="/images/profilkep.jpg" 
-                alt="Kovács Bálint fotográfus Zalaegerszeg Budapest" 
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
+            <TiltCard tiltStrength={6} className="rounded-[2rem]">
+              <div className="relative aspect-[4/5] md:aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
+                {/* TIPP: Ide tölts fel egy jó portrét magadról a public/images mappába! */}
+                <Image
+                  src="/images/profilkep.webp"
+                  alt="Kovács Bálint fotográfus Zalaegerszeg Budapest"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </TiltCard>
             {/* Lebegő "badge" - Letisztultabb lett */}
             <div className="absolute -bottom-6 -right-6 md:bottom-8 md:-right-8 bg-white p-6 rounded-2xl shadow-xl max-w-[220px] hidden md:block border border-[#5A4A42]/5">
               <p className="font-akaya text-[#C79C8D] text-xl leading-tight">
