@@ -3,5 +3,10 @@
   publish = ".next"
   functions = "netlify/functions"
 
+# A Next.js 16 minimum Node 20.9-et igényel. Rögzítve, hogy egy Netlify-oldali
+# default-váltás ne törhesse el a buildet. Lokálisan ugyanez a .nvmrc-ben.
+[build.environment]
+  NODE_VERSION = "22"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"

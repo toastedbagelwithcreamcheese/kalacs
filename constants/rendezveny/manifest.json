@@ -1,0 +1,729 @@
+{
+  "/images/rendezveny/egyetemi/ballagas-bf-9831.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 140584,
+    "alt": "Ballagás",
+    "event": "ballagas"
+  },
+  "/images/rendezveny/egyetemi/ballagas-bf-9852.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 163986,
+    "alt": "Ballagás",
+    "event": "ballagas"
+  },
+  "/images/rendezveny/egyetemi/ballagas-bf-9889.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 156718,
+    "alt": "Ballagás",
+    "event": "ballagas"
+  },
+  "/images/rendezveny/egyetemi/ballagas-bf-9923.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 182612,
+    "alt": "Ballagás",
+    "event": "ballagas"
+  },
+  "/images/rendezveny/egyetemi/ballagas-bf-9966.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 127218,
+    "alt": "Ballagás",
+    "event": "ballagas"
+  },
+  "/images/rendezveny/egyetemi/ballagas-bf-9967.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 120832,
+    "alt": "Ballagás",
+    "event": "ballagas"
+  },
+  "/images/rendezveny/egyetemi/ballagas-bf-9993.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 128434,
+    "alt": "Ballagás",
+    "event": "ballagas"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a0075.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 126622,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9674.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 177406,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9708.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 157916,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9747.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 205168,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9760.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 103228,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9809.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 120758,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9885.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 81884,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9893.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 168400,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9914.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 184402,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9940.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 217664,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9955.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 161382,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-42a9994.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 56854,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-dji-0936.webp": {
+    "width": 1800,
+    "height": 1199,
+    "bytes": 219564,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/egyetemi/dualis-tabor-dji-0960.webp": {
+    "width": 1800,
+    "height": 1199,
+    "bytes": 194458,
+    "alt": "Duális tábor, Pannon Egyetem",
+    "event": "dualis-tabor"
+  },
+  "/images/rendezveny/konferencia/egyed-viktor-42a9058.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 191704,
+    "alt": "Egyed Viktor Leadership Akadémia és könyvbemutató",
+    "event": "egyed-viktor"
+  },
+  "/images/rendezveny/konferencia/egyed-viktor-42a9415-2.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 147496,
+    "alt": "Egyed Viktor Leadership Akadémia és könyvbemutató",
+    "event": "egyed-viktor"
+  },
+  "/images/rendezveny/konferencia/egyed-viktor-42a9652.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 174976,
+    "alt": "Egyed Viktor Leadership Akadémia és könyvbemutató",
+    "event": "egyed-viktor"
+  },
+  "/images/rendezveny/konferencia/lr-42a6050.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 85196,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/konferencia/lr-42a6211.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 141580,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/konferencia/lr-42a6315.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 145310,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/konferencia/lr-42a6401.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 119922,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/konferencia/lr-42a6462.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 122784,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/konferencia/lr-42a6515.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 176830,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/konferencia/lr-42a6534.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 79582,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/konferencia/lr-42a6582.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 81972,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/konferencia/lr-42a6704.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 95870,
+    "alt": "LR Health & Beauty rendezvény",
+    "event": "lr"
+  },
+  "/images/rendezveny/kultura/tanc-42a7714.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 164398,
+    "alt": "Táncelőadás",
+    "event": "tanc"
+  },
+  "/images/rendezveny/kultura/tanc-42a7767.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 184928,
+    "alt": "Táncelőadás",
+    "event": "tanc"
+  },
+  "/images/rendezveny/kultura/tanc-42a7987.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 105492,
+    "alt": "Táncelőadás",
+    "event": "tanc"
+  },
+  "/images/rendezveny/kultura/tanc-42a8006.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 195184,
+    "alt": "Táncelőadás",
+    "event": "tanc"
+  },
+  "/images/rendezveny/kultura/tanc-42a8111.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 175804,
+    "alt": "Táncelőadás",
+    "event": "tanc"
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-7587.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 118344,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-7750.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 207332,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-7991.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 78908,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-8028.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 86298,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-8079.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 85774,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-8321.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 117336,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-8605.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 53128,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-8667.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 93918,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-8757.webp": {
+    "width": 1600,
+    "height": 1280,
+    "bytes": 204038,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/fozes-bf-8759.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 215604,
+    "alt": "Főzőverseny, Pannon Egyetem",
+    "event": "fozes",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7099.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 204644,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7168.webp": {
+    "width": 1400,
+    "height": 933,
+    "bytes": 205780,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7341.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 198646,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7389.webp": {
+    "width": 1120,
+    "height": 1400,
+    "bytes": 202322,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7414.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 73956,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7505.webp": {
+    "width": 1400,
+    "height": 1120,
+    "bytes": 212432,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7509.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 183352,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7548.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 40262,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/maganunnep/kutyusok-bf-7570.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 72674,
+    "alt": "Kutyás élményprogram, Pannon Egyetem",
+    "event": "kutyusok",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/offroad/offroad-42a4075.webp": {
+    "width": 1280,
+    "height": 853,
+    "bytes": 205992,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4133.webp": {
+    "width": 1600,
+    "height": 1067,
+    "bytes": 210208,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4413.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 149402,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4434.webp": {
+    "width": 1600,
+    "height": 1067,
+    "bytes": 204666,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4456.webp": {
+    "width": 1400,
+    "height": 933,
+    "bytes": 196646,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4547.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 222244,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4649.webp": {
+    "width": 1600,
+    "height": 1067,
+    "bytes": 224208,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4693.webp": {
+    "width": 1600,
+    "height": 1067,
+    "bytes": 203358,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4756.webp": {
+    "width": 1200,
+    "height": 1800,
+    "bytes": 122654,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4865.webp": {
+    "width": 1400,
+    "height": 933,
+    "bytes": 195590,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a4926.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 163996,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a5091.webp": {
+    "width": 1280,
+    "height": 853,
+    "bytes": 246166,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a5139.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 122330,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a5238.webp": {
+    "width": 853,
+    "height": 1280,
+    "bytes": 223048,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a5345.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 221406,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a5563-pano.webp": {
+    "width": 1800,
+    "height": 834,
+    "bytes": 219458,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-42a5573.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 171742,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-bf-0102.webp": {
+    "width": 1800,
+    "height": 1554,
+    "bytes": 201282,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-bf-0117.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 173006,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-dji-0100.webp": {
+    "width": 1400,
+    "height": 933,
+    "bytes": 190280,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-dji-0105.webp": {
+    "width": 1800,
+    "height": 1199,
+    "bytes": 210562,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-dji-0123.webp": {
+    "width": 1400,
+    "height": 933,
+    "bytes": 211578,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/offroad/offroad-dji-0147.webp": {
+    "width": 1600,
+    "height": 1066,
+    "bytes": 193238,
+    "alt": "Offroad találkozó",
+    "event": "offroad"
+  },
+  "/images/rendezveny/sport/foci-bf-4006.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 201368,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-4162.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 118526,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-4668.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 165692,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-4739.webp": {
+    "width": 1440,
+    "height": 1800,
+    "bytes": 129036,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-6221.webp": {
+    "width": 1800,
+    "height": 1440,
+    "bytes": 203000,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-6259.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 219438,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-6761.webp": {
+    "width": 1600,
+    "height": 1280,
+    "bytes": 208820,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-6788.webp": {
+    "width": 1800,
+    "height": 1440,
+    "bytes": 183848,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-6877.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 87732,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-6963.webp": {
+    "width": 1600,
+    "height": 1067,
+    "bytes": 212982,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  },
+  "/images/rendezveny/sport/foci-bf-6984.webp": {
+    "width": 1800,
+    "height": 1200,
+    "bytes": 225108,
+    "alt": "Focibajnokság, Pannon Egyetem",
+    "event": "foci",
+    "tags": [
+      "egyetemi"
+    ]
+  }
+}

@@ -45,3 +45,22 @@ next-env.d.ts
 
 # graphify knowledge-graph output (local tooling, not part of the app)
 /graphify-out/
+
+# Nyers/eredeti képfájlok - ezek SOHA nem kerülhetnek a repóba.
+# A .git már 1,9 GB a korábbi nagy binárisoktól; az eredetik a repón kívül,
+# a kalacs-image-originals/ mappában maradnak. A public/images/ alá csak a
+# scripts/prep-event-images.mjs által optimalizált WebP mehet be.
+*.CR2
+*.CR3
+*.NEF
+*.ARW
+*.ORF
+*.RAF
+*.dng
+*.DNG
+*.psd
+*.PSD
+*.tif
+*.tiff
+*.TIF
+*.TIFF

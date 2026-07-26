@@ -1,0 +1,212 @@
+/* ============================================================
+   PRIZMA — a rendezvényes oldal scoped stíluslapja
+   ------------------------------------------------------------
+   MINDEN itt definiált változó és osztály a .ev-root alatt él.
+   Ha itt valami elszabadul, az KIZÁRÓLAG a /rendezveny alatt
+   látszik -- a fotós oldal nem sérülhet tőle.
+   Forrás: docs/RENDEZVENY-TERV.md 4. fejezet
+   ============================================================ */
+
+.ev-root {
+  /* --- semleges alap (a felület 90%-a) --- */
+  --ev-bg: #fafaf8;
+  --ev-surface: #ffffff;
+  --ev-sunk: #f2f1ee;
+  --ev-line: rgba(25, 23, 35, 0.1);
+  --ev-line-2: rgba(25, 23, 35, 0.2);
+
+  --ev-ink: #191723;
+  --ev-ink-2: #5a5568;
+  --ev-ink-3: #8b8698;
+
+  /* --- márka-horgony: minden művelet színe --- */
+  --ev-brand: #2e2a6b;
+  --ev-brand-ink: #ffffff;
+  --ev-brand-soft: #ebeaf5;
+
+  /* --- aktuális kategória-szín; a [kategoria] oldal írja felül --- */
+  --ev-cat: #c6cef7;
+  --ev-cat-deep: #3b4bb8;
+
+  /* --- mozgás --- */
+  --ev-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ev-ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+
+  background: var(--ev-bg);
+  color: var(--ev-ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  /* A globals.css `overflow-y: scroll !important` szabálya miatt a
+     görgetészárat NEM az overflow-val oldjuk meg -- ld. .ev-scroll-lock. */
+}
+
+/* ============================================================
+   Tipográfia
+   ============================================================ */
+
+.ev-display {
+  font-family: var(--font-schibsted), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.ev-mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ev-ink-3);
+}
+
+.ev-d-xl { font-size: clamp(2.75rem, 9vw, 7.5rem); }
+.ev-d-l  { font-size: clamp(2rem, 5.5vw, 4.5rem); }
+.ev-d-m  { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+.ev-body-l { font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.6; }
+
+/* ============================================================
+   Gombok — mindig a márka-indigó, SOHA nem kategória-szín
+   ============================================================ */
+
+.ev-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.22s var(--ev-ease-out),
+    color 0.22s var(--ev-ease-out), transform 0.22s var(--ev-ease-out),
+    box-shadow 0.22s var(--ev-ease-out);
+}
+
+.ev-btn-primary {
+  background: var(--ev-brand);
+  color: var(--ev-brand-ink);
+  box-shadow: 0 12px 32px -16px rgba(46, 42, 107, 0.45);
+}
+.ev-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -18px rgba(46, 42, 107, 0.55);
+}
+
+.ev-btn-ghost {
+  background: transparent;
+  color: var(--ev-ink);
+  border: 1px solid var(--ev-line-2);
+}
+.ev-btn-ghost:hover {
+  border-color: var(--ev-brand);
+  color: var(--ev-brand);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Aláhúzódó link — a kategória-szín itt kap szerepet
+   ============================================================ */
+
+.ev-link {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+.ev-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--ev-cat-deep);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ev-ease-out);
+}
+.ev-link:hover::after,
+.ev-link[data-active="true"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ============================================================
+   Görgetészár (L4)
+   ------------------------------------------------------------
+   A globals.css `html, body { overflow-y: scroll !important }`
+   szabálya miatt a body.style.overflow = "hidden" NEM működik.
+   Ezért position: fixed alapú zárat használunk, a scroll
+   pozíciót pedig kézzel állítjuk vissza (EventNav.js).
+   ============================================================ */
+
+body.ev-scroll-lock {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+/* ============================================================
+   Maszkos feltárulás — a Reveal komponens alapja
+   ============================================================ */
+
+.ev-reveal {
+  clip-path: inset(100% 0 0 0);
+  opacity: 0;
+  transition: clip-path 0.85s var(--ev-ease-out),
+    opacity 0.6s var(--ev-ease-out), transform 0.85s var(--ev-ease-out);
+  transform: translateY(14px);
+}
+.ev-reveal[data-shown="true"] {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   Marquee — végtelen görgetősáv
+   ============================================================ */
+
+.ev-marquee {
+  display: flex;
+  width: max-content;
+  animation: ev-marquee-scroll var(--ev-marquee-duration, 42s) linear infinite;
+}
+.ev-marquee-wrap:hover .ev-marquee {
+  animation-play-state: paused;
+}
+@keyframes ev-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   Fókusz — látható, márka-színű, mindenhol
+   ============================================================ */
+
+.ev-root :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--ev-brand);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Mozgáscsökkentés
+   ------------------------------------------------------------
+   A globals.css már tartalmaz globális szabályt, de a
+   clip-path alapú feltárulást külön is ki kell iktatni:
+   különben a tartalom LÁTHATATLAN maradna, ha a JS nem fut le.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .ev-reveal {
+    clip-path: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ev-marquee {
+    animation: none !important;
+  }
+}
