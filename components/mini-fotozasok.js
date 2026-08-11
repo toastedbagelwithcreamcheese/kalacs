@@ -10,7 +10,7 @@ import { ChevronDown, CheckCircle, Calendar, Clock, Sparkles, Snowflake } from "
 const seasonalPackages = [
   {
     title: "Ünnepi Mini",
-    price: "15.900 Ft",
+    price: "30.000 Ft",
     duration: "25-30 perc fotózás",
     features: [
       "Gondosan berendezett ünnepi díszlet",
@@ -23,7 +23,7 @@ const seasonalPackages = [
   },
   {
     title: "Családi Karácsony",
-    price: "24.900 Ft",
+    price: "39.000 Ft",
     duration: "50-60 perc fotózás",
     features: [
       "Több háttér/helyszín használata",
@@ -36,7 +36,7 @@ const seasonalPackages = [
   },
   {
     title: "Prémium Ünnepi Emlék",
-    price: "34.900 Ft",
+    price: "49.000 Ft",
     duration: "90 perc fotózás",
     features: [
       "Korlátlan létszám (közeli hozzátartozók)",

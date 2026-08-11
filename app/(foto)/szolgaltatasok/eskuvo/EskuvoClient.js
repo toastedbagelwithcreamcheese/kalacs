@@ -35,7 +35,11 @@ const galleryImages = [
   { src: "/images/_BF_5326-2.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_5191-2.webp", alt: "Esküvői pillanat" },
   { src: "/images/_BF_5158-2.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5157-2.webp", alt: "Esküvői pillanat" }
+  { src: "/images/_BF_5157-2.webp", alt: "Esküvői pillanat" },
+  { src: "/images/eskuvo/_42A9125-2.webp", alt: "Meghitt fekete-fehér pillanat a menyasszony és a vőlegény között" },
+  { src: "/images/eskuvo/_42A9328.webp", alt: "Boldog ifjú pár a szertartás után" },
+  { src: "/images/eskuvo/_42A9386-2.webp", alt: "Csók és a frissen felhúzott jegygyűrűk közeli fotója" },
+  { src: "/images/eskuvo/_BF_9464.webp", alt: "Ifjú pár portréja a kastély épülete előtt" }
 ];
 
 export default function EskuvoClient() {

@@ -23,6 +23,59 @@ export const SERVICES_DATA = {
     gridClass: "col-span-1 md:col-span-6 lg:col-span-4 row-span-1",
     tags: ["Stúdió / Szabadtér", "Üzleti portré", "Kreatív"],
     gallery: [
+      // Adriai nyaralás - Tengerparti portrék
+      { src: "/images/portre/_42A1096.webp", alt: "Nyaralós portré a tengerparti sziklákon" },
+      { src: "/images/portre/_42A2167.webp", alt: "Naplementés hintázós portré a tengerparti strandon" },
+      { src: "/images/portre/_42A2591.webp", alt: "Fekete-fehér portré a sziklákon, hosszú expozíciós tengerrel" },
+      { src: "/images/portre/_42A2900.webp", alt: "Naplementés parti fotó a tengerparti sziklákon" },
+      { src: "/images/portre/_42A3880.webp", alt: "Fehér ruhás portré a tengerre néző pavilon boltíve alatt" },
+
+      // Éjszakai városi sorozat
+      { src: "/images/portre/_42A5667.webp", alt: "Esti utcai portré fehér szettben" },
+      { src: "/images/portre/_42A5704.webp", alt: "Kreatív esti portré meleg fényekkel és mozgáselmosódással" },
+      { src: "/images/portre/_42A5787.webp", alt: "Szimmetrikus, minimalista portré a fehér lépcsősor perspektívájában" },
+      { src: "/images/portre/_42A5832.webp", alt: "Éjszakai portré teliholddal a háttérben" },
+      { src: "/images/portre/_42A5880.webp", alt: "Esti séta a kivilágított sétányon" },
+      { src: "/images/portre/_42A5908-2.webp", alt: "Fekete-fehér portré a város éjszakai fényei felett" },
+      { src: "/images/portre/_42A5910.webp", alt: "Vidám portré a város esti fényeinek panorámájával" },
+      { src: "/images/portre/_42A5934.webp", alt: "Fekete-fehér éjszakai portré a korlátnál" },
+      { src: "/images/portre/_42A5952-2.webp", alt: "Éjszakai portré a hold és a városi fények alatt" },
+      { src: "/images/portre/_42A6811.webp", alt: "Elegáns esti portré bordó ruhában" },
+      { src: "/images/portre/_42A6948.webp", alt: "Kreatív portré egy utcai domború tükör tükröződésében" },
+      { src: "/images/portre/_42A7071-2.webp", alt: "Éjszakai utcai portré elmosódott lámpafényekkel" },
+      { src: "/images/portre/_42A7077-3.webp", alt: "Fekete-fehér portré az út közepén, lámpasor perspektívájával" },
+      { src: "/images/portre/_42A7077.webp", alt: "Éjszakai portré az út közepén, a városi lámpák fényében" },
+      { src: "/images/portre/_42A7095.webp", alt: "Laza fekete-fehér utcai portré napszemüvegben" },
+
+      // Stúdiós, minimál enteriőrös sorozat
+      { src: "/images/portre/_42A8195.webp", alt: "Portré világos, minimál stúdiós enteriőrben" },
+      { src: "/images/portre/_42A8253.webp", alt: "Stúdiós divatportré növényes díszlettel" },
+      { src: "/images/portre/_42A8458.webp", alt: "Természetes fényű portré világos stúdióháttér előtt" },
+      { src: "/images/portre/_42A8494.webp", alt: "Minimalista egészalakos portré fehér téglafal előtt" },
+      { src: "/images/portre/_42A8687.webp", alt: "Portré a nagy ablak természetes fényében" },
+
+      // Városi lifestyle sorozat
+      { src: "/images/portre/_BF_0142.webp", alt: "Városi divatportré árnyékos utcarészleten" },
+      { src: "/images/portre/_BF_0318.webp", alt: "Elegáns városi portré csipke felsőben" },
+      { src: "/images/portre/_BF_0408.webp", alt: "Ellenfényes portré egy városi átjáróban" },
+      { src: "/images/portre/_BF_0441.webp", alt: "Napsütötte lifestyle portré a sétálóutcán" },
+      { src: "/images/portre/_BF_0529.webp", alt: "Mozgás közben készült portré a belvárosi téren" },
+      { src: "/images/portre/_BF_0530.webp", alt: "Városi séta közben elkapott portré" },
+      { src: "/images/portre/_BF_0635-ret.webp", alt: "Kávézós portré, játékos napszemüveges pillanat" },
+      { src: "/images/portre/_BF_0655.webp", alt: "Hangulatos portré a kávézó kirakata előtt" },
+      { src: "/images/portre/_BF_0674.webp", alt: "Városi portré itallal a kezében, esti fényben" },
+      { src: "/images/portre/_BF_0899.webp", alt: "Életkép a vidámparkban, mozgalmas háttérrel" },
+      { src: "/images/portre/_BF_0994-2.webp", alt: "Lifestyle portré a vidámpark színes forgatagában" },
+      { src: "/images/portre/_BF_1249.webp", alt: "Laza, utcai stílusú portré a vidámparkban" },
+      { src: "/images/portre/_BF_1310.webp", alt: "Páros portré stúdiós, klubhangulatú díszletben" },
+
+      // Tavaszi, természetes fényű portrék
+      { src: "/images/portre/_BF_8904.webp", alt: "Tavaszi portré napfényes lombok között" },
+      { src: "/images/portre/_BF_8931.webp", alt: "Természetes fényű tavaszi portré farmerdzsekiben" },
+      { src: "/images/portre/_BF_8946.webp", alt: "Közeli tavaszi portré lágy, természetes fényben" },
+      { src: "/images/portre/_BF_9108.webp", alt: "Portré a park fái között, tavaszi hangulatban" },
+      { src: "/images/portre/_BF_9126.webp", alt: "Egészalakos portré a napsütötte parkban" },
+
       // Keszthelyi móló - Esti képek (.JPEG)
       { src: "/images/_BF_0299.webp", alt: "Művészi esti portré a keszthelyi móló kivilágított korlátjánál" },
       { src: "/images/_BF_0300.webp", alt: "Hangulatos éjszakai fotó a Balaton-parton, sejtelmes fényekkel" },
@@ -63,7 +116,7 @@ export const SERVICES_DATA = {
       { src: "/images/Virag_BP/7.webp", alt: "Felnőtt portré" },
       { src: "/images/_MG_0315-2.webp", alt: "Felnőtt portré" }
     ],
-    startingPrice: "19.900 Ft",
+    startingPrice: "30.000 Ft",
     baseFeatures: [
       "1 óra rendelkezésre állás (Zala megye vagy Budapest)",
       "Előzetes konzultáció, koncepciótervezés",
@@ -94,6 +147,12 @@ export const SERVICES_DATA = {
     gridClass: "col-span-1 md:col-span-6 lg:col-span-4 row-span-1",
     tags: ["Kismama ruhák", "Meghitt", "Páros képek"],
     gallery: [
+      // Babavárás bejelentő fotózás
+      { src: "/images/baba_reveal/_BF_2013.webp", alt: "Babavárás bejelentés: babacipő és ultrahangkép a leendő apuka vállán" },
+      { src: "/images/baba_reveal/_BF_2053.webp", alt: "DAD és MOM feliratú sapkák az ultrahangképpel a leendő szülők kezében" },
+      { src: "/images/baba_reveal/_BF_2096.webp", alt: "Babavárás bejelentés kellékei: sapkák, babacipő és ultrahangkép" },
+      { src: "/images/baba_reveal/_BF_2122.webp", alt: "Leendő apuka DAD feliratú sapkában, babacipővel a vállán" },
+
       { src: "/images/kata_kismama/_47A7843-2.webp", alt: "Kismama portré a természetben" },
       { src: "/images/kata_kismama/_47A7885-2.webp", alt: "Pocak lakója" },
       { src: "/images/kata_kismama/_47A7897-2.webp", alt: "Boldog várakozás" },
@@ -113,7 +172,7 @@ export const SERVICES_DATA = {
       { src: "/images/kata_kismama/_47A9191-2.webp", alt: "Apával közösen" },
       { src: "/images/kata_kismama/_47A9221-2.webp", alt: "Boldog szülők" }
     ],
-    startingPrice: "24.900 Ft",
+    startingPrice: "30.000 Ft",
     baseFeatures: [
       "kb. 1-1.5 óra fotózás szabadtéren vagy az otthonotokban",
       "Páros, családi és egyéni kismama fotók vegyesen",
@@ -175,7 +234,7 @@ export const SERVICES_DATA = {
       { src: "/images/karacsony_patriek/_47A2964.webp", alt: "Játékos karácsonyi pillanat" },
       { src: "/images/karacsony_patriek/_47A3036.webp", alt: "Szeretetteljes ünnepi hangulat" }
     ],
-    startingPrice: "24.900 Ft",
+    startingPrice: "30.000 Ft",
     baseFeatures: [
       "Kb. 1-1.5 óra kötetlen, játékos fotózás szabadtéren",
       "Közös képek, gyerekek külön, és a szülők kettesben is",
@@ -206,6 +265,18 @@ export const SERVICES_DATA = {
     gridClass: "col-span-1 md:col-span-4 lg:col-span-4 row-span-1",
     tags: ["Rolling shots", "Részletfotók", "Night shots"],
     gallery: [
+      // Aranyóra sorozat - Izomautó és limuzin a nyári mezőn
+      { src: "/images/autok/_BF_0069.webp", alt: "Fekete Dodge Challenger a nyári mezőn, oldalnézetben" },
+      { src: "/images/autok/_BF_0084.webp", alt: "Izomautó a dombos táj és a szénabálák előtt" },
+      { src: "/images/autok/_BF_0143.webp", alt: "Audi limuzin a naplementében, aranyló tarlón" },
+      { src: "/images/autok/_BF_0177.webp", alt: "Autó sziluettje a lemenő nap fényében" },
+      { src: "/images/autok/_BF_0180.webp", alt: "Aranyóra hangulatú autós fotó a nyári mezőn" },
+      { src: "/images/autok/_42A0238.webp", alt: "Fekete izomautó részletfotó a lemenő nap fényében" },
+      { src: "/images/autok/_42A0246.webp", alt: "Autó belső tér: kormány és váltó részletfotó" },
+      { src: "/images/autok/_42A0253.webp", alt: "Krómozott tanksapka közeli részletfotó" },
+      { src: "/images/autok/_42A0273.webp", alt: "Autó utastere naplementében, ellenfényes hangulatban" },
+      { src: "/images/autok/_42A0281.webp", alt: "Hátsó szárny sziluettje a naplemente színei előtt" },
+
       { src: "/images/_BF_6906.webp", alt: "Kreatív Autó fotó" },
       { src: "/images/_BF_6913.webp", alt: "Kreatív Autó fotó" },
       { src: "/images/_BF_6916.webp", alt: "Autó fotó" },
@@ -244,7 +315,7 @@ export const SERVICES_DATA = {
       { src: "/images/audi_tel--5.webp", alt: "Téli táj" },
       { src: "/images/_MG_6525.webp", alt: "Oldalnézet" }
     ],
-    startingPrice: "19.900 Ft",
+    startingPrice: "30.000 Ft",
     baseFeatures: [
       "1 órás fotózás egy egyeztetett, az autóhoz illő helyszínen",
       "Külső vonalak, belső tér és apró részletek megörökítése",
@@ -279,7 +350,7 @@ export const SERVICES_DATA = {
       { src: "/images/_MG_5324.webp", alt: "Kutyus portré" },
       { src: "/images/_MG_5351.webp", alt: "Gazdival közösen" }
     ],
-    startingPrice: "14.900 Ft",
+    startingPrice: "30.000 Ft",
     baseFeatures: [
       "Kb. 1 órás kötetlen séta és játék egy választott szabadtéri helyszínen",
       "Akciófotók futás közben, nyugodt portrék és gazdival közös képek",
