@@ -10,61 +10,64 @@ module.exports = {
         akaya: ["Akaya Kanadaka", "sans-serif"],
         anton: ["Anton", "san-serif"],
 
-        // --- Rendezvényes oldal (PRIZMA) ---
-        evDisplay: ["var(--font-schibsted)", "sans-serif"],
-        evBody: ["var(--font-geist-sans)", "sans-serif"],
+        // --- Rendezvényes oldal (NOIR) ---
+        evDisplay: ["var(--font-bebas)", "var(--font-schibsted)", "sans-serif"],
+        evBody: ["var(--font-jakarta)", "sans-serif"],
         evMono: ["var(--font-geist-mono)", "monospace"],
       },
       backgroundImage: {
         'pattern': "url('/liquid-cheese.svg')", // Háttérminta betöltése
       },
 
-      // === RENDEZVÉNYES OLDAL — „PRIZMA" ===
+      // === RENDEZVÉNYES OLDAL — „NOIR" ===
       // Minden kulcs "ev" névtérben, hogy a fotós oldal tokenjeit ne érintse.
-      // Forrás: docs/RENDEZVENY-TERV.md 4.2
+      // Az igazi forrás a rendezveny.css változó-blokkja; ez csak a
+      // Tailwind-oldali tükre, hogy szükség esetén osztályból is elérhető.
       colors: {
         ev: {
-          bg: "#FAFAF8",        // meleg papír
-          surface: "#FFFFFF",
-          sunk: "#F2F1EE",
-          line: "rgba(25,23,35,0.10)",
-          line2: "rgba(25,23,35,0.20)",
+          bg: "#08060F",        // mély, enyhén lila fekete -- NEM tiszta #000
+          surface: "#0E0B1A",
+          sunk: "#151024",
+          line: "rgba(255,255,255,0.09)",
+          line2: "rgba(255,255,255,0.20)",
 
-          ink: "#191723",       // mély tinta, lila árnyalattal -- NEM fekete
-          ink2: "#5A5568",
-          ink3: "#8B8698",
+          ink: "#F6F4FC",
+          ink2: "rgba(246,244,252,0.66)",
+          ink3: "rgba(246,244,252,0.40)",
 
-          brand: "#2E2A6B",     // mély indigó: minden művelet színe
-          brandSoft: "#EBEAF5",
+          brand: "#FFFFFF",     // sötét alapon a fehér a legerősebb művelet
+          brandSoft: "rgba(255,255,255,0.08)",
+          glow: "#A855F7",
 
-          // Kategória-spektrum. A pasztell csak nagy felületen,
-          // a "deep" csak apró jelzésen (badge, vonal, ikon).
-          konferencia: { soft: "#C6CEF7", deep: "#3B4BB8" },
-          egyetemi: { soft: "#C2E4D3", deep: "#2C7A5B" },
-          offroad: { soft: "#F0DCB6", deep: "#96681C" },
-          sport: { soft: "#C2DEF0", deep: "#236D95" },
-          kultura: { soft: "#DFC8EE", deep: "#79489C" },
-          maganunnep: { soft: "#F5CDD9", deep: "#B24870" },
+          // Kategória-spektrum sötét változatban. A `deep` a világító
+          // akcentus (szöveg, ikon, glow), a `soft` a halvány tónus-alap.
+          konferencia: { soft: "rgba(109,139,255,0.16)", deep: "#6D8BFF" },
+          egyetemi: { soft: "rgba(52,211,153,0.16)", deep: "#34D399" },
+          offroad: { soft: "rgba(245,165,36,0.16)", deep: "#F5A524" },
+          sport: { soft: "rgba(56,189,248,0.16)", deep: "#38BDF8" },
+          kultura: { soft: "rgba(168,85,247,0.16)", deep: "#A855F7" },
+          maganunnep: { soft: "rgba(244,114,182,0.16)", deep: "#F472B6" },
         },
       },
       transitionTimingFunction: {
         "ev-out": "cubic-bezier(0.16, 1, 0.3, 1)",
         "ev-in": "cubic-bezier(0.7, 0, 0.84, 0)",
+        "ev-cine": "cubic-bezier(0.4, 0, 0.2, 1)",
       },
       maxWidth: {
         ev: "1440px",
       },
       borderRadius: {
-        ev: "8px",
-        "ev-sm": "4px",
+        ev: "16px",
+        "ev-sm": "10px",
       },
       boxShadow: {
-        // Színezett, az indigóból származó árnyék. Szürke drop shadow tilos:
-        // az teszi olcsóvá a világos felületeket.
-        ev: "0 12px 32px -16px rgba(46,42,107,0.18)",
-        "ev-lg": "0 24px 60px -24px rgba(46,42,107,0.22)",
+        // Sötét alapon a mély, tág árnyék adja a lebegést; a színes
+        // "glow"-t az akcentus külön rétegben viszi (.ev-glow-spot).
+        ev: "0 25px 50px -12px rgba(0,0,0,0.7)",
+        "ev-lg": "0 40px 90px -30px rgba(0,0,0,0.9)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

@@ -1,6 +1,7 @@
 // pages/aszf.js
 import Head from "next/head";
 import LegalPageLayout from "@/components/LegalPageLayout";
+import LegalPlaceholder from "@/components/LegalPlaceholder";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Hourglass, ArrowLeft } from "lucide-react";
@@ -64,11 +65,11 @@ const ASZFPage = () => {
       <h2>1. A Szolgáltató Adatai</h2>
       <ul>
         <li><strong>Név:</strong> Kovács Bálint</li>
-        <li><strong>Vállalkozási forma:</strong> - </li>
-        <li><strong>Székhely:</strong> Zalaszentiván</li>
-        <li><strong>Nyilvántartási szám:</strong> [A Te Nyilvántartási Számod]</li>
-        <li><strong>Adószám:</strong> [A Te Adószámod]</li>
-        <li><strong>E-mail cím:</strong> [A Te Email Címed]</li>
+        <li><strong>Vállalkozási forma:</strong> <LegalPlaceholder>kitöltendő</LegalPlaceholder></li>
+        <li><strong>Székhely:</strong> Zalaszentiván, <LegalPlaceholder>pontos cím kitöltendő</LegalPlaceholder></li>
+        <li><strong>Nyilvántartási szám:</strong> <LegalPlaceholder>kitöltendő</LegalPlaceholder></li>
+        <li><strong>Adószám:</strong> <LegalPlaceholder>kitöltendő</LegalPlaceholder></li>
+        <li><strong>E-mail cím:</strong> kapcsolat@kovacsbalintfoto.hu</li>
         <li><strong>Telefonszám:</strong> +36 30 872 3777</li>
         <li><strong>Weboldal:</strong> https://kovacsbalintfoto.hu</li>
       </ul>

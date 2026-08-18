@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronDown, Menu, Sparkles, Flower2, ChevronRight, X, Instagram, Facebook } from "lucide-react";
+import { ChevronDown, Menu, Sparkles, Flower2, ChevronRight, X, Instagram, Facebook, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -80,7 +80,7 @@ export default function Navbar() {
           
           <Link href="/" className="group flex items-center gap-3 relative shrink-0 select-none" onClick={() => setMobileMenuOpen(false)}>
             <div className="relative w-10 h-10 transform group-hover:-rotate-6 transition-transform duration-500">
-              <Image src="/images/logo2.webp" alt="Kovács Bálint Logó" fill className="object-contain" priority />
+              <Image src="/images/logo2-transparent.webp" alt="Kovács Bálint Logó" fill className="object-contain" priority />
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-2xl font-bold font-akaya text-[#5A4A42] tracking-wide group-hover:text-[#C79C8D] transition-colors">
@@ -157,6 +157,18 @@ export default function Navbar() {
               <Link href="/about" className="text-sm xl:text-base hover:text-[#C79C8D] transition-colors relative group">
                 Rólam
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C79C8D] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
+
+            {/* Átjáró a rendezvényes oldalra. Szándékosan más a stílusa
+                (keretes, indigó), hogy jelezze: másik világba visz. */}
+            <li>
+              <Link
+                href="/rendezveny"
+                className="flex items-center gap-1.5 rounded-lg border border-[#2E2A6B]/25 px-3 py-1.5 text-xs xl:text-sm font-semibold text-[#2E2A6B] transition-colors hover:bg-[#2E2A6B] hover:text-white"
+              >
+                Rendezvény
+                <ArrowUpRight size={13} />
               </Link>
             </li>
 {/*
@@ -260,6 +272,17 @@ export default function Navbar() {
               <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
                 <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-akaya hover:text-[#C79C8D] transition-colors">
                   Rólam
+                </Link>
+              </motion.li>
+
+              <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="pt-4">
+                <Link
+                  href="/rendezveny"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex items-center gap-2 rounded-xl border border-[#2E2A6B]/30 px-5 py-3 text-2xl font-bold text-[#2E2A6B]"
+                >
+                  Rendezvény
+                  <ArrowUpRight size={22} />
                 </Link>
               </motion.li>
 {/*
