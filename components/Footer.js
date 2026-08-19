@@ -144,6 +144,23 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* KÉSZÍTŐI SOR */}
+        <div className="pt-4 text-center">
+          <p className="text-white/25 text-[10px] tracking-wide">
+            Weboldalt tervezte és fejlesztette{" "}
+            <a
+              href="mailto:kapcsolat@kovacsbalintfoto.hu"
+              className="text-white/40 hover:text-[#C79C8D] transition-colors underline decoration-white/20 underline-offset-2"
+            >
+              Kovács Bálint
+            </a>
+            <span className="mx-1.5">·</span>
+            <a href="tel:+36308723777" className="text-white/40 hover:text-[#C79C8D] transition-colors">
+              +36 30 872 3777
+            </a>
+          </p>
+        </div>
+
       </div>
     </footer>
   );
