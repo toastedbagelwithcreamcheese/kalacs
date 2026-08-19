@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Facebook, Instagram, Mail, Phone, ArrowRight, ArrowUpRight,
-  Heart, Camera, Users, Baby, Car, Dog, PartyPopper,
+  Facebook, Instagram, Mail, Phone, ArrowRight,
+  Heart, Camera, Users, Baby, Car, Dog,
   User, Star, Shield, Cookie, FileText, Info,
 } from "lucide-react";
 
@@ -96,13 +96,6 @@ export default function Footer() {
               <li><Link href="/szolgaltatasok/autok" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Car size={14} className="text-white/30 shrink-0" /> Autó, motoros</Link></li>
               <li><Link href="/szolgaltatasok/kutyusok" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Dog size={14} className="text-white/30 shrink-0" /> Kutyusok</Link></li>
               {/*<li className="pt-2"><Link href="/mini-fotozasok/husvet" className="text-[#C79C8D] hover:text-white transition-colors text-sm font-bold flex items-center gap-2">Húsvéti Mini</Link></li>*/}
-              <li className="pt-3">
-                <Link href="/rendezveny" className="inline-flex items-center gap-2.5 text-sm font-bold text-white/90 hover:text-[#C79C8D] transition-colors">
-                  <PartyPopper size={14} className="text-[#C79C8D] shrink-0" />
-                  Rendezvény
-                  <ArrowUpRight size={14} />
-                </Link>
-              </li>
             </ul>
           </div>
 

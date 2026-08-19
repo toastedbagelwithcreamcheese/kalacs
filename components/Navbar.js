@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronDown, Menu, Sparkles, Flower2, ChevronRight, X, Instagram, Facebook, ArrowUpRight } from "lucide-react";
+import { ChevronDown, Menu, Sparkles, Flower2, ChevronRight, X, Instagram, Facebook } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -160,17 +160,6 @@ export default function Navbar() {
               </Link>
             </li>
 
-            {/* Átjáró a rendezvényes oldalra. Szándékosan más a stílusa
-                (keretes, indigó), hogy jelezze: másik világba visz. */}
-            <li>
-              <Link
-                href="/rendezveny"
-                className="flex items-center gap-1.5 rounded-lg border border-[#2E2A6B]/25 px-3 py-1.5 text-xs xl:text-sm font-semibold text-[#2E2A6B] transition-colors hover:bg-[#2E2A6B] hover:text-white"
-              >
-                Rendezvény
-                <ArrowUpRight size={13} />
-              </Link>
-            </li>
 {/*
             <li>
               <Link href="/mini-fotozasok/husvet" className="flex items-center gap-1.5 px-4 py-1.5 bg-[#C79C8D]/10 text-[#C79C8D] rounded-full text-xs xl:text-sm font-bold hover:bg-[#C79C8D] hover:text-white transition-colors">
@@ -275,16 +264,6 @@ export default function Navbar() {
                 </Link>
               </motion.li>
 
-              <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="pt-4">
-                <Link
-                  href="/rendezveny"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center gap-2 rounded-xl border border-[#2E2A6B]/30 px-5 py-3 text-2xl font-bold text-[#2E2A6B]"
-                >
-                  Rendezvény
-                  <ArrowUpRight size={22} />
-                </Link>
-              </motion.li>
 {/*
               <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="/mini-fotozasok/husvet" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-akaya hover:text-[#C79C8D] transition-colors flex items-center gap-3">
