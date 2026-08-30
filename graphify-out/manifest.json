@@ -1,0 +1,2744 @@
+{
+  "app/layout.js": {
+    "mtime": 1785058407.2199495,
+    "seen": 1788094875.471541,
+    "ast_hash": "ce968b0b2c75065119179db90ba50e2a",
+    "semantic_hash": ""
+  },
+  "app/robots.js": {
+    "mtime": 1783362666.1229534,
+    "seen": 1788094875.471544,
+    "ast_hash": "26c73f019090656d07035b64a0cb713c",
+    "semantic_hash": "26c73f019090656d07035b64a0cb713c"
+  },
+  "app/sitemap.js": {
+    "mtime": 1787057161.1137288,
+    "seen": 1788094875.471544,
+    "ast_hash": "9d7d4b2a6f29d53845d6eed264be935d",
+    "semantic_hash": "9d7d4b2a6f29d53845d6eed264be935d"
+  },
+  "components/AboutSection.js": {
+    "mtime": 1783375113.6075246,
+    "seen": 1788094875.471545,
+    "ast_hash": "7dd76115c8ed23f536ebead4c5847ade",
+    "semantic_hash": ""
+  },
+  "components/ClientGallery.jsx": {
+    "mtime": 1754859740.7620878,
+    "seen": 1788094875.471545,
+    "ast_hash": "2311e5c8629e6bff684e101e0f770611",
+    "semantic_hash": "2311e5c8629e6bff684e101e0f770611"
+  },
+  "components/Contact.js": {
+    "mtime": 1783375442.9133317,
+    "seen": 1788094875.4715462,
+    "ast_hash": "8b31cc2e4226cae557403815b182d425",
+    "semantic_hash": ""
+  },
+  "components/Footer.js": {
+    "mtime": 1787145652.997948,
+    "seen": 1788094875.471547,
+    "ast_hash": "c7b71c3139296919ea731df27841d7ac",
+    "semantic_hash": ""
+  },
+  "components/HeroSlider.js": {
+    "mtime": 1783374984.983242,
+    "seen": 1788094875.4715478,
+    "ast_hash": "4cf0725eac974ed998ba699777e5f33b",
+    "semantic_hash": ""
+  },
+  "components/HomePageReviews.js": {
+    "mtime": 1783375192.5616958,
+    "seen": 1788094875.4715478,
+    "ast_hash": "f57daae239fe12991f213f84e380fa85",
+    "semantic_hash": ""
+  },
+  "components/LegalPageLayout.js": {
+    "mtime": 1787057124.102859,
+    "seen": 1788094875.4715478,
+    "ast_hash": "7fe7585a81ce84db8856867637a6d469",
+    "semantic_hash": ""
+  },
+  "components/Navbar.js": {
+    "mtime": 1787145660.961493,
+    "seen": 1788094875.471549,
+    "ast_hash": "69e5b17b1da355ebc228019d23dc2201",
+    "semantic_hash": ""
+  },
+  "components/NavbarClient.js": {
+    "mtime": 1745183148.3677874,
+    "seen": 1788094875.471549,
+    "ast_hash": "43a6d8144698c159be5159df40923c84",
+    "semantic_hash": "43a6d8144698c159be5159df40923c84"
+  },
+  "components/SeasonalBanner.js": {
+    "mtime": 1768316079.3578966,
+    "seen": 1788094875.47155,
+    "ast_hash": "803890adcbc82db2e4fa3da3382c6020",
+    "semantic_hash": "803890adcbc82db2e4fa3da3382c6020"
+  },
+  "components/ServicesGrid.js": {
+    "mtime": 1783375064.8718421,
+    "seen": 1788094875.47155,
+    "ast_hash": "cd71d67a6a4727c499dd654cfd14e511",
+    "semantic_hash": ""
+  },
+  "components/mini-fotozasok.js": {
+    "mtime": 1786476453.4080107,
+    "seen": 1788094875.471551,
+    "ast_hash": "4cf10069fe64bdbbee8b1a71868299f4",
+    "semantic_hash": ""
+  },
+  "constants/services.js": {
+    "mtime": 1786476646.664898,
+    "seen": 1788094875.4715588,
+    "ast_hash": "52f4e8c255181bd7d6478ea11aaa8f8e",
+    "semantic_hash": ""
+  },
+  "eslint.config.mjs": {
+    "mtime": 1745183148.368717,
+    "seen": 1788094875.47156,
+    "ast_hash": "d5cd0612978dc664c07bcee09cd13829",
+    "semantic_hash": "d5cd0612978dc664c07bcee09cd13829"
+  },
+  "jsconfig.json": {
+    "mtime": 1745183148.3687973,
+    "seen": 1788094875.47156,
+    "ast_hash": "21306b44064ae42bbbd715b1986abaf8",
+    "semantic_hash": "21306b44064ae42bbbd715b1986abaf8"
+  },
+  "lib/canvasPrices.js": {
+    "mtime": 1756741250.841915,
+    "seen": 1788094875.47156,
+    "ast_hash": "68267648d74d766c65fbc1a53927f506",
+    "semantic_hash": "68267648d74d766c65fbc1a53927f506"
+  },
+  "lib/cloudinary.js": {
+    "mtime": 1750662760.9311583,
+    "seen": 1788094875.471561,
+    "ast_hash": "a1881285f42b5d9a7a4b9b8f95efd28b",
+    "semantic_hash": "a1881285f42b5d9a7a4b9b8f95efd28b"
+  },
+  "lib/supabaseClient.js": {
+    "mtime": 1785058332.0629478,
+    "seen": 1788094875.471561,
+    "ast_hash": "e1c11f4b2a0856f393856dbb9a2adb42",
+    "semantic_hash": ""
+  },
+  "middleware.js": {
+    "mtime": 1756746244.3023667,
+    "seen": 1788094875.471562,
+    "ast_hash": "21bd88f91e49d58f21a44a7bcda8aae2",
+    "semantic_hash": "21bd88f91e49d58f21a44a7bcda8aae2"
+  },
+  "next.config.mjs": {
+    "mtime": 1783369433.4379535,
+    "seen": 1788094875.471562,
+    "ast_hash": "2dfd99c8678ff5afa76eecc3311730f0",
+    "semantic_hash": "2dfd99c8678ff5afa76eecc3311730f0"
+  },
+  "package.json": {
+    "mtime": 1787057161.1363056,
+    "seen": 1788094875.471562,
+    "ast_hash": "7f4cd46c42d77ab85e3628164afc2b6e",
+    "semantic_hash": ""
+  },
+  "pages/_app.js": {
+    "mtime": 1749918010.0816395,
+    "seen": 1788094875.471563,
+    "ast_hash": "0530af9f5bb3dc0a07778d44fa3da6c6",
+    "semantic_hash": "0530af9f5bb3dc0a07778d44fa3da6c6"
+  },
+  "pages/adatvedelem.js": {
+    "mtime": 1787057124.107007,
+    "seen": 1788094875.471563,
+    "ast_hash": "533fe4a6dc0a2405f60048aaf0468233",
+    "semantic_hash": ""
+  },
+  "pages/api/gallery-login.js": {
+    "mtime": 1749915679.7550201,
+    "seen": 1788094875.471564,
+    "ast_hash": "cfeae02f715aa7a92ac7fc535dc4be88",
+    "semantic_hash": "cfeae02f715aa7a92ac7fc535dc4be88"
+  },
+  "pages/api/update-selection.js": {
+    "mtime": 1749915808.010654,
+    "seen": 1788094875.471564,
+    "ast_hash": "dd6157645975ca4d102482c74e35f013",
+    "semantic_hash": "dd6157645975ca4d102482c74e35f013"
+  },
+  "pages/aszf.js": {
+    "mtime": 1787057124.1080575,
+    "seen": 1788094875.471564,
+    "ast_hash": "0f6f2f6969a32bb83d7d5ce7c2c75b3f",
+    "semantic_hash": ""
+  },
+  "pages/galeria/[galleryId].jsx": {
+    "mtime": 1749915545.3431726,
+    "seen": 1788094875.471565,
+    "ast_hash": "ab3ac5a0c8af179f28135e392d30a4bf",
+    "semantic_hash": "ab3ac5a0c8af179f28135e392d30a4bf"
+  },
+  "pages/galeria/login/[galleryId].jsx": {
+    "mtime": 1749918387.250164,
+    "seen": 1788094875.471565,
+    "ast_hash": "b7f5ea4d417a131f66301d1dca94d20c",
+    "semantic_hash": "b7f5ea4d417a131f66301d1dca94d20c"
+  },
+  "pages/thank-you.js": {
+    "mtime": 1783369517.595517,
+    "seen": 1788094875.471566,
+    "ast_hash": "2b449d5383ba1128b18551db2ed08ace",
+    "semantic_hash": "2b449d5383ba1128b18551db2ed08ace"
+  },
+  "postcss.config.js": {
+    "mtime": 1745183148.369679,
+    "seen": 1788094875.471566,
+    "ast_hash": "f97339d89e529295e9602db8daddfc93",
+    "semantic_hash": "f97339d89e529295e9602db8daddfc93"
+  },
+  "scripts/optimize-existing-webp.mjs": {
+    "mtime": 1783369868.034444,
+    "seen": 1788094875.4715679,
+    "ast_hash": "7c3acda106843db4730958894964a579",
+    "semantic_hash": "7c3acda106843db4730958894964a579"
+  },
+  "scripts/optimize-images.mjs": {
+    "mtime": 1783369743.4320812,
+    "seen": 1788094875.4715679,
+    "ast_hash": "4a811ae8465a9e8a91d57bab695d3022",
+    "semantic_hash": "4a811ae8465a9e8a91d57bab695d3022"
+  },
+  "tailwind.config.js": {
+    "mtime": 1787057124.1187546,
+    "seen": 1788094875.4715688,
+    "ast_hash": "8f22212ca83e94b8d8f3e74b04511cf1",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1783370335.9269466,
+    "seen": 1788094875.4715688,
+    "ast_hash": "ab4c46f99998f60651f35d7ad8da0947",
+    "semantic_hash": "ab4c46f99998f60651f35d7ad8da0947"
+  },
+  "public/llms.txt": {
+    "mtime": 1787057161.137283,
+    "seen": 1788094875.471571,
+    "ast_hash": "837677a5865b7a3e4f6f367daceac82e",
+    "semantic_hash": ""
+  },
+  "public/fonts/Noto_Serif_Armenian/OFL.txt": {
+    "mtime": 1745183148.3745346,
+    "seen": 1788094875.47157,
+    "ast_hash": "5bb6e8dabfdee66d358aeabe41490b97",
+    "semantic_hash": ""
+  },
+  "public/fonts/Noto_Serif_Armenian/README.txt": {
+    "mtime": 1745183148.374619,
+    "seen": 1788094875.47157,
+    "ast_hash": "48b72ac6fe13be3be95a538ccb85c1bc",
+    "semantic_hash": ""
+  },
+  "public/android-chrome-192x192.png": {
+    "mtime": 1758557806.0,
+    "seen": 1788094875.471571,
+    "ast_hash": "0272d9143c3013571c0fb6d04ba4a53f",
+    "semantic_hash": ""
+  },
+  "public/android-chrome-512x512.png": {
+    "mtime": 1758557806.0,
+    "seen": 1788094875.471572,
+    "ast_hash": "0f35160beee3e8139cc2b6f3fe8887d8",
+    "semantic_hash": ""
+  },
+  "public/apple-touch-icon.png": {
+    "mtime": 1758557806.0,
+    "seen": 1788094875.471572,
+    "ast_hash": "c9259d48ce9955d2a130c88246d95487",
+    "semantic_hash": ""
+  },
+  "public/facebook.svg": {
+    "mtime": 1745183148.369896,
+    "seen": 1788094875.471572,
+    "ast_hash": "b3c5ac93407ebe11bb7a14b08fbd77c7",
+    "semantic_hash": ""
+  },
+  "public/favicon-16x16.png": {
+    "mtime": 1758557806.0,
+    "seen": 1788094875.471572,
+    "ast_hash": "5e77a8e1be16accf3b64d9dc72c899bb",
+    "semantic_hash": ""
+  },
+  "public/favicon-32x32.png": {
+    "mtime": 1758557806.0,
+    "seen": 1788094875.4715729,
+    "ast_hash": "838093aa1cb8d0a42b71a7b28ce3d49a",
+    "semantic_hash": ""
+  },
+  "public/file.svg": {
+    "mtime": 1745183148.3699825,
+    "seen": 1788094875.4715729,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "public/globe.svg": {
+    "mtime": 1745183148.3871734,
+    "seen": 1788094875.4715729,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "public/images/Eskuvo2026-3.webp": {
+    "mtime": 1783369879.6068733,
+    "seen": 1788094875.471574,
+    "ast_hash": "d312ccf9f4c6d09d27604ebe60b6666b",
+    "semantic_hash": ""
+  },
+  "public/images/Eskuvo2026.webp": {
+    "mtime": 1783369879.9509902,
+    "seen": 1788094875.471574,
+    "ast_hash": "c3f2f1db1c002b16a8d9134ea57263db",
+    "semantic_hash": ""
+  },
+  "public/images/Rendszamnelkul-7580.webp": {
+    "mtime": 1783369753.9375472,
+    "seen": 1788094875.471574,
+    "ast_hash": "20ddd1a102eeb31638e6b88796fce6db",
+    "semantic_hash": ""
+  },
+  "public/images/Rendszamnelkul-7651.webp": {
+    "mtime": 1783369880.7022204,
+    "seen": 1788094875.471575,
+    "ast_hash": "5cc22da2ef0bfdbc6894dd0cd9861334",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/10.webp": {
+    "mtime": 1783369754.1638098,
+    "seen": 1788094875.471575,
+    "ast_hash": "7bc9d5d1ec7f61ea690f4327a4185b39",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/11.webp": {
+    "mtime": 1783369754.2096555,
+    "seen": 1788094875.471575,
+    "ast_hash": "7e503ad06c5387a62bfd35fd8b7b30b2",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/1_1.webp": {
+    "mtime": 1759429436.0,
+    "seen": 1788094875.471576,
+    "ast_hash": "9444ffa83b1ce5f5de9a7e9fa9565aa2",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/3.webp": {
+    "mtime": 1759429436.0,
+    "seen": 1788094875.471576,
+    "ast_hash": "21065f7e367dcb2db838841c9f4b5420",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/6.webp": {
+    "mtime": 1759429436.0,
+    "seen": 1788094875.471576,
+    "ast_hash": "4fb4e875aefbee5a735a27addc0e8dcd",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/7.webp": {
+    "mtime": 1759429436.0,
+    "seen": 1788094875.4715772,
+    "ast_hash": "28a91821c36bd4dc40be50c6e703fcc1",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/8.webp": {
+    "mtime": 1783369881.020577,
+    "seen": 1788094875.4715772,
+    "ast_hash": "43cee56ebd55414507902b9e181211ab",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/_MG_2433.webp": {
+    "mtime": 1783369754.9434445,
+    "seen": 1788094875.4715772,
+    "ast_hash": "185736afd055ffb1c8eb6d2606cfda2b",
+    "semantic_hash": ""
+  },
+  "public/images/Virag_BP/_MG_2456.webp": {
+    "mtime": 1783369755.3777716,
+    "seen": 1788094875.4715781,
+    "ast_hash": "633c41480b10aeaad68dbe02c3f87eea",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0167-2.webp": {
+    "mtime": 1783369755.893532,
+    "seen": 1788094875.4715788,
+    "ast_hash": "2a8cef7bf6b89784fd35d7e89d813485",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0167.webp": {
+    "mtime": 1783369756.3286462,
+    "seen": 1788094875.4715788,
+    "ast_hash": "ee332c2cb591bd7f50e2cfde3bab7176",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0180-2.webp": {
+    "mtime": 1783369756.8318107,
+    "seen": 1788094875.4715798,
+    "ast_hash": "c4d62d797ca396a437a2796986ec318e",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0180.webp": {
+    "mtime": 1783369757.244489,
+    "seen": 1788094875.4715798,
+    "ast_hash": "4d23ad0cb1fc08dd8a4ba3693c244ea0",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0185-2.webp": {
+    "mtime": 1783369757.7184942,
+    "seen": 1788094875.4715798,
+    "ast_hash": "1bb79248bcd3ed5bbe0e00e8d7975383",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0185.webp": {
+    "mtime": 1783369758.1377285,
+    "seen": 1788094875.471581,
+    "ast_hash": "2bad066e649504ffdbf28d7149754831",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0185_hero.webp": {
+    "mtime": 1783369758.4557507,
+    "seen": 1788094875.471581,
+    "ast_hash": "1aa7629833d9af374a0d5cf1345dd15e",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0190.webp": {
+    "mtime": 1783369758.8003,
+    "seen": 1788094875.471581,
+    "ast_hash": "3c316e6d1d7d552f7770ecfd34f3a398",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0195-2.webp": {
+    "mtime": 1783369759.2897706,
+    "seen": 1788094875.471581,
+    "ast_hash": "f818bbe9de90e948b041e0b48403ef70",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0195.webp": {
+    "mtime": 1783369759.9787133,
+    "seen": 1788094875.471582,
+    "ast_hash": "440148ec2930cd0d30975e8451a1b324",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0299.webp": {
+    "mtime": 1783369760.4523122,
+    "seen": 1788094875.471582,
+    "ast_hash": "d62e6e740cf6042be78753fafe888c0b",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0300.webp": {
+    "mtime": 1783369760.923374,
+    "seen": 1788094875.471582,
+    "ast_hash": "ba8c469cc0bf78a10e171e80c32f02ef",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0306.webp": {
+    "mtime": 1783369761.3810067,
+    "seen": 1788094875.471583,
+    "ast_hash": "2c345e64c65af6c80a48b1a52ccf3cfb",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0328.webp": {
+    "mtime": 1783369761.544945,
+    "seen": 1788094875.471583,
+    "ast_hash": "3e9fa6f9018fb1a3f7ce7f06b1821687",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0488.webp": {
+    "mtime": 1783369761.9832816,
+    "seen": 1788094875.471583,
+    "ast_hash": "fcc94f06624ce994a4298aa7c6c00a97",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0511.webp": {
+    "mtime": 1783369762.4822772,
+    "seen": 1788094875.471584,
+    "ast_hash": "5bc8522dd2691454cd78bf883b2e7711",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0535.webp": {
+    "mtime": 1783369762.9560325,
+    "seen": 1788094875.471584,
+    "ast_hash": "11374b07e2fbac7d67560b5ef905d93d",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0547.webp": {
+    "mtime": 1783369763.4116018,
+    "seen": 1788094875.471584,
+    "ast_hash": "b89a82f53573832cff5caf70acaa270a",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0560.webp": {
+    "mtime": 1783369763.7887836,
+    "seen": 1788094875.471584,
+    "ast_hash": "45aa7c74fbcfc74269dfb701e423e895",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0573.webp": {
+    "mtime": 1783369764.2961564,
+    "seen": 1788094875.471585,
+    "ast_hash": "9ebded80bb4a9c539875fcfc77e4f926",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0640.webp": {
+    "mtime": 1777144256.0,
+    "seen": 1788094875.471585,
+    "ast_hash": "41804d98141fd8312870f6964e0cae14",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0656.webp": {
+    "mtime": 1783369882.065331,
+    "seen": 1788094875.471585,
+    "ast_hash": "0fdd1c296499f202061961edfbfce9ee",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0678.webp": {
+    "mtime": 1783369882.2962868,
+    "seen": 1788094875.471586,
+    "ast_hash": "90c84e24c91c8bedda062def6c71cbc5",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0718.webp": {
+    "mtime": 1783369882.5096238,
+    "seen": 1788094875.471586,
+    "ast_hash": "cdff439481e4d460372c1eba77cf4c82",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0772.webp": {
+    "mtime": 1783369882.757061,
+    "seen": 1788094875.471586,
+    "ast_hash": "59f401e20b7e2089a2658224e3cd74f8",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0795-2.webp": {
+    "mtime": 1783369883.19383,
+    "seen": 1788094875.471586,
+    "ast_hash": "eed4cc3e2cc1c87614e29ab19981d07a",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0795.webp": {
+    "mtime": 1783369883.431424,
+    "seen": 1788094875.4715872,
+    "ast_hash": "9f47534472ef5866df24d5462fe0e076",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0796-2.webp": {
+    "mtime": 1783369883.8504424,
+    "seen": 1788094875.4715872,
+    "ast_hash": "b0b400b48c00a4c4638fc75bdb13a506",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0796.webp": {
+    "mtime": 1783369884.0977259,
+    "seen": 1788094875.4715872,
+    "ast_hash": "1e6dfdeedd5a6b76061e666f1fd98cbe",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_0852.webp": {
+    "mtime": 1783369884.3514774,
+    "seen": 1788094875.4715881,
+    "ast_hash": "9d83e7f80b159743f6a19648f90b1f78",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_1337-2.webp": {
+    "mtime": 1783369764.8731282,
+    "seen": 1788094875.4715881,
+    "ast_hash": "5042e9fb33283edf5dfbbd46b135676e",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_2289.webp": {
+    "mtime": 1783369884.6447577,
+    "seen": 1788094875.4715881,
+    "ast_hash": "e8b0398be4cc2f8d28b3170242a76b8a",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_2448-4.webp": {
+    "mtime": 1783369885.2433386,
+    "seen": 1788094875.4715881,
+    "ast_hash": "487ff9d31e536ed622e7e55aede498a2",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_2507.webp": {
+    "mtime": 1783369885.6698673,
+    "seen": 1788094875.471589,
+    "ast_hash": "667952d7d3dbe8cd2f4ede2f733976dd",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_2535.webp": {
+    "mtime": 1783369886.023138,
+    "seen": 1788094875.471589,
+    "ast_hash": "087ee974010278dc8b01df953322311f",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_2915.webp": {
+    "mtime": 1783369886.2757092,
+    "seen": 1788094875.471589,
+    "ast_hash": "d95d6dbb8aab735e91e6655b2e64ad62",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_3127.webp": {
+    "mtime": 1783369886.6647034,
+    "seen": 1788094875.4715898,
+    "ast_hash": "5f93567c9f08feb7da52b2b0e9405870",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_4181.webp": {
+    "mtime": 1783369765.4140396,
+    "seen": 1788094875.4715898,
+    "ast_hash": "62242e0964bc7826249168ec9f529ec8",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_5157-2.webp": {
+    "mtime": 1783369886.91161,
+    "seen": 1788094875.4715898,
+    "ast_hash": "72dd3a5a103e719dd46c757486a04131",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_5158-2.webp": {
+    "mtime": 1783369766.683234,
+    "seen": 1788094875.471591,
+    "ast_hash": "13d032ae2fceb1849a17f5f0f7207422",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_5191-2.webp": {
+    "mtime": 1783369767.3241687,
+    "seen": 1788094875.471591,
+    "ast_hash": "87473e83b630f845280a831528b7bf49",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_5326-2.webp": {
+    "mtime": 1783369767.8593154,
+    "seen": 1788094875.471591,
+    "ast_hash": "3ec626e40a486c6dfec8ff15fbfdebfa",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_5510.webp": {
+    "mtime": 1783369768.3858466,
+    "seen": 1788094875.471592,
+    "ast_hash": "28a0bc12b46a614e3529aa9736ae024f",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_5522.webp": {
+    "mtime": 1783369768.893228,
+    "seen": 1788094875.471592,
+    "ast_hash": "adb6c89f069dcf40153c67f60877be39",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_6726.webp": {
+    "mtime": 1783369769.3530366,
+    "seen": 1788094875.471592,
+    "ast_hash": "d79fb9f3112a9a16fad2bc5f609b3139",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_6727.webp": {
+    "mtime": 1783369769.6952999,
+    "seen": 1788094875.471592,
+    "ast_hash": "fb90175a6612a6fcb4cfd07402163f69",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_6906.webp": {
+    "mtime": 1783369887.1782079,
+    "seen": 1788094875.471593,
+    "ast_hash": "171c63373774f2955c80a44cc3f361be",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_6908.webp": {
+    "mtime": 1783369887.518555,
+    "seen": 1788094875.471593,
+    "ast_hash": "9ba586a716951b578b7587221395a27e",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_6913.webp": {
+    "mtime": 1783369887.8363464,
+    "seen": 1788094875.471593,
+    "ast_hash": "e4fe8d9ea7fa47b296485add93bc0647",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_6916.webp": {
+    "mtime": 1783369888.159547,
+    "seen": 1788094875.471594,
+    "ast_hash": "c815ed9038b269517b35c82533747354",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_7627.webp": {
+    "mtime": 1783369888.3847234,
+    "seen": 1788094875.471594,
+    "ast_hash": "8e0a2ca90f3d46dd4339cbc026140bd8",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_7632.webp": {
+    "mtime": 1783369888.6138985,
+    "seen": 1788094875.471594,
+    "ast_hash": "46b6aa582ceaa19fd794dc877f76e33b",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_7636.webp": {
+    "mtime": 1783369888.9126575,
+    "seen": 1788094875.471595,
+    "ast_hash": "3f5e1705a5e1df0b49513f2c0b3cafd2",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_7664.webp": {
+    "mtime": 1783369889.1746905,
+    "seen": 1788094875.471595,
+    "ast_hash": "f3c1d74ac45e8cc0828ad25cba6e73cf",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_7732.webp": {
+    "mtime": 1783369889.461324,
+    "seen": 1788094875.471595,
+    "ast_hash": "b3337bb5de9461cc6f5ec7e2a8865695",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_8065.webp": {
+    "mtime": 1783369889.7497292,
+    "seen": 1788094875.471595,
+    "ast_hash": "5bf45dfe2bdb0310e4e6e975a6bda955",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_8173.webp": {
+    "mtime": 1783369890.0784256,
+    "seen": 1788094875.471596,
+    "ast_hash": "c3c0a125069baaa463f0aa868b9a6383",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_8266.webp": {
+    "mtime": 1783369890.3679795,
+    "seen": 1788094875.471596,
+    "ast_hash": "5b6b22c69d107533c7e7032d80fd5493",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_8479.webp": {
+    "mtime": 1783369890.6317344,
+    "seen": 1788094875.471596,
+    "ast_hash": "9ebfc656ba9d920032dfa1f475c90f90",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_8606.webp": {
+    "mtime": 1783369890.9803386,
+    "seen": 1788094875.471597,
+    "ast_hash": "12e16594ce74dc633aedb5df2e80a91c",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_8791.webp": {
+    "mtime": 1783369891.2570903,
+    "seen": 1788094875.471597,
+    "ast_hash": "40fab6c400cbb349fbc79216b3bf0983",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9139.webp": {
+    "mtime": 1783369891.5020602,
+    "seen": 1788094875.471597,
+    "ast_hash": "cab6f4b78e216d388dfd49a05a2d2a19",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9511.webp": {
+    "mtime": 1783369891.794306,
+    "seen": 1788094875.471599,
+    "ast_hash": "fb615523c24311515090b547a4634135",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9604.webp": {
+    "mtime": 1783369892.097966,
+    "seen": 1788094875.471599,
+    "ast_hash": "d22951ee69f0a72185314f1e0c9bacf1",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9706.webp": {
+    "mtime": 1783369892.3377664,
+    "seen": 1788094875.471599,
+    "ast_hash": "07e09f96894d3eb1c4c6de38f4e22373",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9914-2.webp": {
+    "mtime": 1783369770.2192123,
+    "seen": 1788094875.4716,
+    "ast_hash": "6906b26f1d79e74556daf4b286acb7c1",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9914.webp": {
+    "mtime": 1783369770.6389241,
+    "seen": 1788094875.4716,
+    "ast_hash": "835b3c627e0f7a337bb81f40bdc6a5a5",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0003.webp": {
+    "mtime": 1783369892.5905466,
+    "seen": 1788094875.4716,
+    "ast_hash": "44e8437e09d16f5a200d5288e6d78745",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0017-2.webp": {
+    "mtime": 1783369893.046596,
+    "seen": 1788094875.4716,
+    "ast_hash": "4bfbb28fb804fa73c46ec74c59dd71f4",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0019.webp": {
+    "mtime": 1783369893.2617648,
+    "seen": 1788094875.471601,
+    "ast_hash": "fa5b99781cab8432100af3020d7762c4",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0031.webp": {
+    "mtime": 1783369893.5037506,
+    "seen": 1788094875.471601,
+    "ast_hash": "41012bbd6b663159ad06d0f788fb28e0",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0045.webp": {
+    "mtime": 1783369893.7562478,
+    "seen": 1788094875.471601,
+    "ast_hash": "ff68784b5b88903c57cfa5164f9b2736",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0047.webp": {
+    "mtime": 1783369894.553636,
+    "seen": 1788094875.471602,
+    "ast_hash": "ec2509cf5ca33a5c2a4fdecac06bab42",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0094.webp": {
+    "mtime": 1783369895.5745008,
+    "seen": 1788094875.471602,
+    "ast_hash": "66c9eee9e7707b9a4aa1efde4490d9f8",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0097-2.webp": {
+    "mtime": 1783369895.9131365,
+    "seen": 1788094875.471602,
+    "ast_hash": "59b3d986beb6d65535ca8b6d912b5171",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0274.webp": {
+    "mtime": 1783369897.7202818,
+    "seen": 1788094875.471603,
+    "ast_hash": "c5b29833f9d152284529f474f040a3f4",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0315-2.webp": {
+    "mtime": 1783369898.6225355,
+    "seen": 1788094875.471603,
+    "ast_hash": "a3f94c6e8a0082a94828101006d02903",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0390.webp": {
+    "mtime": 1783369898.8246105,
+    "seen": 1788094875.471603,
+    "ast_hash": "231835e32a88520d6d9ffe4191180e75",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0490.webp": {
+    "mtime": 1783369899.0780988,
+    "seen": 1788094875.471603,
+    "ast_hash": "7a49066d7bd8e7aad3cae217d0c11eb3",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0568.webp": {
+    "mtime": 1783369899.31699,
+    "seen": 1788094875.4716039,
+    "ast_hash": "49200f1fc9013e35518f35e88845c842",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_0586-2.webp": {
+    "mtime": 1783369899.807133,
+    "seen": 1788094875.4716039,
+    "ast_hash": "f329fbe2f1990ea54729fcfc0af238ef",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_1136.webp": {
+    "mtime": 1783369900.2496104,
+    "seen": 1788094875.4716039,
+    "ast_hash": "cbc6ace59f3ee10b156663d0f8af53b6",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_4270festettV5.webp": {
+    "mtime": 1783369901.1689894,
+    "seen": 1788094875.471605,
+    "ast_hash": "30fcb566295440e3ab3af1ebf77418c6",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_4462.webp": {
+    "mtime": 1783369901.6318355,
+    "seen": 1788094875.471605,
+    "ast_hash": "4c561caa3dc096577a2ade8f55496062",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_4486.webp": {
+    "mtime": 1783369902.1513069,
+    "seen": 1788094875.471605,
+    "ast_hash": "cd5c1e26625241f4dd0a1943cba4240f",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_4693.webp": {
+    "mtime": 1783369904.8592947,
+    "seen": 1788094875.471606,
+    "ast_hash": "a450cfbdaa1b9c25e14e4dcb27c31eca",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_4731.webp": {
+    "mtime": 1783369905.182534,
+    "seen": 1788094875.471606,
+    "ast_hash": "df3d70772174911d3629ccd7f1d500c7",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_4795.webp": {
+    "mtime": 1783369906.082306,
+    "seen": 1788094875.471606,
+    "ast_hash": "0cdb88d5d86019bd15fc4c15e87e1645",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_4805.webp": {
+    "mtime": 1783369771.1642873,
+    "seen": 1788094875.471607,
+    "ast_hash": "b0b535b0aa962bcef9158cecaaac5a8b",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_5324.webp": {
+    "mtime": 1783369907.8615909,
+    "seen": 1788094875.471607,
+    "ast_hash": "f78a89f99c43a6b906ec97ca8592c476",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_5347.webp": {
+    "mtime": 1783369908.0592647,
+    "seen": 1788094875.471607,
+    "ast_hash": "23bf5b4c609db5c71379066372b6d29b",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_5351.webp": {
+    "mtime": 1783369908.318555,
+    "seen": 1788094875.4716082,
+    "ast_hash": "b66500306fc167d4f7e9a56f00e733a7",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_6310.webp": {
+    "mtime": 1783369909.1511586,
+    "seen": 1788094875.4716082,
+    "ast_hash": "d0093cb41a3e2cc679d7283f057c9202",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_6330_2.webp": {
+    "mtime": 1783369909.413943,
+    "seen": 1788094875.4716082,
+    "ast_hash": "0a28ef0d7e33b05c07ffa1d414cbde9a",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_6506.webp": {
+    "mtime": 1783369909.6645434,
+    "seen": 1788094875.4716082,
+    "ast_hash": "fe0f045b886c8abfcb2ef9033a488dca",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_6508.webp": {
+    "mtime": 1783369909.9448588,
+    "seen": 1788094875.471609,
+    "ast_hash": "480b8e09f11df669caf1f539608d2e90",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_6519.webp": {
+    "mtime": 1783369910.2930143,
+    "seen": 1788094875.471609,
+    "ast_hash": "42618e845f3d47033badabe24df75a74",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_6525.webp": {
+    "mtime": 1783369910.5997372,
+    "seen": 1788094875.471609,
+    "ast_hash": "7f415dc8c876a1d5e0a36cc3772fae46",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_6531.webp": {
+    "mtime": 1783369910.9093492,
+    "seen": 1788094875.47161,
+    "ast_hash": "fbe3a25916f79df9f167bb11371ea776",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_7266.webp": {
+    "mtime": 1783369911.9334111,
+    "seen": 1788094875.47161,
+    "ast_hash": "54891076f63edd6bf003536c5cb7d506",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_7542.webp": {
+    "mtime": 1783369912.3496103,
+    "seen": 1788094875.47161,
+    "ast_hash": "cd497cbb642e2c00bf934e9ff12bd51e",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_7633.webp": {
+    "mtime": 1783369912.6487663,
+    "seen": 1788094875.4716108,
+    "ast_hash": "d3f595a5709143298cc2484aa846be46",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_7636.webp": {
+    "mtime": 1783369912.9326415,
+    "seen": 1788094875.4716108,
+    "ast_hash": "ac8c600aa41e329112133166f0635a1e",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_8620.webp": {
+    "mtime": 1783369913.1529527,
+    "seen": 1788094875.4716108,
+    "ast_hash": "864f2a9501dc77abafbd5e2c8daf167f",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_8634.webp": {
+    "mtime": 1783369913.5315824,
+    "seen": 1788094875.471612,
+    "ast_hash": "c1760b8e96a9a7162469528c125a467c",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_8653.webp": {
+    "mtime": 1783369913.82582,
+    "seen": 1788094875.471612,
+    "ast_hash": "9c8c3bd281875f794a6082bc61ce870d",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_8762.webp": {
+    "mtime": 1783369914.0978053,
+    "seen": 1788094875.471612,
+    "ast_hash": "396b0877a4c4a1f3a2cb60cde6df21eb",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_8775.webp": {
+    "mtime": 1783369914.336175,
+    "seen": 1788094875.471612,
+    "ast_hash": "a9d6af3a060f4272e39e028d58cdc0d9",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_8842.webp": {
+    "mtime": 1783369914.591959,
+    "seen": 1788094875.471613,
+    "ast_hash": "ca668d98dc98f9320ee51ded99d6763c",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_8932.webp": {
+    "mtime": 1783369915.440834,
+    "seen": 1788094875.471613,
+    "ast_hash": "f01745f7687203089c88721fbf298b68",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_8992.webp": {
+    "mtime": 1783369915.6656222,
+    "seen": 1788094875.471613,
+    "ast_hash": "7919e416c20bd0b010d5a2aa6235b366",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_9219.webp": {
+    "mtime": 1783369916.2314622,
+    "seen": 1788094875.471614,
+    "ast_hash": "c3ee23a4a8ee749b1c5674f4035e972d",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_9335.webp": {
+    "mtime": 1783369916.8480976,
+    "seen": 1788094875.471614,
+    "ast_hash": "c3428e1b413bfa5819e339a12bb63329",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_9381.webp": {
+    "mtime": 1783369917.0962055,
+    "seen": 1788094875.471614,
+    "ast_hash": "66753c275cdbd64319cef5e2c714017f",
+    "semantic_hash": ""
+  },
+  "public/images/_MG_9410.webp": {
+    "mtime": 1783369917.4821668,
+    "seen": 1788094875.471615,
+    "ast_hash": "ebec44d3e45271615c5c341b0f06397f",
+    "semantic_hash": ""
+  },
+  "public/images/_U2A0102.webp": {
+    "mtime": 1783369772.4385488,
+    "seen": 1788094875.471615,
+    "ast_hash": "7da60c4a3a49feceb8e8821828b243d9",
+    "semantic_hash": ""
+  },
+  "public/images/_U2A0314.webp": {
+    "mtime": 1783369773.0595117,
+    "seen": 1788094875.471615,
+    "ast_hash": "39ac59e5e8fd5c7a864883a725eb6935",
+    "semantic_hash": ""
+  },
+  "public/images/_U2A0633-2.webp": {
+    "mtime": 1783369773.4762588,
+    "seen": 1788094875.471616,
+    "ast_hash": "639443303aef8b9008281a41c9a48278",
+    "semantic_hash": ""
+  },
+  "public/images/anna_varosliget/_47A7016.webp": {
+    "mtime": 1783369917.7759657,
+    "seen": 1788094875.471616,
+    "ast_hash": "824adfec98481126aaedf3910f77a4bd",
+    "semantic_hash": ""
+  },
+  "public/images/anna_varosliget/_47A7180.webp": {
+    "mtime": 1783369918.0554042,
+    "seen": 1788094875.471616,
+    "ast_hash": "b709614f65a2343274512158cfcdfd8d",
+    "semantic_hash": ""
+  },
+  "public/images/asdf.webp": {
+    "mtime": 1783369773.7187817,
+    "seen": 1788094875.471616,
+    "ast_hash": "d45e1e78beaaf838e57dc20057a288db",
+    "semantic_hash": ""
+  },
+  "public/images/audi_tel--5.webp": {
+    "mtime": 1783369774.7350674,
+    "seen": 1788094875.471617,
+    "ast_hash": "6a2d0c767b4a18ada1a53d14da3542a6",
+    "semantic_hash": ""
+  },
+  "public/images/audi_tel-1198.webp": {
+    "mtime": 1783369775.0873358,
+    "seen": 1788094875.471617,
+    "ast_hash": "d55336da1c2b7652dc9187e567ea7446",
+    "semantic_hash": ""
+  },
+  "public/images/husvet_1.webp": {
+    "mtime": 1783369776.4589763,
+    "seen": 1788094875.471623,
+    "ast_hash": "a5adc229db3014f87164355d5c5dc9ea",
+    "semantic_hash": ""
+  },
+  "public/images/husvet_2.webp": {
+    "mtime": 1783369776.7119713,
+    "seen": 1788094875.471623,
+    "ast_hash": "e30c0bb18c93958b5cc046a2858db55f",
+    "semantic_hash": ""
+  },
+  "public/images/husvet_3.webp": {
+    "mtime": 1783369776.9660528,
+    "seen": 1788094875.471624,
+    "ast_hash": "bb382df6bfd66a70a57e9596f452df4b",
+    "semantic_hash": ""
+  },
+  "public/images/husvet_hero.webp": {
+    "mtime": 1783369777.204896,
+    "seen": 1788094875.471624,
+    "ast_hash": "d867aa820cb37a3f28a5680bc7877eb1",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2095.webp": {
+    "mtime": 1783369777.602859,
+    "seen": 1788094875.471624,
+    "ast_hash": "af15bbb87f1783eb4b8bda73500a276e",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2157.webp": {
+    "mtime": 1783369777.9128325,
+    "seen": 1788094875.4716249,
+    "ast_hash": "44e972952bf4368ecc928d605caa93f3",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2250.webp": {
+    "mtime": 1783369778.345372,
+    "seen": 1788094875.4716249,
+    "ast_hash": "cb3fe02f96e1557bc06a90417782a359",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2262.webp": {
+    "mtime": 1783369778.738543,
+    "seen": 1788094875.4716249,
+    "ast_hash": "75f4a99006b117cefe44a98fc619ca92",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2289.webp": {
+    "mtime": 1783369779.2347617,
+    "seen": 1788094875.471626,
+    "ast_hash": "b917615c20941d784787c6f6fd0515f2",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2319.webp": {
+    "mtime": 1783369779.6908073,
+    "seen": 1788094875.471626,
+    "ast_hash": "766efd1384c0f40ed88761159f033352",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2351.webp": {
+    "mtime": 1783369780.0468273,
+    "seen": 1788094875.471626,
+    "ast_hash": "ba32c2c33dd27b8ad849f810b5c288a9",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2421.webp": {
+    "mtime": 1783369780.402331,
+    "seen": 1788094875.471627,
+    "ast_hash": "c38fe9dfbb4a7e667e7f0fd2dac9a720",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2438.webp": {
+    "mtime": 1783369780.7903163,
+    "seen": 1788094875.471627,
+    "ast_hash": "4f4db171a52e4da17dc1c3e5726fb552",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2860.webp": {
+    "mtime": 1783369781.1246555,
+    "seen": 1788094875.471627,
+    "ast_hash": "e0fbfe23cd01d5f2f57d22e1c89d1588",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A2964.webp": {
+    "mtime": 1783369781.6640682,
+    "seen": 1788094875.471628,
+    "ast_hash": "b158ceb3c65c5aba20d36e9ca9fd7e44",
+    "semantic_hash": ""
+  },
+  "public/images/karacsony_patriek/_47A3036.webp": {
+    "mtime": 1783369782.0014727,
+    "seen": 1788094875.471628,
+    "ast_hash": "97eb57334099debd1519bd70f2c73e07",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/B56E8960-7048-4562-BD9A-C27C2E6FEE1A.webp": {
+    "mtime": 1783369782.1573482,
+    "seen": 1788094875.471628,
+    "ast_hash": "27a1c78e4a2fe80dc9d84ffac60f2b1e",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A7843-2.webp": {
+    "mtime": 1783369782.5563397,
+    "seen": 1788094875.471628,
+    "ast_hash": "f432a9a23483702099d8899b77f7271c",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A7885-2.webp": {
+    "mtime": 1783369782.9595902,
+    "seen": 1788094875.4716291,
+    "ast_hash": "effcc9ffce1d2397492bc1a88fc71026",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A7897-2.webp": {
+    "mtime": 1783369783.4116745,
+    "seen": 1788094875.4716291,
+    "ast_hash": "4d7914b6a6b203d5b041964c50dcbb72",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A8142-2.webp": {
+    "mtime": 1783369783.791793,
+    "seen": 1788094875.4716291,
+    "ast_hash": "f85c2d73b6d8d8495485b803a101bcd2",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A8160-2.webp": {
+    "mtime": 1783369784.232266,
+    "seen": 1788094875.47163,
+    "ast_hash": "ba7767a30f766a430de8002bfa0c14cc",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A8248-2.webp": {
+    "mtime": 1783369784.745227,
+    "seen": 1788094875.47163,
+    "ast_hash": "31d0f784ed101fbccc7b6e5b31c0a023",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A8279-2.webp": {
+    "mtime": 1783369785.204165,
+    "seen": 1788094875.47163,
+    "ast_hash": "ad8eb3e9cfddc23f137a4f63e9a75091",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A8484-2.webp": {
+    "mtime": 1783369919.1942532,
+    "seen": 1788094875.471631,
+    "ast_hash": "23cbe2c6767a2f0cd88336e954c855de",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A8666-2.webp": {
+    "mtime": 1783369786.3279812,
+    "seen": 1788094875.471631,
+    "ast_hash": "45ec2aa6c422edc24b258666918812b1",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A8673-2.webp": {
+    "mtime": 1783369786.8099012,
+    "seen": 1788094875.471631,
+    "ast_hash": "e0687e1db72b0da7c22509524f1cfa42",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A8966-2.webp": {
+    "mtime": 1783369787.2521818,
+    "seen": 1788094875.4716318,
+    "ast_hash": "d90c09f56943cf4f50ac9b9f02f845e0",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A9009-2.webp": {
+    "mtime": 1783369787.6817286,
+    "seen": 1788094875.4716318,
+    "ast_hash": "6aa4da9cba9e8340af5ba42936a059e6",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A9056-2.webp": {
+    "mtime": 1783369788.0747879,
+    "seen": 1788094875.4716318,
+    "ast_hash": "0887d6716e891a553a43022b3f69543b",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A9104-2.webp": {
+    "mtime": 1783369788.696365,
+    "seen": 1788094875.471633,
+    "ast_hash": "3d3f2b565f68e5d7f199045401ff3b6f",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A9146-2.webp": {
+    "mtime": 1783369789.1200202,
+    "seen": 1788094875.471633,
+    "ast_hash": "351f68a033af5321522874d0ab5ac84b",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A9158-2.webp": {
+    "mtime": 1783369789.6083863,
+    "seen": 1788094875.471633,
+    "ast_hash": "34d42270ac103f012c9786386b12c672",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A9191-2.webp": {
+    "mtime": 1783369790.0075994,
+    "seen": 1788094875.471634,
+    "ast_hash": "c56648f8d0f8073bdb210e6755bce87e",
+    "semantic_hash": ""
+  },
+  "public/images/kata_kismama/_47A9221-2.webp": {
+    "mtime": 1783369790.5176785,
+    "seen": 1788094875.471634,
+    "ast_hash": "7f69095ab7dfa7f36f2a738796e0fa3f",
+    "semantic_hash": ""
+  },
+  "public/images/logo2.webp": {
+    "mtime": 1783369790.9972034,
+    "seen": 1788094875.471634,
+    "ast_hash": "a718d9a69d981b4db63022ec7811b217",
+    "semantic_hash": ""
+  },
+  "public/images/profilkep.webp": {
+    "mtime": 1783369822.4358482,
+    "seen": 1788094875.471649,
+    "ast_hash": "fb4a50adb9a749e1786367c8ecede7d4",
+    "semantic_hash": ""
+  },
+  "public/instagram.svg": {
+    "mtime": 1745183149.9121797,
+    "seen": 1788094875.4716759,
+    "ast_hash": "eddc0648277ca4edb5c47e85067a28c9",
+    "semantic_hash": ""
+  },
+  "public/liquid-cheese.svg": {
+    "mtime": 1745183149.9123049,
+    "seen": 1788094875.4716759,
+    "ast_hash": "39a3637ac761108b291c90e1698da7d2",
+    "semantic_hash": ""
+  },
+  "public/next.svg": {
+    "mtime": 1745183149.9123847,
+    "seen": 1788094875.4716768,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "public/tiktok.svg": {
+    "mtime": 1745183149.9126062,
+    "seen": 1788094875.4716768,
+    "ast_hash": "a4310f2057cb39c8719981cf21ed41c2",
+    "semantic_hash": ""
+  },
+  "public/varying-stripes.svg": {
+    "mtime": 1745183149.9127052,
+    "seen": 1788094875.4716768,
+    "ast_hash": "ff98b38090abd3163b9f8c5a09e00201",
+    "semantic_hash": ""
+  },
+  "public/vercel.svg": {
+    "mtime": 1745183149.9127789,
+    "seen": 1788094875.471678,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "public/window.svg": {
+    "mtime": 1745183149.9128401,
+    "seen": 1788094875.471678,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "public/youtube.svg": {
+    "mtime": 1745183149.9129164,
+    "seen": 1788094875.471678,
+    "ast_hash": "7a44696754509db83fd9e8cae4d62e88",
+    "semantic_hash": ""
+  },
+  "components/DatePicker.js": {
+    "mtime": 1783375328.6432552,
+    "seen": 1788094875.4715462,
+    "ast_hash": "630b0cf8cb3a9684c6017beca0e8a736",
+    "semantic_hash": ""
+  },
+  "components/TiltCard.js": {
+    "mtime": 1783374907.5339823,
+    "seen": 1788094875.47155,
+    "ast_hash": "26dd2af2526ffe745866f871332fdda4",
+    "semantic_hash": ""
+  },
+  "components/GlassFilter.js": {
+    "mtime": 1783377229.4798615,
+    "seen": 1788094875.471547,
+    "ast_hash": "c622189bdbc9350ff29f04571449ae99",
+    "semantic_hash": ""
+  },
+  "app/(foto)/about/AboutClient.js": {
+    "mtime": 1785058332.0589747,
+    "seen": 1788094875.471529,
+    "ast_hash": "a0dd51383d86dc7d12b420e59e8250b0",
+    "semantic_hash": ""
+  },
+  "app/(foto)/about/page.js": {
+    "mtime": 1787057161.098093,
+    "seen": 1788094875.471531,
+    "ast_hash": "469e301ae3474f054b7fd95064cee488",
+    "semantic_hash": ""
+  },
+  "app/(foto)/admin/layout.js": {
+    "mtime": 1785058332.0592363,
+    "seen": 1788094875.471532,
+    "ast_hash": "f929cedb0195290c43a31e59252b46b6",
+    "semantic_hash": ""
+  },
+  "app/(foto)/admin/vaszonkep/page.js": {
+    "mtime": 1785058332.0594103,
+    "seen": 1788094875.471533,
+    "ast_hash": "3e8a2c59a987ac7c263d471c82550bb4",
+    "semantic_hash": ""
+  },
+  "app/(foto)/admin/velemenyek/page.js": {
+    "mtime": 1785058332.0595827,
+    "seen": 1788094875.471533,
+    "ast_hash": "b980a3aaee5da1d4f648a230129fcdae",
+    "semantic_hash": ""
+  },
+  "app/(foto)/contact/page.js": {
+    "mtime": 1787057161.098896,
+    "seen": 1788094875.471534,
+    "ast_hash": "dfb3030b1261a88d5ce8808787b1da44",
+    "semantic_hash": ""
+  },
+  "app/(foto)/elszamolas/layout.js": {
+    "mtime": 1785058332.0598826,
+    "seen": 1788094875.471534,
+    "ast_hash": "e80b9776d52069139cdd177ae69f628d",
+    "semantic_hash": ""
+  },
+  "app/(foto)/elszamolas/page.js": {
+    "mtime": 1785058332.060031,
+    "seen": 1788094875.4715352,
+    "ast_hash": "119eb43fa0ba0cc0f40423e23001b4da",
+    "semantic_hash": ""
+  },
+  "app/(foto)/layout.js": {
+    "mtime": 1787057161.1011226,
+    "seen": 1788094875.4715352,
+    "ast_hash": "1cd5a2a187b74c7d9c576d6eb7687050",
+    "semantic_hash": ""
+  },
+  "app/(foto)/mini-fotozasok/husvet/layout.js": {
+    "mtime": 1787057161.1025271,
+    "seen": 1788094875.4715362,
+    "ast_hash": "39035145a3f6b67c67cbdc05e41fe565",
+    "semantic_hash": ""
+  },
+  "app/(foto)/mini-fotozasok/husvet/page.js": {
+    "mtime": 1785058332.060362,
+    "seen": 1788094875.4715362,
+    "ast_hash": "1af275e44b6ce2769133f6eac24941d4",
+    "semantic_hash": ""
+  },
+  "app/(foto)/mini-fotozasok/karacsony/page.js": {
+    "mtime": 1787057161.1036198,
+    "seen": 1788094875.4715362,
+    "ast_hash": "f998e136d4f5851a910f280ed652415a",
+    "semantic_hash": ""
+  },
+  "app/(foto)/page.js": {
+    "mtime": 1787057161.1043644,
+    "seen": 1788094875.4715369,
+    "ast_hash": "f7dc432ea14fc3642b61d8380b1d7da0",
+    "semantic_hash": ""
+  },
+  "app/(foto)/portfolio/PortfolioClient.js": {
+    "mtime": 1786476905.179476,
+    "seen": 1788094875.4715369,
+    "ast_hash": "c074561ada88141ea48f24e221586ccb",
+    "semantic_hash": ""
+  },
+  "app/(foto)/portfolio/page.js": {
+    "mtime": 1787057161.1051598,
+    "seen": 1788094875.4715378,
+    "ast_hash": "d59d91b199264589d3e6646dfa1fca87",
+    "semantic_hash": ""
+  },
+  "app/(foto)/szolgaltatasok/[slug]/ServiceClient.js": {
+    "mtime": 1785058332.0612006,
+    "seen": 1788094875.4715378,
+    "ast_hash": "220be26926deae6e619020a4c1631f23",
+    "semantic_hash": ""
+  },
+  "app/(foto)/szolgaltatasok/[slug]/page.js": {
+    "mtime": 1787057161.105981,
+    "seen": 1788094875.471539,
+    "ast_hash": "635d80484e13be412f574bd8925010d2",
+    "semantic_hash": ""
+  },
+  "app/(foto)/szolgaltatasok/eskuvo/EskuvoClient.js": {
+    "mtime": 1786476373.0996938,
+    "seen": 1788094875.471539,
+    "ast_hash": "3c6b8e90452bc4d07500510a37e5affc",
+    "semantic_hash": ""
+  },
+  "app/(foto)/szolgaltatasok/eskuvo/page.js": {
+    "mtime": 1787057161.1067235,
+    "seen": 1788094875.471539,
+    "ast_hash": "5773b026c7016f21ad9b3f6934bda85c",
+    "semantic_hash": ""
+  },
+  "app/(foto)/velemeny-iras/layout.js": {
+    "mtime": 1787057161.107358,
+    "seen": 1788094875.47154,
+    "ast_hash": "862dbe29fb90a83d6a14515f44446835",
+    "semantic_hash": ""
+  },
+  "app/(foto)/velemeny-iras/page.js": {
+    "mtime": 1785058332.061983,
+    "seen": 1788094875.47154,
+    "ast_hash": "fa79b0d26339aabcb5bb6f515c9563a5",
+    "semantic_hash": ""
+  },
+  "app/(foto)/velemenyek/layout.js": {
+    "mtime": 1787057161.1088402,
+    "seen": 1788094875.47154,
+    "ast_hash": "30028769fe93edb38a51271242c40fd1",
+    "semantic_hash": ""
+  },
+  "app/(foto)/velemenyek/page.js": {
+    "mtime": 1785058332.0622623,
+    "seen": 1788094875.47154,
+    "ast_hash": "3fcb27ce256dc939384cf8a8501eb6c7",
+    "semantic_hash": ""
+  },
+  "app/rendezveny/[kategoria]/page.js": {
+    "mtime": 1787057161.1097198,
+    "seen": 1788094875.471541,
+    "ast_hash": "8bb7c773a9473b266b75f835bca15d8d",
+    "semantic_hash": ""
+  },
+  "app/rendezveny/layout.js": {
+    "mtime": 1787057161.110715,
+    "seen": 1788094875.4715421,
+    "ast_hash": "035272b0e6c1e6eede899b886b72995a",
+    "semantic_hash": ""
+  },
+  "app/rendezveny/munkaim/MunkaimClient.js": {
+    "mtime": 1785088784.6725862,
+    "seen": 1788094875.4715421,
+    "ast_hash": "687aad0aa80458aa6b1d1cb3f8eee2b7",
+    "semantic_hash": ""
+  },
+  "app/rendezveny/munkaim/[slug]/page.js": {
+    "mtime": 1785088674.1502333,
+    "seen": 1788094875.4715421,
+    "ast_hash": "35c29191655097cc639085dc4588d3d1",
+    "semantic_hash": ""
+  },
+  "app/rendezveny/munkaim/page.js": {
+    "mtime": 1785088801.881299,
+    "seen": 1788094875.471543,
+    "ast_hash": "467bc6e9192d51758f2734fff0c73f80",
+    "semantic_hash": ""
+  },
+  "app/rendezveny/page.js": {
+    "mtime": 1787057161.1116269,
+    "seen": 1788094875.471543,
+    "ast_hash": "c81c8790f699460c06ee94154af6673e",
+    "semantic_hash": ""
+  },
+  "app/rendezveny/video/page.js": {
+    "mtime": 1785089949.969284,
+    "seen": 1788094875.471543,
+    "ast_hash": "61070fe13a51c579e961633d2c93bd72",
+    "semantic_hash": ""
+  },
+  "components/LegalPlaceholder.js": {
+    "mtime": 1787057124.1034691,
+    "seen": 1788094875.471549,
+    "ast_hash": "786941ae685f2c52dab76641fd49f1bc",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/CaseCard.js": {
+    "mtime": 1785088759.2892737,
+    "seen": 1788094875.471551,
+    "ast_hash": "10a841445e062a5b5e6da6a0b3e463c7",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/CaseMetaBar.js": {
+    "mtime": 1785088558.6757696,
+    "seen": 1788094875.471552,
+    "ast_hash": "bde9297ecb56f60aaf17c5c967136d32",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/EventFooter.js": {
+    "mtime": 1787057161.1145756,
+    "seen": 1788094875.471552,
+    "ast_hash": "0f2d54206ee0b41b2cd36ecbf8d690eb",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/EventNav.js": {
+    "mtime": 1787057161.1153831,
+    "seen": 1788094875.471552,
+    "ast_hash": "7f9ef63dc847f5009f378da036d16319",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/FaqAccordion.js": {
+    "mtime": 1787057161.1164021,
+    "seen": 1788094875.471552,
+    "ast_hash": "8aa1f5816b83aa9c981637a80ded6cca",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/GalleryLightbox.js": {
+    "mtime": 1785088306.753981,
+    "seen": 1788094875.471553,
+    "ast_hash": "a07c25433f573a456b9b73dbd730d45f",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/GalleryMasonry.js": {
+    "mtime": 1785088302.5482762,
+    "seen": 1788094875.471553,
+    "ast_hash": "d181cbeef208a492f5479fd336d7a6c3",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/Marquee.js": {
+    "mtime": 1785085671.1184902,
+    "seen": 1788094875.471554,
+    "ast_hash": "ebaa9b9eccc05f1d79affbbc68261ded",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/MonoLabel.js": {
+    "mtime": 1785085654.6508439,
+    "seen": 1788094875.471554,
+    "ast_hash": "59327d43437b99765ccba46bde6a18ea",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/PillarBlock.js": {
+    "mtime": 1785087621.7972713,
+    "seen": 1788094875.471554,
+    "ast_hash": "3910ff23df54f63df391ae72468ad5b2",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/ProcessSteps.js": {
+    "mtime": 1787057161.1171584,
+    "seen": 1788094875.471554,
+    "ast_hash": "664d674d7149bb772b344c304e8a76ce",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/ReelWall.js": {
+    "mtime": 1785089887.7730656,
+    "seen": 1788094875.471555,
+    "ast_hash": "7e9a1e88f8be7ebdec39dff18813a2e8",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/ReferenceList.js": {
+    "mtime": 1787057161.1180036,
+    "seen": 1788094875.471555,
+    "ast_hash": "39583e32a0b7d778f8d3ea12acb3e0c1",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/Reveal.js": {
+    "mtime": 1787057161.118805,
+    "seen": 1788094875.471555,
+    "ast_hash": "c6f39ee1ba882932f53a1659c8341620",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/StatCounter.js": {
+    "mtime": 1785087595.4650154,
+    "seen": 1788094875.4715562,
+    "ast_hash": "84d43bd3d07c83264e68acfa30b6850c",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/StickyCta.js": {
+    "mtime": 1785085676.8482122,
+    "seen": 1788094875.4715562,
+    "ast_hash": "27b19c23ecfb2cc4dbc693261f8a84dd",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/TestimonialRow.js": {
+    "mtime": 1785087848.30419,
+    "seen": 1788094875.4715562,
+    "ast_hash": "5728e84d9a34cd6b43c94a9ff407f301",
+    "semantic_hash": ""
+  },
+  "components/rendezveny/VideoFacade.js": {
+    "mtime": 1785089806.9109933,
+    "seen": 1788094875.4715571,
+    "ast_hash": "421352f6811ea4754b8546a9fd52517a",
+    "semantic_hash": ""
+  },
+  "constants/rendezveny/cases.js": {
+    "mtime": 1785088579.8133385,
+    "seen": 1788094875.4715571,
+    "ast_hash": "7ddebc89c225539e45a9bc2c5eced540",
+    "semantic_hash": ""
+  },
+  "constants/rendezveny/categories.js": {
+    "mtime": 1787057161.1196873,
+    "seen": 1788094875.4715571,
+    "ast_hash": "8f6c225f4af6e0f99e903d4b25eddc00",
+    "semantic_hash": ""
+  },
+  "constants/rendezveny/faq.js": {
+    "mtime": 1785087532.1088195,
+    "seen": 1788094875.4715579,
+    "ast_hash": "59bce6155cef9b2b4d0a2ac3f722360c",
+    "semantic_hash": ""
+  },
+  "constants/rendezveny/manifest.json": {
+    "mtime": 1787057161.120989,
+    "seen": 1788094875.4715579,
+    "ast_hash": "95679c78b66121c897784b7aeca13cd6",
+    "semantic_hash": ""
+  },
+  "constants/rendezveny/references.js": {
+    "mtime": 1785087559.2796159,
+    "seen": 1788094875.4715579,
+    "ast_hash": "22e9d2f22d3371467d8988e9cd9cc1c6",
+    "semantic_hash": ""
+  },
+  "constants/rendezveny/site.js": {
+    "mtime": 1785085566.5361602,
+    "seen": 1788094875.4715579,
+    "ast_hash": "344f4fc12f9f09c8dc110c85d3eb862a",
+    "semantic_hash": ""
+  },
+  "constants/rendezveny/testimonials.js": {
+    "mtime": 1785087538.5917313,
+    "seen": 1788094875.4715588,
+    "ast_hash": "d7eb6b8a7cdbe4c50fea4a23d5b36555",
+    "semantic_hash": ""
+  },
+  "constants/rendezveny/video.js": {
+    "mtime": 1785090025.7837322,
+    "seen": 1788094875.4715588,
+    "ast_hash": "f44cbea1e01647087b8bc12db7b13aa6",
+    "semantic_hash": ""
+  },
+  "lib/eventMedia.js": {
+    "mtime": 1785086753.772402,
+    "seen": 1788094875.471561,
+    "ast_hash": "add5ee7415efa3b2f04ba69492516da0",
+    "semantic_hash": ""
+  },
+  "pages/cookie.js": {
+    "mtime": 1787057124.1091256,
+    "seen": 1788094875.471565,
+    "ast_hash": "1e14db8c5c4eed74501d2c66a1e42cbd",
+    "semantic_hash": ""
+  },
+  "pages/impresszum.js": {
+    "mtime": 1787057124.110172,
+    "seen": 1788094875.471566,
+    "ast_hash": "24c9ccd5a06cb4f441a98e0e0238d59d",
+    "semantic_hash": ""
+  },
+  "scripts/build-media-manifest.mjs": {
+    "mtime": 1787057161.1380417,
+    "seen": 1788094875.4715672,
+    "ast_hash": "a4c87a8411b82d9052c6bcf9b0d044cd",
+    "semantic_hash": ""
+  },
+  "scripts/check-media-budget.mjs": {
+    "mtime": 1785086365.3977969,
+    "seen": 1788094875.4715672,
+    "ast_hash": "4e05b9843ff797a884cdc73eda54e2ec",
+    "semantic_hash": ""
+  },
+  "scripts/event-images.config.mjs": {
+    "mtime": 1785086277.160341,
+    "seen": 1788094875.4715672,
+    "ast_hash": "575ccff9843a558366ac71811ff726c4",
+    "semantic_hash": ""
+  },
+  "scripts/prep-event-images.mjs": {
+    "mtime": 1785086584.952272,
+    "seen": 1788094875.4715679,
+    "ast_hash": "eddef759efecc2a163536af9d5c8cc68",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1788093814.0568507,
+    "seen": 1788094875.4715688,
+    "ast_hash": "b78c85891aa0cde18e781f2493325123",
+    "semantic_hash": ""
+  },
+  "docs/RENDEZVENY-TERV.md": {
+    "mtime": 1785059993.0360796,
+    "seen": 1788094875.47157,
+    "ast_hash": "f0aa69d35deec3042b0bd86ad376457e",
+    "semantic_hash": ""
+  },
+  "public/images/_42A9335.jpg": {
+    "mtime": 1782127252.1486647,
+    "seen": 1788094875.4715781,
+    "ast_hash": "259188052f09415c59652aaeb92da60e",
+    "semantic_hash": ""
+  },
+  "public/images/_42A9386-2.jpg": {
+    "mtime": 1781791306.2370503,
+    "seen": 1788094875.4715788,
+    "ast_hash": "8753c8788b326dba2569d12799232993",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9357.jpg": {
+    "mtime": 1781790906.588481,
+    "seen": 1788094875.471597,
+    "ast_hash": "afd1c4222c6888c229912533f9f80e9e",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9398.jpg": {
+    "mtime": 1781790926.4356294,
+    "seen": 1788094875.4715981,
+    "ast_hash": "388c31ef3a011e95b09774322aa7840e",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9433.jpg": {
+    "mtime": 1781790942.8753994,
+    "seen": 1788094875.4715981,
+    "ast_hash": "0375dc17a0d82bb2293e2483d7c316ad",
+    "semantic_hash": ""
+  },
+  "public/images/_BF_9464.jpg": {
+    "mtime": 1781790958.2403135,
+    "seen": 1788094875.4715981,
+    "ast_hash": "505e66114ff7c8f1ceb3e806d51cf615",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_42A0238.webp": {
+    "mtime": 1786476191.737245,
+    "seen": 1788094875.471618,
+    "ast_hash": "9b4fd429594883590845a3238589622e",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_42A0246.webp": {
+    "mtime": 1786476191.9444077,
+    "seen": 1788094875.471618,
+    "ast_hash": "c2c79c095318e7421a2bc8a86f2f9544",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_42A0253.webp": {
+    "mtime": 1786476192.2730718,
+    "seen": 1788094875.471618,
+    "ast_hash": "9c947487da25e5a6d418755c4878d6f1",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_42A0273.webp": {
+    "mtime": 1786476192.6076214,
+    "seen": 1788094875.4716191,
+    "ast_hash": "8706f8342716013d5bc6f86a083ad130",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_42A0281.webp": {
+    "mtime": 1786476193.0168781,
+    "seen": 1788094875.4716191,
+    "ast_hash": "41ea21c6fe3e2da7c26f1853219bfd38",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_BF_0069.webp": {
+    "mtime": 1786476193.278278,
+    "seen": 1788094875.4716191,
+    "ast_hash": "dbd08411fcf03679f083f82058d358cb",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_BF_0084.webp": {
+    "mtime": 1786476193.5557761,
+    "seen": 1788094875.4716191,
+    "ast_hash": "59c965f8acda4a90438f33f9c3f7fc80",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_BF_0143.webp": {
+    "mtime": 1786476193.8782692,
+    "seen": 1788094875.47162,
+    "ast_hash": "d5484a1f57866a123ad84dccacaf7321",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_BF_0177.webp": {
+    "mtime": 1786476194.1812043,
+    "seen": 1788094875.47162,
+    "ast_hash": "edc077815eae1b37e9059a9663a697a2",
+    "semantic_hash": ""
+  },
+  "public/images/autok/_BF_0180.webp": {
+    "mtime": 1786476194.4658992,
+    "seen": 1788094875.47162,
+    "ast_hash": "761f0c3e416c8cb1604f03f8c5e11044",
+    "semantic_hash": ""
+  },
+  "public/images/baba_reveal/_BF_2013.webp": {
+    "mtime": 1786476194.7842743,
+    "seen": 1788094875.471621,
+    "ast_hash": "a843f8a43d28af7771bbccb4b79fb645",
+    "semantic_hash": ""
+  },
+  "public/images/baba_reveal/_BF_2053.webp": {
+    "mtime": 1786476195.0626876,
+    "seen": 1788094875.471621,
+    "ast_hash": "5270d8ca4ec7344dcf1ed9c636423f8b",
+    "semantic_hash": ""
+  },
+  "public/images/baba_reveal/_BF_2096.webp": {
+    "mtime": 1786476195.4308596,
+    "seen": 1788094875.471621,
+    "ast_hash": "f5fd4f96082b20c59e3b4561aa7f3030",
+    "semantic_hash": ""
+  },
+  "public/images/baba_reveal/_BF_2122.webp": {
+    "mtime": 1786476195.7415464,
+    "seen": 1788094875.471621,
+    "ast_hash": "6b3dda8ab45e0b9b7c9561baa95ce7f5",
+    "semantic_hash": ""
+  },
+  "public/images/eskuvo/_42A9125-2.webp": {
+    "mtime": 1786476190.4476674,
+    "seen": 1788094875.471622,
+    "ast_hash": "14623cde681b3748237304e6b9ff3635",
+    "semantic_hash": ""
+  },
+  "public/images/eskuvo/_42A9328.webp": {
+    "mtime": 1786476190.7763288,
+    "seen": 1788094875.471622,
+    "ast_hash": "998073a0e7ecf895cfe4e9660720ec9e",
+    "semantic_hash": ""
+  },
+  "public/images/eskuvo/_42A9386-2.webp": {
+    "mtime": 1786476191.1946585,
+    "seen": 1788094875.471622,
+    "ast_hash": "a8d81987bd3c2b6ba73bcf78bdc8a3b4",
+    "semantic_hash": ""
+  },
+  "public/images/eskuvo/_BF_9464.webp": {
+    "mtime": 1786476191.5558767,
+    "seen": 1788094875.471623,
+    "ast_hash": "60323c9a8eb8f1cc97dbe9761cd84620",
+    "semantic_hash": ""
+  },
+  "public/images/logo2-transparent.webp": {
+    "mtime": 1787057124.1150494,
+    "seen": 1788094875.471634,
+    "ast_hash": "2bac5d553faceafcfa49f4aa06184491",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A1096.webp": {
+    "mtime": 1786476196.0411713,
+    "seen": 1788094875.4716349,
+    "ast_hash": "5adb93d5b8b39c808cd9e555e878fe39",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A2167.webp": {
+    "mtime": 1786476196.446519,
+    "seen": 1788094875.4716349,
+    "ast_hash": "e5f85aed355799a42f84be623e1eaf81",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A2591.webp": {
+    "mtime": 1786476196.7643833,
+    "seen": 1788094875.4716349,
+    "ast_hash": "1dea1c3a5df0678d009735ad622fa9d8",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A2900.webp": {
+    "mtime": 1786476197.14759,
+    "seen": 1788094875.471636,
+    "ast_hash": "c5aebbdeef589e9946eaf119d85d7552",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A3880.webp": {
+    "mtime": 1786476197.573108,
+    "seen": 1788094875.471636,
+    "ast_hash": "53e1b16b4ce3489af1b5fcdf1e3bc888",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5667.webp": {
+    "mtime": 1786476197.907011,
+    "seen": 1788094875.471636,
+    "ast_hash": "164707599dd1000fd7469991581d835a",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5704.webp": {
+    "mtime": 1786476198.2520878,
+    "seen": 1788094875.471637,
+    "ast_hash": "976a2911e4d0bdfbd1a0871ec28c0322",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5787.webp": {
+    "mtime": 1786476198.6284606,
+    "seen": 1788094875.471637,
+    "ast_hash": "37369b47c3f37cd93d24951f3dddf55f",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5832.webp": {
+    "mtime": 1786476198.987793,
+    "seen": 1788094875.471637,
+    "ast_hash": "da5e83c0810688d09d2ccb68a8932ba9",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5880.webp": {
+    "mtime": 1786476199.2433786,
+    "seen": 1788094875.471638,
+    "ast_hash": "7f5f09ebc803dbb42f94541fd08462c7",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5908-2.webp": {
+    "mtime": 1786476199.5285375,
+    "seen": 1788094875.471638,
+    "ast_hash": "2342e6b4a318e19d6fc74ac5550b1d79",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5910.webp": {
+    "mtime": 1786476199.8746789,
+    "seen": 1788094875.471638,
+    "ast_hash": "187b5cec0a182dfa18a4877a09e5e78b",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5934.webp": {
+    "mtime": 1786476200.1682062,
+    "seen": 1788094875.4716392,
+    "ast_hash": "a1f7b8a0398a6eeed4f0c13f1457ea57",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A5952-2.webp": {
+    "mtime": 1786476200.4007328,
+    "seen": 1788094875.4716392,
+    "ast_hash": "037a4ae702de33f342f67e4f500c58f9",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A6811.webp": {
+    "mtime": 1786476200.747263,
+    "seen": 1788094875.4716392,
+    "ast_hash": "e93df5081eb9dc390cb6c3d1e321046e",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A6948.webp": {
+    "mtime": 1786476201.0513425,
+    "seen": 1788094875.47164,
+    "ast_hash": "70bc39a6bf1828becfb68b4464d93737",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A7071-2.webp": {
+    "mtime": 1786476201.2736795,
+    "seen": 1788094875.47164,
+    "ast_hash": "1c0921f4f127da2d0c5c6b0cdbc3bc97",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A7077-3.webp": {
+    "mtime": 1786476201.5103316,
+    "seen": 1788094875.47164,
+    "ast_hash": "7764f542819e5e825b6e7d4e718c015f",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A7077.webp": {
+    "mtime": 1786476201.8994048,
+    "seen": 1788094875.47164,
+    "ast_hash": "445995f7c8ff23091466492517b853a6",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A7095.webp": {
+    "mtime": 1786476202.2414527,
+    "seen": 1788094875.471642,
+    "ast_hash": "2977e0d629c6fa89fd9033c20254a98c",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A8195.webp": {
+    "mtime": 1786476202.6278424,
+    "seen": 1788094875.471643,
+    "ast_hash": "41a556775765d1e4fc5a0ed0141562a8",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A8253.webp": {
+    "mtime": 1786476202.987891,
+    "seen": 1788094875.471643,
+    "ast_hash": "d552e33c4e67faa457c04049c7c72789",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A8458.webp": {
+    "mtime": 1786476203.339769,
+    "seen": 1788094875.471643,
+    "ast_hash": "cfd07a72658473b21d33f7d351da9c5a",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A8494.webp": {
+    "mtime": 1786476203.6679766,
+    "seen": 1788094875.471644,
+    "ast_hash": "dd68e69ee92ca6eea219883ebc2fd2a9",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_42A8687.webp": {
+    "mtime": 1786476204.0455682,
+    "seen": 1788094875.471644,
+    "ast_hash": "31d98f569446baae9930aad02d86dfbf",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0142.webp": {
+    "mtime": 1786476204.3353236,
+    "seen": 1788094875.471644,
+    "ast_hash": "17fc6c742d42b3717a23cc83bd845551",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0318.webp": {
+    "mtime": 1786476204.6927896,
+    "seen": 1788094875.471644,
+    "ast_hash": "bca5cfac9ffcd48c6e57aa5163a539b9",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0408.webp": {
+    "mtime": 1786476205.0153933,
+    "seen": 1788094875.4716449,
+    "ast_hash": "3f2098f01e3cd037f5978d0f7506cd55",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0441.webp": {
+    "mtime": 1786476205.3184166,
+    "seen": 1788094875.4716449,
+    "ast_hash": "938fe0f56029b1a829d9f49709774cf0",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0529.webp": {
+    "mtime": 1786476205.5983384,
+    "seen": 1788094875.4716449,
+    "ast_hash": "77f3010d44e119a9d4bc47746559551f",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0530.webp": {
+    "mtime": 1786476205.846366,
+    "seen": 1788094875.471646,
+    "ast_hash": "bbe8cd0b0b9277da5dd8cae5ad96249f",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0635-ret.webp": {
+    "mtime": 1786476206.11154,
+    "seen": 1788094875.471646,
+    "ast_hash": "f22ada215ae2e0caa2066ba80c414ca6",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0655.webp": {
+    "mtime": 1786476206.320693,
+    "seen": 1788094875.471646,
+    "ast_hash": "38832c52eb7375b774a187316d152203",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0674.webp": {
+    "mtime": 1786476206.5964317,
+    "seen": 1788094875.471646,
+    "ast_hash": "68b3e2773ff51dd9419b745e76466473",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0899.webp": {
+    "mtime": 1786476206.9410043,
+    "seen": 1788094875.471647,
+    "ast_hash": "b133d5ebea4474377352aafcc478691a",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_0994-2.webp": {
+    "mtime": 1786476207.3049557,
+    "seen": 1788094875.471647,
+    "ast_hash": "da6c03cf2675ae5a00c61dbe5f90e92b",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_1249.webp": {
+    "mtime": 1786476207.6682796,
+    "seen": 1788094875.471647,
+    "ast_hash": "c674cea9d993967eeeb3a81cf847bd13",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_1310.webp": {
+    "mtime": 1786476207.9760573,
+    "seen": 1788094875.471648,
+    "ast_hash": "ae0efbef5da2a60432848c52a6e54a6d",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_8904.webp": {
+    "mtime": 1786476208.322407,
+    "seen": 1788094875.471648,
+    "ast_hash": "b0fe2a7d7545c15ab61886f5885ef1a0",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_8931.webp": {
+    "mtime": 1786476208.6859312,
+    "seen": 1788094875.471648,
+    "ast_hash": "aafe6472d78e8256476681c640c68635",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_8946.webp": {
+    "mtime": 1786476209.0424607,
+    "seen": 1788094875.471648,
+    "ast_hash": "8b35f33e35cca18e31c7d118a668eb32",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_9108.webp": {
+    "mtime": 1786476209.3410406,
+    "seen": 1788094875.471649,
+    "ast_hash": "ee4d210d29d3e6b129283a7721e77e80",
+    "semantic_hash": ""
+  },
+  "public/images/portre/_BF_9126.webp": {
+    "mtime": 1786476209.756394,
+    "seen": 1788094875.471649,
+    "ast_hash": "003f2a5956172d7ca53d2740fcfaaaff",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/ballagas-bf-9831.webp": {
+    "mtime": 1785086608.0819266,
+    "seen": 1788094875.4716501,
+    "ast_hash": "26d436c303a95aa796f05c5397e7ae51",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/ballagas-bf-9852.webp": {
+    "mtime": 1785086608.4963853,
+    "seen": 1788094875.4716501,
+    "ast_hash": "b3bf164bf75219d2654841b5ae809ee4",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/ballagas-bf-9889.webp": {
+    "mtime": 1785086608.9318078,
+    "seen": 1788094875.4716501,
+    "ast_hash": "3e9215be2302eef6d7c45b88ece301a3",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/ballagas-bf-9923.webp": {
+    "mtime": 1785086609.4074466,
+    "seen": 1788094875.471651,
+    "ast_hash": "ae215b69528b457b9eba579a3a5ce691",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/ballagas-bf-9966.webp": {
+    "mtime": 1785086609.8155022,
+    "seen": 1788094875.471651,
+    "ast_hash": "fd0bc913c6c6360014ff13140bc03da2",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/ballagas-bf-9967.webp": {
+    "mtime": 1785086610.2142289,
+    "seen": 1788094875.471651,
+    "ast_hash": "4eafd2f36ec6abdf66fb276d7ed029cc",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/ballagas-bf-9993.webp": {
+    "mtime": 1785086610.660632,
+    "seen": 1788094875.471651,
+    "ast_hash": "0c811bd76cd961cadda47e4686486389",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a0075.webp": {
+    "mtime": 1785086600.7293382,
+    "seen": 1788094875.471652,
+    "ast_hash": "bd4d1b19542e5fb1989ffefbfe7744e0",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9674.webp": {
+    "mtime": 1785086601.2218177,
+    "seen": 1788094875.471652,
+    "ast_hash": "3baa7a9be02716025c08a089aa836276",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9708.webp": {
+    "mtime": 1785086601.7884295,
+    "seen": 1788094875.471652,
+    "ast_hash": "043a6acbbcea0d12277e6c6b002fae8b",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9747.webp": {
+    "mtime": 1785086603.3468204,
+    "seen": 1788094875.4716532,
+    "ast_hash": "50489839d5de59282b508c8563e82df0",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9760.webp": {
+    "mtime": 1785086604.0290074,
+    "seen": 1788094875.4716532,
+    "ast_hash": "3b6e6178fa4aa0187eb5c66e792fab2c",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9809.webp": {
+    "mtime": 1785086604.4992666,
+    "seen": 1788094875.4716532,
+    "ast_hash": "ea0e69d4e1c386f4a28e97047915a98f",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9885.webp": {
+    "mtime": 1785086604.872562,
+    "seen": 1788094875.4716532,
+    "ast_hash": "83b3f730f56c672f3d63a967b982d015",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9893.webp": {
+    "mtime": 1785086605.2870204,
+    "seen": 1788094875.471654,
+    "ast_hash": "e7025fcc94d7244bef6d8e52ee6cab90",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9914.webp": {
+    "mtime": 1785086605.7289991,
+    "seen": 1788094875.471654,
+    "ast_hash": "a2138846576b234699d117cc040a5323",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9940.webp": {
+    "mtime": 1785086606.7383285,
+    "seen": 1788094875.471654,
+    "ast_hash": "cadecc7b40a894fd3988785791c9fa7c",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9955.webp": {
+    "mtime": 1785086607.2262402,
+    "seen": 1788094875.471655,
+    "ast_hash": "fb6f13f3f4f01ee5e868adb009d089f9",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-42a9994.webp": {
+    "mtime": 1785086607.6545687,
+    "seen": 1788094875.471655,
+    "ast_hash": "0fd52ea3602cb29bf228f6d9f7bc9a70",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-dji-0936.webp": {
+    "mtime": 1785086599.1442354,
+    "seen": 1788094875.471655,
+    "ast_hash": "9ac7233c3cb35d921926ffe1a524a93a",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/egyetemi/dualis-tabor-dji-0960.webp": {
+    "mtime": 1785086600.2016807,
+    "seen": 1788094875.471655,
+    "ast_hash": "8b2c8bda806a0e46ba72f8a945a1ae28",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/egyed-viktor-42a9058.webp": {
+    "mtime": 1785086597.4073386,
+    "seen": 1788094875.4716558,
+    "ast_hash": "68cc033141b0d6f915d9674b97745c97",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/egyed-viktor-42a9415-2.webp": {
+    "mtime": 1785086597.9357536,
+    "seen": 1788094875.4716558,
+    "ast_hash": "dcd52670a330f57d8506525b51d6d1e9",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/egyed-viktor-42a9652.webp": {
+    "mtime": 1785086598.4096885,
+    "seen": 1788094875.4716558,
+    "ast_hash": "c2c02300c8285df240ca865ee738bcbc",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6050.webp": {
+    "mtime": 1785086593.6147532,
+    "seen": 1788094875.471657,
+    "ast_hash": "a3c4717ee074d55bb7f7b8d56bf367e9",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6211.webp": {
+    "mtime": 1785086593.9952264,
+    "seen": 1788094875.471657,
+    "ast_hash": "9dc0f985135aa9cb0dbd288b71a8e34e",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6315.webp": {
+    "mtime": 1785086594.3535845,
+    "seen": 1788094875.471657,
+    "ast_hash": "e91135bd65c06dae4fd8cc205e1f4d5e",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6401.webp": {
+    "mtime": 1785086594.8252125,
+    "seen": 1788094875.471657,
+    "ast_hash": "53fc6a0406969ec19ffa4696828fce3a",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6462.webp": {
+    "mtime": 1785086595.2803004,
+    "seen": 1788094875.471658,
+    "ast_hash": "2eb6b498117fcb93a21dfa82c9b3f3ee",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6515.webp": {
+    "mtime": 1785086595.6572368,
+    "seen": 1788094875.471658,
+    "ast_hash": "11a994da2b6cc17c4b51b50cb1b95fe4",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6534.webp": {
+    "mtime": 1785086596.107221,
+    "seen": 1788094875.471658,
+    "ast_hash": "cdf3e8966290325f0a8f8d72e861ee0c",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6582.webp": {
+    "mtime": 1785086596.5084755,
+    "seen": 1788094875.471659,
+    "ast_hash": "7b9ebdc1816505d025b2d80acd79eb25",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/konferencia/lr-42a6704.webp": {
+    "mtime": 1785086596.9449537,
+    "seen": 1788094875.471659,
+    "ast_hash": "f0fd2485cdb8075560be1754f54e9841",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/kultura/tanc-42a7714.webp": {
+    "mtime": 1785086652.6298769,
+    "seen": 1788094875.471659,
+    "ast_hash": "1ead3e31324036bab24e9c337949f9db",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/kultura/tanc-42a7767.webp": {
+    "mtime": 1785086653.2277706,
+    "seen": 1788094875.471659,
+    "ast_hash": "1677143c2ee76ce4aa78874d4b37eb2a",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/kultura/tanc-42a7987.webp": {
+    "mtime": 1785086653.7019308,
+    "seen": 1788094875.4716601,
+    "ast_hash": "76b1019111a22121a41843877ae68f0a",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/kultura/tanc-42a8006.webp": {
+    "mtime": 1785086654.2213368,
+    "seen": 1788094875.4716601,
+    "ast_hash": "8383e2f235c9f4695104ec154e76807f",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/kultura/tanc-42a8111.webp": {
+    "mtime": 1785086654.816239,
+    "seen": 1788094875.4716601,
+    "ast_hash": "e9e50d5f8da358ff545f8382ffab98b9",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-7587.webp": {
+    "mtime": 1785086655.1967545,
+    "seen": 1788094875.471661,
+    "ast_hash": "a7ecdecf668e1a873126e2dc02f75c9b",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-7750.webp": {
+    "mtime": 1785086656.3829978,
+    "seen": 1788094875.471661,
+    "ast_hash": "00e8d8cca321184fa1ce687a99ef0911",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-7991.webp": {
+    "mtime": 1785086656.6635492,
+    "seen": 1788094875.471661,
+    "ast_hash": "3a52f1d910c030e3b6e04f5516d54616",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-8028.webp": {
+    "mtime": 1785086657.074957,
+    "seen": 1788094875.471661,
+    "ast_hash": "0502020824a50947038d445603a20958",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-8079.webp": {
+    "mtime": 1785086657.3794672,
+    "seen": 1788094875.471662,
+    "ast_hash": "980cd7a25dac4171f87d089d3fba132e",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-8321.webp": {
+    "mtime": 1785086657.799564,
+    "seen": 1788094875.471662,
+    "ast_hash": "a8ae49a7d7b0c76a01c6d573521444fd",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-8605.webp": {
+    "mtime": 1785086658.1687799,
+    "seen": 1788094875.471662,
+    "ast_hash": "4b3f97994e6c1e24ee08998925f32bbc",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-8667.webp": {
+    "mtime": 1785086658.5738056,
+    "seen": 1788094875.471663,
+    "ast_hash": "c42822eceba6b18525792356040b1aec",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-8757.webp": {
+    "mtime": 1785086660.212677,
+    "seen": 1788094875.471663,
+    "ast_hash": "a8b19621fd87c36888b6177232eb5025",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/fozes-bf-8759.webp": {
+    "mtime": 1785086661.1244347,
+    "seen": 1788094875.471663,
+    "ast_hash": "71364f60cff3e3098cf1b5ed032be83e",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7099.webp": {
+    "mtime": 1785086662.3341746,
+    "seen": 1788094875.471663,
+    "ast_hash": "629902d7de8dc0d741830e5e21578462",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7168.webp": {
+    "mtime": 1785086664.3884168,
+    "seen": 1788094875.4716642,
+    "ast_hash": "0f2c6d4c6ac0876ddadf716ab060a105",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7341.webp": {
+    "mtime": 1785086665.70435,
+    "seen": 1788094875.4716642,
+    "ast_hash": "492a4a86150b7f27d1fe2012ff92e074",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7389.webp": {
+    "mtime": 1785086667.767334,
+    "seen": 1788094875.4716642,
+    "ast_hash": "3e9bece52ab318c9b62d707fbb4d9ce2",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7414.webp": {
+    "mtime": 1785086668.0702739,
+    "seen": 1788094875.471665,
+    "ast_hash": "da05976ecd138b66dfa0c698a5a104fe",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7505.webp": {
+    "mtime": 1785086670.433719,
+    "seen": 1788094875.471665,
+    "ast_hash": "0be4a8908da2ad0be9b23e8475c70d61",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7509.webp": {
+    "mtime": 1785086670.7570472,
+    "seen": 1788094875.471665,
+    "ast_hash": "b2f71b8f19317fa457bd92630e777498",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7548.webp": {
+    "mtime": 1785086671.0322332,
+    "seen": 1788094875.471665,
+    "ast_hash": "a37ebb1bffc28bce6943b672865a2ea2",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/maganunnep/kutyusok-bf-7570.webp": {
+    "mtime": 1785086671.3152623,
+    "seen": 1788094875.4716659,
+    "ast_hash": "7a582876e606a7e323cdad13cddc28a7",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4075.webp": {
+    "mtime": 1785086620.451779,
+    "seen": 1788094875.4716659,
+    "ast_hash": "dabd644ae9b33d6a760e14407cf30d0d",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4133.webp": {
+    "mtime": 1785086622.3128068,
+    "seen": 1788094875.4716659,
+    "ast_hash": "8a1e684fb99b3fcf7d3cd3349c505201",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4413.webp": {
+    "mtime": 1785086622.6939776,
+    "seen": 1788094875.471667,
+    "ast_hash": "03f2276a3bae5d0437aecdf4214e1713",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4434.webp": {
+    "mtime": 1785086624.5350254,
+    "seen": 1788094875.471667,
+    "ast_hash": "544784802ee499e93e2c90ece5ddf362",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4456.webp": {
+    "mtime": 1785086626.8068652,
+    "seen": 1788094875.471667,
+    "ast_hash": "498f6569b62e44c8173e4bc56efb6cfe",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4547.webp": {
+    "mtime": 1785086627.875059,
+    "seen": 1788094875.471667,
+    "ast_hash": "9c99a87f3887b1c0aff8a6c82608e2c0",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4649.webp": {
+    "mtime": 1785086629.7752173,
+    "seen": 1788094875.471668,
+    "ast_hash": "12887f5f983a2a4bcb5eadf0a26838d1",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4693.webp": {
+    "mtime": 1785086631.2108898,
+    "seen": 1788094875.471668,
+    "ast_hash": "e1ffe09a7464d122827f060a9f0b52f9",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4756.webp": {
+    "mtime": 1785086631.597527,
+    "seen": 1788094875.471668,
+    "ast_hash": "7591fe8c7b7512a52b8c1dae636f04af",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4865.webp": {
+    "mtime": 1785086633.8611834,
+    "seen": 1788094875.471669,
+    "ast_hash": "f019d7f6fb77e4b504a6bc365a08f393",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a4926.webp": {
+    "mtime": 1785086634.254485,
+    "seen": 1788094875.471669,
+    "ast_hash": "c83dbf19786628a31c9b801c290b79c6",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a5091.webp": {
+    "mtime": 1785086637.4995944,
+    "seen": 1788094875.471669,
+    "ast_hash": "625ce07d7f03611f22b749f327e1e2e1",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a5139.webp": {
+    "mtime": 1785086637.8915832,
+    "seen": 1788094875.471669,
+    "ast_hash": "e8c1f2ff28008b6feba16c1cf97ce8c2",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a5238.webp": {
+    "mtime": 1785086640.4123306,
+    "seen": 1788094875.47167,
+    "ast_hash": "2fb8edb6da3747d549325a023c2ba8ce",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a5345.webp": {
+    "mtime": 1785086641.5250883,
+    "seen": 1788094875.47167,
+    "ast_hash": "33835a30f2de2ff6e7af8462ba4a5f20",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a5563-pano.webp": {
+    "mtime": 1785086642.8325772,
+    "seen": 1788094875.47167,
+    "ast_hash": "0bf8acc1f2f9bc07369b34b12a682043",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-42a5573.webp": {
+    "mtime": 1785086643.2251346,
+    "seen": 1788094875.471671,
+    "ast_hash": "7387ccdeac4856d27608585412c847b8",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-bf-0102.webp": {
+    "mtime": 1785086643.6825142,
+    "seen": 1788094875.471671,
+    "ast_hash": "29b739667d49a4b8b7c1033b31df63a4",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-bf-0117.webp": {
+    "mtime": 1785086644.1040385,
+    "seen": 1788094875.471671,
+    "ast_hash": "678e9b546547aa2e8962cdef00128e81",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-dji-0100.webp": {
+    "mtime": 1785086612.7704165,
+    "seen": 1788094875.471672,
+    "ast_hash": "bf5b71648cab68c5ad78e6119ec9ca20",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-dji-0105.webp": {
+    "mtime": 1785086613.4880805,
+    "seen": 1788094875.471672,
+    "ast_hash": "c2d74fc46eee4ce4e00b7b3316ad5bd7",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-dji-0123.webp": {
+    "mtime": 1785086615.9772198,
+    "seen": 1788094875.471672,
+    "ast_hash": "2ff55fab8c3ab06f8152552790b777ad",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/offroad/offroad-dji-0147.webp": {
+    "mtime": 1785086617.3527317,
+    "seen": 1788094875.471672,
+    "ast_hash": "337f244dd69855697d7aa3906e1f724a",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-4006.webp": {
+    "mtime": 1785086644.4669893,
+    "seen": 1788094875.471673,
+    "ast_hash": "13a21f5ae7738684ef9a531fb9f0041a",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-4162.webp": {
+    "mtime": 1785086644.8842099,
+    "seen": 1788094875.471673,
+    "ast_hash": "3882415e7cbb95fb04954e9a49576287",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-4668.webp": {
+    "mtime": 1785086645.2551966,
+    "seen": 1788094875.471673,
+    "ast_hash": "0060d4dc6c3368a32e7eb1d32737afc0",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-4739.webp": {
+    "mtime": 1785086645.666805,
+    "seen": 1788094875.4716742,
+    "ast_hash": "90de2c2b0817024a76b2e87faadfb0d1",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-6221.webp": {
+    "mtime": 1785086646.7949333,
+    "seen": 1788094875.4716742,
+    "ast_hash": "3934f00ef8a4bd692da0029af7bf629a",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-6259.webp": {
+    "mtime": 1785086647.333929,
+    "seen": 1788094875.4716742,
+    "ast_hash": "c8e3c3fb8553c0da28c87efae73f3ce8",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-6761.webp": {
+    "mtime": 1785086648.9811857,
+    "seen": 1788094875.471675,
+    "ast_hash": "63ae67c10a755df334f57a32c7fcb577",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-6788.webp": {
+    "mtime": 1785086649.4745405,
+    "seen": 1788094875.471675,
+    "ast_hash": "e9d742288a54a508ed6f4ca47d4413d9",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-6877.webp": {
+    "mtime": 1785086649.7802653,
+    "seen": 1788094875.471675,
+    "ast_hash": "a27785071005a65d77803357a71c568b",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-6963.webp": {
+    "mtime": 1785086651.1727083,
+    "seen": 1788094875.471675,
+    "ast_hash": "5d4c5f1be42fc595772fd08e6b82bf86",
+    "semantic_hash": ""
+  },
+  "public/images/rendezveny/sport/foci-bf-6984.webp": {
+    "mtime": 1785086652.091241,
+    "seen": 1788094875.4716759,
+    "ast_hash": "5c8c89042f385d43d4b73fa78506db7d",
+    "semantic_hash": ""
+  }
+}
