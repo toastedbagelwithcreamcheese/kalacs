@@ -59,6 +59,16 @@ export const metadata = {
       { rel: "android-chrome", url: "/android-chrome-512x512.png", sizes: "512x512" },
     ],
   },
+
+  /* A Meta domain-hitelesítése. A gyökér layoutban van, mert a Meta a
+     kezdőlapot nézi, és innen minden app/ útvonalra kimegy. Ha egyszer
+     igazolt a domain, a címkét akkor sem szabad kivenni — a Meta
+     időnként újraellenőrzi. */
+  verification: {
+    other: {
+      "facebook-domain-verification": "xjlftiihib5g0v9s4ziisgyv9l3q0m",
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
