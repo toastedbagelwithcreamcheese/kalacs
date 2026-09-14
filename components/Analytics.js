@@ -21,6 +21,21 @@ import Script from "next/script";
  * galériákon nem futna mérés.
  */
 const GA_ID = "G-MQFN0PVM0E";
+
+/** Űrlapokból hívható eseményküldés. Ha a gtag még nem töltött be, némán elszáll. */
+export function track(name, params = {}) {
+  try {
+    window.gtag?.("event", name, params);
+    /* A Meta saját szótárat használ: az ajánlatkérés náluk „Lead". */
+    if (name === "ajanlatkeres") window.fbq?.("track", "Lead", params);
+  } catch { /* a mérés soha nem törheti el az űrlapot */ }
+}
+/* Meta Pixel. Környezeti változóból jön, hogy a kód akkor is helyes maradjon,
+   amíg nincs pixel: ha nincs beállítva, egyetlen Meta-kérés sem indul.
+   Beállítás: Netlify → Site configuration → Environment variables →
+   NEXT_PUBLIC_META_PIXEL_ID = <a pixel 15-16 jegyű azonosítója>. */
+const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
+
 const KEY = "kbf-consent";
 const EVT = "kbf-consent-change";
 
@@ -45,6 +60,25 @@ export default function Analytics() {
   const consent = useSyncExternalStore(subscribe, readConsent, () => null);
   const ready = useSyncExternalStore(noop, () => true, () => false);
 
+  /* Konverziómérés. A GA4-ben csak akkor lesz „kulcsesemény", ha egyáltalán
+     érkezik ilyen esemény — eddig egy sem volt: a mérés a látogatók számát
+     tudta, azt nem, hányan hívnak vagy írnak. Delegált figyelő, mert a tel:
+     és mailto: hivatkozások öt különböző komponensben élnek. */
+  useEffect(() => {
+    const onClick = (e) => {
+      const a = e.target?.closest?.("a[href]");
+      if (!a) return;
+      const href = a.getAttribute("href") || "";
+      if (href.startsWith("tel:")) {
+        window.gtag?.("event", "phone_click", { link_url: href, page_path: location.pathname });
+      } else if (href.startsWith("mailto:")) {
+        window.gtag?.("event", "email_click", { link_url: href, page_path: location.pathname });
+      }
+    };
+    addEventListener("click", onClick, true);
+    return () => removeEventListener("click", onClick, true);
+  }, []);
+
   useEffect(() => {
     if (!ready || !consent) return;
     const v = consent === "granted" ? "granted" : "denied";
@@ -66,6 +100,19 @@ gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user
 gtag('js',new Date());gtag('config','${GA_ID}',{anonymize_ip:true});`}
       </Script>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+
+      {META_PIXEL_ID && (
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('consent','revoke');
+fbq('init','${META_PIXEL_ID}');
+fbq('track','PageView');`}
+        </Script>
+      )}
 
       {ready && consent === null && (
         <div

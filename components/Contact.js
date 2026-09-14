@@ -8,6 +8,7 @@ import {
   AlertCircle, CheckCircle2, MapPin, Instagram, Facebook, Sparkles
 } from "lucide-react";
 import DatePicker from "@/components/DatePicker";
+import { track } from "@/components/Analytics";
 
 // Szolgáltatás típusok
 const serviceOptions = [
@@ -90,6 +91,12 @@ const Contact = () => {
       })
       .then(() => {
         setIsSubmitting(false);
+        /* Az ajánlatkérés a lap tényleges célja — ezt kell a GA4-ben
+           kulceseménynek jelölni. Eddig egyetlen esemény sem érkezett. */
+        track("ajanlatkeres", {
+          service_type: formData.serviceType || "nincs_megadva",
+          found_via: formData.foundVia || "nincs_megadva",
+        });
         setMessageStatus({ type: "success", text: "Üzenet sikeresen elküldve! Hamarosan kereslek." });
         setFormData({
           name: "",

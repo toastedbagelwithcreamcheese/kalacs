@@ -322,7 +322,7 @@ export default function EasterSchoolPage() {
                 <Mail size={20} /> Írjon nekünk
               </Link>
               <Link 
-                href="tel:+36301234567" 
+                href="tel:+36308723777" 
                 className="border-2 border-[#C79C8D] text-[#C79C8D] px-8 py-4 rounded-full font-bold hover:bg-[#C79C8D] hover:text-white transition-all flex items-center justify-center gap-2"
               >
                 <Phone size={20} /> +36 30 872 3777

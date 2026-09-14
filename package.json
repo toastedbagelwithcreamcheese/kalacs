@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "media:prep": "node scripts/prep-event-images.mjs",
     "media:manifest": "node scripts/build-media-manifest.mjs",
-    "media:check": "node scripts/check-media-budget.mjs"
+    "media:check": "node scripts/check-media-budget.mjs",
+    "postbuild": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
