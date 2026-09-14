@@ -2,15 +2,19 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Star, Quote, User, Image as ImageIcon } from 'lucide-react';
-import Image from 'next/image';
+import { Star, Quote } from 'lucide-react';
 import TiltCard from '@/components/TiltCard';
+import { GOOGLE_VELEMENYEK, OSSZEGZES, GOOGLE_PROFIL_URL } from '@/constants/google-velemenyek';
 
-/* A véleményeket a szerver adja át (app/(foto)/page.js → HomeClient → ide).
-   Korábban itt, useEffect-ben töltődtek be, ezért a főoldal kiszolgált
-   HTML-jében sem volt belőlük semmi — a kereső és az AI üres szakaszt látott. */
-export default function HomePageReviews({ reviews = [] }) {
-    if (reviews.length === 0) return null;
+/* A főoldalon a Google Cégprofil nyilvános értékelései állnak — ezek azok,
+   amiket egy kereső is lát a cégprofilon, tehát nem „saját" vélemények.
+
+   SZÁNDÉKOSAN NINCS hozzájuk strukturált adat. A Google szabályzata szerint
+   a más felületről átvett értékeléseket nem szabad saját AggregateRating-ként
+   jelölni; az oldal értékelés-jelölése továbbra is csak a /velemenyek lapon
+   van, a saját, moderált véleményekből számolva. */
+export default function HomePageReviews() {
+    if (GOOGLE_VELEMENYEK.length === 0) return null;
 
     return (
         <section className="bg-[#F9F5F1] py-24 md:py-32 relative overflow-hidden">
@@ -30,7 +34,7 @@ export default function HomePageReviews({ reviews = [] }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                 >
                     <h2 className="font-akaya text-4xl md:text-6xl text-[#5A4A42] mb-6">
                         Közös <span className="text-shimmer italic">történeteink</span>
@@ -40,11 +44,39 @@ export default function HomePageReviews({ reviews = [] }) {
                     </p>
                 </motion.div>
 
+                {/* Google-összegzés — a forrás megnevezésével */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mb-14 text-[#5A4A42]"
+                >
+                    <span className="flex" aria-hidden="true">
+                        {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 text-[#C79C8D] fill-[#C79C8D]" />
+                        ))}
+                    </span>
+                    <span className="font-bold text-lg tabular-nums">
+                        {OSSZEGZES.atlag.toLocaleString('hu-HU', { minimumFractionDigits: 1 })}
+                    </span>
+                    <span className="text-[#5A4A42]/70">
+                        {OSSZEGZES.darab} Google-értékelés alapján
+                    </span>
+                    <a
+                        href={GOOGLE_PROFIL_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#C79C8D] font-bold underline underline-offset-4 hover:text-[#5A4A42] transition-colors"
+                    >
+                        Megnézem a Google-on
+                    </a>
+                </motion.div>
+
                 {/* Kártyák */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {reviews.map((review, i) => (
+                    {GOOGLE_VELEMENYEK.map((velemeny, i) => (
                         <motion.div
-                            key={i}
+                            key={velemeny.nev}
                             initial={{ opacity: 0, y: 40, scale: 0.94 }}
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, amount: 0.3 }}
@@ -52,67 +84,45 @@ export default function HomePageReviews({ reviews = [] }) {
                             style={{ perspective: 1000 }}
                         >
                             <TiltCard tiltStrength={5} className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-[#5A4A42]/5 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300">
-                                <Quote className="absolute top-8 right-8 text-[#C79C8D]/10 w-16 h-16 transform group-hover:-rotate-12 group-hover:scale-110 transition-transform duration-500" />
+                                <Quote aria-hidden="true" className="absolute top-8 right-8 text-[#C79C8D]/10 w-16 h-16" />
 
-                                <div className="flex items-center gap-5 mb-8 z-10">
-                                    <div className="relative w-16 h-16 shrink-0 rounded-full ring-2 ring-transparent group-hover:ring-[#C79C8D]/60 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(199,156,141,0.5)]">
-                                        {review.profile_image_url ? (
-                                            <Image src={review.profile_image_url} alt={review.name} fill sizes="64px" className="rounded-full object-cover" />
-                                        ) : (
-                                            <div className="w-full h-full rounded-full bg-[#F9F5F1] flex items-center justify-center text-[#C79C8D]">
-                                                <User size={28} />
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold font-akaya text-[#5A4A42] text-2xl">{review.name}</h3>
-                                        <div className="flex gap-1 mt-1">
-                                            {[...Array(5)].map((_, starIndex) => (
-                                                <motion.span
-                                                    key={starIndex}
-                                                    initial={{ opacity: 0, scale: 0 }}
-                                                    whileInView={{ opacity: 1, scale: 1 }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ delay: i * 0.12 + 0.3 + starIndex * 0.06, type: "spring", stiffness: 300, damping: 15 }}
-                                                >
-                                                    <Star className={`w-4 h-4 ${starIndex < review.rating ? 'text-[#C79C8D] fill-[#C79C8D]' : 'text-gray-200'}`} />
-                                                </motion.span>
-                                            ))}
-                                        </div>
+                                <div className="mb-6 z-10">
+                                    <h3 className="font-bold font-akaya text-[#5A4A42] text-2xl">{velemeny.nev}</h3>
+                                    <div className="flex gap-1 mt-2">
+                                        {[...Array(5)].map((_, starIndex) => (
+                                            <motion.span
+                                                key={starIndex}
+                                                initial={{ opacity: 0, scale: 0 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: i * 0.12 + 0.3 + starIndex * 0.06, type: "spring", stiffness: 300, damping: 15 }}
+                                            >
+                                                <Star className={`w-4 h-4 ${starIndex < velemeny.ertekeles ? 'text-[#C79C8D] fill-[#C79C8D]' : 'text-gray-200'}`} />
+                                            </motion.span>
+                                        ))}
                                     </div>
                                 </div>
 
-                                <p className="text-[#5A4A42]/80 italic leading-relaxed mb-8 flex-grow relative z-10 text-sm md:text-base">
-                                    "{review.review_text}"
-                                </p>
+                                <blockquote className="text-[#5A4A42]/80 italic leading-relaxed mb-6 flex-grow relative z-10 text-sm md:text-base">
+                                    „{velemeny.szoveg}”
+                                </blockquote>
 
-                                {review.product_image_urls && review.product_image_urls.length > 0 && (
-                                    <div className="mt-auto pt-6 border-t border-[#5A4A42]/5 z-10">
-                                        <p className="text-[10px] text-[#C79C8D] font-bold uppercase tracking-[0.2em] mb-3 flex items-center gap-1">
-                                            <ImageIcon size={12} /> Csatolt képek
-                                        </p>
-                                        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-                                            {review.product_image_urls.map((imgUrl, idx) => (
-                                                <a href={imgUrl} target="_blank" rel="noopener noreferrer" key={idx} className="relative w-16 h-16 shrink-0 rounded-xl overflow-hidden shadow-sm group/img">
-                                                    <Image src={imgUrl} alt="Vélemény fotó" fill className="object-cover group-hover/img:scale-110 transition-transform duration-500" sizes="64px" />
-                                                </a>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
+                                <p className="mt-auto pt-5 border-t border-[#5A4A42]/5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C79C8D] z-10">
+                                    Google-értékelés
+                                </p>
                             </TiltCard>
                         </motion.div>
                     ))}
                 </div>
 
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     className="text-center mt-16"
                 >
                     <Link href="/velemenyek" className="inline-block border-b-2 border-[#C79C8D] pb-1 text-[#5A4A42] font-bold uppercase tracking-widest text-sm hover:text-[#C79C8D] transition-colors">
-                        Összes vélemény olvasása
+                        Írásos visszajelzések olvasása
                     </Link>
                 </motion.div>
             </div>

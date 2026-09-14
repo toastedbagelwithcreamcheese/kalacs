@@ -1,5 +1,4 @@
 import HomeClient from "./HomeClient";
-import { getApprovedReviews } from "@/lib/reviews";
 
 /**
  * A főoldal szerver-burkolója.
@@ -17,9 +16,9 @@ export const metadata = {
   alternates: { canonical: "/" },
 };
 
-export default async function Page() {
-  /* A három legfrissebb vélemény szerveroldalon: így a főoldal HTML-jében is
-     ott a valódi ügyfélszöveg, nem csak hidratálás után. */
-  const reviews = (await getApprovedReviews()).slice(0, 3);
-  return <HomeClient reviews={reviews} />;
+export default function Page() {
+  /* A főoldalon a Google Cégprofil nyilvános értékelései állnak (a komponens
+     maga hozza őket), a saját, moderált vélemények pedig a /velemenyek lapon.
+     A Supabase-lekérés ezért itt már nem kell. */
+  return <HomeClient />;
 }
