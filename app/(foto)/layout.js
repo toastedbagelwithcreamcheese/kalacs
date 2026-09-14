@@ -99,7 +99,12 @@ export default function FotoLayout({ children }) {
     "@id": "https://kovacsbalintfoto.hu",
     "url": "https://kovacsbalintfoto.hu",
     "telephone": "+36308723777",
-    "priceRange": "30000 HUF - 150000+ HUF",
+    "email": "kapcsolat@kovacsbalintfoto.hu",
+    "knowsLanguage": "hu",
+    "logo": "https://kovacsbalintfoto.hu/images/profilkep.webp",
+    /* A Google a priceRange-ben rövid, szimbolikus jelzést vár ($–$$$$);
+       a konkrét árak a szolgáltatásoldalak Offer-jeiben vannak. */
+    "priceRange": "$$",
     "description": "Prémium esküvői, portré, családi és autófotózás Zalaegerszegen és Budapesten. Őszinte pillanatok feszengés nélkül.",
     "address": {
       "@type": "PostalAddress",
@@ -172,9 +177,18 @@ export default function FotoLayout({ children }) {
     ]
   };
 
+  const website = {
+    "@type": "WebSite",
+    "@id": "https://kovacsbalintfoto.hu/#website",
+    url: "https://kovacsbalintfoto.hu",
+    name: "Kovács Bálint Fotográfia",
+    inLanguage: "hu-HU",
+    publisher: { "@id": "https://kovacsbalintfoto.hu" },
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [business, person],
+    "@graph": [business, person, website],
   };
 
   return (

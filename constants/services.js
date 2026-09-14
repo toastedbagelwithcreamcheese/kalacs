@@ -419,3 +419,32 @@ export const SERVICES_DATA = {
     ]
   },
 };
+/* Témacsoportok. A szolgáltatásoldalak törzsszövegéből eddig EGYETLEN belső
+   link sem ment másik szolgáltatásra, a portfólióra vagy a véleményekre —
+   csak a /contact-ra és a láblécre. A horgonyszöveg szándékosan leíró. */
+export const KAPCSOLODO = {
+  eskuvo: [
+    { slug: "portre", anchor: "jegyes- és portréfotózás a nagy nap előtt" },
+    { slug: "family-sessions", anchor: "családi fotózás Zalaegerszegen, később" },
+  ],
+  portre: [
+    { slug: "family-sessions", anchor: "családi fotózás Zalaegerszegen" },
+    { slug: "eskuvo", anchor: "esküvői fotózás Zalaegerszegen és Budapesten" },
+  ],
+  kismama: [
+    { slug: "family-sessions", anchor: "családi fotózás — amikor megszületik, itt folytatjuk" },
+    { slug: "portre", anchor: "portréfotózás Zalaegerszegen" },
+  ],
+  "family-sessions": [
+    { slug: "kismama", anchor: "kismama fotózás Zalaegerszegen" },
+    { slug: "portre", anchor: "portréfotózás Zalaegerszegen" },
+  ],
+  autok: [
+    { slug: "portre", anchor: "portréfotózás Zalaegerszegen és Budapesten" },
+    { slug: "kutyusok", anchor: "kutyafotózás Zalaegerszegen" },
+  ],
+  kutyusok: [
+    { slug: "family-sessions", anchor: "családi fotózás Zalaegerszegen" },
+    { slug: "portre", anchor: "portréfotózás Zalaegerszegen" },
+  ],
+};

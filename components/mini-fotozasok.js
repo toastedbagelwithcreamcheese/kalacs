@@ -5,49 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, CheckCircle, Calendar, Clock, Sparkles, Snowflake } from "lucide-react";
+import { KARACSONY_CSOMAGOK } from "@/constants/mini-fotozasok";
 
 // SZEZONÁLIS CSOMAGOK (Mini Session fókusz)
-const seasonalPackages = [
-  {
-    title: "Ünnepi Mini",
-    price: "30.000 Ft",
-    duration: "25-30 perc fotózás",
-    features: [
-      "Gondosan berendezett ünnepi díszlet",
-      "10 db profi, retusált digitális fotó",
-      "Online válogató galéria",
-      "Maximum 2 felnőtt + 2 gyermek",
-      "Gyors átadási határidő (5 munkanap)",
-    ],
-    popular: false,
-  },
-  {
-    title: "Családi Karácsony",
-    price: "39.000 Ft",
-    duration: "50-60 perc fotózás",
-    features: [
-      "Több háttér/helyszín használata",
-      "20 db profi, retusált digitális fotó",
-      "Minden további kép: 1.790 Ft/db",
-      "Online letölthető galéria",
-      "Ajándék: 3 db nyomtatott kép (10x15)",
-    ],
-    popular: true,
-  },
-  {
-    title: "Prémium Ünnepi Emlék",
-    price: "49.000 Ft",
-    duration: "90 perc fotózás",
-    features: [
-      "Korlátlan létszám (közeli hozzátartozók)",
-      "35 db profi, retusált digitális fotó",
-      "Saját, otthoni helyszín lehetősége",
-      "Díszdobozos pendrive az összes képpel",
-      "Prémium fotókönyv összeállítása",
-    ],
-    popular: false,
-  },
-];
+const seasonalPackages = KARACSONY_CSOMAGOK;
 
 export default function SzezonalisFotozas() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -89,8 +50,14 @@ export default function SzezonalisFotozas() {
                <Sparkles size={20} />
                <Snowflake size={20} />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 italic" style={{ fontFamily: "Noto Serif Armenian, serif" }}>
+            {/* A főcím eddig „Ünnepi Pillanatok" volt: se szolgáltatás, se hely
+                nem szerepelt benne, így a lap semmire nem tudott rangsorolni.
+                A régi felirat megmaradt szemöldök-szövegként. */}
+            <p className="text-xs md:text-sm uppercase tracking-[0.35em] mb-4 opacity-80">
               Ünnepi Pillanatok
+            </p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 italic" style={{ fontFamily: "Noto Serif Armenian, serif" }}>
+              Karácsonyi mini fotózás Zalaegerszegen
             </h1>
             <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
               Legyen szó Karácsonyról, Húsvétról vagy szezonális Mini fotózásokról, segítek megőrizni az év legszebb ünnepeinek fényét.
@@ -105,6 +72,10 @@ export default function SzezonalisFotozas() {
       {/* MIÉRT VÁLASSZ MINI FOTÓZÁST? */}
       <section className="py-24 bg-rose-50/30">
         <div className="container mx-auto px-6">
+          {/* A h1 után eddig rögtön h3 jött — a köztes szint hiányzott. */}
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ fontFamily: "Noto Serif Armenian, serif" }}>
+            Miért válaszd a mini fotózást?
+          </h2>
           <div className="grid md:grid-cols-3 gap-12 text-center">
             {[
               { icon: <Clock size={32} />, title: "Gyors & Gördülékeny", text: "A mini sessionök rövidek, így a legkisebbek is végig élvezik a figyelmet." },

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { SERVICES_DATA, KAPCSOLODO } from "@/constants/services";
 import Link from "next/link";
 import { CheckCircle, Plus, Minus, ArrowRight, Camera, ChevronDown, Sparkles } from "lucide-react";
 import { useState } from "react";
@@ -17,6 +18,7 @@ const fadeIn = {
 
 export default function ServiceClient({ data }) {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const kapcsolodo = (KAPCSOLODO[data.slug] || []).filter((k) => SERVICES_DATA[k.slug]);
   const [lightboxIndex, setLightboxIndex] = useState(-1);
   const [visibleImages, setVisibleImages] = useState(6); 
 
@@ -241,6 +243,45 @@ export default function ServiceClient({ data }) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* 5b. KAPCSOLÓDÓ FOTÓZÁSOK — belső linkek leíró horgonyszöveggel */}
+      {kapcsolodo.length > 0 && (
+        <section className="py-16 bg-white border-t border-[#5A4A42]/5">
+          <div className="container mx-auto px-6 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold font-akaya text-[#5A4A42] mb-6">
+              Ez is érdekelhet
+            </h2>
+            <ul className="space-y-3 list-none p-0 text-[#5A4A42]/80 font-light">
+              {kapcsolodo.map((k) => (
+                <li key={k.slug}>
+                  <Link
+                    href={`/szolgaltatasok/${k.slug}`}
+                    className="underline decoration-[#C79C8D]/50 underline-offset-4 hover:text-[#C79C8D] transition-colors"
+                  >
+                    {k.anchor}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/portfolio"
+                  className="underline decoration-[#C79C8D]/50 underline-offset-4 hover:text-[#C79C8D] transition-colors"
+                >
+                  válogatás a portfólióból
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/velemenyek"
+                  className="underline decoration-[#C79C8D]/50 underline-offset-4 hover:text-[#C79C8D] transition-colors"
+                >
+                  mit írnak azok, akikkel már dolgoztam
+                </Link>
+              </li>
+            </ul>
           </div>
         </section>
       )}

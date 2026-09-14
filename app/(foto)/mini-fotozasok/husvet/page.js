@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { HUSVET_FAQ } from "@/constants/mini-fotozasok";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -89,24 +90,7 @@ const packages = [
   },
 ];
 
-const faqData = [
-  { 
-    question: "Mennyi munkával jár ez az óvónőknek?", 
-    answer: "Gyakorlatilag semmivel. Mi hozzuk a dekorációt, mi kezeljük a rendeléseket és a fizetést. Az óvónőknek csak a gyerekek bekísérésében kell segíteniük, minden mást mi intézünk." 
-  },
-  { 
-    question: "Hogyan jutnak el a képek a szülőkhöz?", 
-    answer: "Minden gyermek kap egy egyedi kódot. Ezzel a szülő belép a weboldalunkra, ahol csak a saját gyermeke képeit látja. Itt tud rendelni és fizetni is." 
-  },
-  { 
-    question: "Milyen hátteret használtok?", 
-    answer: "Kerüljük a művi, digitális háttereket. Valódi, prémium minőségű tavaszi kiegészítőkkel (fa elemek, virágok, kosarak) építünk fel egy kis stúdiót a helyszínen." 
-  },
-  { 
-    question: "Biztonságosak az adatok?", 
-    answer: "Igen, rendszerünk GDPR kompatibilis. A képek zárt szerveren vannak, és csak az adott kód birtokában tekinthetők meg." 
-  },
-];
+const faqData = HUSVET_FAQ;
 
 export default function EasterSchoolPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -287,18 +271,16 @@ export default function EasterSchoolPage() {
                   <span className="text-lg">{item.question}</span>
                   <ChevronDown className={`transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`} />
                 </button>
-                <AnimatePresence>
-                  {openFaqIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="pb-6 text-[#5A4A42]/70 leading-relaxed">{item.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* Nem feltételes: a válaszok a lap legegyedibb szövegei,
+                    benne kell lenniük a kiszolgált HTML-ben. */}
+                <div
+                  className="grid transition-[grid-template-rows] duration-300 ease-out"
+                  style={{ gridTemplateRows: openFaqIndex === index ? "1fr" : "0fr" }}
+                >
+                  <div className="overflow-hidden">
+                    <p className="pb-6 text-[#5A4A42]/70 leading-relaxed">{item.answer}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

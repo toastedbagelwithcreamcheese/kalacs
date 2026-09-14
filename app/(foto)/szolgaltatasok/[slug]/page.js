@@ -62,12 +62,51 @@ export default async function ServicePage({ params }) {
     })),
   } : null;
 
+  /* A hat szolgáltatás eddig csak a főoldal LocalBusiness-ében szerepelt
+     Offer-ként, ár nélkül — miközben a kezdőár ott van a lapon. Innentől
+     minden szolgáltatásoldal saját Service csomópontot ad, a látható árral. */
+  const startFt = Number(String(data.startingPrice ?? "").replace(/[^\d]/g, ""));
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: data.title,
+    serviceType: data.title,
+    description: data.seoDescription ?? data.description,
+    url: `${baseUrl}/szolgaltatasok/${slug}`,
+    image: `${baseUrl}${data.heroImage}`,
+    provider: { "@id": `${baseUrl}/#kovacs-balint` },
+    areaServed: [
+      { "@type": "City", name: "Zalaegerszeg" },
+      { "@type": "City", name: "Budapest" },
+      { "@type": "Country", name: "Magyarország" },
+    ],
+    ...(Number.isFinite(startFt) && startFt > 0
+      ? {
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "HUF",
+            url: `${baseUrl}/szolgaltatasok/${slug}`,
+            availability: "https://schema.org/InStock",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              minPrice: startFt,
+              priceCurrency: "HUF",
+            },
+          },
+        }
+      : {}),
+  };
+
   // Ha megvan az adat, átadjuk a kliens oldali UI komponensnek
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       {faqJsonLd && (
         <script
