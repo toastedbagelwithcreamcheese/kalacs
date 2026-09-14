@@ -1,6 +1,7 @@
 // pages/_app.js
 import Head from 'next/head'; // 1. FONTOS: Head komponens importálása a next/head-ből
-import '@/app/globals.css'; // Feltételezve, hogy a globális stíluslapod továbbra is itt található
+import '@/app/globals.css';
+import Analytics from '@/components/Analytics'; // Feltételezve, hogy a globális stíluslapod továbbra is itt található
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -21,6 +22,8 @@ function MyApp({ Component, pageProps }) {
       
       {/* A tényleges oldal komponens, ami megjelenik */}
       <Component {...pageProps} />
+      {/* A pages/ router nem kap az app/layout.js-től semmit, ezért itt is kell. */}
+      <Analytics />
     </>
   );
 }

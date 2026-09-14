@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
 
 // FONTOS: a "latin" subset NEM tartalmazza az ő (U+0151) és ű (U+0171) betűket --
 // azok a "latin-ext"-ben vannak. Enélkül a magyar szövegben ez a két karakter
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
     <html lang="hu">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -62,4 +62,11 @@ export const naih = {
 };
 
 /** A jogi dokumentumok közös hatálybalépési dátuma. */
-export const hatalyosDatum = "2026. szeptember 14.";
+export const hatalyosDatum = "2026. szeptember 14."
+
+// A süti-szabályzatnak SAJÁT hatálybalépési dátuma van: 2026-09-14-én a
+// weboldal bekapcsolta a hozzájárulás mögé kötött Google Analytics 4 mérést,
+// ezért az a dokumentum változott. Az ÁSZF, az impresszum és az adatvédelmi
+// tájékoztató érintetlen maradt, így azok dátumát nem mozgatjuk — egy jogi
+// lapon a dátum azt jelenti, mikor változott utoljára a TARTALMA.
+export const cookieHatalyosDatum = "2026. szeptember 14.";;

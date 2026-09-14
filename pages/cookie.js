@@ -1,7 +1,7 @@
 // pages/cookie.js
 import Head from "next/head";
 import LegalPageLayout from "@/components/LegalPageLayout";
-import { hatalyosDatum } from "@/constants/legal";
+import { cookieHatalyosDatum } from "@/constants/legal";
 
 const CookiePage = () => {
   return (
@@ -11,12 +11,13 @@ const CookiePage = () => {
         <meta name="description" content="Tájékoztató a kovacsbalintfoto.hu weboldalon használt sütikről." />
         <link rel="canonical" href="https://kovacsbalintfoto.hu/cookie" />
       </Head>
-      <LegalPageLayout title="Cookie Szabályzat" effectiveDate={hatalyosDatum}>
+      <LegalPageLayout title="Cookie Szabályzat" effectiveDate={cookieHatalyosDatum}>
         <p>
-          A kovacsbalintfoto.hu weboldal jelenleg <strong>kizárólag egyetlen, technikailag
-          elengedhetetlen sütit</strong> használ — statisztikai, hirdetési vagy remarketing célú
-          süti (pl. Google Analytics, Meta Pixel) az oldalon nem fut, ezért ehhez cookie-elfogadó
-          sávra sincs szükség.
+          A kovacsbalintfoto.hu weboldal egy <strong>technikailag elengedhetetlen</strong> sütit,
+          valamint — <strong>kizárólag az Ön hozzájárulása esetén</strong> — látogatottság-mérési
+          sütiket használ. Hirdetési és remarketing süti (pl. Meta Pixel, Google Ads) az oldalon
+          nem fut. A mérésről az oldal alján megjelenő sávon dönthet; a döntés bármikor
+          megváltoztatható a böngésző tárolt adatainak törlésével.
         </p>
 
         <h2>1. Mi az a süti (cookie)?</h2>
@@ -34,6 +35,15 @@ const CookiePage = () => {
               <td>Szerződés teljesítése / a szolgáltatás igénybevételéhez elengedhetetlen (GDPR 6. cikk (1) b), ePrivacy 5. cikk (3) — technikailag szükséges süti, elfogadás nélkül is beállítható)</td>
               <td>24 óra</td>
             </tr>
+            <tr>
+              <td><code>_ga</code>, <code>_ga_MQFN0PVM0E</code></td>
+              <td>Google Analytics 4: megkülönbözteti az egyes látogatókat és munkameneteket, hogy
+              összesített látogatottsági statisztika készülhessen (hány látogató, mely oldalak,
+              milyen forrásból). Egyéni azonosítására nem használjuk.</td>
+              <td>Hozzájárulás (GDPR 6. cikk (1) a), ePrivacy 5. cikk (3) — <strong>csak elfogadás
+              után</strong> kerül elhelyezésre)</td>
+              <td>2 év</td>
+            </tr>
           </tbody>
         </table>
         <p>
@@ -45,16 +55,25 @@ const CookiePage = () => {
 
         <h2>3. Statisztikai és marketing sütik</h2>
         <p>
-          A weboldal jelen dokumentum közzétételekor <strong>nem használ</strong> statisztikai
-          (pl. Google Analytics) vagy marketing/remarketing (pl. Meta Pixel, Google Ads) sütiket.
-          Ha ez a jövőben változik, a jelen Cookie Szabályzat frissül, és a weboldalon
-          cookie-elfogadó sáv jelenik meg a hozzájárulás bekéréséhez.
+          A weboldal a <strong>Google Analytics 4</strong> szolgáltatást használja a látogatottság
+          mérésére (üzemeltető: Google Ireland Limited). A mérés úgynevezett hozzájárulási módban
+          (Consent Mode v2) fut: <strong>elutasítás esetén</strong> a Google süti és azonosító
+          nélkül, névtelen jelzésekből számol összesített becslést — az Ön böngészőjében ilyenkor
+          nem marad mérési süti. <strong>Elfogadás esetén</strong> a fenti táblázatban felsorolt két
+          süti kerül elhelyezésre. Az IP-cím anonimizálva továbbítódik.
+        </p>
+        <p>
+          Hirdetési és remarketing sütit (pl. Meta Pixel, Google Ads) a weboldal
+          <strong>nem használ</strong>. Ha ez a jövőben változik, a jelen Cookie Szabályzat frissül,
+          és a hozzájárulást külön kérjük be.
         </p>
 
         <h2>4. Sütik kezelése, letiltása</h2>
         <p>
           A <code>gallery-auth</code> süti a böngésző beállításain keresztül bármikor törölhető —
-          ez azzal jár, hogy az adott galériába újra be kell jelentkezni a jelszóval.
+          ez azzal jár, hogy az adott galériába újra be kell jelentkezni a jelszóval. A mérésre adott
+          hozzájárulása szintén a böngészőben tárolódik (<code>kbf-consent</code> néven, a böngésző
+          helyi tárolójában); ennek törlésével a döntés visszavonható, és az oldal újra rákérdez.
         </p>
         <ul>
           <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
