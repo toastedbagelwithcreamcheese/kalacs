@@ -79,6 +79,14 @@ export default function ServiceClient({ data }) {
             <motion.p variants={fadeIn} className="text-[#5A4A42] leading-relaxed text-lg md:text-xl font-light">
               {data.description}
             </motion.p>
+            {data.localIntro && (
+              <motion.p
+                variants={fadeIn}
+                className="text-[#5A4A42]/70 leading-relaxed text-base md:text-lg font-light mt-6"
+              >
+                {data.localIntro}
+              </motion.p>
+            )}
          </div>
       </motion.section>
 

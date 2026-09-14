@@ -83,7 +83,7 @@ export default function Footer() {
 
           {/* 2. Portfólió (Egyesítve a Galériák és Szolgáltatások) */}
           <div className="lg:col-span-4">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C79C8D] mb-8">Portfólió</h4>
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C79C8D] mb-8">Portfólió</h3>
             <ul className="space-y-4">
               <li>
                 <Link href="/szolgaltatasok/eskuvo" className="text-white/90 font-medium hover:text-[#C79C8D] transition-colors text-sm flex items-center gap-2.5">
@@ -95,14 +95,20 @@ export default function Footer() {
               <li><Link href="/szolgaltatasok/kismama" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Baby size={14} className="text-white/30 shrink-0" /> Kismama</Link></li>
               <li><Link href="/szolgaltatasok/autok" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Car size={14} className="text-white/30 shrink-0" /> Autó, motoros</Link></li>
               <li><Link href="/szolgaltatasok/kutyusok" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Dog size={14} className="text-white/30 shrink-0" /> Kutyusok</Link></li>
-              {/*<li className="pt-2"><Link href="/mini-fotozasok/husvet" className="text-[#C79C8D] hover:text-white transition-colors text-sm font-bold flex items-center gap-2">Húsvéti Mini</Link></li>*/}
+              {/* A két mini-fotózás és a gyűjtőoldal eddig sehonnan nem volt
+                  elérhető a lábléc felől — a karácsonyi lapra egyáltalán nem
+                  vezetett belső hivatkozás. */}
+              <li className="pt-2"><Link href="/szolgaltatasok" className="text-white/80 hover:text-white transition-colors text-sm font-bold flex items-center gap-2.5"><Camera size={14} className="text-white/30 shrink-0" /> Összes szolgáltatás</Link></li>
+              <li><Link href="/mini-fotozasok/husvet" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Camera size={14} className="text-white/30 shrink-0" /> Húsvéti mini fotózás</Link></li>
+              <li><Link href="/mini-fotozasok/karacsony" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Camera size={14} className="text-white/30 shrink-0" /> Karácsonyi mini fotózás</Link></li>
             </ul>
           </div>
 
           {/* 3. Információk */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C79C8D] mb-8">Információk</h4>
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C79C8D] mb-8">Információk</h3>
             <ul className="space-y-4">
+              <li><Link href="/portfolio" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Camera size={14} className="text-white/30 shrink-0" /> Portfólió</Link></li>
               <li><Link href="/about" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><User size={14} className="text-white/30 shrink-0" /> Rólam</Link></li>
               <li><Link href="/contact" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Mail size={14} className="text-white/30 shrink-0" /> Kapcsolat</Link></li>
               <li><Link href="/velemenyek" className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2.5"><Star size={14} className="text-white/30 shrink-0" /> Vélemények</Link></li>

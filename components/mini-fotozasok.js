@@ -126,16 +126,16 @@ export default function SzezonalisFotozas() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/karacsony_patriek/_47A2095.webp" alt="Karácsony" fill className="object-cover" />
+              <Image src="/images/karacsony_patriek/_47A2095.webp" alt="Kislány bíbor bársonyruhában retró játékautón a karácsonyfa mellett" fill className="object-cover" />
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-0">
-              <Image src="/images/karacsony_patriek/_47A2157.webp" alt="Karácsony" fill className="object-cover" />
+              <Image src="/images/karacsony_patriek/_47A2157.webp" alt="Anya és kislánya a fényfüzéres sátorban, karácsonyi mini fotózáson" fill className="object-cover" />
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/karacsony_patriek/_47A2351.webp" alt="Karácsony" fill className="object-cover" />
+              <Image src="/images/karacsony_patriek/_47A2351.webp" alt="Kisbaba piros kockás ruhában a szőnyegen, háttérben a fa fényeivel" fill className="object-cover" />
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-0">
-              <Image src="/images/karacsony_patriek/_47A2438.webp" alt="Karácsony" fill className="object-cover" />
+              <Image src="/images/karacsony_patriek/_47A2438.webp" alt="Kislány bíbor bársonyruhában nevet a karácsonyfa előtt" fill className="object-cover" />
             </div>
           </div>
         </div>

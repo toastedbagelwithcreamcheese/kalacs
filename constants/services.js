@@ -12,6 +12,10 @@ export const SERVICES_DATA = {
     slug: "eskuvo",
     heroSubtitle: "Az igenektől az utolsó táncig",
     description: "Életetek nagy napja megérdemli a professzionális figyelmet. Stílusom az elegancia és a természetesség ötvözete, célom pedig az, hogy a képeket nézve újraélhessétek minden pillanatát.",
+    /* Egy mondat, amiben a szolgáltatás és a helyszín EGYÜTT szerepel.
+       Korábban egyetlen oldalon sem volt ilyen mondat — ezért találtak
+       meg autós témában (a képekből), családiban viszont nem. */
+    localIntro: "Esküvői fotózást Zalaegerszegen és Zala vármegyében, valamint Budapesten és környékén vállalok — de egy jó esküvőért az ország bármely pontjára elutazom.",
     heroImage: "/images/_BF_2915.webp", 
     gridClass: "col-span-1 md:col-span-12 lg:col-span-7 row-span-1",
     tags: ["Egész napos", "Jegyesfotózás", "Fine-art retus"],
@@ -27,6 +31,10 @@ export const SERVICES_DATA = {
     slug: "portre",
     heroSubtitle: "Portrék, amik Rólad szólnak",
     description: "Természetes, stílusos és őszinte képek. Fedezd fel a benned rejlő karaktert. Legyen szó egy gyors, lényegretörő üzleti portréról, vagy egy kreatív, elmélyült sorozatról – a célom, hogy feszengés nélkül megmutassuk a legjobb arcodat.",
+    /* Egy mondat, amiben a szolgáltatás és a helyszín EGYÜTT szerepel.
+       Korábban egyetlen oldalon sem volt ilyen mondat — ezért találtak
+       meg autós témában (a képekből), családiban viszont nem. */
+    localIntro: "Portréfotózásra Zalaegerszegen és Budapesten van bázisom: a zalai helyszínek a természetes, szabadtéri portrékhoz valók, a budapesti utcák pedig a városi, esti sorozatokhoz.",
     heroImage: "/images/_BF_0185_hero.webp",
     gridClass: "col-span-1 md:col-span-6 lg:col-span-4 row-span-1",
     tags: ["Stúdió / Szabadtér", "Üzleti portré", "Kreatív"],
@@ -88,9 +96,9 @@ export const SERVICES_DATA = {
       { src: "/images/_BF_0299.webp", alt: "Művészi esti portré a keszthelyi móló kivilágított korlátjánál" },
       { src: "/images/_BF_0300.webp", alt: "Hangulatos éjszakai fotó a Balaton-parton, sejtelmes fényekkel" },
       { src: "/images/_BF_0306.webp", alt: "Közeli portré fotó esti fényben a móló végénél" },
-      { src: "/images/anna_varosliget/_47A7016.webp", alt: "Kreatív portré" },
+      { src: "/images/anna_varosliget/_47A7016.webp", alt: "Ülő portré bőrkabátban az őszi parkban" },
       { src: "/images/_BF_7627.webp", alt: "Természetes fényekkel készült fotó a virágzó mezőn" },
-      { src: "/images/anna_varosliget/_47A7180.webp", alt: "Kreatív portré" },
+      { src: "/images/anna_varosliget/_47A7180.webp", alt: "Portré szemüvegben, kéz a hajban, őszi utcarészlet előtt" },
       // Tulipánmező - Tavaszi portrék (.JPEG)
       { src: "/images/_BF_9914.webp", alt: "Tavaszi portré fotózás színes tulipánmező közepén" },
       { src: "/images/_BF_9914-2.webp", alt: "Művészi távlati kép a virágzó tulipánok között" },
@@ -104,25 +112,25 @@ export const SERVICES_DATA = {
       { src: "/images/_BF_0185-2.webp", alt: "Kreatív kompozíció a tulipánmezőn készült fotósorozatból" },
       { src: "/images/_BF_0190.webp", alt: "Profi kültéri portré a tavaszi virágzás idején" },
       { src: "/images/_BF_0195.webp", alt: "Érzelmes pillanat a tulipánok között, lágy tónusokkal" },
-      { src: "/images/_MG_4270festettV5.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_8992.webp", alt: "Gyermek portré" },
-      { src: "/images/_MG_7542.webp", alt: "Felnőtt portré" },
-      { src: "/images/Virag_BP/6.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_8932.webp", alt: "Gyermek portré" },
-      { src: "/images/_MG_4462.webp", alt: "Felnőtt portré" },
-      { src: "/images/Virag_BP/1_1.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_4486.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_8634.webp", alt: "Gyermek portré" },
-      { src: "/images/Virag_BP/11.webp", alt: "Felnőtt portré" },
-      { src: "/images/Virag_BP/_MG_2433.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_8620.webp", alt: "Gyermek portré" },
-      { src: "/images/_MG_7266.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_9381.webp", alt: "Gyermek portré" },
-      { src: "/images/Virag_BP/3.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_0047.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_9410.webp", alt: "Gyermek portré" },
-      { src: "/images/Virag_BP/7.webp", alt: "Felnőtt portré" },
-      { src: "/images/_MG_0315-2.webp", alt: "Felnőtt portré" }
+      { src: "/images/_MG_4270festettV5.webp", alt: "Kék szemű portré rózsaszín virágzó ágak mögül" },
+      { src: "/images/_MG_8992.webp", alt: "Kislány levendulás kosárral a levendulafarm sátra mellett" },
+      { src: "/images/_MG_7542.webp", alt: "Portré rózsaszín széken ülve a levendulamezőn" },
+      { src: "/images/Virag_BP/6.webp", alt: "Éjszakai portré bőrkabátban, városi fények előtt" },
+      { src: "/images/_MG_8932.webp", alt: "Kislány függőszékben a levendulamezőn" },
+      { src: "/images/_MG_4462.webp", alt: "Portré virágzó ágak között, lágy háttérrel" },
+      { src: "/images/Virag_BP/1_1.webp", alt: "Éjszakai portré a híd türkiz fényeinél" },
+      { src: "/images/_MG_4486.webp", alt: "Hátulról fotózott portré csíkos felsőben, virágzó fák előtt" },
+      { src: "/images/_MG_8634.webp", alt: "Kislány a japánkert piros hídján, virágos háttérrel" },
+      { src: "/images/Virag_BP/11.webp", alt: "Éjszakai portré a Duna-parton, háttérben a kivilágított Budai Várral" },
+      { src: "/images/Virag_BP/_MG_2433.webp", alt: "Fekete-fehér éjszakai portré a Duna-parti korlátnál, budapesti panorámával" },
+      { src: "/images/_MG_8620.webp", alt: "Kislány a japánkert piros hídjánál, tavaszi virágok között" },
+      { src: "/images/_MG_7266.webp", alt: "Portré kerti széken, levendulamező előtt" },
+      { src: "/images/_MG_9381.webp", alt: "Kislány szalmakalapban a levendulamezőn" },
+      { src: "/images/Virag_BP/3.webp", alt: "Esti utcai portré, elmosódó forgalom fényeivel" },
+      { src: "/images/_MG_0047.webp", alt: "Estélyi ruhás portré a kastély szökőkútjánál" },
+      { src: "/images/_MG_9410.webp", alt: "Kislány szalmakalapban a lila ajtó előtt" },
+      { src: "/images/Virag_BP/7.webp", alt: "Fekete-fehér éjszakai portré a rakparton" },
+      { src: "/images/_MG_0315-2.webp", alt: "Fekete-fehér portré fekete estélyi ruhában, kastély előtt" }
     ],
     startingPrice: "30.000 Ft",
     baseFeatures: [
@@ -155,6 +163,10 @@ export const SERVICES_DATA = {
     slug: "kismama",
     heroSubtitle: "Az Anyaság Varázsa",
     description: "Örökítsük meg a várakozás legszebb pillanatait finom, természetes és időtálló fotókon. Feszültségmentes, nyugodt környezetben alkotunk, ahol Te vagy a középpontban, de természetesen a párod és a nagyobb tesók is részesei lehetnek az élménynek.",
+    /* Egy mondat, amiben a szolgáltatás és a helyszín EGYÜTT szerepel.
+       Korábban egyetlen oldalon sem volt ilyen mondat — ezért találtak
+       meg autós témában (a képekből), családiban viszont nem. */
+    localIntro: "Kismama fotózásra Zalaegerszegen és környékén leggyakrabban a szabadban vagy nálatok otthon kerül sor, de budapesti helyszínen is szívesen dolgozom.",
     heroImage: "/images/kata_kismama/_47A9158-2.webp",
     gridClass: "col-span-1 md:col-span-6 lg:col-span-4 row-span-1",
     tags: ["Kismama ruhák", "Meghitt", "Páros képek"],
@@ -215,6 +227,10 @@ export const SERVICES_DATA = {
     slug: "family-sessions",
     heroSubtitle: "Őszinte pillanatok és közös nevetések",
     description: "Felejtsétek el a feszengést és a kötelező mosolygást. Nálam a fotózás közös játék, séta és nevetés. Örökítsük meg a valódi öleléseket és a gyerekek huncut mosolyát egy kötetlen szabadtéri program keretében.",
+    /* Egy mondat, amiben a szolgáltatás és a helyszín EGYÜTT szerepel.
+       Korábban egyetlen oldalon sem volt ilyen mondat — ezért találtak
+       meg autós témában (a képekből), családiban viszont nem. */
+    localIntro: "Családi és gyerekfotózást Zalaegerszegen és Zala vármegyében vállalok a legtöbbször — erdőszélen, parkban vagy a saját kertetekben —, illetve Budapesten és környékén.",
     heroImage: "/images/_BF_8065.webp",
     gridClass: "col-span-1 md:col-span-4 lg:col-span-4 row-span-1",
     tags: ["Játékos", "Gyerekbarát", "Szabadtéri"],
@@ -281,6 +297,10 @@ export const SERVICES_DATA = {
     slug: "autok",
     heroSubtitle: "Design, erő és szenvedély négy keréken",
     description: "Minden autó egyedi karakter, egy saját történet. Benzinvérűként pontosan tudom, milyen szögek és fények kellenek ahhoz, hogy a végeredmény egy prospektusba illő mestermű legyen. Legyen szó eladásról, a hobbidról, vagy egy különleges projekt autóról.",
+    /* Egy mondat, amiben a szolgáltatás és a helyszín EGYÜTT szerepel.
+       Korábban egyetlen oldalon sem volt ilyen mondat — ezért találtak
+       meg autós témában (a képekből), családiban viszont nem. */
+    localIntro: "Autó- és motorfotózásra Zalaegerszeg környéke ideális: üres ipari utak, erdei szerpentinek és csendes parkolók vannak kéznyújtásnyira. Budapesten és az ország más pontjain is dolgozom, a rolling shotokhoz mindig a helyszínhez választom az útvonalat.",
     heroImage: "/images/_BF_0535.webp",
     gridClass: "col-span-1 md:col-span-4 lg:col-span-4 row-span-1",
     tags: ["Rolling shots", "Részletfotók", "Night shots"],
@@ -297,9 +317,9 @@ export const SERVICES_DATA = {
       { src: "/images/autok/_42A0273.webp", alt: "Autó utastere naplementében, ellenfényes hangulatban" },
       { src: "/images/autok/_42A0281.webp", alt: "Hátsó szárny sziluettje a naplemente színei előtt" },
 
-      { src: "/images/_BF_6906.webp", alt: "Kreatív Autó fotó" },
-      { src: "/images/_BF_6913.webp", alt: "Kreatív Autó fotó" },
-      { src: "/images/_BF_6916.webp", alt: "Autó fotó" },
+      { src: "/images/_BF_6906.webp", alt: "Fekete, ültetett Audi modern üvegépület előtt" },
+      { src: "/images/_BF_6913.webp", alt: "Fekete Audi elölnézetben a parkolóban, fenyők között" },
+      { src: "/images/_BF_6916.webp", alt: "Ültetett fekete Audi oldalnézetben, kövezett téren" },
       { src: "/images/_BF_0772.webp", alt: "Vagány motoros portré a MOL Campus modern üvegfalai előtt" },
       { src: "/images/_BF_0678.webp", alt: "Városi motorozás életérzés a Kopaszi-gát épületei között" },
       { src: "/images/_BF_0640.webp", alt: "Stílusos motorkerékpár parkol Budapest legmagasabb irodaházánál" },
@@ -366,6 +386,10 @@ export const SERVICES_DATA = {
     slug: "kutyusok",
     heroSubtitle: "Négylábú kedvencek, őszinte pillanatok",
     description: "Örökítsd meg kutyusod legboldogabb, legőszintébb pillanatait! A természetes fények és a szabadtéri környezet adják a legjobb hátteret az önfeledt játékhoz. Nem sietünk: hagyjuk, hogy a kutyus felfedezzen, játsszon, és közben készülnek a legszebb portrék, akciófotók és persze a közös képek a gazdival.",
+    /* Egy mondat, amiben a szolgáltatás és a helyszín EGYÜTT szerepel.
+       Korábban egyetlen oldalon sem volt ilyen mondat — ezért találtak
+       meg autós témában (a képekből), családiban viszont nem. */
+    localIntro: "Kutyafotózásra Zalaegerszegen és környékén a legtöbbször szabadtéren, a kutya megszokott terepén kerül sor, de budapesti helyszínen is vállalom.",
     heroImage: "/images/_MG_5347.webp",
     gridClass: "col-span-1 md:col-span-4 lg:col-span-4 row-span-1",
     tags: ["Természetes", "Akciófotók", "Gazdival közös"],

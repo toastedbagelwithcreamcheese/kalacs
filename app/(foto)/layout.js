@@ -55,8 +55,44 @@ export const metadata = {
 };
 
 export default function FotoLayout({ children }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
+  /* Az AI-asszisztensek személyt keresnek („ki fotóz kutyákat Zalaegerszegen?"),
+     nem cégnevet. Eddig csak a LocalBusiness létezett, a founder pedig egy
+     önálló azonosító nélküli töredék volt — így semmi sem mondta ki gépi
+     olvasásra, hogy milyen témákban vagyok releváns. */
+  const person = {
+    "@type": "Person",
+    "@id": "https://kovacsbalintfoto.hu/#kovacs-balint",
+    "name": "Kovács Bálint",
+    "jobTitle": "Fotográfus",
+    "image": "https://kovacsbalintfoto.hu/images/profilkep.webp",
+    "url": "https://kovacsbalintfoto.hu/about",
+    "telephone": "+36308723777",
+    "worksFor": { "@id": "https://kovacsbalintfoto.hu" },
+    "knowsAbout": [
+      "Esküvői fotózás",
+      "Portréfotózás",
+      "Családi fotózás",
+      "Kismama fotózás",
+      "Autófotózás",
+      "Motorfotózás",
+      "Rolling shot fotózás",
+      "Kutyafotózás",
+    ],
+    "homeLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zalaegerszeg",
+        "addressCountry": "HU",
+      },
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61577861518379",
+      "https://www.instagram.com/k_balintfoto/",
+    ],
+  };
+
+  const business = {
     "@type": ["LocalBusiness", "PhotographyService"],
     "name": "Kovács Bálint Fotográfia",
     "image": "https://kovacsbalintfoto.hu/images/profilkep.webp",
@@ -74,11 +110,7 @@ export default function FotoLayout({ children }) {
       { "@type": "City", "name": "Zalaegerszeg" },
       { "@type": "City", "name": "Budapest" }
     ],
-    "founder": {
-      "@type": "Person",
-      "name": "Kovács Bálint",
-      "jobTitle": "Fotográfus"
-    },
+    "founder": { "@id": "https://kovacsbalintfoto.hu/#kovacs-balint" },
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61577861518379",
       "https://www.instagram.com/k_balintfoto/"
@@ -138,6 +170,11 @@ export default function FotoLayout({ children }) {
         }
       }
     ]
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [business, person],
   };
 
   return (

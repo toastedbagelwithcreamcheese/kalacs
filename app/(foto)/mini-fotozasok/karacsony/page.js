@@ -7,6 +7,15 @@ export const metadata = {
   alternates: {
     canonical: "/mini-fotozasok/karacsony",
   },
+  openGraph: {
+    type: "website",
+    locale: "hu_HU",
+    url: "https://kovacsbalintfoto.hu/mini-fotozasok/karacsony",
+    title: "Karácsonyi mini fotózás Zalaegerszegen",
+    description:
+      "Karácsonyi hangulatú mini családi és gyerekfotózás Zalaegerszegen. Rövid, megfizethető ünnepi fotósorozat.",
+    images: ["/images/_BF_2915.webp"],
+  },
 };
 
 const SzezonalisPage = () => {

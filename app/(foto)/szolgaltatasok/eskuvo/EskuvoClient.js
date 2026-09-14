@@ -15,27 +15,27 @@ const heroImage = "/images/Eskuvo2026-3.webp";
 const funnyImage = "/images/Eskuvo2026.webp";
 
 const galleryImages = [
-  { src: "/images/_BF_2535.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_2915.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_3127.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_6727.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_6726.webp", alt: "Esküvői pillanat" },
-  { src: "/images/asdf.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_2507.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_2448-4.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_2289.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_U2A0633-2.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_U2A0314.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_U2A0102.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_4181.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_1337-2.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_0328.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5522.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5510.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5326-2.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5191-2.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5158-2.webp", alt: "Esküvői pillanat" },
-  { src: "/images/_BF_5157-2.webp", alt: "Esküvői pillanat" },
+  { src: "/images/_BF_2535.webp", alt: "Menyasszony és vőlegény csókja a kastély árkádjai alatt" },
+  { src: "/images/_BF_2915.webp", alt: "Menyasszony és vőlegény csókja a belvárosi utcán" },
+  { src: "/images/_BF_3127.webp", alt: "Menyasszony és vőlegény a nászmenet autói előtt" },
+  { src: "/images/_BF_6727.webp", alt: "A pár keze szív alakban, benne a két jegygyűrűvel" },
+  { src: "/images/_BF_6726.webp", alt: "Lebegő jegygyűrűk két tenyér között, fehér háttér előtt" },
+  { src: "/images/asdf.webp", alt: "Vőlegény és menyasszony profilból, ujjaik között a jegygyűrűkkel" },
+  { src: "/images/_BF_2507.webp", alt: "Menyasszony és vőlegény hátradőlős csókja az árkádok alatt" },
+  { src: "/images/_BF_2448-4.webp", alt: "Menyasszony és vőlegény a fehér árkádsorban" },
+  { src: "/images/_BF_2289.webp", alt: "Menyasszony és vőlegény a kastély lépcsőházában" },
+  { src: "/images/_U2A0633-2.webp", alt: "Fekete-fehér kép: menyasszony szív alakú napszemüvegben a buliban" },
+  { src: "/images/_U2A0314.webp", alt: "Az ifjú pár a főasztalnál mutatja a jegygyűrűket" },
+  { src: "/images/_U2A0102.webp", alt: "Menyasszony és vőlegény a szertartás alatt" },
+  { src: "/images/_BF_4181.webp", alt: "A friss házasokat kenyérrel és sóval fogadják a vendégek" },
+  { src: "/images/_BF_1337-2.webp", alt: "Fekete-fehér kép: meghatódott vendégek a szertartáson" },
+  { src: "/images/_BF_0328.webp", alt: "Az anyakönyv aláírása közelről" },
+  { src: "/images/_BF_5522.webp", alt: "Szív alakú napszemüveg a monogrammal és a dátummal az esküvői torta mellett" },
+  { src: "/images/_BF_5510.webp", alt: "Esküvői tortaszelet átadása" },
+  { src: "/images/_BF_5326-2.webp", alt: "Vendégek és az ifjú pár napszemüvegben a buliban" },
+  { src: "/images/_BF_5191-2.webp", alt: "Fekete-fehér kép: a menyasszony tánca" },
+  { src: "/images/_BF_5158-2.webp", alt: "Fekete-fehér kép: táncoló vendégek a parketten" },
+  { src: "/images/_BF_5157-2.webp", alt: "Fekete-fehér kép: a menyasszony és a vendégek tánca a lakodalomban" },
   { src: "/images/eskuvo/_42A9125-2.webp", alt: "Meghitt fekete-fehér pillanat a menyasszony és a vőlegény között" },
   { src: "/images/eskuvo/_42A9328.webp", alt: "Boldog ifjú pár a szertartás után" },
   { src: "/images/eskuvo/_42A9386-2.webp", alt: "Csók és a frissen felhúzott jegygyűrűk közeli fotója" },
@@ -100,9 +100,16 @@ export default function EskuvoClient() {
                 Nem csak képeket, <br/> <span className="text-[#C79C8D]">történetet</span> adok át.
               </h2>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
-                Az esküvőtök életeket legszebb története, amit feszengés és erőltetett pózok nélkül, 
+                Az esküvőtök életetek legszebb története, amit feszengés és erőltetett pózok nélkül, 
                 a maga őszinte és elegáns valójában érdemes megőrizni. Célom, hogy amikor évek múltán 
                 visszanézitek az albumot, ne csak lássátok, hanem *érezzétek* is azt a napot.
+              </p>
+              {/* A szolgáltatás és a helyszín EGY mondatban — eddig sehol nem
+                  szerepelt együtt, ezért nem jött elő helyi keresésre. */}
+              <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light">
+                Esküvői fotósként Zalaegerszegen és Zala vármegyében, valamint
+                Budapesten és környékén dolgozom — de egy jó esküvőért az ország
+                bármely pontjára elutazom.
               </p>
               <div className="flex items-center gap-6 pt-4">
                 <div className="flex items-center gap-2 text-[#C79C8D] font-bold uppercase tracking-widest text-sm">

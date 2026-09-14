@@ -54,23 +54,25 @@ export default function HeroFineArt() {
         style={{ y: textY }}
         className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex justify-between px-2 sm:px-8 lg:px-16 z-0 pointer-events-none select-none"
       >
-        <motion.h1
+        <motion.span
+          aria-hidden="true"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="text-[16vw] md:text-[13vw] lg:text-[14vw] font-bold font-akaya text-[#5A4A42]/5 leading-none"
+          className="block text-[16vw] md:text-[13vw] lg:text-[14vw] font-bold font-akaya text-[#5A4A42]/5 leading-none"
         >
           Kovács
-        </motion.h1>
+        </motion.span>
         
-        <motion.h1
+        <motion.span
+          aria-hidden="true"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="text-[16vw] md:text-[13vw] lg:text-[14vw] font-bold font-akaya text-[#5A4A42]/5 leading-none"
+          className="block text-[16vw] md:text-[13vw] lg:text-[14vw] font-bold font-akaya text-[#5A4A42]/5 leading-none"
         >
           Bálint
-        </motion.h1>
+        </motion.span>
       </motion.div>
 
       {/* 2. A FÓKUSZPONT: KÉP MASZKOLT BETÖLTÉSSEL (Reveal), PARALLAX-al ÉS EGÉRKÖVETŐ 3D DŐLÉSSEL */}
@@ -119,11 +121,15 @@ export default function HeroFineArt() {
         className="relative z-20 text-center mt-10 md:-mt-8 px-4"
       >
         <div className="bg-[#F9F5F1]/80 backdrop-blur-md px-8 py-6 rounded-2xl shadow-sm border border-[#5A4A42]/5 inline-block">
-          <h2 className="text-3xl md:text-4xl font-bold font-akaya text-[#5A4A42] mb-2">
+          {/* A lap egyetlen h1-e. Korábban a két 5%-os vízjel („Kovács",
+              „Bálint") volt h1, a valódi cím pedig h2 — a kezdőlapnak így
+              gyakorlatilag nem volt olvasható főcíme. */}
+          <h1 className="text-3xl md:text-4xl font-bold font-akaya text-[#5A4A42] mb-2">
             A pillanat <span className="italic text-shimmer">művészete.</span>
-          </h2>
+          </h1>
           <p className="text-[#5A4A42]/70 text-sm md:text-base mb-6 font-light max-w-xs mx-auto">
-            Letisztult, őszinte és időtálló emlékek.
+            Fotós Zalaegerszegen és Budapesten — letisztult, őszinte és időtálló
+            emlékek.
           </p>
           
           <Link 
