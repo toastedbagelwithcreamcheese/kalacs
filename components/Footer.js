@@ -136,7 +136,7 @@ export default function Footer() {
         {/* ALSÓ SZEKCIÓ: Copyright Sáv */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-xs font-light tracking-wide">
-            &copy; {currentYear} Kovács Bálint Fotográfia. Minden jog fenntartva.
+            &copy; {currentYear} Kovács Bálint Fotó. Minden jog fenntartva.
           </p>
           <p className="text-white/20 text-[10px] uppercase tracking-[0.2em] font-bold">
             Készült szenvedéllyel Zalaegerszegen

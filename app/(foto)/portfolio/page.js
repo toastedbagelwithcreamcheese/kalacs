@@ -14,7 +14,7 @@ export const metadata = {
     "zalaegerszeg fotós referenciák"
   ],
   openGraph: {
-    title: "Portfólió - Kovács Bálint Fotográfia",
+    title: "Portfólió - Kovács Bálint Fotó",
     description: "Nézd meg a kedvenc felvételeimet egy lenyűgöző, szűrhető galériában!",
     images: ["/images/Eskuvo2026-3.webp"],
   }
@@ -27,7 +27,7 @@ function imageJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    name: "Kovács Bálint Fotográfia — portfólió",
+    name: "Kovács Bálint Fotó — portfólió",
     url: `${baseUrl}/portfolio`,
     author: { "@id": `${baseUrl}/#kovacs-balint` },
     associatedMedia: PORTFOLIO_IMAGES.map((img) => ({
@@ -38,7 +38,7 @@ function imageJsonLd() {
       genre: img.category,
       creator: { "@id": `${baseUrl}/#kovacs-balint` },
       copyrightHolder: { "@id": `${baseUrl}/#kovacs-balint` },
-      creditText: "Kovács Bálint Fotográfia",
+      creditText: "Kovács Bálint Fotó",
       license: `${baseUrl}/aszf`,
       acquireLicensePage: `${baseUrl}/contact`,
     })),

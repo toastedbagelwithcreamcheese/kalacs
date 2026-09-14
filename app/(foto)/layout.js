@@ -14,7 +14,7 @@ import GlassFilter from "@/components/GlassFilter";
 // A /rendezveny saját layoutot kap, így nem örökli ezt a fejlécet/láblécet.
 export const metadata = {
   title: {
-    default: "Kovács Bálint Fotográfia | Zalaegerszeg és környéke",
+    default: "Kovács Bálint Fotó | Zalaegerszeg és környéke",
     template: "%s | Kovács Bálint Fotó",
   },
   description:
@@ -26,7 +26,7 @@ export const metadata = {
   ],
   authors: [{ name: "Kovács Bálint" }],
   creator: "Kovács Bálint",
-  publisher: "Kovács Bálint Fotográfia",
+  publisher: "Kovács Bálint Fotó",
   /* SZÁNDÉKOSAN nincs itt `alternates.canonical`: a layout-szintű érték
      minden felül nem író oldalra átszivárog. Minden lap a SAJÁT
      page.js-ében/layout.js-ében adja meg a canonicalját. */
@@ -34,21 +34,21 @@ export const metadata = {
     type: "website",
     locale: "hu_HU",
     url: "https://kovacsbalintfoto.hu",
-    title: "Kovács Bálint Fotográfia | Őszinte pillanatok",
+    title: "Kovács Bálint Fotó | Őszinte pillanatok",
     description: "Prémium fotózás Zalaegerszegen és országosan. Fedezd fel a portfóliómat!",
-    siteName: "Kovács Bálint Fotográfia",
+    siteName: "Kovács Bálint Fotó",
     images: [
       {
         url: "/images/_MG_0315-2.webp",
         width: 1200,
         height: 630,
-        alt: "Kovács Bálint Fotográfia",
+        alt: "Kovács Bálint Fotó",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kovács Bálint Fotográfia | Őszinte pillanatok",
+    title: "Kovács Bálint Fotó | Őszinte pillanatok",
     description: "Prémium fotózás Zalaegerszegen és országosan. Fedezd fel a portfóliómat!",
     images: ["/images/_MG_0315-2.webp"],
   },
@@ -87,6 +87,7 @@ export default function FotoLayout({ children }) {
       },
     },
     "sameAs": [
+      "https://maps.google.com/?cid=2686351091748372696",
       "https://www.facebook.com/profile.php?id=61577861518379",
       "https://www.instagram.com/k_balintfoto/",
     ],
@@ -94,7 +95,10 @@ export default function FotoLayout({ children }) {
 
   const business = {
     "@type": ["LocalBusiness", "PhotographyService"],
-    "name": "Kovács Bálint Fotográfia",
+    /* A Google Cégprofilon ez a név szerepel; a Google a névegyezésből
+       is dolgozik, ezért itt is ez a fő alak. */
+    "name": "Kovács Bálint Fotó",
+    "alternateName": "Kovács Bálint Fotográfia",
     "image": "https://kovacsbalintfoto.hu/images/profilkep.webp",
     "@id": "https://kovacsbalintfoto.hu",
     "url": "https://kovacsbalintfoto.hu",
@@ -109,14 +113,30 @@ export default function FotoLayout({ children }) {
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Zalaegerszeg",
+      "addressRegion": "Zala",
       "addressCountry": "HU"
     },
+    /* Zalaegerszeg városközpontja, NEM a lakcím. Kiszállással dolgozó
+       vállalkozásnál ez a szokásos megoldás: a séma addressLocality-je is
+       Zalaegerszeg, tehát a kettő fedi egymást. A Cégprofil megosztott
+       linkjében szereplő 46.8798, 17.7334 SZÁNDÉKOSAN nincs itt — az a
+       kiszolgált terület számított középpontja (valahol a Balatonnál),
+       nem a székhely. */
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 46.8417,
+      "longitude": 16.8416
+    },
+    "hasMap": "https://maps.google.com/?cid=2686351091748372696",
     "areaServed": [
       { "@type": "City", "name": "Zalaegerszeg" },
       { "@type": "City", "name": "Budapest" }
     ],
     "founder": { "@id": "https://kovacsbalintfoto.hu/#kovacs-balint" },
+    /* A Google Cégprofil stabil hivatkozása (cid). Ez köti össze a Google
+       szemében a weboldalt és a céget. */
     "sameAs": [
+      "https://maps.google.com/?cid=2686351091748372696",
       "https://www.facebook.com/profile.php?id=61577861518379",
       "https://www.instagram.com/k_balintfoto/"
     ],
@@ -181,7 +201,7 @@ export default function FotoLayout({ children }) {
     "@type": "WebSite",
     "@id": "https://kovacsbalintfoto.hu/#website",
     url: "https://kovacsbalintfoto.hu",
-    name: "Kovács Bálint Fotográfia",
+    name: "Kovács Bálint Fotó",
     inLanguage: "hu-HU",
     publisher: { "@id": "https://kovacsbalintfoto.hu" },
   };

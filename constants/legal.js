@@ -14,7 +14,7 @@
 
 export const szolgaltato = {
   nev: "Kovács Szabolcs e.v.",
-  markanev: "Kovács Bálint Fotográfia",
+  markanev: "Kovács Bálint Fotó",
   forma: "egyéni vállalkozó",
   szekhely: "8921 Zalaszentiván, Deák Ferenc utca 3.",
   nyilvantartasiSzam: "ZA66203276",

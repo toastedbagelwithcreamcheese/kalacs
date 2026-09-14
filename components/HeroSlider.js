@@ -94,7 +94,7 @@ export default function HeroFineArt() {
         >
           <Image
             src="/images/_BF_2915.webp" // A kedvenc fotód
-            alt="Kovács Bálint Fotográfia"
+            alt="Menyasszony és vőlegény csókja a belvárosi utcán, télikabátban"
             fill
             className="object-cover"
             priority

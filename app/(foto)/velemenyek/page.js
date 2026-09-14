@@ -22,7 +22,7 @@ export default async function Page() {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "@id": "https://kovacsbalintfoto.hu#business",
-        name: "Kovács Bálint Fotográfia",
+        name: "Kovács Bálint Fotó",
         url: "https://kovacsbalintfoto.hu",
         aggregateRating: {
           "@type": "AggregateRating",

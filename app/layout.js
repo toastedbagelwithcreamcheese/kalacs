@@ -26,7 +26,7 @@ export const metadata = {
   // template ráragadna a gyermek layoutok saját default címére is
   // (pl. "... | Kovács Bálint Fotó | Kovács Bálint"). A címsablont az
   // (foto) és a rendezveny layout külön-külön definiálja.
-  title: "Kovács Bálint Fotográfia",
+  title: "Kovács Bálint Fotó",
 
   formatDetection: {
     email: false,
