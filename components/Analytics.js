@@ -82,9 +82,33 @@ export default function Analytics() {
   useEffect(() => {
     if (!ready || !consent) return;
     const v = consent === "granted" ? "granted" : "denied";
-    window.gtag?.("consent", "update", {
-      analytics_storage: v, ad_storage: v, ad_user_data: v, ad_personalization: v,
-    });
+
+    /* BUKTATÓ: a gtag és az fbq `afterInteractive` szkriptekből jön, azok
+       viszont a hidratálás UTÁN kerülnek a lapra. Ez a hatás korábban fut,
+       mint ahogy a `window.fbq` létezne, és az optional chaining némán
+       elnyelné a hívást — a Meta Pixel emiatt „revoke" állapotban ragadna,
+       és egyetlen eseményt sem küldene el. Ezért megvárjuk. */
+    let tries = 0;
+    const apply = () => {
+      const hasGtag = typeof window.gtag === "function";
+      const hasFbq = typeof window.fbq === "function";
+      if (hasGtag) {
+        window.gtag("consent", "update", {
+          analytics_storage: v, ad_storage: v, ad_user_data: v, ad_personalization: v,
+        });
+      }
+      /* A Meta saját kapcsolója: amíg „revoke", a könyvtár sorba teszi az
+         eseményeket, és egyet sem küld el. */
+      if (hasFbq) window.fbq("consent", v === "granted" ? "grant" : "revoke");
+      return hasGtag && (hasFbq || !META_PIXEL_ID);
+    };
+
+    if (apply()) return;
+    const t = setInterval(() => {
+      tries += 1;
+      if (apply() || tries > 40) clearInterval(t); // legfeljebb ~10 másodperc
+    }, 250);
+    return () => clearInterval(t);
   }, [ready, consent]);
 
   const decide = (v) => {
@@ -96,7 +120,8 @@ export default function Analytics() {
     <>
       <Script id="ga-consent" strategy="afterInteractive">
         {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;
-gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+var kbfC=(function(){try{return localStorage.getItem('${KEY}')}catch(e){return null}})();var kbfV=kbfC==='granted'?'granted':'denied';
+gtag('consent','default',{analytics_storage:kbfV,ad_storage:kbfV,ad_user_data:kbfV,ad_personalization:kbfV,wait_for_update:500});
 gtag('js',new Date());gtag('config','${GA_ID}',{anonymize_ip:true});`}
       </Script>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
@@ -108,7 +133,7 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('consent','revoke');
+fbq('consent',(function(){try{return localStorage.getItem('${KEY}')==='granted'?'grant':'revoke'}catch(e){return 'revoke'}})());
 fbq('init','${META_PIXEL_ID}');
 fbq('track','PageView');`}
         </Script>
