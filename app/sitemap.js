@@ -15,6 +15,8 @@ export default function sitemap() {
     { path: '/mini-fotozasok/karacsony', priority: 0.5, changeFrequency: 'yearly' },
     { path: '/adatvedelem', priority: 0.2, changeFrequency: 'yearly' },
     { path: '/aszf', priority: 0.2, changeFrequency: 'yearly' },
+    { path: '/impresszum', priority: 0.2, changeFrequency: 'yearly' },
+    { path: '/cookie', priority: 0.2, changeFrequency: 'yearly' },
   ];
 
   const serviceRoutes = Object.keys(SERVICES_DATA).map((slug) => ({

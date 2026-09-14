@@ -1,6 +1,7 @@
 // pages/cookie.js
 import Head from "next/head";
 import LegalPageLayout from "@/components/LegalPageLayout";
+import { hatalyosDatum } from "@/constants/legal";
 
 const CookiePage = () => {
   return (
@@ -10,7 +11,7 @@ const CookiePage = () => {
         <meta name="description" content="Tájékoztató a kovacsbalintfoto.hu weboldalon használt sütikről." />
         <link rel="canonical" href="https://kovacsbalintfoto.hu/cookie" />
       </Head>
-      <LegalPageLayout title="Cookie Szabályzat">
+      <LegalPageLayout title="Cookie Szabályzat" effectiveDate={hatalyosDatum}>
         <p>
           A kovacsbalintfoto.hu weboldal jelenleg <strong>kizárólag egyetlen, technikailag
           elengedhetetlen sütit</strong> használ — statisztikai, hirdetési vagy remarketing célú

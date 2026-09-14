@@ -1,7 +1,7 @@
 // pages/adatvedelem.js
 import Head from "next/head";
 import LegalPageLayout from "@/components/LegalPageLayout";
-import LegalPlaceholder from "@/components/LegalPlaceholder";
+import { szolgaltato, naih, hatalyosDatum } from "@/constants/legal";
 import Link from "next/link";
 
 const AdatvedelemPage = () => {
@@ -12,20 +12,28 @@ const AdatvedelemPage = () => {
         <meta name="description" content="Kovács Bálint Fotográfia adatvédelmi tájékoztatója a GDPR alapján: kezelt adatok köre, célja, jogalapja és az adatfeldolgozók listája." />
         <link rel="canonical" href="https://kovacsbalintfoto.hu/adatvedelem" />
       </Head>
-      <LegalPageLayout title="Adatvédelmi Irányelvek">
+      <LegalPageLayout title="Adatvédelmi Irányelvek" effectiveDate={hatalyosDatum}>
       <p>Jelen Adatvédelmi Irányelvek célja, hogy tájékoztatást nyújtson a kovacsbalintfoto.hu weboldal által végzett adatkezelési gyakorlatokról, az Európai Parlament és a Tanács (EU) 2016/679 rendelete (GDPR) alapján.</p>
       
       <h2>1. Az Adatkezelő Adatai</h2>
       <p>Az adatok kezelője megegyezik az ÁSZF-ben megjelölt Szolgáltatóval.</p>
       <ul>
-        <li><strong>Név:</strong> Kovács Bálint</li>
-        <li><strong>Vállalkozási forma:</strong> <LegalPlaceholder>kitöltendő</LegalPlaceholder></li>
-        <li><strong>Székhely:</strong> Zalaszentiván, <LegalPlaceholder>pontos cím kitöltendő</LegalPlaceholder></li>
-        <li><strong>Nyilvántartási szám:</strong> <LegalPlaceholder>kitöltendő</LegalPlaceholder></li>
-        <li><strong>Adószám:</strong> <LegalPlaceholder>kitöltendő</LegalPlaceholder></li>
-        <li><strong>E-mail cím:</strong> kapcsolat@kovacsbalintfoto.hu</li>
-        <li><strong>Telefonszám:</strong> +36 30 872 3777</li>
+        <li><strong>Név:</strong> {szolgaltato.nev}</li>
+        <li><strong>Vállalkozási forma:</strong> {szolgaltato.forma}</li>
+        <li><strong>Székhely:</strong> {szolgaltato.szekhely}</li>
+        <li>
+          <strong>{szolgaltato.nyilvantartasiSzamMegnevezes}:</strong>{" "}
+          {szolgaltato.nyilvantartasiSzam}
+        </li>
+        <li><strong>Adószám:</strong> {szolgaltato.adoszam}</li>
+        <li><strong>E-mail cím:</strong> {szolgaltato.email}</li>
+        <li><strong>Telefonszám:</strong> {szolgaltato.telefon}</li>
       </ul>
+      <p>
+        A szolgáltatás {szolgaltato.markanev} néven jelenik meg; a fotókat{" "}
+        {szolgaltato.szerzo} készíti. Adatvédelmi tisztviselő kijelölésére az adatkezelés
+        jellege és terjedelme alapján nem kerül sor.
+      </p>
 
       <h2>2. A Kezelt Személyes Adatok Köre, Célja és Jogalapja</h2>
       <p>A Szolgáltatásaim igénybevételéhez kapcsolódóan az alábbi személyes adatokat kezelem:</p>
@@ -72,8 +80,26 @@ const AdatvedelemPage = () => {
       <p>Ön bármikor jogosult tájékoztatást kérni személyes adatai kezeléséről, kérheti azok helyesbítését, törlését vagy kezelésének korlátozását, valamint tiltakozhat az adatkezelés ellen. Ezen jogait az 1. pontban megadott elérhetőségeken gyakorolhatja.</p>
 
       <h2>6. Jogorvoslati Lehetőségek</h2>
-      <p>Amennyiben úgy véli, hogy adatkezelésem nem felel meg a jogszabályi előírásoknak, panasszal élhet a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH).</p>
-      <p><em>Hatályos: 2025. július 1.</em></p>
+      <p>
+        Kérésével elsősorban forduljon hozzám az 1. pontban megadott elérhetőségeken: a
+        megkeresést legkésőbb egy hónapon belül megválaszolom.
+      </p>
+      <p>
+        Ha úgy véli, hogy az adatkezelésem nem felel meg a jogszabályi előírásoknak, panasszal
+        élhet a felügyeleti hatóságnál:
+      </p>
+      <ul>
+        <li><strong>Név:</strong> {naih.nev}</li>
+        <li><strong>Cím:</strong> {naih.cim}</li>
+        <li><strong>Postacím:</strong> {naih.postacim}</li>
+        <li><strong>Telefon:</strong> {naih.telefon}</li>
+        <li><strong>E-mail:</strong> {naih.email}</li>
+        <li><strong>Weboldal:</strong> {naih.weboldal}</li>
+      </ul>
+      <p>
+        Jogainak megsértése esetén bírósághoz is fordulhat. A per — választása szerint — a
+        lakóhelye vagy tartózkodási helye szerinti törvényszék előtt is megindítható.
+      </p>
       </LegalPageLayout>
     </>
   );
