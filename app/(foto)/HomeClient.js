@@ -7,7 +7,7 @@ import ServicesGrid from "@/components/ServicesGrid";
 import AboutSection from "@/components/AboutSection";
 import Velemenyek from "@/components/HomePageReviews";
 
-export default function HomeClient() {
+export default function HomeClient({ reviews = [] }) {
   return (
     <main className="flex flex-col min-h-screen bg-white">
       
@@ -26,7 +26,7 @@ export default function HomeClient() {
       <AboutSection />
 
       {/* 5. Vélemények */}
-      <Velemenyek />
+      <Velemenyek reviews={reviews} />
 
       {/* 6. Végső CTA (Call to Action) - Hogy ne csak vége szakadjon az oldalnak */}
       <div className="relative bg-[#5A4A42] py-16 px-4 text-center text-white overflow-hidden">

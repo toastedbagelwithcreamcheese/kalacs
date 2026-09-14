@@ -83,11 +83,11 @@ export default function FotoLayout({ children }) {
       "https://www.facebook.com/profile.php?id=61577861518379",
       "https://www.instagram.com/k_balintfoto/"
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "24"
-    },
+    /* Az `aggregateRating` SZÁNDÉKOSAN nincs itt. Korábban a layoutból mind a
+       17 lapra kiment 5,0/24 értékkel, miközben az adatbázisban hat jóváhagyott
+       vélemény van, és a legtöbb lapon egy sem látszott — ez a Google strukturált
+       adat szabályzatába ütközik. Az értékelés mostantól kizárólag a
+       /velemenyek oldalon jelenik meg, valós, adatbázisból számolt adattal. */
     "makesOffer": [
       {
         "@type": "Offer",

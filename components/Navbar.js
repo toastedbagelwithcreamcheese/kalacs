@@ -124,16 +124,24 @@ export default function Navbar() {
                 <ChevronDown size={14} className={`transition-transform duration-300 ${menuOpen ? "rotate-180 text-[#C79C8D]" : ""}`}/>
               </button>
 
-              <AnimatePresence>
-                {menuOpen && (
-                  <motion.div
-                    variants={dropdownVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    className="absolute top-full -left-4 mt-0 w-64 pt-2"
-                  >
+              {/* Nem feltételes renderelés: a szolgáltatás-linkeknek benne kell
+                  lenniük a kiszolgált HTML-ben, különben a crawler nem talál
+                  utat az aloldalakhoz. Csak láthatóságot kapcsolunk. */}
+              <div
+                className={`absolute top-full -left-4 mt-0 w-64 pt-2 transition-all duration-200 ${
+                  menuOpen
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
+                }`}
+                aria-hidden={!menuOpen}
+              >
                     <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden py-2">
+                      <Link href="/szolgaltatasok" className="group/link flex items-center justify-between px-6 py-3 border-b border-gray-50 hover:bg-[#F9F5F1] transition-colors">
+                        <span className="text-sm font-bold text-[#5A4A42] group-hover/link:text-[#C79C8D] transition-colors">
+                          Összes szolgáltatás
+                        </span>
+                        <ChevronRight size={14} className="text-[#C79C8D] opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
+                      </Link>
                       {serviceLinks.map((item, idx) => (
                         <Link key={idx} href={`/szolgaltatasok/${item.slug}`} className="group/link flex items-center justify-between px-6 py-3 hover:bg-[#F9F5F1] transition-colors">
                           <span className="text-sm font-medium text-[#5A4A42] group-hover/link:text-[#C79C8D] transition-colors">
@@ -148,9 +156,7 @@ export default function Navbar() {
                         </Link>
                       </div>
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              </div>
             </li>
             
               <li>
@@ -220,14 +226,19 @@ export default function Navbar() {
                   <ChevronDown size={24} className={`transition-transform duration-300 ${mobileServicesOpen ? "rotate-180 text-[#C79C8D]" : ""}`} />
                 </button>
                 
-                <AnimatePresence>
-                  {mobileServicesOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden mt-4 pl-4 flex flex-col gap-4 border-l-2 border-[#C79C8D]/30"
-                    >
+                <div
+                  className="grid transition-[grid-template-rows] duration-300 ease-out"
+                  style={{ gridTemplateRows: mobileServicesOpen ? "1fr" : "0fr" }}
+                >
+                  <div className="overflow-hidden">
+                    <div className="mt-4 pl-4 flex flex-col gap-4 border-l-2 border-[#C79C8D]/30">
+                      <Link
+                        href="/szolgaltatasok"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-xl font-bold text-[#5A4A42] hover:text-[#C79C8D]"
+                      >
+                        Összes szolgáltatás
+                      </Link>
                       {serviceLinks.map((item, idx) => (
                         <Link 
                           key={idx} 
@@ -241,9 +252,9 @@ export default function Navbar() {
                       <Link href="/velemenyek" onClick={() => setMobileMenuOpen(false)} className="text-lg font-bold uppercase tracking-widest text-[#C79C8D] mt-2">
                         Vélemények
                       </Link>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    </div>
+                  </div>
+                </div>
               </motion.li>
 
               <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>

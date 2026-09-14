@@ -26,6 +26,13 @@ export const metadata = {
   alternates: {
     canonical: "/rendezveny",
   },
+  /* Még futó projekt, szándékosan rejtett — amíg nem élesedik, nem
+     kérünk rá indexelést. Ha élesedik, ez a blokk törlendő. */
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false },
+  },
   openGraph: {
     type: "website",
     locale: "hu_HU",

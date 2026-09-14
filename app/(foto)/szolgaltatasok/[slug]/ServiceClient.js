@@ -210,6 +210,7 @@ export default function ServiceClient({ data }) {
                 <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
                   <button 
                     className="w-full flex justify-between items-center p-5 md:p-6 text-left group"
+                    aria-expanded={openFaqIndex === idx}
                     onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
                   >
                     <span className="text-base md:text-lg font-bold text-[#5A4A42] group-hover:text-[#C79C8D] transition-colors">
@@ -219,21 +220,16 @@ export default function ServiceClient({ data }) {
                       <ChevronDown size={18} className={`transition-transform duration-300 ${openFaqIndex === idx ? "rotate-180" : ""}`} />
                     </div>
                   </button>
-                  <AnimatePresence>
-                    {openFaqIndex === idx && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <p className="px-5 md:px-6 pb-6 pt-0 text-gray-600 leading-relaxed text-sm md:text-base border-t border-[#5A4A42]/5 mt-3 pt-4 font-light">
-                          {item.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <div
+                    className="grid transition-[grid-template-rows] duration-300 ease-out"
+                    style={{ gridTemplateRows: openFaqIndex === idx ? "1fr" : "0fr" }}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="px-5 md:px-6 pb-6 text-gray-600 leading-relaxed text-sm md:text-base border-t border-[#5A4A42]/5 mt-3 pt-4 font-light">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

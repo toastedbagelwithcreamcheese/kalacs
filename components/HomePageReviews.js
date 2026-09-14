@@ -1,42 +1,16 @@
 "use client";
 
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Star, Quote, User, Image as ImageIcon } from 'lucide-react';
-import { createClient } from '@supabase/supabase-js';
 import Image from 'next/image';
 import TiltCard from '@/components/TiltCard';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-export default function HomePageReviews() {
-    const [reviews, setReviews] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchTopReviews = async () => {
-            setIsLoading(true);
-            const { data, error } = await supabase
-                .from('velemenyek')
-                .select('name, rating, review_text, profile_image_url, product_image_urls')
-                .eq('status', 'jovahagyva')
-                .order('created_at', { ascending: false })
-                .limit(3); 
-
-            if (error) {
-                console.error("Hiba a vélemények betöltésekor:", error);
-            } else {
-                setReviews(data);
-            }
-            setIsLoading(false);
-        };
-        fetchTopReviews();
-    }, []);
-
-    if (isLoading || reviews.length === 0) return null;
+/* A véleményeket a szerver adja át (app/(foto)/page.js → HomeClient → ide).
+   Korábban itt, useEffect-ben töltődtek be, ezért a főoldal kiszolgált
+   HTML-jében sem volt belőlük semmi — a kereső és az AI üres szakaszt látott. */
+export default function HomePageReviews({ reviews = [] }) {
+    if (reviews.length === 0) return null;
 
     return (
         <section className="bg-[#F9F5F1] py-24 md:py-32 relative overflow-hidden">

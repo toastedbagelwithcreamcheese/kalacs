@@ -1,4 +1,5 @@
 import HomeClient from "./HomeClient";
+import { getApprovedReviews } from "@/lib/reviews";
 
 /**
  * A főoldal szerver-burkolója.
@@ -16,6 +17,9 @@ export const metadata = {
   alternates: { canonical: "/" },
 };
 
-export default function Page() {
-  return <HomeClient />;
+export default async function Page() {
+  /* A három legfrissebb vélemény szerveroldalon: így a főoldal HTML-jében is
+     ott a valódi ügyfélszöveg, nem csak hidratálás után. */
+  const reviews = (await getApprovedReviews()).slice(0, 3);
+  return <HomeClient reviews={reviews} />;
 }

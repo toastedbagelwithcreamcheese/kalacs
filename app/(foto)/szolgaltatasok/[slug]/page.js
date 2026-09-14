@@ -44,7 +44,7 @@ export default async function ServicePage({ params }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Kezdőlap", item: baseUrl },
-      { "@type": "ListItem", position: 2, name: "Szolgáltatások", item: `${baseUrl}/portfolio` },
+      { "@type": "ListItem", position: 2, name: "Szolgáltatások", item: `${baseUrl}/szolgaltatasok` },
       { "@type": "ListItem", position: 3, name: data.title, item: `${baseUrl}/szolgaltatasok/${slug}` },
     ],
   };
