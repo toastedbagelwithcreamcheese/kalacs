@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Vélemény Írása | Kovács Bálint Fotó",
+  title: "Vélemény írása",
   description: "Voltál már nálam fotózáson? Írd meg a véleményed Kovács Bálint fotográfusról, és segíts másoknak a döntésben.",
   alternates: {
     canonical: "/velemeny-iras",

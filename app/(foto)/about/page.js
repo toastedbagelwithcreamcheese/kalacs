@@ -1,7 +1,8 @@
 import AboutClient from "./AboutClient";
 
 export const metadata = {
-  title: "Rólam - Kovács Bálint Fotográfus | Budapest & Zalaegerszeg",
+  alternates: { canonical: "/about" },
+  title: "Rólam — fotós Zalaegerszeg, Budapest",
   description: "Ismerd meg Kovács Bálint fotográfust! Prémium esküvői, portré és családi fotózás Budapesten, Zalaegerszegen és országosan. Valódi érzelmek, pózok nélkül.",
   keywords: [
     "Kovács Bálint fotós",

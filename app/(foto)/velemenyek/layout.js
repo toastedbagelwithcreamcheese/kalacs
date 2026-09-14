@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Vélemények | Kovács Bálint Fotó",
+  title: "Vélemények",
   description: "Olvasd el korábbi ügyfeleim véleményét Kovács Bálint fotográfusról. Valós tapasztalatok esküvői, portré, családi és kismama fotózásokról.",
   alternates: {
     canonical: "/velemenyek",

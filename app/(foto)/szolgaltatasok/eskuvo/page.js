@@ -3,7 +3,7 @@ import EskuvoClient from "./EskuvoClient";
 const baseUrl = "https://kovacsbalintfoto.hu";
 
 export const metadata = {
-  title: "Esküvői Fotózás | Kovács Bálint Fotó",
+  title: "Esküvői fotós Zalaegerszegen",
   description: "Prémium esküvői fotózás Zalaegerszegen és országosan. Örökítsd meg életed legszebb napját őszinte, elegáns és művészi fotókon feszengés nélkül.",
   alternates: {
     canonical: "/szolgaltatasok/eskuvo",

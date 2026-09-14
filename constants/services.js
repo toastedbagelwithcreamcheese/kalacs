@@ -5,6 +5,10 @@ export const SERVICES_DATA = {
   // --- Az esküvőt a saját egyedi oldala kezeli, ide csak a globális adatok kellenek ---
   "eskuvo": {
     title: "Esküvői Fotózás",
+    /* A látható címtől külön: a magyar keresés „fotós Zalaegerszeg" alakú,
+       és a <title> sablonja még ráfűz 20 karaktert. */
+    seoTitle: "Esküvői fotós Zalaegerszegen",
+    seoDescription: "Esküvői fotózás Zalaegerszegen és országosan. Elegancia és természetesség — hogy a képeket nézve újraélhessétek a nap minden pillanatát.",
     slug: "eskuvo",
     heroSubtitle: "Az igenektől az utolsó táncig",
     description: "Életetek nagy napja megérdemli a professzionális figyelmet. Stílusom az elegancia és a természetesség ötvözete, célom pedig az, hogy a képeket nézve újraélhessétek minden pillanatát.",
@@ -16,6 +20,10 @@ export const SERVICES_DATA = {
 
   "portre": {
     title: "Portré Fotózás",
+    /* A látható címtől külön: a magyar keresés „fotós Zalaegerszeg" alakú,
+       és a <title> sablonja még ráfűz 20 karaktert. */
+    seoTitle: "Portré fotózás Zalaegerszegen",
+    seoDescription: "Portréfotózás Zalaegerszegen: természetes, őszinte képek. Üzleti portrétól a kreatív sorozatig, feszengés nélkül.",
     slug: "portre",
     heroSubtitle: "Portrék, amik Rólad szólnak",
     description: "Természetes, stílusos és őszinte képek. Fedezd fel a benned rejlő karaktert. Legyen szó egy gyors, lényegretörő üzleti portréról, vagy egy kreatív, elmélyült sorozatról – a célom, hogy feszengés nélkül megmutassuk a legjobb arcodat.",
@@ -140,6 +148,10 @@ export const SERVICES_DATA = {
 
   "kismama": {
     title: "Kismama Fotózás",
+    /* A látható címtől külön: a magyar keresés „fotós Zalaegerszeg" alakú,
+       és a <title> sablonja még ráfűz 20 karaktert. */
+    seoTitle: "Kismama fotózás Zalaegerszegen",
+    seoDescription: "Kismama fotózás Zalaegerszegen: finom, természetes képek a várakozás heteiről. Nyugodt környezetben, párral és nagyobb testvérekkel is.",
     slug: "kismama",
     heroSubtitle: "Az Anyaság Varázsa",
     description: "Örökítsük meg a várakozás legszebb pillanatait finom, természetes és időtálló fotókon. Feszültségmentes, nyugodt környezetben alkotunk, ahol Te vagy a középpontban, de természetesen a párod és a nagyobb tesók is részesei lehetnek az élménynek.",
@@ -196,6 +208,10 @@ export const SERVICES_DATA = {
 
   "family-sessions": {
     title: "Családi Fotózás",
+    /* A látható címtől külön: a magyar keresés „fotós Zalaegerszeg" alakú,
+       és a <title> sablonja még ráfűz 20 karaktert. */
+    seoTitle: "Családi fotózás Zalaegerszegen",
+    seoDescription: "Családi fotózás Zalaegerszegen, kötetlen szabadtéri programként. Kötelező mosolygás helyett valódi ölelések és huncut gyerekmosolyok.",
     slug: "family-sessions",
     heroSubtitle: "Őszinte pillanatok és közös nevetések",
     description: "Felejtsétek el a feszengést és a kötelező mosolygást. Nálam a fotózás közös játék, séta és nevetés. Örökítsük meg a valódi öleléseket és a gyerekek huncut mosolyát egy kötetlen szabadtéri program keretében.",
@@ -258,6 +274,10 @@ export const SERVICES_DATA = {
 
   "autok": {
     title: "Autó, motoros Fotózás",
+    /* A látható címtől külön: a magyar keresés „fotós Zalaegerszeg" alakú,
+       és a <title> sablonja még ráfűz 20 karaktert. */
+    seoTitle: "Autó- és motorfotózás Zalaegerszegen",
+    seoDescription: "Autó- és motorfotózás Zalaegerszegen. Prospektusba illő képek eladáshoz, a hobbihoz vagy egy projekt autóhoz — a megfelelő szögekkel és fényekkel.",
     slug: "autok",
     heroSubtitle: "Design, erő és szenvedély négy keréken",
     description: "Minden autó egyedi karakter, egy saját történet. Benzinvérűként pontosan tudom, milyen szögek és fények kellenek ahhoz, hogy a végeredmény egy prospektusba illő mestermű legyen. Legyen szó eladásról, a hobbidról, vagy egy különleges projekt autóról.",
@@ -339,6 +359,10 @@ export const SERVICES_DATA = {
 
   "kutyusok": {
     title: "Kutyafotózás",
+    /* A látható címtől külön: a magyar keresés „fotós Zalaegerszeg" alakú,
+       és a <title> sablonja még ráfűz 20 karaktert. */
+    seoTitle: "Kutyafotózás Zalaegerszegen",
+    seoDescription: "Kutyafotózás Zalaegerszegen, szabadtéren, természetes fényben. Nem sietünk: portré, akciófotó és közös kép a gazdival.",
     slug: "kutyusok",
     heroSubtitle: "Négylábú kedvencek, őszinte pillanatok",
     description: "Örökítsd meg kutyusod legboldogabb, legőszintébb pillanatait! A természetes fények és a szabadtéri környezet adják a legjobb hátteret az önfeledt játékhoz. Nem sietünk: hagyjuk, hogy a kutyus felfedezzen, játsszon, és közben készülnek a legszebb portrék, akciófotók és persze a közös képek a gazdival.",

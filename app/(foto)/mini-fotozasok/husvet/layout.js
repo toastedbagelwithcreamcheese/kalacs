@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Húsvéti Mini Fotózás | Kovács Bálint Fotó",
+  title: "Húsvéti mini fotózás",
   description: "Húsvéti hangulatú mini családi és gyerekfotózás Zalaegerszegen. Rövid, megfizethető tavaszi fotósorozat.",
   alternates: {
     canonical: "/mini-fotozasok/husvet",

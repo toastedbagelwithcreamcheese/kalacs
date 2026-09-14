@@ -1,7 +1,8 @@
 import PortfolioClient from "./PortfolioClient";
 
 export const metadata = {
-  title: "Portfólió | Kovács Bálint Fotográfia",
+  alternates: { canonical: "/portfolio" },
+  title: "Portfólió",
   description: "Válogatás a legjobb munkáimból. Esküvői, portré, családi és autófotózás Zalaegerszegen és országosan. Lapozd át a referenciáimat!",
   keywords: [
     "Kovács Bálint portfólió",

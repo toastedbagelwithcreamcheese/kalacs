@@ -13,13 +13,15 @@ export async function generateMetadata({ params }) {
   if (!data) return {};
 
   return {
-    title: `${data.title} - Kovács Bálint Fotó`,
-    description: data.description,
+    /* A sablon (`%s | Kovács Bálint Fotó`) magától ráfűzi a márkát — ha itt is
+       kiírnánk, kétszer szerepelne, és 20 karakternyi hely veszne el. */
+    title: data.seoTitle ?? data.title,
+    description: data.seoDescription ?? data.description,
     alternates: {
       canonical: `/szolgaltatasok/${resolvedParams.slug}`,
     },
     openGraph: {
-      title: `${data.title} - Kovács Bálint`,
+      title: data.seoTitle ?? data.title,
       description: data.description,
       images: [data.heroImage],
     },

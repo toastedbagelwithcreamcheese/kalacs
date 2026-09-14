@@ -1,5 +1,12 @@
 import Footer from "@/components/Footer";
-import NavbarClient from "@/components/NavbarClient";
+/* A Navbar KÖZVETLENÜL importálva, nem `dynamic(..., { ssr: false })`-on át.
+   Mérve: az ssr:false miatt a kiszolgált HTML-ben nem volt sem <nav>, sem
+   egyetlen menülink — így a Google-nak nem volt belső crawl-útja a
+   szolgáltatásoldalakhoz (2026-09-14-én 18 URL-ből 14 "unknown to Google"),
+   az AI-robotok pedig — amelyek nem futtatnak JavaScriptet — navigáció
+   nélküli oldalt láttak. A Navbar "use client", de attól még előrenderelődik
+   a szerveren; a window-hoz csak useEffect-ben nyúl, ami böngészőben fut. */
+import Navbar from "@/components/Navbar";
 import GlassFilter from "@/components/GlassFilter";
 
 // A fotós oldal chrome-ja és metaadatai. Ez a route group ("(foto)") NEM
@@ -20,9 +27,9 @@ export const metadata = {
   authors: [{ name: "Kovács Bálint" }],
   creator: "Kovács Bálint",
   publisher: "Kovács Bálint Fotográfia",
-  alternates: {
-    canonical: "/",
-  },
+  /* SZÁNDÉKOSAN nincs itt `alternates.canonical`: a layout-szintű érték
+     minden felül nem író oldalra átszivárog. Minden lap a SAJÁT
+     page.js-ében/layout.js-ében adja meg a canonicalját. */
   openGraph: {
     type: "website",
     locale: "hu_HU",
@@ -136,7 +143,7 @@ export default function FotoLayout({ children }) {
   return (
     <>
       <GlassFilter />
-      <NavbarClient />
+      <Navbar />
       {/* Nincs pt-[80px]: a transzparens Navbar és a teljes képernyős Hero
           szándékosan fedik egymást. */}
       <main>{children}</main>

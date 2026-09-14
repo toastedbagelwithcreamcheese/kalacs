@@ -2,7 +2,10 @@
 import Head from "next/head";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import NavbarClient from "./NavbarClient";
+/* Közvetlen import, nem `dynamic(..., { ssr: false })`: a jogi lapok
+   kiszolgált HTML-jében is legyen navigáció, hogy a keresőnek legyen
+   belső útja innen a többi oldalra. */
+import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const LegalPageLayout = ({ title, effectiveDate, children }) => {
@@ -11,7 +14,7 @@ const LegalPageLayout = ({ title, effectiveDate, children }) => {
       <Head>
         <title>{`${title} – Kovács Bálint Fotó`}</title>
       </Head>
-      <NavbarClient />
+      <Navbar />
       <div className="bg-[#F9F5F1] pt-32 pb-24">
         <div className="container mx-auto px-6 max-w-3xl">
           <Link
