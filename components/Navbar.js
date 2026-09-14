@@ -87,7 +87,7 @@ export default function Navbar() {
                 Bálint
               </span>
               <span className="text-[9px] uppercase tracking-[0.3em] text-[#C79C8D] font-bold group-hover:text-[#5A4A42] transition-colors mt-0.5">
-                Fotográfia
+                Fotó
               </span>
             </div>
           </Link>

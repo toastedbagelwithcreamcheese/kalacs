@@ -47,7 +47,7 @@ export default function Footer() {
                   Kovács Bálint
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.3em] text-[#C79C8D] font-bold">
-                  Fotográfia
+                  Fotó
                 </span>
               </div>
             </Link>
